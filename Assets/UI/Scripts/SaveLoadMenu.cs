@@ -6,6 +6,7 @@ using System;
 public class SaveLoadMenu : MonoBehaviour {
 
     public Text menuLabel, actionButtonLabel;
+    public string saveFolder;
     public InputField nameInput;
     public RectTransform listContent;
     public SaveLoadItem itemPrefab;
@@ -37,7 +38,7 @@ public class SaveLoadMenu : MonoBehaviour {
         if (mapName.Length == 0) {
             return null;
         }
-        return Path.Combine(Application.persistentDataPath, mapName + ".map");
+        return Path.Combine(Application.dataPath, saveFolder, mapName + ".map");
     }
 
     //Save & Load maps
@@ -94,7 +95,7 @@ public class SaveLoadMenu : MonoBehaviour {
         }
 
         string[] paths =
-            Directory.GetFiles(Application.persistentDataPath, "*.map");
+            Directory.GetFiles(Path.Combine(Application.dataPath, saveFolder), "*.map");
         Array.Sort(paths);
         for (int i = 0; i < paths.Length; i++) {
             SaveLoadItem item = Instantiate(itemPrefab);
