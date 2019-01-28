@@ -84,3 +84,5 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 }
+
+//testjm
