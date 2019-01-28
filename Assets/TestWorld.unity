@@ -14321,6 +14321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuLabel: {fileID: 1808226916}
   actionButtonLabel: {fileID: 1732776624}
+  saveFolder: Maps
   nameInput: {fileID: 1841669564}
   listContent: {fileID: 1279927188}
   itemPrefab: {fileID: 114487975730416316, guid: 0575a3af41b7b124da54a2b8d2daec8d,
