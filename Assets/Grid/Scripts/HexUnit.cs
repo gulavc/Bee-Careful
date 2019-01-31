@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HexUnit : MonoBehaviour {
 
+    public Text countText;
     HexCell location;
     float orientation;
-    int speed = 14;
+    int speed = 200000;
+    private int pointsAction = 100;
 
     List<HexCell> pathToTravel;
     const float travelSpeed = 4f; //cells per second
@@ -185,4 +188,8 @@ public class HexUnit : MonoBehaviour {
         pathToTravel = null;
     }
 
+    void SetCountText ()
+    {
+        countText.text = "Points d'action : " + pointsAction.ToString();
+    }
 }
