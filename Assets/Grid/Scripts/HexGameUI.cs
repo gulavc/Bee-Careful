@@ -13,12 +13,12 @@ public class HexGameUI : MonoBehaviour {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButtonDown(0)) {
                 DoSelection();
-                //ShowPossibleMovement();
+                ShowPossibleMovement();
             }
             else if (selectedUnit) {
                 if (Input.GetMouseButtonDown(1)) {
                     DoMove();
-                    //ShowPossibleMovement();
+                    ShowPossibleMovement();
                 }
                 else {
                     DoPathfinding();
