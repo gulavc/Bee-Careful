@@ -1,0 +1,1 @@
+﻿public enum RecipeType { Bread, Honey, Jelly, Propolis, Wax };
