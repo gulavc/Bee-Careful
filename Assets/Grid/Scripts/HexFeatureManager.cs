@@ -312,6 +312,14 @@ public class HexFeatureManager : MonoBehaviour
     public void AddSpecialFeature(HexCell cell, Vector3 position)
     {
         Transform instance = Instantiate(special[cell.SpecialIndex - 1]);
+
+        //Find the HexInteractable component in the special feature
+        HexInteractable hexint = instance.GetComponentInChildren<HexInteractable>();
+        if (hexint)
+        {
+            hexint.Cell = cell;
+        }
+
         instance.localPosition = HexMetrics.Perturb(position);
         HexHash hash = HexMetrics.SampleHashGrid(position);
         instance.localRotation = Quaternion.Euler(0f, 360f * hash.e, 0f);
