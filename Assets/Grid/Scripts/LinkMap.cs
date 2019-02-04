@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class LinkMap : MonoBehaviour {
+public class LinkMap : HexInteractable {
+
     public string mapName;
     public string saveFolder;
     private HexGrid hexGrid;
 
 
-    
-    void OnTriggerEnter(Collider other)
+public override void OnUnitEnterCell(HexCell cell)
     {
-        Debug.Log("allo");
-        if (other.tag == "Player")
-        {
-            string path = Path.Combine(Application.dataPath, saveFolder, mapName + ".map");
-            Load(path);
-        }
+        string path = Path.Combine(Application.dataPath, saveFolder, mapName + ".map");
+        Load(path);
     }
-    
+   
 
     public void Load(string path)
     {
@@ -46,4 +42,5 @@ public class LinkMap : MonoBehaviour {
         }
     }
 
+    
 }
