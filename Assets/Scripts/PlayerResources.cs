@@ -13,7 +13,7 @@ public class PlayerResources : MonoBehaviour
     public int morePollen = 8;
     public int moreDamage = 10;
 
-    private void Start()
+    public void Start()
     {
 
         playerResources.Add(ResourceType.Nectar, 0);
@@ -98,7 +98,7 @@ public class PlayerResources : MonoBehaviour
             ResourceType.Damage + ": " + playerResources[ResourceType.Damage];
     }
 
-    private bool ValidateResources(int newValue = 0)
+    public bool ValidateResources(int newValue = 0)
     {
         int total = newValue;
         foreach (int i in playerResources.Values)
@@ -109,7 +109,7 @@ public class PlayerResources : MonoBehaviour
         return total <= maxResources;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -146,7 +146,7 @@ public class PlayerResources : MonoBehaviour
 
         }
 
-    }
+    }*/
 
 
 

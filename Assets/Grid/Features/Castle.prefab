@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4790125486521924}
+  - component: {fileID: 114966570080967522}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -404,3 +405,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502939567388058}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114966570080967522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410122490462098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  resourceValue: 2

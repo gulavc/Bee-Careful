@@ -4666,7 +4666,7 @@ GameObject:
   - component: {fileID: 513710046}
   - component: {fileID: 513710045}
   m_Layer: 0
-  m_Name: ResourcesTest
+  m_Name: BeeHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,6 +4683,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b588ac0c188bfd7469881c2b86fe1f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxResources: 50
+  moreNectar: 2
+  moreWater: 4
+  moreResin: 6
+  morePollen: 8
+  moreDamage: 10
 --- !u!4 &513710046
 Transform:
   m_ObjectHideFlags: 0
