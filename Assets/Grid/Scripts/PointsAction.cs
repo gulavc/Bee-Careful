@@ -15,16 +15,16 @@ public class PointsAction : MonoBehaviour {
     {
         pointsAction = 100;
         SetCountText();
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+    }
 
-    void SetCountText ()
+    public void SetCountText ()
     {
-        countText.text = "Points d'Action :" + countText.ToString();
+        countText.text = "Points d'Action : " + pointsAction;
     }
 }
