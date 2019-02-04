@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class PointsAction : MonoBehaviour {
 
 
-    HexUnit unit;
-    private int pointsAction;
+    
+    public int pointsAction;
     public Text countText;
 
 	// Use this for initialization
 	void Start ()
     {
-        unit = FindObjectOfType<HexUnit>();
-        pointsAction = 0;
+        pointsAction = 100;
         SetCountText();
 	}
 	
