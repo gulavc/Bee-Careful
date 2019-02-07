@@ -314,10 +314,13 @@ public class HexFeatureManager : MonoBehaviour
         Transform instance = Instantiate(special[cell.SpecialIndex - 1]);
 
         //Find the HexInteractable component in the special feature
-        HexInteractable hexint = instance.GetComponentInChildren<HexInteractable>();
-        if (hexint)
+        HexInteractable[] hexint = instance.GetComponentsInChildren<HexInteractable>();
+        if (hexint.Length > 0)
         {
-            hexint.Cell = cell;
+            foreach (HexInteractable hi in hexint)
+            {
+                hi.Cell = cell;
+            }
         }
 
         instance.localPosition = HexMetrics.Perturb(position);
