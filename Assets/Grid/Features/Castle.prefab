@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 4790125486521924}
   - component: {fileID: 114129372813954292}
   - component: {fileID: 65631584055192030}
+  - component: {fileID: 114831942950700002}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -431,3 +432,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapName: Hive
   saveFolder: Maps
+--- !u!114 &114831942950700002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410122490462098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca06aac140a1b4042a6aafb8c2843419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowMaterial: {fileID: 2100000, guid: c3e95d32e5c563a439f1756c0fc0479a, type: 2}
+  glowColor: {r: 0, g: 1, b: 0.016897917, a: 0}

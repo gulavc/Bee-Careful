@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4603719833855288}
   - component: {fileID: 114778500092231724}
+  - component: {fileID: 114633546887482840}
   m_Layer: 0
   m_Name: HugeMeteor
   m_TagString: Untagged
@@ -113,6 +114,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1912949404592690}
   m_Mesh: {fileID: 4300000, guid: e399af9d66682f149b2b761a48e7d46e, type: 3}
+--- !u!114 &114633546887482840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1691413727130716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca06aac140a1b4042a6aafb8c2843419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowMaterial: {fileID: 2100000, guid: b0bf29b02185e7d4eb222bf9d8f4c79d, type: 2}
 --- !u!114 &114778500092231724
 MonoBehaviour:
   m_ObjectHideFlags: 1
