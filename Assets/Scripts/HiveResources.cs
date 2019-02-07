@@ -15,11 +15,11 @@ public class HiveResources : MonoBehaviour
        hiveResources.Add(ResourceType.Water, 0);
        hiveResources.Add(ResourceType.Resin, 0);
        hiveResources.Add(ResourceType.Pollen, 0);
-       hiveResources.Add(ResourceType.Bread, 0);
+       /*hiveResources.Add(ResourceType.Bread, 0);
        hiveResources.Add(ResourceType.Honey, 0);
        hiveResources.Add(ResourceType.Jelly, 0);
        hiveResources.Add(ResourceType.Propolis, 0);
-       hiveResources.Add(ResourceType.Wax, 0);
+       hiveResources.Add(ResourceType.Wax, 0);*/
        
         
     }

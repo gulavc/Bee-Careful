@@ -55,9 +55,8 @@ GameObject:
   - component: {fileID: 4790125486521924}
   - component: {fileID: 114129372813954292}
   - component: {fileID: 65631584055192030}
-  - component: {fileID: 114283189535270080}
   m_Layer: 0
-  m_Name: Castle
+  m_Name: ResinPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -425,24 +424,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0417e76582c19454184303e69b07babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mapName: Hive
   saveFolder: Maps
---- !u!114 &114283189535270080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  resourceValue: 10
-  resourceMax: 50

@@ -109,7 +109,7 @@ public class PlayerResources : MonoBehaviour
         return total <= maxResources;
     }
 
-    /*private void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -142,11 +142,11 @@ public class PlayerResources : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             AddResources(ResourceType.Damage, moreDamage);
-            Debug.Log("Got Pollen");
+            Debug.Log("Got Damage");
 
         }
 
-    }*/
+    }
 
 
 
