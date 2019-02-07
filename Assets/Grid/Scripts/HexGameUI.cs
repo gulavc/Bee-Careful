@@ -13,24 +13,24 @@ public class HexGameUI : MonoBehaviour {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButtonDown(0)) {
                 DoSelection();
-                ShowPossibleMovement();
+                /*ShowPossibleMovement();*/
             }
             else if (selectedUnit) {
                 if (Input.GetMouseButtonDown(1)) {
                     DoMove();
-                    ShowPossibleMovement();
+                    /*ShowPossibleMovement();*/
                 }
                 else {
                     DoPathfinding();
                 }
             }
         }
-        /*if (Input.GetKeyDown(KeyCode.R)) {
+        if (Input.GetKeyDown(KeyCode.R)) {
             if (selectedUnit) {
                 selectedUnit.ResetMovement();
-                ShowPossibleMovement();
+                //ShowPossibleMovement();
             }
-        }*/
+        }
     }
 
     public void SetEditMode(bool toggle) {
@@ -70,9 +70,9 @@ public class HexGameUI : MonoBehaviour {
     }
 
     void DoMove() {
-        if (grid.HasPath && grid.IsReachable(currentCell)) {
+        if (grid.HasPath /*&& grid.IsReachable(currentCell)*/) {
             selectedUnit.Travel(grid.GetPath());
-            //selectedUnit.UseMovement(currentCell.Distance);
+            selectedUnit.UseMovement(currentCell.Distance);
             grid.ClearPath();
         }
     }
