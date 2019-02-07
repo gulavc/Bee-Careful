@@ -6,12 +6,7 @@ public class PlayerResources : MonoBehaviour
 {
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
-    public int maxResources = 50;
-    public int moreNectar = 2;
-    public int moreWater = 4;
-    public int moreResin = 6;
-    public int morePollen = 8;
-    public int moreDamage = 10;
+    public int maxResources = 100;
 
     public void Start()
     {
@@ -109,11 +104,11 @@ public class PlayerResources : MonoBehaviour
         return total <= maxResources;
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
-            AddResources(ResourceType.Nectar, moreNectar);
+            AddResources(ResourceType.Nectar,);
             Debug.Log("Got Nectar");
 
         }
@@ -146,7 +141,7 @@ public class PlayerResources : MonoBehaviour
 
         }
 
-    }
+    }*/
 
 
 

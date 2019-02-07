@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 114129372813954292}
   - component: {fileID: 65631584055192030}
   - component: {fileID: 114831942950700002}
+  - component: {fileID: 114833329676880918}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -425,7 +426,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0417e76582c19454184303e69b07babf, type: 3}
   m_Name: 
@@ -444,4 +445,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowMaterial: {fileID: 2100000, guid: c3e95d32e5c563a439f1756c0fc0479a, type: 2}
-  glowColor: {r: 0, g: 1, b: 0.016897917, a: 0}
+--- !u!114 &114833329676880918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410122490462098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  resourceValue: 10
+  resourceMax: 30
+  paCost: 10
