@@ -109,7 +109,7 @@ public class PlayerResources : MonoBehaviour
         return playerResources[r];
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -146,7 +146,7 @@ public class PlayerResources : MonoBehaviour
 
         }
 
-    }
+    }*/
 
 
 

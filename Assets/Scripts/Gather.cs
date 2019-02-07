@@ -24,7 +24,7 @@ public class Gather : HexInteractable
     {
 
 
-        if (pa.pointsAction > paCost)
+        if (pa.pointsAction >= paCost)
         {
             pa.pointsAction -= paCost;
             pa.SetCountText();
