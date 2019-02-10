@@ -109,7 +109,12 @@ public class PlayerResources : MonoBehaviour
         return total <= maxResources;
     }
 
-    /*private void Update()
+    public int GetCurrentResource(ResourceType r)
+    {
+        return playerResources[r];
+    }
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
         {
@@ -146,7 +151,7 @@ public class PlayerResources : MonoBehaviour
 
         }
 
-    }*/
+    }
 
 
 
