@@ -96,8 +96,7 @@ public class HexUnit : MonoBehaviour {
     }
 
     public bool IsValidDestination(HexCell cell) {
-        //bool tooFar = cell.Distance > speed;
-        return !cell.IsUnderwater && !cell.Unit /*&& !tooFar*/;
+        return cell.IsExplored && !cell.IsUnderwater && !cell.Unit;
     }
 
     public void UseMovement(int move) {
@@ -214,5 +213,30 @@ public class HexUnit : MonoBehaviour {
 
         ListPool<HexCell>.Add(pathToTravel);
         pathToTravel = null;
+    }
+
+    public int GetMoveCost(HexCell fromCell, HexCell toCell, HexDirection direction)
+    {
+        HexEdgeType edgeType = fromCell.GetEdgeType(toCell);
+        if (edgeType == HexEdgeType.Cliff /*&& player cannot fly*/)
+        {
+            return -1;
+        }
+
+        int moveCost;
+        if (fromCell.HasRoadThroughEdge(direction))
+        {
+            moveCost = 1;
+        }
+        else if (fromCell.Walled != toCell.Walled)
+        {
+            return -1;
+        }
+        else
+        {
+            moveCost = edgeType == HexEdgeType.Flat ? 3 : 5;
+            moveCost += (toCell.UrbanLevel + toCell.FarmLevel + toCell.PlantLevel) / 2;
+        }
+        return moveCost;
     }
 }

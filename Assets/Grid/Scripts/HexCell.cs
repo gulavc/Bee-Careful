@@ -39,6 +39,8 @@ public class HexCell : MonoBehaviour {
 
     public int Index { get; set; }
 
+    public bool IsExplored { get; private set; }
+
     //Cell Visibility
     public bool IsVisible {
         get {
@@ -473,10 +475,11 @@ public class HexCell : MonoBehaviour {
             }
         }
         writer.Write((byte)roadFlags);
+        writer.Write(IsExplored);
 
     }
 
-    public void Load(BinaryReader reader) {
+    public void Load(BinaryReader reader, int header) {
         terrainTypeIndex = reader.ReadByte();
         ShaderData.RefreshTerrain(this);
         elevation = reader.ReadByte();
@@ -510,6 +513,9 @@ public class HexCell : MonoBehaviour {
         for (int i = 0; i < roads.Length; i++) {
             roads[i] = (roadFlags & (1 << i)) != 0;
         }
+        IsExplored = header >= 3 ? reader.ReadBoolean() : false;
+        ShaderData.RefreshVisibility(this);
+
     }
 
 
@@ -560,6 +566,7 @@ public class HexCell : MonoBehaviour {
         visibility += 1;
         if (visibility == 1)
         {
+            IsExplored = true;
             ShaderData.RefreshVisibility(this);
         }
     }
