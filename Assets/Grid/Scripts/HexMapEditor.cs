@@ -222,7 +222,6 @@ public class HexMapEditor : MonoBehaviour {
         {
             index = 0;
         }
-        Debug.Log("i: " + index);
         activeSpecialIndex = index;
     }
 
