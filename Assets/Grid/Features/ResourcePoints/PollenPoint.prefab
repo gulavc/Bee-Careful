@@ -55,10 +55,8 @@ GameObject:
   - component: {fileID: 4790125486521924}
   - component: {fileID: 114129372813954292}
   - component: {fileID: 65631584055192030}
-  - component: {fileID: 114831942950700002}
-  - component: {fileID: 114833329676880918}
   m_Layer: 0
-  m_Name: Castle
+  m_Name: PollenPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,37 +424,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0417e76582c19454184303e69b07babf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mapName: Hive
   saveFolder: Maps
---- !u!114 &114831942950700002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca06aac140a1b4042a6aafb8c2843419, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: c3e95d32e5c563a439f1756c0fc0479a, type: 2}
---- !u!114 &114833329676880918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1410122490462098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  resourceValue: 10
-  resourceMax: 30
-  paCost: 10
