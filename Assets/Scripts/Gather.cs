@@ -28,7 +28,7 @@ public class Gather : HexInteractable
         {
             pa.pointsAction -= paCost;
             pa.SetCountText();
-            Debug.Log("You lost " + paCost + " points. You know have " + pa.pointsAction + " points!");
+            Debug.Log("You lost " + paCost + " points. You now have " + pa.pointsAction + " points!");
             playerResources.AddResources(type, resourceValue);
 
             //si c'est 0 ou plus bas, tu peux rien ramasser.
