@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.IO;
+using UnityEngine.UI;
 
 public class HexMapEditor : MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class HexMapEditor : MonoBehaviour {
     HexCell previousCell;
 
     public Material terrainMaterial;
+    public Text specialValue;
     
     enum OptionalToggle {
         Ignore, Yes, No
@@ -210,6 +212,18 @@ public class HexMapEditor : MonoBehaviour {
 
     public void SetSpecialIndex(float index) {
         activeSpecialIndex = (int)index;
+    }
+
+    public void SetSpecialIndex()
+    {
+        int index;
+        int.TryParse(specialValue.text, out index);
+        if(index < 0)
+        {
+            index = 0;
+        }
+        Debug.Log("i: " + index);
+        activeSpecialIndex = index;
     }
 
     public void SetEditMode(bool toggle) {
