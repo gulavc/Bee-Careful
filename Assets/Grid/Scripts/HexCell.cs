@@ -35,6 +35,21 @@ public class HexCell : MonoBehaviour {
 
     int specialIndex;
 
+    public HexCellShaderData ShaderData { get; set; }
+
+    public int Index { get; set; }
+
+    public bool IsExplored { get; private set; }
+
+    //Cell Visibility
+    public bool IsVisible {
+        get {
+            return visibility > 0;
+        }
+    }
+
+    int visibility;
+
     //distance to selected cell
     int distance;
 
@@ -97,7 +112,7 @@ public class HexCell : MonoBehaviour {
         set {
             if (terrainTypeIndex != value) {
                 terrainTypeIndex = value;
-                Refresh();
+                ShaderData.RefreshTerrain(this);
             }
         }
     }
@@ -460,11 +475,13 @@ public class HexCell : MonoBehaviour {
             }
         }
         writer.Write((byte)roadFlags);
+        writer.Write(IsExplored);
 
     }
 
-    public void Load(BinaryReader reader) {
+    public void Load(BinaryReader reader, int header) {
         terrainTypeIndex = reader.ReadByte();
+        ShaderData.RefreshTerrain(this);
         elevation = reader.ReadByte();
         RefreshPosition();
         waterLevel = reader.ReadByte();
@@ -496,6 +513,9 @@ public class HexCell : MonoBehaviour {
         for (int i = 0; i < roads.Length; i++) {
             roads[i] = (roadFlags & (1 << i)) != 0;
         }
+        IsExplored = header >= 3 ? reader.ReadBoolean() : false;
+        ShaderData.RefreshVisibility(this);
+
     }
 
 
@@ -539,5 +559,25 @@ public class HexCell : MonoBehaviour {
 
     //Unit Currently in cell
     public HexUnit Unit { get; set; }
+
+    //Visibility functions
+    public void IncreaseVisibility()
+    {
+        visibility += 1;
+        if (visibility == 1)
+        {
+            IsExplored = true;
+            ShaderData.RefreshVisibility(this);
+        }
+    }
+
+    public void DecreaseVisibility()
+    {
+        visibility -= 1;
+        if (visibility == 0)
+        {
+            ShaderData.RefreshVisibility(this);
+        }
+    }
 
 }

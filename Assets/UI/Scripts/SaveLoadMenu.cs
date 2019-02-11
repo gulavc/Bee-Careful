@@ -5,6 +5,8 @@ using System;
 
 public class SaveLoadMenu : MonoBehaviour {
 
+    const int mapFileVersion = 3;
+
     public Text menuLabel, actionButtonLabel;
     public string saveFolder;
     public InputField nameInput;
@@ -47,7 +49,7 @@ public class SaveLoadMenu : MonoBehaviour {
             BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.Create))
         ) {
             //Save version
-            writer.Write(2);
+            writer.Write(mapFileVersion);
             hexGrid.Save(writer);
         }
     }
@@ -61,7 +63,7 @@ public class SaveLoadMenu : MonoBehaviour {
             BinaryReader reader = new BinaryReader(File.OpenRead(path))
         ) {
             int header = reader.ReadInt32();
-            if (header <= 2) {
+            if (header <= mapFileVersion) {
                 hexGrid.Load(reader, header);
                 HexMapCamera.ValidatePosition();
             }
