@@ -750,9 +750,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 1
-  useCellData: 1
+  useColors: 1
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 1
 --- !u!114 &114106926787584070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -790,18 +791,18 @@ MonoBehaviour:
     - {fileID: 4521252341384620, guid: d126fbcaf602621468fea3e3705e4eac, type: 2}
     - {fileID: 4572002201653508, guid: 3b74abd2a1a402a4aaaac8b475564cb2, type: 2}
   - prefabs:
-    - {fileID: 0}
+    - {fileID: 4715511532790052, guid: 9a5b8cda228e46b408af07851db21a54, type: 2}
     - {fileID: 4782742762755698, guid: e0bfe5d4c4834fc4eafbf33610dd9275, type: 2}
   - prefabs:
     - {fileID: 4328074032109280, guid: a9f1cfb004bccf24e984acce9edd9d5a, type: 2}
     - {fileID: 4551834874917292, guid: 7e17bb5321869a6429506d3bdd674312, type: 2}
   farmCollections:
   - prefabs:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 4280539974183002, guid: 8b325b8935b7fd14eb7c197513be71cf, type: 2}
+    - {fileID: 4267692806472614, guid: c045fc4103be15447bc50a26eb2025e1, type: 2}
   - prefabs:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 4313317842495688, guid: 649654ef2eea43345b50f21f067d55ca, type: 2}
+    - {fileID: 4512729141267690, guid: d3c9ca42c91f2664dbf2694036e7c3e3, type: 2}
     - {fileID: 0}
   - prefabs:
     - {fileID: 4448730430786274, guid: 1ddaf242dd01c744393cf9bd8a9334d1, type: 2}
@@ -838,9 +839,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 1
+  useTerrainTypes: 0
 --- !u!114 &114391112932531584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -853,9 +855,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114404010561402838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -868,9 +871,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114417646931690754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -883,9 +887,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114746702501130568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -898,9 +903,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 0
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!114 &114850705854433250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -931,9 +937,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useCollider: 0
-  useCellData: 1
+  useColors: 0
   useUVCoordinates: 1
   useUV2Coordinates: 0
+  useTerrainTypes: 0
 --- !u!223 &223497789383876796
 Canvas:
   m_ObjectHideFlags: 1
