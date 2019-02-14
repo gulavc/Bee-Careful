@@ -5,39 +5,66 @@ using UnityEngine.UI;
 
 public class ResourcesHUD : MonoBehaviour {
 
-    private PlayerResources resources;
-    private GlobalObjectives globalObjectives;
+    public GameManager gameManager;
+    
 
+    //Hud Elements
     public Slider pollenSlider;
     public Slider waterSlider;
     public Slider nectarSlider;
     public Slider resinSlider;
     public Slider damageSlider;
-
-    public Text nectarObjectiveText;
-    public Text waterObjectiveText;
-    public Text resinObjectiveText;
-    public Text pollenObjectiveText;
+    public Text workersText;
+    public Text pointActionText;
 
 	// Use this for initialization
 	void Start () {
 
-        resources = GameObject.FindObjectOfType<PlayerResources>();
-        globalObjectives = GameObject.FindObjectOfType<GlobalObjectives>();
-
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
-        pollenSlider.value = resources.GetCurrentResource(ResourceType.Pollen);
-        nectarSlider.value = resources.GetCurrentResource(ResourceType.Nectar);
-        waterSlider.value = resources.GetCurrentResource(ResourceType.Water);
-        resinSlider.value = resources.GetCurrentResource(ResourceType.Resin);
 
-        nectarObjectiveText.text = globalObjectives.VerifyObjective(ResourceType.Nectar) ? "Complete!" : resources.GetCurrentResource(ResourceType.Nectar) + " / " + globalObjectives.GetObjective(ResourceType.Nectar);
-        waterObjectiveText.text = globalObjectives.VerifyObjective(ResourceType.Water) ? "Complete!" : resources.GetCurrentResource(ResourceType.Water) + " / " + globalObjectives.GetObjective(ResourceType.Water);
-        resinObjectiveText.text = globalObjectives.VerifyObjective(ResourceType.Resin) ? "Complete!" : resources.GetCurrentResource(ResourceType.Resin) + " / " + globalObjectives.GetObjective(ResourceType.Resin);
-        pollenObjectiveText.text = globalObjectives.VerifyObjective(ResourceType.Pollen) ? "Complete!" : resources.GetCurrentResource(ResourceType.Pollen) + " / " + globalObjectives.GetObjective(ResourceType.Pollen);
+    }
 
+    public void UpdateHUD(ResourceType r)
+    {
+        switch (r)
+        {
+            case ResourceType.Water:
+                waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+                break;
+            case ResourceType.Pollen:
+                pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+                break;
+            case ResourceType.Nectar:
+                nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+                break;
+            case ResourceType.Resin:
+                resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+                break;
+            case ResourceType.Workers:
+                workersText.text = "Workers: " + gameManager.GetRessourceCount(ResourceType.Workers);
+                break;
+            default:
+                UpdateHUDAllResources();
+                break;
+
+        }
+    }
+
+    public void UpdatePointsActionHUD()
+    {
+        pointActionText.text = "Points d'Action: " + gameManager.GetCurrentPointsAction();
+    }
+
+    public void UpdateHUDAllResources()
+    {
+        pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+        nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+        waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+        resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+        workersText.text = "Workers: " + gameManager.GetRessourceCount(ResourceType.Workers);
+        pointActionText.text = "Points d'Action: " + gameManager.GetCurrentPointsAction();
     }
 }
