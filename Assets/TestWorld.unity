@@ -6762,7 +6762,7 @@ MonoBehaviour:
     type: 2}
   noiseSource: {fileID: 2800000, guid: 91b4276488e536046b0e6bb92f559394, type: 3}
   seed: 42
-  unitPrefab: {fileID: 114104680617803334, guid: 992db0fc161549b48b1b09831784af52,
+  unitPrefab: {fileID: 114009083097518516, guid: 709f02528d3c9314a8a5dd07b4c02a73,
     type: 2}
 --- !u!4 &776477864
 Transform:
