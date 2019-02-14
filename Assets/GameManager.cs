@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour {
     public ResourcesHUD resourcesHUD;
     public PointsAction pointsAction;
     public Workers workers;
+    public EndOfYearUI endOfYearUI;
+
 
 	// Use this for initialization
 	void Start () {
         playerResources.gameManager = this;
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
+        workers.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 	}
@@ -60,5 +63,17 @@ public class GameManager : MonoBehaviour {
         {
             workers.CreateNewWorkers(amount);
         }
+    }
+
+    public void RemovePlayerRessources(ResourceType r, int amount)
+    {
+        playerResources.RemoveResources(r, amount);
+    }
+
+    //End of year
+    public void EndOfYear()
+    {
+        resourcesHUD.gameObject.SetActive(false);
+        endOfYearUI.gameObject.SetActive(true);
     }
 }

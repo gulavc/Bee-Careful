@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Workers : MonoBehaviour {
 
+    public GameManager gameManager;
     private List<int> workersEnergy;
 
     public int MaxWorkerActionPoints;
@@ -58,6 +59,7 @@ public class Workers : MonoBehaviour {
             if (workersEnergy[index] <= 0)
             {
                 workersEnergy.RemoveAt(index);
+                gameManager.RemovePlayerRessources(ResourceType.Workers, 1);
             }
             workersEnergy.Sort();
         }

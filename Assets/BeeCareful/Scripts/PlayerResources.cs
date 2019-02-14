@@ -86,6 +86,16 @@ public class PlayerResources : MonoBehaviour
 
     }
 
+    public void RemoveResources(ResourceType r, int amount)
+    {
+        if(amount >= 0)
+        {
+            playerResources[r] = playerResources[r] - amount < 0 ? 0 : playerResources[r] - amount;
+        }
+        gameManager.UpdateResourcesHUD(r);
+
+    }
+
     public string printRessources()
     {
         return ResourceType.Nectar + ": " + playerResources[ResourceType.Nectar] + " / " +
