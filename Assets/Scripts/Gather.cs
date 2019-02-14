@@ -5,31 +5,28 @@ using UnityEngine;
 public class Gather : HexInteractable
 {
 
-    private PlayerResources playerResources;
+    private GameManager gameManager;
     public ResourceType type;
     public int resourceValue;
     public int resourceMax;
     private int resourceCurrent;
-    private PointsAction pa;
     public int paCost;
 
     void Start()
     {
-        playerResources = GameObject.FindObjectOfType<PlayerResources>();
-        pa = GameObject.FindObjectOfType<PointsAction>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
         resourceCurrent = resourceMax;
     }
 
     public override void OnUnitEnterCell(HexCell cell)
     {
+        
 
-
-        if (pa.pointsAction >= paCost)
+        if (gameManager.GetCurrentPointsAction() >= paCost)
         {
-            pa.pointsAction -= paCost;
-            pa.SetCountText();
-            Debug.Log("You lost " + paCost + " points. You now have " + pa.pointsAction + " points!");
-            playerResources.AddResources(type, resourceValue);
+            gameManager.RemovePointsAction(paCost);
+            Debug.Log("You lost " + paCost + " points. You now have " + gameManager.GetCurrentPointsAction() + " points!");
+            gameManager.AddPlayerResources(type, resourceValue);
 
             //si c'est 0 ou plus bas, tu peux rien ramasser.
             resourceCurrent -= resourceValue;

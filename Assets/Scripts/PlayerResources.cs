@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
+    public GameManager gameManager;
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
     public int maxResources = 100;
 
-    public void Start()
+    public void Awake()
     {
 
         playerResources.Add(ResourceType.Nectar, 0);
         playerResources.Add(ResourceType.Water, 0);
         playerResources.Add(ResourceType.Resin, 0);
         playerResources.Add(ResourceType.Pollen, 0);
-        playerResources.Add(ResourceType.Damage, 0);
+        playerResources.Add(ResourceType.Workers, 0);
 
     }
 
@@ -30,7 +31,8 @@ public class PlayerResources : MonoBehaviour
         else
         {
 
-            if (r == ResourceType.Damage)
+            //Dealing with damage -- RIP
+            /*if (r == ResourceType.Damage)
             {
 
                 for (int i = 0; i < value; i++)
@@ -66,7 +68,7 @@ public class PlayerResources : MonoBehaviour
 
                     }
                 }
-            }
+            }*/
 
 
             int total = 0;
@@ -80,7 +82,7 @@ public class PlayerResources : MonoBehaviour
         }
 
 
-        Debug.Log(printRessources());
+        gameManager.UpdateResourcesHUD(r);
 
     }
 
@@ -90,7 +92,7 @@ public class PlayerResources : MonoBehaviour
             ResourceType.Water + ": " + playerResources[ResourceType.Water] + " / " +
             ResourceType.Resin + ": " + playerResources[ResourceType.Resin] + " / " +
             ResourceType.Pollen + ": " + playerResources[ResourceType.Pollen] + " / " +
-            ResourceType.Damage + ": " + playerResources[ResourceType.Damage];
+            ResourceType.Workers + ": " + playerResources[ResourceType.Workers];
     }
 
     public bool ValidateResources(int newValue = 0)
