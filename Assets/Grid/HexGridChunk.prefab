@@ -798,14 +798,15 @@ MonoBehaviour:
   farmCollections:
   - prefabs:
     - {fileID: 4280539974183002, guid: 8b325b8935b7fd14eb7c197513be71cf, type: 2}
-    - {fileID: 4267692806472614, guid: c045fc4103be15447bc50a26eb2025e1, type: 2}
+    - {fileID: 4280539974183002, guid: 8b325b8935b7fd14eb7c197513be71cf, type: 2}
+    - {fileID: 4313317842495688, guid: 649654ef2eea43345b50f21f067d55ca, type: 2}
   - prefabs:
     - {fileID: 4313317842495688, guid: 649654ef2eea43345b50f21f067d55ca, type: 2}
     - {fileID: 4512729141267690, guid: d3c9ca42c91f2664dbf2694036e7c3e3, type: 2}
     - {fileID: 0}
   - prefabs:
-    - {fileID: 4448730430786274, guid: 1ddaf242dd01c744393cf9bd8a9334d1, type: 2}
-    - {fileID: 4412714568244462, guid: 2ab833ef86401f8409c0310ffb61631e, type: 2}
+    - {fileID: 4801794848564428, guid: 5bee7571d593ded419fbb84a886856ca, type: 2}
+    - {fileID: 4280539974183002, guid: 8b325b8935b7fd14eb7c197513be71cf, type: 2}
   plantCollections:
   - prefabs:
     - {fileID: 489912, guid: 7c5aafe3fe2c6ef4a9150f7f44653760, type: 2}
@@ -823,8 +824,8 @@ MonoBehaviour:
   wallTower: {fileID: 4764244389369490, guid: c1577efe4ca57bf478bc91e369a8250c, type: 2}
   bridge: {fileID: 4781738550713454, guid: d6ae40d56308c31499264b8a2f81f1ed, type: 2}
   special:
-  - {fileID: 4790125486521924, guid: c71cf873e9705d74289312822720697a, type: 2}
-  - {fileID: 4603719833855288, guid: dbaa1de15e8463145980d19dbd8d0433, type: 2}
+  - {fileID: 4530954123642070, guid: 0b615ee8154e1e3418a7ec5b991cb82b, type: 2}
+  - {fileID: 4291013751534696, guid: bb523c112f484f144842616d2eda2424, type: 2}
   - {fileID: 4814480777087124, guid: 9cefb067be9a3e44887d1cc8af3308b7, type: 2}
 --- !u!114 &114281327835223084
 MonoBehaviour:
