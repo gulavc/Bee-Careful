@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     public PlayerResources playerResources;
     public ResourcesHUD resourcesHUD;
     public PointsAction pointsAction;
+    public Workers workers;
 
 	// Use this for initialization
 	void Start () {
@@ -55,5 +56,9 @@ public class GameManager : MonoBehaviour {
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
+        if(r == ResourceType.Workers)
+        {
+            workers.CreateNewWorkers(amount);
+        }
     }
 }
