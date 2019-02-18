@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     //public Button SpawnScout;
     //public Button SpawnWorker;
     private HexGrid hexGrid;
+    private GameManager gameManager;
+    public int unitCost;
 
     // Use this for initialization
     void Start()
@@ -17,6 +19,7 @@ public class SpawnManager : MonoBehaviour
         //SpawnScout.onClick.AddListener(CreateScout);
         /*SpawnWorker.onClick.AddListener(CreateWorker);*/
         hexGrid = GameObject.FindObjectOfType<HexGrid>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
 
 
     }
@@ -49,14 +52,19 @@ public class SpawnManager : MonoBehaviour
 
     public void CreateScout()
     {
-        Debug.Log("Let's explore this hood!");
-        HexCell cell = hexGrid.GetCell(new Vector3(1, -2, 1));
-        if (cell && !cell.Unit)
+        if (gameManager.GetRessourceCount(ResourceType.Water) >= unitCost)
         {
-            hexGrid.AddUnit(
-                Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f)
-            );
 
+             -= unitCost;
+            Debug.Log("Let's explore this hood!");
+            HexCell cell = hexGrid.GetCell(new Vector3(1, -2, 1));
+            if (cell && !cell.Unit)
+            {
+                hexGrid.AddUnit(
+                    Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f)
+                );
+
+            }
         }
     }
 
