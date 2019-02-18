@@ -34,9 +34,10 @@ public class PointsAction : MonoBehaviour {
 
     public void RemovePointsAction(int change)
     {
-        if(Points - change < 0)
-        {
+        if(Points - change <= 0)
+        {            
             Points = 0;
+            gameManager.EndOfYear();
         }
         else if (Points - change > pointsActionMax)
         {

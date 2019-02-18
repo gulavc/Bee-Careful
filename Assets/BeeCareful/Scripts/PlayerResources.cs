@@ -86,6 +86,16 @@ public class PlayerResources : MonoBehaviour
 
     }
 
+    public void RemoveResources(ResourceType r, int amount)
+    {
+        if(amount >= 0)
+        {
+            playerResources[r] = playerResources[r] - amount < 0 ? 0 : playerResources[r] - amount;
+        }
+        gameManager.UpdateResourcesHUD(r);
+
+    }
+
     public string printRessources()
     {
         return ResourceType.Nectar + ": " + playerResources[ResourceType.Nectar] + " / " +
@@ -110,46 +120,5 @@ public class PlayerResources : MonoBehaviour
     {
         return playerResources[r];
     }
-
-    /*private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            AddResources(ResourceType.Nectar,);
-            Debug.Log("Got Nectar");
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            AddResources(ResourceType.Water, moreWater);
-            Debug.Log("Got Water");
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            AddResources(ResourceType.Resin, moreResin);
-            Debug.Log("Got Resin");
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            AddResources(ResourceType.Pollen, morePollen);
-            Debug.Log("Got Pollen");
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            AddResources(ResourceType.Damage, moreDamage);
-            Debug.Log("Got Damage");
-
-        }
-
-    }*/
-
-
 
 }
