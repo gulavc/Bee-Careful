@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class EndOfYearUI : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
+
 }

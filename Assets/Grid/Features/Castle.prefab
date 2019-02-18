@@ -459,4 +459,4 @@ MonoBehaviour:
   type: 4
   resourceValue: 1
   resourceMax: 10
-  paCost: 1
+  paCost: 25

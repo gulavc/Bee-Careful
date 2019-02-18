@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public PointsAction pointsAction;
     public Workers workers;
     public EndOfYearUI endOfYearUI;
+    public GlobalObjectives globalObjectives;
 
 
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
         workers.gameManager = this;
+        globalObjectives.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 	}
