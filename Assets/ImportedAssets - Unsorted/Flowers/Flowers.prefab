@@ -79,6 +79,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291013751534696}
+  - component: {fileID: 114309247994650134}
   m_Layer: 0
   m_Name: Flowers
   m_TagString: Untagged
@@ -969,6 +970,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740071525842254}
   m_Mesh: {fileID: 4300000, guid: c83f502368bab8140af79867b14e99c9, type: 3}
+--- !u!114 &114309247994650134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373264916713022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  resourceValue: 20
+  resourceMax: 100
+  paCost: 5
 --- !u!205 &205259143006361884
 LODGroup:
   m_ObjectHideFlags: 1

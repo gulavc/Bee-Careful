@@ -10,7 +10,11 @@ public class SpawnManager : MonoBehaviour
     //public Button SpawnWorker;
     private HexGrid hexGrid;
     private GameManager gameManager;
-    public int unitCost;
+    public int scoutNectarCost;
+    public int scoutPollenCost;
+    public int workNectarCost;
+    public int workPollenCost;
+    public int addWorkers;
 
     // Use this for initialization
     void Start()
@@ -52,17 +56,16 @@ public class SpawnManager : MonoBehaviour
 
     public void CreateScout()
     {
-        if (gameManager.GetRessourceCount(ResourceType.Water) >= unitCost)
+        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= scoutNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= scoutPollenCost))
         {
 
-             -= unitCost;
+            gameManager.RemovePlayerRessources(ResourceType.Nectar, scoutNectarCost);
+            gameManager.RemovePlayerRessources(ResourceType.Pollen, scoutPollenCost);
             Debug.Log("Let's explore this hood!");
             HexCell cell = hexGrid.GetCell(new Vector3(1, -2, 1));
             if (cell && !cell.Unit)
             {
-                hexGrid.AddUnit(
-                    Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f)
-                );
+                hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
 
             }
         }
@@ -72,9 +75,17 @@ public class SpawnManager : MonoBehaviour
     public void CreateWorker()
     {
 
-        Debug.Log("Let's gather some shit!");
+        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= workNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= workPollenCost))
+        {
+
+            gameManager.RemovePlayerRessources(ResourceType.Nectar, workNectarCost);
+            gameManager.RemovePlayerRessources(ResourceType.Pollen, workPollenCost);
+            gameManager.playerResources.AddResources(ResourceType.Workers, addWorkers);
+            Debug.Log("Let's gather some shit!");
+
+        }
 
     }
-}   
+}
 
 
