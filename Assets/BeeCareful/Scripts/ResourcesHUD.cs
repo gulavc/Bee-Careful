@@ -13,7 +13,6 @@ public class ResourcesHUD : MonoBehaviour {
     public Slider waterSlider;
     public Slider nectarSlider;
     public Slider resinSlider;
-    public Slider damageSlider;
     public Text workersText;
     public Text pointActionText;
 
@@ -64,7 +63,7 @@ public class ResourcesHUD : MonoBehaviour {
         nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
         waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
         resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
-        workersText.text = "Workers: " + gameManager.GetRessourceCount(ResourceType.Workers);
-        pointActionText.text = "Points d'Action: " + gameManager.GetCurrentPointsAction();
+        workersText.text = "Workforce: " + gameManager.GetRessourceCount(ResourceType.Workers);
+        pointActionText.text = "Beenergy: " + gameManager.GetCurrentPointsAction();
     }
 }
