@@ -2410,7 +2410,7 @@ MonoBehaviour:
   pointsAction: {fileID: 65822417}
   workers: {fileID: 1337162704}
   endOfYearUI: {fileID: 98956854}
-  globalObjectives: {fileID: 0}
+  globalObjectives: {fileID: 2005651776}
 --- !u!1 &248587580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,7 +4200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1857460740445434, guid: 10f3e9fe4b19ab645b257461a7f0f720, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f3e9fe4b19ab645b257461a7f0f720, type: 2}
@@ -14136,7 +14136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2003393921
 Transform:
   m_ObjectHideFlags: 0
