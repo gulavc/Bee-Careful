@@ -7,43 +7,27 @@ public class Workers : MonoBehaviour {
     public GameManager gameManager;
     private List<int> workersEnergy;
 
-    public int MaxWorkerActionPoints;
+    //public int MaxWorkerActionPoints;
     public ParticleSystem workerParticles;
 
 	// Use this for initialization
 	void Start () {
-        workersEnergy = new List<int>();
+        //workersEnergy = new List<int>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            UseWorker(0, 10);
-            PrintWorkers();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            UseWorker(1, 10);
-            PrintWorkers();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            UseWorker(2, 10);
-            PrintWorkers();
-        }
     }
 
     public void CreateNewWorkers(int count = 1)
     {
+        /*
         for(int i = 0; i < count; i++)
         {
             workersEnergy.Add(MaxWorkerActionPoints);
         }
-        PrintWorkers();
+        PrintWorkers();*/
     }
 
     public int[] GetAllWorkers()
@@ -68,7 +52,7 @@ public class Workers : MonoBehaviour {
 
     //Debug method
     public void PrintWorkers()
-    {
+    { /*
         string output = "[";
         foreach(int energy in GetAllWorkers())
         {
@@ -77,6 +61,6 @@ public class Workers : MonoBehaviour {
         char[] toTrim = { '.', ' ' };
         output.TrimEnd(toTrim);
         output += "]";
-        Debug.Log(output);
+        Debug.Log(output);*/
     }
 }

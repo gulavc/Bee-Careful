@@ -6,7 +6,7 @@ public class GlobalObjectives : MonoBehaviour
 {
 
     Dictionary<ResourceType, int> goals = new Dictionary<ResourceType, int>();
-    public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
 
     public void Start()
     {

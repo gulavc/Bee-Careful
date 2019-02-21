@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
-    public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
     public int maxResources = 100;

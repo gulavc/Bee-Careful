@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ResourcesHUD : MonoBehaviour {
 
-    public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
     
 
     //Hud Elements

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointsAction : MonoBehaviour {
 
-    public GameManager gameManager;
+    [HideInInspector] public GameManager gameManager;
     
     public int pointsActionMax;
 

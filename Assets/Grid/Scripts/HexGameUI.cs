@@ -63,6 +63,10 @@ public class HexGameUI : MonoBehaviour {
         UpdateCurrentCell();
         if (currentCell) {
             selectedUnit = currentCell.Unit;
+            if (currentCell.Unit)
+            {
+                currentCell.EnableHighlight(Color.blue);
+            }            
         }
     }
 
@@ -92,5 +96,3 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 }
-
-//testjm

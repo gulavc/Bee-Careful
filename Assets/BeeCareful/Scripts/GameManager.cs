@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public Workers workers;
     public EndOfYearUI endOfYearUI;
     public GlobalObjectives globalObjectives;
+    public UpgradeManager upgradeManager;
 
 
 	// Use this for initialization
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour {
         pointsAction.gameManager = this;
         workers.gameManager = this;
         globalObjectives.gameManager = this;
+        upgradeManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 	}

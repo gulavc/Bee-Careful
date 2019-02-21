@@ -4,23 +4,20 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HexUnit : MonoBehaviour {
+public class HexUnit : MonoBehaviour, IUpgrade {
 
     public Text countText;
     HexCell location, currentTravelLocation;
     float orientation;
     int speed = 200000;
 
-    public int VisionRange {
-        get {
-            return 3;
-        }
-    }
+    public int VisionRange { get; private set; } = 3;
 
     List<HexCell> pathToTravel;
     const float travelSpeed = 4f; //cells per second
     const float rotationSpeed = 180f; //degrees per second
-    
+
+    private bool canFly = false;
 
     public static HexUnit unitPrefab;
 
@@ -222,7 +219,7 @@ public class HexUnit : MonoBehaviour {
     public int GetMoveCost(HexCell fromCell, HexCell toCell, HexDirection direction)
     {
         HexEdgeType edgeType = fromCell.GetEdgeType(toCell);
-        if (edgeType == HexEdgeType.Cliff /*&& player cannot fly*/)
+        if (edgeType == HexEdgeType.Cliff && !canFly)
         {
             return -1;
         }
@@ -232,7 +229,7 @@ public class HexUnit : MonoBehaviour {
         {
             moveCost = 1;
         }
-        else if (fromCell.Walled != toCell.Walled)
+        else if (fromCell.Walled != toCell.Walled && !canFly)
         {
             return -1;
         }
@@ -242,5 +239,25 @@ public class HexUnit : MonoBehaviour {
             moveCost += (toCell.UrbanLevel + toCell.FarmLevel + toCell.PlantLevel) / 2;
         }
         return moveCost;
+    }
+
+
+    public void ApplyUpgrade(string name)
+    {
+        switch (name)
+        {
+            case "ScoutVisionUpgrade":
+                Debug.Log("UpgradeScoutVision");
+                VisionRange += 1;
+                Grid.ResetVisibility();
+                break;
+            case "ScoutFlyUpgrade":
+                Debug.Log("UpgradeScoutFly");
+                canFly = true;
+                break;
+            default:
+                Debug.LogError("No such upgrade");
+                break;
+        }
     }
 }
