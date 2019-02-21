@@ -34,6 +34,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4530954123642070}
+  - component: {fileID: 114225104838856034}
   m_Layer: 0
   m_Name: bushy2
   m_TagString: Untagged
@@ -3341,3 +3342,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8e22b09183d115b45b12741f524a8ab4, type: 3}
+--- !u!114 &114225104838856034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018024592847764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  resourceValue: 20
+  resourceMax: 100
+  paCost: 5

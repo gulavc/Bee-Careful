@@ -77,5 +77,11 @@ public class GameManager : MonoBehaviour {
     {
         resourcesHUD.gameObject.SetActive(false);
         endOfYearUI.gameObject.SetActive(true);
+        endOfYearUI.EndOfYear();
+    }
+
+    public bool VerifyAllObjectives()
+    {
+        return globalObjectives.VerifyAllObjectives();
     }
 }

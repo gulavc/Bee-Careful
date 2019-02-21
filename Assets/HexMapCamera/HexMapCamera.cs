@@ -31,19 +31,26 @@ public class HexMapCamera : MonoBehaviour
     void Update()
     {
         float zoomDelta = Input.GetAxis("Mouse ScrollWheel");
+        float xDelta, zDelta;
         if (zoomDelta != 0f)
         {
+            if (zoomDelta > 0f && zoom < 1f)
+            {
+                xDelta = (Input.mousePosition.x - (Screen.width / 2)) / (Screen.width / 10);
+                zDelta = (Input.mousePosition.y - (Screen.height / 2)) / (Screen.height / 10);
+                AdjustPosition(xDelta, zDelta);
+            }
             AdjustZoom(zoomDelta);
         }
-
+        
         float rotationDelta = Input.GetAxis("Rotation");
         if (rotationDelta != 0f)
-        {
-            AdjustRotation(rotationDelta);
+        {            
+            AdjustRotation(rotationDelta);                       
         }
 
-        float xDelta = Input.GetAxis("Horizontal");
-        float zDelta = Input.GetAxis("Vertical");
+        xDelta = Input.GetAxis("Horizontal");
+        zDelta = Input.GetAxis("Vertical");
         if (xDelta != 0f || zDelta != 0f)
         {
             AdjustPosition(xDelta, zDelta);
