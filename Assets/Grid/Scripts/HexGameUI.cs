@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class HexGameUI : MonoBehaviour {
 
@@ -9,6 +10,9 @@ public class HexGameUI : MonoBehaviour {
     HexCell currentCell;
 
     HexUnit selectedUnit;
+
+    List<int> resourcePointIndices;
+    const int HiveSpecialIndex = 3;
 
     void Update() {
         if (!EventSystem.current.IsPointerOverGameObject()) {
@@ -32,6 +36,16 @@ public class HexGameUI : MonoBehaviour {
                 //ShowPossibleMovement();
             }
         }
+    }
+
+    void Start()
+    {
+        //This contains all the special indices of the resource points
+        resourcePointIndices = new List<int>();
+        resourcePointIndices.Add(1);
+        resourcePointIndices.Add(2);
+        resourcePointIndices.Add(4);
+        resourcePointIndices.Add(5);
     }
 
     public void SetEditMode(bool toggle) {
@@ -67,8 +81,23 @@ public class HexGameUI : MonoBehaviour {
             if (currentCell.Unit)
             {
                 currentCell.EnableHighlight(Color.blue);
+
+                if(resourcePointIndices.Contains(currentCell.SpecialIndex))
+                {
+                    ShowScoutUI();
+                }
+                else
+                {
+                    HideScoutUI();
+                }
+
             }
-            if (currentCell.SpecialIndex == 3) //Hive specialID is 3
+            else
+            {
+                HideScoutUI();
+            }
+
+            if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
                 Debug.Log("Hive UI");
                 //Put the code to show the hive UI here
@@ -90,8 +119,16 @@ public class HexGameUI : MonoBehaviour {
     void DoMove() {
         if (grid.HasPath /*&& grid.IsReachable(currentCell)*/) {
             selectedUnit.Travel(grid.GetPath());
-            selectedUnit.UseMovement(currentCell.Distance);
+            //selectedUnit.UseMovement(currentCell.Distance);
             grid.ClearPath();
+            if (resourcePointIndices.Contains(currentCell.SpecialIndex))
+            {
+                ShowScoutUI();
+            }
+            else
+            {
+                HideScoutUI();
+            }
         }
     }
 
@@ -100,5 +137,15 @@ public class HexGameUI : MonoBehaviour {
             grid.ClearShowMovement();
             grid.ShowPossibleMovement(selectedUnit.Location, currentCell, selectedUnit.Speed);
         }
+    }
+
+    void ShowScoutUI()
+    {
+        Debug.Log("Show ScoutUI");
+    }
+
+    void HideScoutUI()
+    {
+        Debug.Log("Hide ScoutUI");
     }
 }
