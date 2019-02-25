@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public EndOfYearUI endOfYearUI;
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
-    public DangerManager dangerManager;
+    public ResourcePointManager rpManager;
 
 
 	// Use this for initialization
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour {
         workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
-        dangerManager.gameManager = this;
+        rpManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 	}
@@ -87,5 +88,11 @@ public class GameManager : MonoBehaviour {
     public bool VerifyAllObjectives()
     {
         return globalObjectives.VerifyAllObjectives();
+    }
+
+
+    public ResourcePoint FindResourcePoint(HexCell cell)
+    {
+        return rpManager.GetResourcePointByCell(cell);
     }
 }

@@ -6,6 +6,7 @@ public class HexGameUI : MonoBehaviour {
 
     public HexGrid grid;
     public ScoutUI scoutUI;
+    private GameManager gameManager;
 
     HexCell currentCell;
 
@@ -40,6 +41,8 @@ public class HexGameUI : MonoBehaviour {
 
     void Start()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+
         //This contains all the special indices of the resource points
         resourcePointIndices = new List<int>();
         resourcePointIndices.Add(1);
@@ -143,6 +146,7 @@ public class HexGameUI : MonoBehaviour {
     {
         scoutUI.gameObject.SetActive(true);
         scoutUI.currentCell = currentCell;
+        scoutUI.resourcePoint = gameManager.FindResourcePoint(currentCell);
     }
 
     void HideScoutUI()

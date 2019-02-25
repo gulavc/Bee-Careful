@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class DangerManager : MonoBehaviour {
+public class ResourcePointManager : MonoBehaviour {
 
     [Range(0,100)]
     public int percentWasps;
@@ -30,5 +30,30 @@ public class DangerManager : MonoBehaviour {
     private List<ResourcePoint> resourcePoints;
 
 
+    void Start()
+    {
+        resourcePoints = new List<ResourcePoint>();
+    }
+
+
+    public ResourcePoint GetResourcePointByCell(HexCell cell)
+    {
+
+        foreach(ResourcePoint r in resourcePoints)
+        {
+            if (r.Cell == cell)
+            {
+                return r;
+            }
+        }
+
+        return null;
+
+    }
+
+    public void AddResourcePoint(ResourcePoint rp)
+    {
+        resourcePoints.Add(rp);
+    }
 
 }

@@ -108,4 +108,15 @@ public struct HexCoordinates
         c.z = reader.ReadInt32();
         return c;
     }
+
+    public static bool operator == (HexCoordinates c1, HexCoordinates c2)
+    {
+        return (c1.x == c2.x && c1.z == c2.z);
+    }
+
+    public static bool operator != (HexCoordinates c1, HexCoordinates c2)
+    {
+        return !(c1 == c2);
+    }
+
 }

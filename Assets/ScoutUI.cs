@@ -7,6 +7,8 @@ public class ScoutUI : MonoBehaviour {
     public ParticleSystem workersPrefab;
     [HideInInspector]
     public HexCell currentCell;
+    [HideInInspector]
+    public ResourcePoint resourcePoint;
 
     public void SummonWorker()
     {
@@ -14,6 +16,18 @@ public class ScoutUI : MonoBehaviour {
         workers.transform.position = currentCell.transform.position;
         workers.Play();
         Destroy(workers, 5f);
+
+        resourcePoint = GetResourcePoint();
+
+        if (resourcePoint)
+        {
+            resourcePoint.GatherResources();
+        }
+        else
+        {
+            Debug.Log("WTF");
+        }
+        
     }
 
 	// Use this for initialization
@@ -25,4 +39,18 @@ public class ScoutUI : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    ResourcePoint GetResourcePoint()
+    {
+        foreach(ResourcePoint rp in GameObject.FindObjectsOfType<ResourcePoint>())
+        {
+            if(rp.Cell.coordinates == currentCell.coordinates)
+            {
+                return rp;
+            }
+        }
+
+        return null;
+    }
+
 }

@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4594529973722668}
   - component: {fileID: 114560586220821842}
   m_Layer: 0
-  m_Name: DangerManager
+  m_Name: ResourcePointManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  pointsActionMax: 10
+  pointsActionMax: 100
 --- !u!114 &114560586220821842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentWasps: 0
   percentPesticide: 0
+  gameManager: {fileID: 0}
 --- !u!114 &114667128376241786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,3 +315,4 @@ MonoBehaviour:
   endOfYearUI: {fileID: 0}
   globalObjectives: {fileID: 114152446127359380}
   upgradeManager: {fileID: 114699117815647096}
+  rpManager: {fileID: 114560586220821842}

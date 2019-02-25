@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourcePoint : MonoBehaviour {
+public class ResourcePoint : HexInteractable {
 
     private GameManager gameManager;
+    private ResourcePointManager rpm;
     public ResourceType type;
     //public int resourceValue;
     public int resourceMax;
     public int workforceCost;
+    
 
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        //rpm = GameObject.FindObjectOfType<ResourcePointManager>();
+
+        //rpm.AddResourcePoint(this);
         RemainingResources = resourceMax;
+
     }
 
     
-    public void GatherResources(HexCell cell) {
+    public void GatherResources() {
 
         if (gameManager.GetCurrentPointsAction() >= workforceCost)
         {
@@ -30,11 +36,16 @@ public class ResourcePoint : MonoBehaviour {
             RemainingResources -= resourceGet;
             if (RemainingResources <= 0)
             {
-                cell.SpecialIndex = 0;
+                Cell.SpecialIndex = 0;
 
             }
         }
 
+    }
+
+    public override void OnUnitEnterCell(HexCell cell)
+    {
+        //Do nothing
     }
 
     public int RemainingResources { get; private set; }
