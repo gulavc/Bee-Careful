@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class HexGameUI : MonoBehaviour {
 
     public HexGrid grid;
+    public ScoutUI scoutUI;
 
     HexCell currentCell;
 
@@ -140,11 +141,12 @@ public class HexGameUI : MonoBehaviour {
 
     void ShowScoutUI()
     {
-        Debug.Log("Show ScoutUI");
+        scoutUI.gameObject.SetActive(true);
+        scoutUI.currentCell = currentCell;
     }
 
     void HideScoutUI()
     {
-        Debug.Log("Hide ScoutUI");
+        scoutUI.gameObject.SetActive(false);
     }
 }

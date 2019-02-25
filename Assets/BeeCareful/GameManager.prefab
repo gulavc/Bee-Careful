@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  pointsActionMax: 10
+  pointsActionMax: 100
 --- !u!114 &114667128376241786
 MonoBehaviour:
   m_ObjectHideFlags: 1
