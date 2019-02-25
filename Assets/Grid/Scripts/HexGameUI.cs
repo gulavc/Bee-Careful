@@ -66,7 +66,12 @@ public class HexGameUI : MonoBehaviour {
             if (currentCell.Unit)
             {
                 currentCell.EnableHighlight(Color.blue);
-            }            
+            }
+            if (currentCell.SpecialIndex == 3) //Hive specialID is 3
+            {
+                Debug.Log("Hive UI");
+                //Put the code to show the hive UI here
+            }
         }
     }
 
