@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public EndOfYearUI endOfYearUI;
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
+    public DangerManager dangerManager;
 
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour {
         workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
+        dangerManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 	}
