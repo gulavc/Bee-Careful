@@ -44,7 +44,7 @@ public class ScoutUI : MonoBehaviour {
     {
         foreach(ResourcePoint rp in GameObject.FindObjectsOfType<ResourcePoint>())
         {
-            if(rp.Cell.coordinates == currentCell.coordinates)
+            if(rp.Cell == currentCell)
             {
                 return rp;
             }

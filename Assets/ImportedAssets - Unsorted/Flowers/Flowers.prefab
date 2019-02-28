@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 4291013751534696}
   - component: {fileID: 114309247994650134}
   - component: {fileID: 23660818764210442}
+  - component: {fileID: 114670644067888592}
   m_Layer: 0
   m_Name: Flowers
   m_TagString: Untagged
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373264916713022}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
   m_Name: 
@@ -1021,6 +1022,20 @@ MonoBehaviour:
   resourceValue: 20
   resourceMax: 100
   paCost: 5
+--- !u!114 &114670644067888592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373264916713022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a95dc17bf0bfc4bb4f2596d0c10e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  resourceMax: 100
+  workforceCost: 0
 --- !u!205 &205259143006361884
 LODGroup:
   m_ObjectHideFlags: 1

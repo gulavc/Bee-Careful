@@ -472,6 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133098397837300}
   - component: {fileID: 114756315802504300}
+  - component: {fileID: 114560111475208906}
   m_Layer: 0
   m_Name: WATER
   m_TagString: Untagged
@@ -2306,13 +2307,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114756315802504300
+--- !u!114 &114560111475208906
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896508716512272}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a95dc17bf0bfc4bb4f2596d0c10e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  resourceMax: 100
+  workforceCost: 0
+--- !u!114 &114756315802504300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896508716512272}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
   m_Name: 
