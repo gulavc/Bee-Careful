@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  resourceValue: 20
+  resourceValue: 10
   resourceMax: 100
   paCost: 5
