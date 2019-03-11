@@ -11,7 +11,7 @@ public class PlayerResources : MonoBehaviour
 
     public void Awake()
     {
-
+        //PLEASE CHANGE IT BACK HOLY SHIT TOO MUCH LAWL
         playerResources.Add(ResourceType.Nectar, 0);
         playerResources.Add(ResourceType.Water, 0);
         playerResources.Add(ResourceType.Resin, 0);

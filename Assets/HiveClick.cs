@@ -1,16 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HiveClick : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+
+    public Toggle toggleButton;
+
+    void Start() {
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (toggleButton.isOn)
+         {
+            toggleButton.isOn = true;
+        }
+         else
+         {
+            toggleButton.isOn = false;
+        }
+
+    }
 }

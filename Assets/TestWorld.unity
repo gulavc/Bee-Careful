@@ -1467,9 +1467,8 @@ GameObject:
   - component: {fileID: 70373324}
   - component: {fileID: 70373323}
   - component: {fileID: 70373322}
-  - component: {fileID: 70373325}
   m_Layer: 5
-  m_Name: ScoutFlyUpgrade
+  m_Name: FlyToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1487,7 +1486,7 @@ RectTransform:
   m_Children:
   - {fileID: 489070417}
   m_Father: {fileID: 558136212}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1502,7 +1501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 70373320}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1523,7 +1522,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2,
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: d4d23e1636d19504ca65396a1d43b6ca, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1531,22 +1530,26 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 70373323}
-  m_OnClick:
+  toggleTransition: 0
+  graphic: {fileID: 0}
+  m_Group: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: f5cea38638c3c20409526ab7ccb2eaf2, type: 3}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1654319562}
+        m_MethodName: TryApplyUpgrade
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ScoutFlyUpgrade
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_IsOn: 0
 --- !u!114 &70373323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,17 +1584,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 70373320}
   m_CullTransparentMesh: 0
---- !u!114 &70373325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 70373320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8831149f2ee4b146a907eeb7620e396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &72963519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,7 +4900,7 @@ Prefab:
     - target: {fileID: 224569363271088908, guid: 10f3e9fe4b19ab645b257461a7f0f720,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -326
+      value: -405
       objectReference: {fileID: 0}
     - target: {fileID: 224368461731402312, guid: 10f3e9fe4b19ab645b257461a7f0f720,
         type: 2}
@@ -5641,7 +5633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Fly Upgrade #1'
+  m_Text: 'Fly Upgrade #1 (10N, 10P)'
 --- !u!222 &489070419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5974,6 +5966,11 @@ Transform:
   m_Father: {fileID: 2003393921}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &524884896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1857460740445434, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 429422206}
 --- !u!1 &554858898
 GameObject:
   m_ObjectHideFlags: 0
@@ -6074,14 +6071,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_Children:
-  - {fileID: 70373321}
   - {fileID: 1423615048}
+  - {fileID: 70373321}
   m_Father: {fileID: 1654319566}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -139, y: -130}
+  m_AnchoredPosition: {x: -141.4, y: -130.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &564989707
@@ -7856,7 +7853,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741492423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558136211}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &741492423
@@ -7969,7 +7977,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 747230056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558136211}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &747230056
@@ -8976,6 +8995,31 @@ Prefab:
       propertyPath: endOfYearUI
       value: 
       objectReference: {fileID: 98956854}
+    - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: editorUI
+      value: 
+      objectReference: {fileID: 2003393920}
+    - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: gameUI
+      value: 
+      objectReference: {fileID: 524884896}
+    - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: loader
+      value: 
+      objectReference: {fileID: 2104719844}
+    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 776477863}
+    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: HiveUI
+      value: 
+      objectReference: {fileID: 727973274}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
@@ -9546,7 +9590,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1, y: 0}
-  m_SizeDelta: {x: 160, y: 59.22}
+  m_SizeDelta: {x: 160, y: 86.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065088400
 MonoBehaviour:
@@ -9580,7 +9624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Vision Upgrade #1'
+  m_Text: 'Vision Upgrade #1 (10N)'
 --- !u!222 &1065088401
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10669,7 +10713,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191587069}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 558136211}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1191587069
@@ -11551,9 +11606,9 @@ GameObject:
   - component: {fileID: 1423615048}
   - component: {fileID: 1423615051}
   - component: {fileID: 1423615050}
-  - component: {fileID: 1423615049}
+  - component: {fileID: 1423615052}
   m_Layer: 5
-  m_Name: ScoutVisionUpgrade
+  m_Name: VisionToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11571,55 +11626,13 @@ RectTransform:
   m_Children:
   - {fileID: 1065088399}
   m_Father: {fileID: 558136212}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -61, y: 19.320002}
   m_SizeDelta: {x: 61, y: -71}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1423615049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1423615047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: d4d23e1636d19504ca65396a1d43b6ca, type: 3}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1423615050}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1423615050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11654,6 +11667,63 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1423615047}
   m_CullTransparentMesh: 0
+--- !u!114 &1423615052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423615047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 2
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 4ae07880f79c3e3409651c1dea8471f2, type: 3}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1423615050}
+  toggleTransition: 0
+  graphic: {fileID: 0}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1654319562}
+        m_MethodName: TryApplyUpgrade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ScoutVisionUpgrade
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_IsOn: 0
 --- !u!1 &1427243250
 GameObject:
   m_ObjectHideFlags: 0
@@ -13141,7 +13211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1654319562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13150,14 +13220,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654319561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f7e601c8f509634ea9be0f8feef831a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoutNectarCost: 20
-  scoutPollenCost: 20
-  workNectarCost: 10
-  workPollenCost: 10
-  addWorkers: 5
+  scoutVisionToggle: {fileID: 1423615052}
+  scoutFlyToggle: {fileID: 70373322}
+  upgradeManager: {fileID: 1819530942}
 --- !u!114 &1654319563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14754,6 +14822,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &1819530942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114699117815647096, guid: 11feb5e47cc57104aace03e188affe14,
+    type: 2}
+  m_PrefabInternal: {fileID: 955671243}
+  m_Script: {fileID: 11500000, guid: f5cea38638c3c20409526ab7ccb2eaf2, type: 3}
 --- !u!1 &1825463710
 GameObject:
   m_ObjectHideFlags: 0
