@@ -10,6 +10,9 @@ public class ResourcePoint : HexInteractable {
     //public int resourceValue;
     public int resourceMax;
     public int workforceCost;
+
+    public bool hasWasp = false;
+    public bool hasPesticide = false;
     
 
     void Start()

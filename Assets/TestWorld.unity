@@ -9102,6 +9102,11 @@ Prefab:
       propertyPath: grid
       value: 
       objectReference: {fileID: 776477863}
+    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: scoutUI
+      value: 
+      objectReference: {fileID: 813133705}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: resourcesHUD
@@ -9127,11 +9132,6 @@ Prefab:
       propertyPath: loader
       value: 
       objectReference: {fileID: 2104719844}
-    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: scoutUI
-      value: 
-      objectReference: {fileID: 813133705}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
