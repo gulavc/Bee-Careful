@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
 public class HexGameUI : MonoBehaviour {
 
+    public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
+    private GameManager gameManager;
 
     HexCell currentCell;
 
@@ -41,6 +42,8 @@ public class HexGameUI : MonoBehaviour {
 
     void Start()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+
         //This contains all the special indices of the resource points
         resourcePointIndices = new List<int>();
         resourcePointIndices.Add(1);
@@ -101,7 +104,7 @@ public class HexGameUI : MonoBehaviour {
             if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
                 Debug.Log("Hive UI");
-                //Put the code to show the hive UI here
+                HiveUI.SetActive(true);
             }
         }
     }
@@ -144,6 +147,7 @@ public class HexGameUI : MonoBehaviour {
     {
         scoutUI.gameObject.SetActive(true);
         scoutUI.currentCell = currentCell;
+        scoutUI.resourcePoint = gameManager.FindResourcePoint(currentCell);
     }
 
     void HideScoutUI()

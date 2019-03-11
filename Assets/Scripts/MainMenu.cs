@@ -1,12 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-    public void PlayGame()
+    public GameObject playButton, editButton, loadingText;
+
+    public void PlayGame(int loadMode)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameLoader.LoadMode = (LoadMode)loadMode; 
+        SceneManager.LoadSceneAsync("TestWorld");
+
+        playButton.SetActive(false);
+        editButton.SetActive(false);
+
+        loadingText.SetActive(true);
     }
 }

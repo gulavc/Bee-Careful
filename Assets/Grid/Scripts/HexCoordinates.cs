@@ -108,4 +108,5 @@ public struct HexCoordinates
         c.z = reader.ReadInt32();
         return c;
     }
+
 }
