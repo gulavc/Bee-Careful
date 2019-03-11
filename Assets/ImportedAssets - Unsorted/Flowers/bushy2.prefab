@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4530954123642070}
   - component: {fileID: 114225104838856034}
+  - component: {fileID: 114312420378506516}
   m_Layer: 0
   m_Name: bushy2
   m_TagString: Untagged
@@ -3348,7 +3349,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018024592847764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
   m_Name: 
@@ -3357,3 +3358,17 @@ MonoBehaviour:
   resourceValue: 10
   resourceMax: 100
   paCost: 5
+--- !u!114 &114312420378506516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018024592847764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a95dc17bf0bfc4bb4f2596d0c10e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  resourceMax: 100
+  workforceCost: 0
