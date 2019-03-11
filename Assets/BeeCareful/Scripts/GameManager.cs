@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour {
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
-    
+    public ResourcePointManager rpManager;
+
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour {
         workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
+        rpManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
 
@@ -103,6 +105,11 @@ public class GameManager : MonoBehaviour {
     public bool VerifyAllObjectives()
     {
         return globalObjectives.VerifyAllObjectives();
+    }
+
+    public ResourcePoint FindResourcePoint(HexCell cell)
+    {
+        return rpManager.GetResourcePointByCell(cell);
     }
 
     //Start new game
