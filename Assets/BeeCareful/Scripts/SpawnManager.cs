@@ -32,24 +32,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
 
     {
-        if (Input.GetKeyDown(KeyCode.S))
-
-        {
-
-            CreateScout();
-
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.W))
-
-        {
-
-            CreateWorker();
-
-        }
-
-
+        
     }
 
 
@@ -62,7 +45,7 @@ public class SpawnManager : MonoBehaviour
             gameManager.RemovePlayerRessources(ResourceType.Nectar, scoutNectarCost);
             gameManager.RemovePlayerRessources(ResourceType.Pollen, scoutPollenCost);
             Debug.Log("Let's explore this hood!");
-            HexCell cell = hexGrid.GetCell(new Vector3(1, -2, 1));
+            HexCell cell = hexGrid.GetCell(new Vector3(13, -30, 17));
             if (cell && !cell.Unit)
             {
                 hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));

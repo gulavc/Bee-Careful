@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 public class HexGameUI : MonoBehaviour {
 
-    public HexGrid grid;
+    public GameObject HiveUI;
+	
+	public HexGrid grid;
 
     HexCell currentCell;
 
@@ -100,7 +102,7 @@ public class HexGameUI : MonoBehaviour {
             if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
                 Debug.Log("Hive UI");
-                //Put the code to show the hive UI here
+                HiveUI.SetActive(true);
             }
         }
     }
