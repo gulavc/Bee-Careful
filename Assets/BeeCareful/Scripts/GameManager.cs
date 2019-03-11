@@ -1,20 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour {
 
-    public PlayerResources playerResources;
-    public ResourcesHUD resourcesHUD;
+    [Header("Public References to Management Scripts")]
+    public PlayerResources playerResources;    
     public PointsAction pointsAction;
-    public Workers workers;
-    public EndOfYearUI endOfYearUI;
+    public Workers workers;    
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
+    public HexGameUI gameController;
+    
 
+    [Space(10)]
+    [Header("Public References to UI Elements")]
+    public ResourcesHUD resourcesHUD;
+    public EndOfYearUI endOfYearUI;
+    public GameObject editorUI, gameUI;
+    public SaveLoadMenu loader;
 
-	// Use this for initialization
-	void Start () {
+    [Space(10)]
+    [Header("Game Settings")]
+    public string mapToLoadOnPlay;
+    
+
+    // Use this for initialization
+    void Start () {
         playerResources.gameManager = this;
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
@@ -23,7 +36,12 @@ public class GameManager : MonoBehaviour {
         upgradeManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();
-	}
+
+
+        StartGame(GameLoader.LoadMode);
+        
+
+    }
 
 
     // Update is called once per frame
@@ -86,4 +104,22 @@ public class GameManager : MonoBehaviour {
     {
         return globalObjectives.VerifyAllObjectives();
     }
+
+    //Start new game
+    public void StartGame(LoadMode lm)
+    {
+        if (GameLoader.LoadMode == LoadMode.Play)
+        {
+            gameController.SetEditMode(false);
+            editorUI.SetActive(false);
+            loader.Load(Path.Combine(Application.dataPath, loader.saveFolder, mapToLoadOnPlay + ".map"));
+        }
+        else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
+        {
+            gameController.SetEditMode(true);
+            gameUI.SetActive(false);
+        }
+    }
+
+    
 }
