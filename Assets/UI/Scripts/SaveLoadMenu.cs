@@ -40,7 +40,7 @@ public class SaveLoadMenu : MonoBehaviour {
         if (mapName.Length == 0) {
             return null;
         }
-        return Path.Combine(Application.dataPath, saveFolder, mapName + ".map");
+        return Path.Combine(Application.dataPath, "StreamingAssets", saveFolder, mapName + ".map");
     }
 
     //Save & Load maps
@@ -97,7 +97,7 @@ public class SaveLoadMenu : MonoBehaviour {
         }
 
         string[] paths =
-            Directory.GetFiles(Path.Combine(Application.dataPath, saveFolder), "*.map");
+            Directory.GetFiles(Path.Combine(Application.dataPath, "StreamingAssets", saveFolder), "*.map");
         Array.Sort(paths);
         for (int i = 0; i < paths.Length; i++) {
             SaveLoadItem item = Instantiate(itemPrefab);

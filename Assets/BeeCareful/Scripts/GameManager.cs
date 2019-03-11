@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour {
         {
             gameController.SetEditMode(false);
             editorUI.SetActive(false);
-            loader.Load(Path.Combine(Application.dataPath, loader.saveFolder, mapToLoadOnPlay + ".map"));
+            loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
         }
         else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
         {
