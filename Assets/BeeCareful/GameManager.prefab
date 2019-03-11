@@ -422,6 +422,7 @@ MonoBehaviour:
   upgradeManager: {fileID: 114699117815647096}
   gameController: {fileID: 114192400815176384}
   rpManager: {fileID: 114291069587861650}
+  grid: {fileID: 0}
   resourcesHUD: {fileID: 0}
   endOfYearUI: {fileID: 0}
   editorUI: {fileID: 0}
