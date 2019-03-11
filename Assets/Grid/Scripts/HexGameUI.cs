@@ -78,6 +78,7 @@ public class HexGameUI : MonoBehaviour {
         grid.ClearShowMovement();
         UpdateCurrentCell();
         if (currentCell) {
+            Debug.Log(currentCell.coordinates);
             selectedUnit = currentCell.Unit;
             if (currentCell.Unit)
             {
