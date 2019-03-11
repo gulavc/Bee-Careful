@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class HexGameUI : MonoBehaviour {
 
+    public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
     private GameManager gameManager;
@@ -103,7 +104,7 @@ public class HexGameUI : MonoBehaviour {
             if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
                 Debug.Log("Hive UI");
-                //Put the code to show the hive UI here
+                HiveUI.SetActive(true);
             }
         }
     }

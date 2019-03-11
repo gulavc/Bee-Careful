@@ -15,6 +15,10 @@ public class ResourcesHUD : MonoBehaviour {
     public Slider resinSlider;
     public Text workersText;
     public Text pointActionText;
+    public Text pollenText;
+    public Text nectarText;
+    public Text waterText;
+    public Text resinText;
 
 	// Use this for initialization
 	void Start () {
@@ -32,15 +36,19 @@ public class ResourcesHUD : MonoBehaviour {
         {
             case ResourceType.Water:
                 waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+                waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water);
                 break;
             case ResourceType.Pollen:
                 pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+                pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen);
                 break;
             case ResourceType.Nectar:
                 nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+                nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
                 break;
             case ResourceType.Resin:
                 resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+                resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
                 break;
             case ResourceType.Workers:
                 workersText.text = "Workers: " + gameManager.GetRessourceCount(ResourceType.Workers);
@@ -60,9 +68,13 @@ public class ResourcesHUD : MonoBehaviour {
     public void UpdateHUDAllResources()
     {
         pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+        pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen);
         nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+        nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
         waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+        waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water);
         resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+        resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
         workersText.text = "Workforce: " + gameManager.GetRessourceCount(ResourceType.Workers);
         pointActionText.text = "Beenergy: " + gameManager.GetCurrentPointsAction();
     }
