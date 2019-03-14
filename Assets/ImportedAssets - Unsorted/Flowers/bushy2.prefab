@@ -3371,4 +3371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   resourceMax: 100
-  workforceCost: 0
+  workforceCost: 10
+  hasWasp: 0
+  hasPesticide: 0

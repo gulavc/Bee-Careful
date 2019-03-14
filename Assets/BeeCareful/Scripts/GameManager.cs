@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
     public ResourcePointManager rpManager;
-
+    public HexGrid grid;
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
     public EndOfYearUI endOfYearUI;
     public GameObject editorUI, gameUI;
     public SaveLoadMenu loader;
+    public ScoutUI scoutUI;
+    public PauseUI pauseUI;
 
     [Space(10)]
     [Header("Game Settings")]
@@ -59,7 +61,10 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseUI.Show();
+        }
 	}
 
 
@@ -72,6 +77,11 @@ public class GameManager : MonoBehaviour {
     public void UpdatePointsActionHUD()
     {
         resourcesHUD.UpdatePointsActionHUD();
+    }
+
+    public void HideScoutUI()
+    {
+        scoutUI.gameObject.SetActive(false);
     }
 
     //Ressource Getters
@@ -130,13 +140,24 @@ public class GameManager : MonoBehaviour {
         {
             gameController.SetEditMode(false);
             editorUI.SetActive(false);
-            loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+
+            StartCoroutine(LoadGame());            
+
+            grid.ResetExploration();
+
         }
         else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
         {
             gameController.SetEditMode(true);
             gameUI.SetActive(false);
         }
+    }
+
+    IEnumerator LoadGame()
+    {
+        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+        yield return new WaitForEndOfFrame();
+        rpManager.AddDangersOnResourcePoints();
     }
 
     

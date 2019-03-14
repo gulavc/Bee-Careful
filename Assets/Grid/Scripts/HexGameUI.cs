@@ -123,7 +123,7 @@ public class HexGameUI : MonoBehaviour {
     void DoMove() {
         if (grid.HasPath /*&& grid.IsReachable(currentCell)*/) {
             selectedUnit.Travel(grid.GetPath());
-            //selectedUnit.UseMovement(currentCell.Distance);
+            gameManager.RemovePointsAction(currentCell.Distance);
             grid.ClearPath();
             if (resourcePointIndices.Contains(currentCell.SpecialIndex))
             {

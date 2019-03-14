@@ -68,6 +68,7 @@ public class HexCellShaderData : MonoBehaviour
         else if (cellTextureData[index].b != 255)
         {
             cellTextureData[index].b = 255;
+            cellTextureData[index].g = cell.IsExplored ? (byte)255 : (byte)0;
             transitioningCells.Add(cell);
         }
         enabled = true;
