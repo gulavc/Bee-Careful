@@ -15,7 +15,7 @@ public class ScoutUI : MonoBehaviour {
         ParticleSystem workers = Instantiate(workersPrefab);
         workers.transform.position = currentCell.transform.position;
         workers.Play();
-        Destroy(workers, 5f);
+        Destroy(workers.gameObject, 5f);
 
         resourcePoint = GetResourcePoint();
 

@@ -18,9 +18,9 @@ public class ResourcePoint : HexInteractable {
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        //rpm = GameObject.FindObjectOfType<ResourcePointManager>();
-
-        //rpm.AddResourcePoint(this);
+        rpm = GameObject.FindObjectOfType<ResourcePointManager>();
+        
+        rpm.AddResourcePoint(this);
         RemainingResources = resourceMax;
 
     }
@@ -28,20 +28,33 @@ public class ResourcePoint : HexInteractable {
     
     public void GatherResources() {
 
-        if (gameManager.GetCurrentPointsAction() >= workforceCost)
+        int actualWorkforceCost = workforceCost;
+        if (hasPesticide)
+        {
+            actualWorkforceCost = (int)(actualWorkforceCost * rpm.pesticidePenalty);
+        }
+
+        if (gameManager.GetCurrentPointsAction() >= actualWorkforceCost)
         {
             int resourceGet = Mathf.CeilToInt(RemainingResources / 2f);
-
-            gameManager.RemovePlayerRessources(ResourceType.Workers, workforceCost);
-            gameManager.AddPlayerResources(type, resourceGet);
-
-            //si c'est 0 ou plus bas, tu peux rien ramasser.
             RemainingResources -= resourceGet;
+            //si c'est 0 ou plus bas, tu peux rien ramasser.            
             if (RemainingResources <= 0)
             {
                 Cell.SpecialIndex = 0;
-
+                gameManager.HideScoutUI();
             }
+
+            if (hasWasp)
+            {
+                resourceGet = (int)(resourceGet * (1 - rpm.waspPenalty)); 
+            }
+            
+
+            gameManager.RemovePlayerRessources(ResourceType.Workers, actualWorkforceCost);
+            gameManager.AddPlayerResources(type, resourceGet);
+
+            
         }
 
     }

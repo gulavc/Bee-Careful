@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
     public EndOfYearUI endOfYearUI;
     public GameObject editorUI, gameUI;
     public SaveLoadMenu loader;
+    public ScoutUI scoutUI;
+    public PauseUI pauseUI;
 
     [Space(10)]
     [Header("Game Settings")]
@@ -48,7 +50,10 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseUI.Show();
+        }
 	}
 
 
@@ -61,6 +66,11 @@ public class GameManager : MonoBehaviour {
     public void UpdatePointsActionHUD()
     {
         resourcesHUD.UpdatePointsActionHUD();
+    }
+
+    public void HideScoutUI()
+    {
+        scoutUI.gameObject.SetActive(false);
     }
 
     //Ressource Getters
@@ -115,13 +125,12 @@ public class GameManager : MonoBehaviour {
     //Start new game
     public void StartGame(LoadMode lm)
     {
-        if (GameLoader.LoadMode == LoadMode.Play)
+        if (lm == LoadMode.Play)
         {
             gameController.SetEditMode(false);
             editorUI.SetActive(false);
-            loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
 
-            rpManager.AddDangersOnResourcePoints();
+            StartCoroutine(LoadGame());            
 
             grid.ResetExploration();
 
@@ -131,6 +140,13 @@ public class GameManager : MonoBehaviour {
             gameController.SetEditMode(true);
             gameUI.SetActive(false);
         }
+    }
+
+    IEnumerator LoadGame()
+    {
+        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+        yield return new WaitForEndOfFrame();
+        rpManager.AddDangersOnResourcePoints();
     }
 
     

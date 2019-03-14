@@ -165,13 +165,6 @@ public class UpgradeManager : MonoBehaviour {
         }
     }
 
-    //Methods to link with the ui
-    public void TryApplyUpgrade(string s)
-    {
-        bool applied = ApplyUpgrade(s);
-        
-    }
-
     //TO TEST UPGRADES PLEASE REMOVE THIS CODE AT SOME POINT OMG WHY IS IT STILL THERE
     void Update()
     {
