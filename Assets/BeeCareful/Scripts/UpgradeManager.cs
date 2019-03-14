@@ -13,7 +13,7 @@ public class UpgradeManager : MonoBehaviour {
     {
         //Initial declarations, don't touch this section
         upgrades = new Dictionary<string, Upgrade>();
-        int[] upgradeCost = new int[4];
+        int[] upgradeCost;
         List<string> prereqs = new List<string>();
         Upgrade newUpgrade;
         string upgradeName;
@@ -21,8 +21,10 @@ public class UpgradeManager : MonoBehaviour {
         //UPGRADES START HERE
 
         //Upgrade 1
+        upgradeCost = new int[4];
+
         //Set costs
-        upgradeCost[0] = 10; //Nectar
+        upgradeCost[0] = 20; //Nectar
         upgradeCost[1] = 0; //Eau
         upgradeCost[2] = 0; //Resine
         upgradeCost[3] = 0; //Pollen
@@ -38,8 +40,50 @@ public class UpgradeManager : MonoBehaviour {
         upgrades.Add(upgradeName, newUpgrade);
         prereqs.Clear();
 
-
         //Upgrade 2
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutVisionUpgrade1");
+
+        //Set name
+        upgradeName = "ScoutVisionUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 3
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 60; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutVisionUpgrade2");
+
+        //Set name
+        upgradeName = "ScoutVisionUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 4
+        upgradeCost = new int[4];
+
         //Set costs
         upgradeCost[0] = 10; //Nectar
         upgradeCost[1] = 0; //Eau
@@ -47,7 +91,7 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost[3] = 10; //Pollen
 
         //Set prereqs
-        prereqs.Add("ScoutVisionUpgrade1");
+        prereqs.Clear();
 
         //Set name
         upgradeName = "ScoutFlyUpgrade1";
@@ -58,7 +102,108 @@ public class UpgradeManager : MonoBehaviour {
         prereqs.Clear();
 
 
-        //Upgrade 3
+        //Upgrade 5
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutFlyUpgrade1");
+
+        //Set name
+        upgradeName = "ScoutFlyUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 6
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutFlyUpgrade2");
+
+        //Set name
+        upgradeName = "ScoutFlyUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 7
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 10; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "ScoutMoveUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 8
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutMoveUpgrade1");
+
+        //Set name
+        upgradeName = "ScoutMoveUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 9
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ScoutMoveUpgrade2");
+
+        //Set name
+        upgradeName = "ScoutMoveUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
 
     }
 
@@ -72,6 +217,7 @@ public class UpgradeManager : MonoBehaviour {
         {
             
             if( !upgrades[name].upgradeUnlocked &&
+                IsUpgradeAvailable(name) &&
                 gameManager.GetRessourceCount(ResourceType.Nectar) >= upgrades[name].upgradeCost[0] &&
                 gameManager.GetRessourceCount(ResourceType.Water) >= upgrades[name].upgradeCost[1] &&
                 gameManager.GetRessourceCount(ResourceType.Resin) >= upgrades[name].upgradeCost[2] &&
@@ -91,6 +237,20 @@ public class UpgradeManager : MonoBehaviour {
                             h.ApplyUpgrade(name);
                         }                        
                         break;
+                    /*case "ScoutVisionUpgrade2":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
+                    case "ScoutVisionUpgrade3":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
                     case "ScoutFlyUpgrade1":
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach (HexUnit h in scouts)
@@ -98,6 +258,41 @@ public class UpgradeManager : MonoBehaviour {
                             h.ApplyUpgrade(name);
                         }                            
                         break;
+                    case "ScoutFlyUpgrade2":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
+                    case "ScoutFlyUpgrade3":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
+                    case "ScoutMoveUpgrade1":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
+                    case "ScoutMoveUpgrade2":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;
+                    case "ScoutMoveUpgrade3":
+                        scouts = FindObjectsOfType<HexUnit>();
+                        foreach (HexUnit h in scouts)
+                        {
+                            h.ApplyUpgrade(name);
+                        }
+                        break;*/
                     default:
                         Debug.LogError("No such upgrade");
                         break;
@@ -165,6 +360,23 @@ public class UpgradeManager : MonoBehaviour {
         }
     }
 
+    public bool IsUpgradeBuyable(string name)
+    {
+        if (upgrades.ContainsKey(name))
+        {
+
+            if (gameManager.GetRessourceCount(ResourceType.Nectar) >= upgrades[name].upgradeCost[0] &&
+                gameManager.GetRessourceCount(ResourceType.Water) >= upgrades[name].upgradeCost[1] &&
+                gameManager.GetRessourceCount(ResourceType.Resin) >= upgrades[name].upgradeCost[2] &&
+                gameManager.GetRessourceCount(ResourceType.Pollen) >= upgrades[name].upgradeCost[3])
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     //Methods to link with the ui
     public void TryApplyUpgrade(string s)
     {
@@ -172,36 +384,6 @@ public class UpgradeManager : MonoBehaviour {
         
     }
 
-    //TO TEST UPGRADES PLEASE REMOVE THIS CODE AT SOME POINT OMG WHY IS IT STILL THERE
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            string test = "ScoutVisionUpgrade1";
-            upgradeTest(test);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            string test = "ScoutFlyUpgrade1";
-            upgradeTest(test);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            string test = "ScoutGodModeUpgrade";
-            upgradeTest(test);
-        }
-    }
 
-    void upgradeTest(string name)
-    {
-        if (IsUpgradeAvailable(name))
-        {
-            ApplyUpgrade(name);
-        }
-        else
-        {
-            Debug.Log("Upgrade not available");
-        }
-    }
 
 }
