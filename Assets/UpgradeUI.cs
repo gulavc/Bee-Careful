@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour {
 
-    public Toggle scoutVisionToggle, scoutFlyToggle;
+    public Toggle visionMore1, flyOverMountains;
 
     public UpgradeManager upgradeManager;
 
@@ -30,11 +30,11 @@ public class UpgradeUI : MonoBehaviour {
             Debug.Log("upgrade yay!");
             switch (upgradeName)
             {
-                case "ScoutVisionUpgrade":
-                    scoutVisionToggle.interactable = false;
+                case "ScoutVisionUpgrade1":
+                    visionMore1.interactable = false;
                     break;
-                case "ScoutFlyUpgrade":
-                    scoutFlyToggle.interactable = false;
+                case "ScoutFlyUpgrade1":
+                    flyOverMountains.interactable = false;
                     break;
                 default:
                     Debug.LogError("No such upgrade name");
@@ -47,10 +47,10 @@ public class UpgradeUI : MonoBehaviour {
             switch (upgradeName)
             {
                 case "ScoutVisionUpgrade":
-                    scoutVisionToggle.isOn = false;
+                    visionMore1.isOn = false;
                     break;
                 case "ScoutFlyUpgrade":
-                    scoutFlyToggle.isOn = false;
+                    flyOverMountains.isOn = false;
                     break;
                 default:
                     Debug.LogError("No such upgrade name");

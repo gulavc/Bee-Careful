@@ -31,7 +31,7 @@ public class UpgradeManager : MonoBehaviour {
         prereqs.Clear();
 
         //Set name
-        upgradeName = "ScoutVisionUpgrade";
+        upgradeName = "ScoutVisionUpgrade1";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -47,10 +47,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost[3] = 10; //Pollen
 
         //Set prereqs
-        prereqs.Add("ScoutVisionUpgrade");
+        prereqs.Add("ScoutVisionUpgrade1");
 
         //Set name
-        upgradeName = "ScoutFlyUpgrade";
+        upgradeName = "ScoutFlyUpgrade1";
 
         //Don't touch this
         newUpgrade = new Upgrade( prereqs, upgradeCost);
@@ -84,14 +84,14 @@ public class UpgradeManager : MonoBehaviour {
 
                 switch (name)
                 {
-                    case "ScoutVisionUpgrade":
+                    case "ScoutVisionUpgrade1":
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach(HexUnit h in scouts)
                         {
                             h.ApplyUpgrade(name);
                         }                        
                         break;
-                    case "ScoutFlyUpgrade":
+                    case "ScoutFlyUpgrade1":
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach (HexUnit h in scouts)
                         {
@@ -177,12 +177,12 @@ public class UpgradeManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            string test = "ScoutVisionUpgrade";
+            string test = "ScoutVisionUpgrade1";
             upgradeTest(test);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            string test = "ScoutFlyUpgrade";
+            string test = "ScoutFlyUpgrade1";
             upgradeTest(test);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
