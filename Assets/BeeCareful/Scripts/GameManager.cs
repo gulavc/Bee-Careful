@@ -5,6 +5,8 @@ using System.IO;
 
 public class GameManager : MonoBehaviour {
 
+    public bool launchInEditor = true;
+
     [Header("Public References to Management Scripts")]
     public PlayerResources playerResources;    
     public PointsAction pointsAction;
@@ -39,8 +41,17 @@ public class GameManager : MonoBehaviour {
 
         resourcesHUD.UpdateHUDAllResources();
 
+        Debug.Log(launchInEditor);
 
-        StartGame(GameLoader.LoadMode);
+        if (!launchInEditor)
+        {
+            StartGame(GameLoader.LoadMode);
+        }
+        else
+        {
+            StartGame(LoadMode.Edit);
+        }
+        
         
 
     }
@@ -115,7 +126,7 @@ public class GameManager : MonoBehaviour {
     //Start new game
     public void StartGame(LoadMode lm)
     {
-        if (GameLoader.LoadMode == LoadMode.Play)
+        if (lm == LoadMode.Play)
         {
             gameController.SetEditMode(false);
             editorUI.SetActive(false);
