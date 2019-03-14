@@ -14,6 +14,8 @@ public class ResourcePoint : HexInteractable {
     public bool hasWasp = false;
     public bool hasPesticide = false;
     
+    [HideInInspector]
+    public GameObject dangerPrefab;
 
     void Start()
     {
@@ -23,9 +25,26 @@ public class ResourcePoint : HexInteractable {
         rpm.AddResourcePoint(this);
         RemainingResources = resourceMax;
 
+        Cell = gameManager.grid.GetCell(HexCoordinates.FromPosition(transform.position));
+
     }
 
-    
+    void Update()
+    {
+        if (dangerPrefab)
+        {
+            if (Cell.IsVisible)
+            {
+                dangerPrefab.SetActive(true);
+            }
+            else
+            {
+                dangerPrefab.SetActive(false);
+            }
+        }
+    }
+
+
     public void GatherResources() {
 
         int actualWorkforceCost = workforceCost;

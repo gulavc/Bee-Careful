@@ -111,14 +111,14 @@ public class ResourcePointManager : MonoBehaviour {
         {
             //Add pesticide on resource
             resourcePoints[i].hasPesticide = true;
-            Instantiate(pesticidePrefab, resourcePoints[i].transform);
+            resourcePoints[i].dangerPrefab = Instantiate(pesticidePrefab, resourcePoints[i].transform);
         }
 
         for (int i = numPesticides; i < numPesticides + numWasps; i++)
         {
             //Add wasp on resource
             resourcePoints[i].hasWasp = true;
-            Instantiate(waspPrefab, resourcePoints[i].transform);
+            resourcePoints[i].dangerPrefab = Instantiate(waspPrefab, resourcePoints[i].transform);
         }
 
         Debug.Log("RP: " + count + ", Wasp: " + numWasps + " / Pest: " + numPesticides);
