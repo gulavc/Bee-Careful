@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 public class ResourcePointManager : MonoBehaviour {
 
@@ -29,8 +30,7 @@ public class ResourcePointManager : MonoBehaviour {
 
     private List<ResourcePoint> resourcePoints;
 
-
-    void Start()
+    void Awake()
     {
         resourcePoints = new List<ResourcePoint>();
     }
@@ -54,6 +54,38 @@ public class ResourcePointManager : MonoBehaviour {
     public void AddResourcePoint(ResourcePoint rp)
     {
         resourcePoints.Add(rp);
+    }
+
+    public void AddDangersOnResourcePoints()
+    {
+        System.Random rng = new System.Random();
+
+        foreach (ResourcePoint rp in FindObjectsOfType<ResourcePoint>())
+        {
+            AddResourcePoint(rp);
+        }
+
+        int count = resourcePoints.Count;
+        int numPesticides = (int)(percentPesticide / 100f * count);
+        int numWasps = (int)(percentWasps / 100f * count);
+
+        resourcePoints = resourcePoints.OrderBy(a => rng.Next()).ToList();
+
+        for(int i = 0; i < numPesticides; i++)
+        {
+            //Add pesticide on resource
+            resourcePoints[i].hasPesticide = true;
+        }
+
+        for (int i = numPesticides; i < numPesticides + numWasps; i++)
+        {
+            //Add wasp on resource
+            resourcePoints[i].hasWasp = true;
+        }
+
+        Debug.Log("RP: " + count + ", Wasp: " + numWasps + " / Pest: " + numPesticides);
+
+
     }
 
 }

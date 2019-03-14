@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
     public ResourcePointManager rpManager;
-
+    public HexGrid grid;
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -119,7 +119,12 @@ public class GameManager : MonoBehaviour {
         {
             gameController.SetEditMode(false);
             editorUI.SetActive(false);
-            loader.Load(Path.Combine(Application.dataPath, loader.saveFolder, mapToLoadOnPlay + ".map"));
+            loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+
+            rpManager.AddDangersOnResourcePoints();
+
+            grid.ResetExploration();
+
         }
         else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
         {
