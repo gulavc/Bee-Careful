@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: RedGlowMaterial
-  m_Shader: {fileID: 4800000, guid: 3f387b3c7760d5a488b5596b42425701, type: 3}
+  m_Shader: {fileID: 4800000, guid: d9da988131fc5064bba114a0b9ce0c6b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -26,12 +26,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: f30e4af5fb1246641a1f92faabd57d2f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _GridCoordinates:
+        m_Texture: {fileID: 2800000, guid: 185ef08ee116b35499bfdc5d12667119, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MKGlowTex:
         m_Texture: {fileID: 2800000, guid: 9e2fa1e8c0bebe74f85914cfcd1049a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d2bfdb919488ef040b6f7e30c6d08ebf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5365874510081be46ab07aa1779c084f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -39,13 +43,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Glossiness: 0.5
     - _MKGlowOffSet: 0
     - _MKGlowPower: 1.1785715
     - _MKGlowTexStrength: 10
     - _Parallax: 0.02
     - _Shininess: 0.15252854
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BackgroundColor: {r: 0.40784314, g: 0.38039216, b: 0.35686275, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _MKGlowColor: {r: 1, g: 0, b: 0.038758278, a: 1}
     - _MKGlowTexColor: {r: 0.972549, g: 0, b: 0.027442724, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Specular: {r: 0.2, g: 0.2, b: 0.2, a: 1}

@@ -16,7 +16,7 @@ public class PlayerResources : MonoBehaviour
         playerResources.Add(ResourceType.Water, 50);
         playerResources.Add(ResourceType.Resin, 50);
         playerResources.Add(ResourceType.Pollen, 50);
-        playerResources.Add(ResourceType.Workers, 0);
+        playerResources.Add(ResourceType.Workers, 200);
 
     }
 

@@ -1035,7 +1035,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resourceMax: 100
-  workforceCost: 0
+  workforceCost: 10
+  hasWasp: 0
+  hasPesticide: 0
 --- !u!205 &205259143006361884
 LODGroup:
   m_ObjectHideFlags: 1
