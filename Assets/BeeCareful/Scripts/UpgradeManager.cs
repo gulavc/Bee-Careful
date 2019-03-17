@@ -24,10 +24,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 20; //Nectar
+        upgradeCost[0] = 15; //Nectar
         upgradeCost[1] = 0; //Eau
         upgradeCost[2] = 0; //Resine
-        upgradeCost[3] = 0; //Pollen
+        upgradeCost[3] = 15; //Pollen
 
         //Set prereqs
         prereqs.Clear();
@@ -47,7 +47,7 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost[0] = 30; //Nectar
         upgradeCost[1] = 0; //Eau
         upgradeCost[2] = 0; //Resine
-        upgradeCost[3] = 0; //Pollen
+        upgradeCost[3] = 30; //Pollen
 
         //Set prereqs
         prereqs.Add("ScoutVisionUpgrade1");
@@ -64,10 +64,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 60; //Nectar
+        upgradeCost[0] = 45; //Nectar
         upgradeCost[1] = 0; //Eau
         upgradeCost[2] = 0; //Resine
-        upgradeCost[3] = 0; //Pollen
+        upgradeCost[3] = 45; //Pollen
 
         //Set prereqs
         prereqs.Add("ScoutVisionUpgrade2");
@@ -85,10 +85,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
+        upgradeCost[0] = 15; //Nectar
         upgradeCost[1] = 0; //Eau
         upgradeCost[2] = 0; //Resine
-        upgradeCost[3] = 10; //Pollen
+        upgradeCost[3] = 30; //Pollen
 
         //Set prereqs
         prereqs.Clear();
@@ -106,8 +106,8 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
-        upgradeCost[1] = 0; //Eau
+        upgradeCost[0] = 15; //Nectar
+        upgradeCost[1] = 30; //Eau
         upgradeCost[2] = 0; //Resine
         upgradeCost[3] = 0; //Pollen
 
@@ -127,9 +127,9 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
+        upgradeCost[0] = 15; //Nectar
         upgradeCost[1] = 0; //Eau
-        upgradeCost[2] = 0; //Resine
+        upgradeCost[2] = 30; //Resine
         upgradeCost[3] = 0; //Pollen
 
         //Set prereqs
@@ -147,10 +147,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
-        upgradeCost[1] = 0; //Eau
-        upgradeCost[2] = 0; //Resine
-        upgradeCost[3] = 10; //Pollen
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 0; //Pollen
 
         //Set prereqs
         prereqs.Clear();
@@ -168,9 +168,9 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
-        upgradeCost[1] = 0; //Eau
-        upgradeCost[2] = 0; //Resine
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
         upgradeCost[3] = 0; //Pollen
 
         //Set prereqs
@@ -189,9 +189,9 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
-        upgradeCost[1] = 0; //Eau
-        upgradeCost[2] = 0; //Resine
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 40; //Eau
+        upgradeCost[2] = 40; //Resine
         upgradeCost[3] = 0; //Pollen
 
         //Set prereqs
@@ -199,6 +199,428 @@ public class UpgradeManager : MonoBehaviour {
 
         //Set name
         upgradeName = "ScoutMoveUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 10
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "GatherMoreUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 11
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 15; //Eau
+        upgradeCost[2] = 15; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("GatherMoreUpgrade1");
+
+        //Set name
+        upgradeName = "GatherMoreUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 12
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("GatherMoreUpgrade2");
+
+        //Set name
+        upgradeName = "GatherMoreUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 13
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "ProtectWaspsUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 14
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ProtectWaspsUpgrade1");
+
+        //Set name
+        upgradeName = "ProtectWaspsUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 15
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 0; //Nectar
+        upgradeCost[1] = 30; //Eau
+        upgradeCost[2] = 30; //Resine
+        upgradeCost[3] = 0; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ProtectWaspsUpgrade2");
+
+        //Set name
+        upgradeName = "ProtectWaspsUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 16
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 10; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "ProtectPesticideUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 17
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 20; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 20; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ProtectPesticideUpgrade1");
+
+        //Set name
+        upgradeName = "ProtectPesticideUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 18
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 0; //Eau
+        upgradeCost[2] = 0; //Resine
+        upgradeCost[3] = 30; //Pollen
+
+        //Set prereqs
+        prereqs.Add("ProtectPesticideUpgrade2");
+
+        //Set name
+        upgradeName = "ProtectPesticideUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 19
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 5; //Nectar
+        upgradeCost[1] = 5; //Eau
+        upgradeCost[2] = 5; //Resine
+        upgradeCost[3] = 5; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "CheapWorkUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 20
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 10; //Pollen
+
+        //Set prereqs
+        prereqs.Add("CheapWorkUpgrade1");
+
+        //Set name
+        upgradeName = "CheapWorkUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 21
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 15; //Nectar
+        upgradeCost[1] = 15; //Eau
+        upgradeCost[2] = 15; //Resine
+        upgradeCost[3] = 15; //Pollen
+
+        //Set prereqs
+        prereqs.Add("CheapWorkUpgrade2");
+
+        //Set name
+        upgradeName = "CheapWorkUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+
+        //Upgrade 22
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 10; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "CheapScoutUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 23
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 20; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
+        upgradeCost[3] = 20; //Pollen
+
+        //Set prereqs
+        prereqs.Add("CheapScoutUpgrade1");
+
+        //Set name
+        upgradeName = "CheapScoutUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 24
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 30; //Eau
+        upgradeCost[2] = 30; //Resine
+        upgradeCost[3] = 30; //Pollen
+
+        //Set prereqs
+        prereqs.Add("CheapScoutUpgrade2");
+
+        //Set name
+        upgradeName = "CheapScoutUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 25
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 15; //Nectar
+        upgradeCost[1] = 15; //Eau
+        upgradeCost[2] = 15; //Resine
+        upgradeCost[3] = 15; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "StartScoutUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 26
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 30; //Eau
+        upgradeCost[2] = 30; //Resine
+        upgradeCost[3] = 30; //Pollen
+
+        //Set prereqs
+        prereqs.Add("StartScoutUpgrade1");
+
+        //Set name
+        upgradeName = "StartScoutUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 27
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 45; //Nectar
+        upgradeCost[1] = 45; //Eau
+        upgradeCost[2] = 45; //Resine
+        upgradeCost[3] = 45; //Pollen
+
+        //Set prereqs
+        prereqs.Add("StartScoutUpgrade2");
+
+        //Set name
+        upgradeName = "StartScoutUpgrade3";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 28
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 10; //Pollen
+
+        //Set prereqs
+        prereqs.Clear();
+
+        //Set name
+        upgradeName = "StartWorkUpgrade1";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 29
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 20; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
+        upgradeCost[3] = 20; //Pollen
+
+        //Set prereqs
+        prereqs.Add("StartWorkUpgrade1");
+
+        //Set name
+        upgradeName = "StartWorkUpgrade2";
+
+        //Don't touch this
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
+        upgrades.Add(upgradeName, newUpgrade);
+        prereqs.Clear();
+
+        //Upgrade 30
+        upgradeCost = new int[4];
+
+        //Set costs
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 30; //Eau
+        upgradeCost[2] = 30; //Resine
+        upgradeCost[3] = 30; //Pollen
+
+        //Set prereqs
+        prereqs.Add("StartWorkUpgrade2");
+
+        //Set name
+        upgradeName = "StartWorkUpgrade3";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -237,6 +659,7 @@ public class UpgradeManager : MonoBehaviour {
                             h.ApplyUpgrade(name);
                         }                        
                         break;
+                        // IL VA FALLOIR CRÉER MÉCANIQUEMENT LES UPGRADES
                     /*case "ScoutVisionUpgrade2":
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach (HexUnit h in scouts)
