@@ -260,90 +260,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 199159074318540248, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 4300000, guid: c418c82b56a447c49a0ef2b80c241f37, type: 3}
     - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
         type: 2}
-      propertyPath: InitialModule.size3D
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.randomizeRotationDirection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSizeY.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSizeZ.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: SizeBySpeedModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.rotation3D
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSizeY.minScalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startSizeZ.minScalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startRotationX.scalar
-      value: -1.5707963
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.startRotation.scalar
-      value: -1.5707963
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: RotationModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: TrailModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 55
+      propertyPath: lengthInSec
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
         type: 2}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89d5e73e9147f80489718ddcf6213f86, type: 2}
