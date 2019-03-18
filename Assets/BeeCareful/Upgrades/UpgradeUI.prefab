@@ -1439,7 +1439,7 @@ GameObject:
   - component: {fileID: 114140531313414354}
   - component: {fileID: 114800895012768158}
   m_Layer: 5
-  m_Name: FlyBeasts
+  m_Name: FlyCities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1507,7 +1507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fly Over Beasts
+  m_Text: Fly Over Cities
 --- !u!114 &114004538770695710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3965,7 +3965,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114547875381558040}
+  m_TargetGraphic: {fileID: 114453431619054468}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4316,7 +4316,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114547875381558040}
+  m_TargetGraphic: {fileID: 114385605622698534}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5217,7 +5217,7 @@ MonoBehaviour:
   visionMore3: {fileID: 114319337853040148}
   flyOverMountains: {fileID: 114440278657481290}
   flyOverRivers: {fileID: 114473537324468592}
-  flyOverBeasts: {fileID: 114800895012768158}
+  flyOverCities: {fileID: 114800895012768158}
   moveMore1: {fileID: 114007028735726386}
   moveMore2: {fileID: 114906663285206692}
   moveMore3: {fileID: 114076808413503834}
@@ -6994,7 +6994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -533, y: -165.5}
+  m_AnchoredPosition: {x: -972, y: -389}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224543756599719318
