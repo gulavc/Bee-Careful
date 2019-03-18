@@ -575,4 +575,15 @@ public class HexGrid : MonoBehaviour {
             IncreaseVisibility(unit.Location, unit.VisionRange);
         }
     }
+
+    public void ResetExploration()
+    {
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].ResetExploration();
+        }
+
+        ResetVisibility();
+        
+    }
 }

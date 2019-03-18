@@ -22,7 +22,6 @@ public class EndOfYearUI : MonoBehaviour {
     }
 
     public void EndOfYear(){
-        Debug.Log(gameManager);
         if (gameManager.VerifyAllObjectives())
         {
             pollenGoal.text = "U win";

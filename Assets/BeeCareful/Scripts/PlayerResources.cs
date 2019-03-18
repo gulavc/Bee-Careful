@@ -11,12 +11,12 @@ public class PlayerResources : MonoBehaviour
 
     public void Awake()
     {
-
-        playerResources.Add(ResourceType.Nectar, 0);
-        playerResources.Add(ResourceType.Water, 0);
-        playerResources.Add(ResourceType.Resin, 0);
-        playerResources.Add(ResourceType.Pollen, 0);
-        playerResources.Add(ResourceType.Workers, 0);
+        //PLEASE CHANGE IT BACK HOLY SHIT TOO MUCH LAWL
+        playerResources.Add(ResourceType.Nectar, 50);
+        playerResources.Add(ResourceType.Water, 50);
+        playerResources.Add(ResourceType.Resin, 50);
+        playerResources.Add(ResourceType.Pollen, 50);
+        playerResources.Add(ResourceType.Workers, 200);
 
     }
 

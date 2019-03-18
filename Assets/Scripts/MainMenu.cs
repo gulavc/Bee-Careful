@@ -16,4 +16,9 @@ public class MainMenu : MonoBehaviour {
 
         loadingText.SetActive(true);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

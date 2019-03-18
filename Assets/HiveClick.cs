@@ -1,21 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HiveClick : MonoBehaviour {
 
-private bool isPressed;
+    // Use this for initialization
 
-	// Use this for initialization
-	void Start () {
-		
-		isPressed = false;
-	}
-	
-	// Update is called once per frame
-	void BuyUpgrade () {
-		
-		isPressed = true;
-		
-	}
+    public Toggle toggleButton;
+
+    void Start() {
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (toggleButton.isOn)
+         {
+            toggleButton.isOn = true;
+        }
+         else
+         {
+            toggleButton.isOn = false;
+        }
+
+    }
 }

@@ -615,4 +615,14 @@ public class HexCell : MonoBehaviour {
         }
     }
 
+    public void ResetExploration()
+    {
+        if (IsExplored)
+        {
+            IsExplored = false;
+            ShaderData.RefreshVisibility(this);
+            
+        }
+    }
+
 }
