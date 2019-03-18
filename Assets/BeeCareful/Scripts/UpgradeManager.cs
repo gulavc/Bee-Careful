@@ -653,6 +653,7 @@ public class UpgradeManager : MonoBehaviour {
                 switch (name)
                 {
                     case "ScoutVisionUpgrade1":
+                        HexUnit.ScoutVisionUpgrade1 = true;
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach(HexUnit h in scouts)
                         {

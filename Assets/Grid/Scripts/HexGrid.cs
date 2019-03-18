@@ -586,4 +586,22 @@ public class HexGrid : MonoBehaviour {
         ResetVisibility();
         
     }
+
+    //Save & Load exploration
+    public void SaveMapExploration()
+    {
+        HexGridExplorationHolder.SaveExplorationData(cells);
+    }
+
+    public void LoadMapExploration()
+    {
+        List<bool> explo = HexGridExplorationHolder.LoadExplorationData();
+        
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].SetExploration(explo[i]);
+        }
+
+        ResetVisibility();
+    }
 }

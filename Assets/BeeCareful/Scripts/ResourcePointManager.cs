@@ -126,4 +126,9 @@ public class ResourcePointManager : MonoBehaviour {
 
     }
 
+    public void Clear()
+    {
+        resourcePoints.Clear();
+    }
+
 }

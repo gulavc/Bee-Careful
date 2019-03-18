@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d768931b1bc9df848af11c774e304e4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchInEditor: 0
+  launchInEditor: 1
   playerResources: {fileID: 114667128376241786}
   pointsAction: {fileID: 114228309259063038}
   workers: {fileID: 114813790085449338}
@@ -436,4 +436,11 @@ MonoBehaviour:
   loader: {fileID: 0}
   scoutUI: {fileID: 0}
   pauseUI: {fileID: 0}
-  mapToLoadOnPlay: Map_World
+  numberOfYears: 6
+  maps:
+  - Map_World
+  - Map_World_urb1
+  - Map_World_urb2
+  - Map_World_urb3
+  - Map_World_urb4
+  - Map_World_urb5
