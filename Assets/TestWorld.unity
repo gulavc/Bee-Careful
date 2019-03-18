@@ -1014,11 +1014,6 @@ Prefab:
       propertyPath: pauseUI
       value: 
       objectReference: {fileID: 1565452845}
-    - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: launchInEditor
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
@@ -1027,7 +1022,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1810843958806904, guid: eeac7122a727fd440af6c54d912faadf,
     type: 2}
   m_PrefabInternal: {fileID: 1590564035}
---- !u!1001 &1363826733
+--- !u!1001 &1397993230
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1071,21 +1066,6 @@ Prefab:
       propertyPath: hexGrid
       value: 
       objectReference: {fileID: 776477863}
-    - target: {fileID: 114912686749347280, guid: 5879c73079813224a8741822ab2dda62,
-        type: 2}
-      propertyPath: HiveUI
-      value: 
-      objectReference: {fileID: 761642058}
-    - target: {fileID: 114912686749347280, guid: 5879c73079813224a8741822ab2dda62,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 776477863}
-    - target: {fileID: 114912686749347280, guid: 5879c73079813224a8741822ab2dda62,
-        type: 2}
-      propertyPath: scoutUI
-      value: 
-      objectReference: {fileID: 813133705}
     - target: {fileID: 114583963671955112, guid: 5879c73079813224a8741822ab2dda62,
         type: 2}
       propertyPath: hexGrid
@@ -1094,6 +1074,11 @@ Prefab:
     - target: {fileID: 1022166421322216, guid: 5879c73079813224a8741822ab2dda62, type: 2}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750744896599020, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114949284239170512, guid: 5879c73079813224a8741822ab2dda62,
         type: 2}
@@ -1364,7 +1349,7 @@ Prefab:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1022166421322216, guid: 5879c73079813224a8741822ab2dda62,
     type: 2}
-  m_PrefabInternal: {fileID: 1363826733}
+  m_PrefabInternal: {fileID: 1397993230}
 --- !u!114 &2016144731 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114453431619054468, guid: eeac7122a727fd440af6c54d912faadf,
@@ -1375,5 +1360,5 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114949284239170512, guid: 5879c73079813224a8741822ab2dda62,
     type: 2}
-  m_PrefabInternal: {fileID: 1363826733}
+  m_PrefabInternal: {fileID: 1397993230}
   m_Script: {fileID: 11500000, guid: 9c322e3226d54fa4da90dc185ac0574e, type: 3}
