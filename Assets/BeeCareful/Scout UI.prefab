@@ -410,6 +410,8 @@ MonoBehaviour:
   workersPrefab: {fileID: 198940532138530046, guid: 89d5e73e9147f80489718ddcf6213f86,
     type: 2}
   currentCell: {fileID: 0}
+  resourcePoint: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!222 &222581976903431976
 CanvasRenderer:
   m_ObjectHideFlags: 1
