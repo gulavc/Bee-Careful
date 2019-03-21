@@ -116,7 +116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114178427509417716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,6 +412,7 @@ MonoBehaviour:
     type: 2}
   currentCell: {fileID: 0}
   resourcePoint: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!222 &222581976903431976
 CanvasRenderer:
   m_ObjectHideFlags: 1

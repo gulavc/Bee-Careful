@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     [Header("Public References to Management Scripts")]
     public PlayerResources playerResources;
     public PointsAction pointsAction;
-    public Workers workers;
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
@@ -67,7 +66,6 @@ public class GameManager : MonoBehaviour {
         playerResources.gameManager = this;
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
-        workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
         rpManager.gameManager = this;
@@ -145,10 +143,10 @@ public class GameManager : MonoBehaviour {
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
-        if(r == ResourceType.Workers)
+        /*if(r == ResourceType.Workers)
         {
             workers.CreateNewWorkers(amount);
-        }
+        }*/
     }
 
     public void RemovePlayerRessources(ResourceType r, int amount)
