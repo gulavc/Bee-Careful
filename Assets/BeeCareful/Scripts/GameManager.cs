@@ -30,9 +30,23 @@ public class GameManager : MonoBehaviour {
     [Header("Game Settings")]
     public int numberOfYears;
     public string[] maps;
+    
     //Properties
     public int CurrentYear { get; set; } = 0;
 
+    private HexCell hiveCell;
+    public HexCell HiveCell {
+        get {
+            if (hiveCell == null)
+            {
+                hiveCell = grid.FindCellBySpecialIndex(gameController.HiveIndex);
+            }
+            return hiveCell;
+        }
+        private set {
+            hiveCell = value;
+        }
+    }
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -57,8 +71,9 @@ public class GameManager : MonoBehaviour {
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
         rpManager.gameManager = this;
+        scoutUI.gameManager = this;
 
-        resourcesHUD.UpdateHUDAllResources();
+        resourcesHUD.UpdateHUDAllResources();        
 
         Debug.Log(launchInEditor);
 
@@ -83,7 +98,6 @@ public class GameManager : MonoBehaviour {
             pauseUI.Show();
         }
 	}
-
 
     //HUD Update Methods
     public void UpdateResourcesHUD(ResourceType r)

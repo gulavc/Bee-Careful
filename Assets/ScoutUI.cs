@@ -9,19 +9,21 @@ public class ScoutUI : MonoBehaviour {
     public HexCell currentCell;
     [HideInInspector]
     public ResourcePoint resourcePoint;
+    [HideInInspector]
+    public GameManager gameManager;
+
+    private HexCell hiveCell;
+    
 
     public void SummonWorker()
-    {
-        ParticleSystem workers = Instantiate(workersPrefab);
-        workers.transform.position = currentCell.transform.position;
-        workers.Play();
-        Destroy(workers.gameObject, 5f);
+    {  
 
         resourcePoint = GetResourcePoint();
 
         if (resourcePoint)
         {
             resourcePoint.GatherResources();
+            StartCoroutine(WorkersTravel());
         }
         else
         {
@@ -30,9 +32,45 @@ public class ScoutUI : MonoBehaviour {
         
     }
 
+    IEnumerator WorkersTravel()
+    {
+        if (!hiveCell)
+        {
+            hiveCell = gameManager.HiveCell;
+        }
+
+        ParticleSystem workers = Instantiate(workersPrefab);
+        workers.transform.position = hiveCell.transform.position;
+        workers.Play();
+
+        Vector3 velocity = Vector3.zero;
+        float smoothTime = 2f;
+
+        //Go to resource point
+        while(Vector3.Distance(workers.transform.position, resourcePoint.transform.position) > 0.1)
+        {
+            workers.transform.position = Vector3.SmoothDamp(workers.transform.position, resourcePoint.transform.position, ref velocity, smoothTime);
+            yield return null;
+        }
+
+        //Gather for a couple seconds
+        yield return new WaitForSeconds(4f);
+
+        //Go back to hive
+        while (Vector3.Distance(workers.transform.position, hiveCell.transform.position) > 0.1)
+        {
+            workers.transform.position = Vector3.SmoothDamp(workers.transform.position, hiveCell.transform.position, ref velocity, smoothTime);
+            yield return null;
+        }
+
+        //Kill workers
+        Destroy(workers.gameObject);
+        
+    }
+
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame

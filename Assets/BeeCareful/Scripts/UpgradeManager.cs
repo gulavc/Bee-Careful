@@ -654,28 +654,18 @@ public class UpgradeManager : MonoBehaviour {
                 {
                     case "ScoutVisionUpgrade1":
                         HexUnit.ScoutVisionUpgrade1 = true;
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach(HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }                        
+                        gameManager.grid.ResetVisibility();     
                         break;
-                        // IL VA FALLOIR CRÉER MÉCANIQUEMENT LES UPGRADES
-                    /*case "ScoutVisionUpgrade2":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
+                    case "ScoutVisionUpgrade2":
+                        HexUnit.ScoutVisionUpgrade2 = true;
+                        gameManager.grid.ResetVisibility();
                         break;
                     case "ScoutVisionUpgrade3":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
+                        HexUnit.ScoutVisionUpgrade3 = true;
+                        gameManager.grid.ResetVisibility();
                         break;
-                    case "ScoutFlyUpgrade1":
+                        // IL VA FALLOIR CRÉER MÉCANIQUEMENT LES UPGRADES
+                    /*case "ScoutFlyUpgrade1":
                         scouts = FindObjectsOfType<HexUnit>();
                         foreach (HexUnit h in scouts)
                         {

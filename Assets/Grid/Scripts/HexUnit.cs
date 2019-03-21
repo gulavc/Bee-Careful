@@ -7,13 +7,31 @@ using UnityEngine.UI;
 public class HexUnit : MonoBehaviour, IUpgrade {
 
     public static bool ScoutVisionUpgrade1 = false;
+    public static bool ScoutVisionUpgrade2 = false;
+    public static bool ScoutVisionUpgrade3 = false;
 
     public Text countText;
     HexCell location, currentTravelLocation;
     float orientation;
     int speed = 200000;
-
-    public int VisionRange { get; private set; } = 3;
+    
+    public int VisionRange {
+        get {
+            if (ScoutVisionUpgrade3)
+            {
+                return 6;
+            }
+            else if (ScoutVisionUpgrade2)
+            {
+                return 5;
+            }
+            else if (ScoutVisionUpgrade1)
+            {
+                return 4;
+            }
+            return 3;
+        }
+    }
 
     List<HexCell> pathToTravel;
     const float travelSpeed = 4f; //cells per second
@@ -249,9 +267,6 @@ public class HexUnit : MonoBehaviour, IUpgrade {
         switch (name)
         {
             case "ScoutVisionUpgrade1":
-                Debug.Log("UpgradeScoutVision");
-                VisionRange += 1;
-                Grid.ResetVisibility();
                 break;
             case "ScoutFlyUpgrade":
                 Debug.Log("UpgradeScoutFly");

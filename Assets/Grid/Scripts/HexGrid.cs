@@ -542,6 +542,17 @@ public class HexGrid : MonoBehaviour {
         return path;
     }
 
+    public HexCell FindCellBySpecialIndex(int index)
+    {
+        foreach(HexCell cell in cells)
+        {
+            if (cell.SpecialIndex == index) {
+                return cell;
+            }
+        }
+        return null;
+    }
+
     //Visibility methods
     public void IncreaseVisibility(HexCell fromCell, int range)
     {
