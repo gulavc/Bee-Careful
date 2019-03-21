@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour {
     public bool launchInEditor = true;
 
     [Header("Public References to Management Scripts")]
-    public PlayerResources playerResources;    
+    public PlayerResources playerResources;
     public PointsAction pointsAction;
-    public Workers workers;    
+    public Workers workers;
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
@@ -28,8 +28,25 @@ public class GameManager : MonoBehaviour {
 
     [Space(10)]
     [Header("Game Settings")]
-    public string mapToLoadOnPlay;
-    
+    public int numberOfYears;
+    public string[] maps;
+    //Properties
+    public int CurrentYear { get; set; } = 0;
+
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if(numberOfYears < 0)
+        {
+            numberOfYears = 0;
+        }
+        if(maps.Length != numberOfYears)
+        {
+            System.Array.Resize(ref maps, numberOfYears);            
+        }
+    }
+#endif
 
     // Use this for initialization
     void Start () {
@@ -101,6 +118,11 @@ public class GameManager : MonoBehaviour {
         pointsAction.RemovePointsAction(change);
     }
 
+    public void SetCurrentPointsAction(int value)
+    {
+        pointsAction.SetPointsAction(value);
+    }
+
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
@@ -155,10 +177,37 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator LoadGame()
     {
-        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+        if (rpManager)
+        {
+            rpManager.Clear();
+        }
+        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, maps[CurrentYear] + ".map"));
         yield return new WaitForEndOfFrame();
         rpManager.AddDangersOnResourcePoints();
     }
 
+
+    //Year Advancement
+    public void AdvanceYear()
+    {
+        CurrentYear++;
+        if(CurrentYear >= numberOfYears)
+        {
+            Debug.Log("END OF GAME");
+        }
+        else
+        {
+            //Load new map
+            grid.SaveMapExploration();
+            StartCoroutine(LoadGame());
+            grid.LoadMapExploration();
+
+            //Set new objectives
+            //TODO
+
+            //Reset player values
+            SetCurrentPointsAction(pointsAction.pointsActionMax);
+        }
+    }
     
 }

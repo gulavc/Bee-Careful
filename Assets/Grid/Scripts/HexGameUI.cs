@@ -32,12 +32,6 @@ public class HexGameUI : MonoBehaviour {
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.R)) {
-            if (selectedUnit) {
-                selectedUnit.ResetMovement();
-                //ShowPossibleMovement();
-            }
-        }
     }
 
     void Start()

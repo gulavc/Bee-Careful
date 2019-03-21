@@ -32,4 +32,10 @@ public class EndOfYearUI : MonoBehaviour {
         }
     }
 
+    public void NextYear()
+    {
+        gameManager.AdvanceYear();
+        this.gameObject.SetActive(false);
+    }
+
 }

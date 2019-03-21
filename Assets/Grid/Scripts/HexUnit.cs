@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HexUnit : MonoBehaviour, IUpgrade {
 
+    public static bool ScoutVisionUpgrade1 = false;
+
     public Text countText;
     HexCell location, currentTravelLocation;
     float orientation;
@@ -246,7 +248,7 @@ public class HexUnit : MonoBehaviour, IUpgrade {
     {
         switch (name)
         {
-            case "ScoutVisionUpgrade":
+            case "ScoutVisionUpgrade1":
                 Debug.Log("UpgradeScoutVision");
                 VisionRange += 1;
                 Grid.ResetVisibility();
