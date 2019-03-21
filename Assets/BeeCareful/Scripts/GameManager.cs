@@ -107,6 +107,11 @@ public class GameManager : MonoBehaviour {
         return pointsAction.Points;
     }
 
+    public int GetPointsActionMax()
+    {
+        return pointsAction.pointsActionMax;
+    }
+
     public int GetRessourceCount(ResourceType r)
     {
         return playerResources.GetCurrentResource(r);
