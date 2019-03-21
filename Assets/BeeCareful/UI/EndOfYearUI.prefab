@@ -687,7 +687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Result of Yearly Objectives:'
 --- !u!114 &114494095740940508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -941,7 +941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Total Nectar gathered:'
 --- !u!114 &114955811826874182
 MonoBehaviour:
   m_ObjectHideFlags: 1
