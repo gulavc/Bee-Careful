@@ -22,9 +22,12 @@ public class EndOfYearUI : MonoBehaviour {
     }
 
     public void EndOfYear(){
+
+        resinGoal.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
+
         if (gameManager.VerifyAllObjectives())
         {
-            pollenGoal.text = "U win";
+            pollenGoal.text = "U win";            
         }
         else
         {

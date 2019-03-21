@@ -319,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114028403332878196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Resin:'
 --- !u!114 &114080346460369082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pollenGoal: {fileID: 114281899550777156}
-  resinGoal: {fileID: 0}
+  resinGoal: {fileID: 114365240426899670}
   nectarGoal: {fileID: 0}
   waterGoal: {fileID: 0}
   workersCreated: {fileID: 0}
