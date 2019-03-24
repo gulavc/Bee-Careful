@@ -18,10 +18,10 @@ public class GlobalObjectives : MonoBehaviour
         goals.Add(ResourceType.Workers, 0);
 
         //Temporary stuff to test
-        SetObjective(ResourceType.Nectar, 10);
-        SetObjective(ResourceType.Water, 10);
-        SetObjective(ResourceType.Resin, 10);
-        SetObjective(ResourceType.Pollen, 10);
+        SetObjective(ResourceType.Nectar, 50);
+        SetObjective(ResourceType.Water, 50);
+        SetObjective(ResourceType.Resin, 50);
+        SetObjective(ResourceType.Pollen, 50);
 
     }
 

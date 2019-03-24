@@ -542,6 +542,17 @@ public class HexGrid : MonoBehaviour {
         return path;
     }
 
+    public HexCell FindCellBySpecialIndex(int index)
+    {
+        foreach(HexCell cell in cells)
+        {
+            if (cell.SpecialIndex == index) {
+                return cell;
+            }
+        }
+        return null;
+    }
+
     //Visibility methods
     public void IncreaseVisibility(HexCell fromCell, int range)
     {
@@ -585,5 +596,23 @@ public class HexGrid : MonoBehaviour {
 
         ResetVisibility();
         
+    }
+
+    //Save & Load exploration
+    public void SaveMapExploration()
+    {
+        HexGridExplorationHolder.SaveExplorationData(cells);
+    }
+
+    public void LoadMapExploration()
+    {
+        List<bool> explo = HexGridExplorationHolder.LoadExplorationData();
+        
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cells[i].SetExploration(explo[i]);
+        }
+
+        ResetVisibility();
     }
 }

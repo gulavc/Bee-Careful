@@ -43,7 +43,7 @@ public class HexCell : MonoBehaviour {
         get {
             return explored && Explorable;
         }
-        private set {
+        set {
             explored = value;
         }
     }
@@ -623,6 +623,12 @@ public class HexCell : MonoBehaviour {
             ShaderData.RefreshVisibility(this);
             
         }
+    }
+
+    public void SetExploration(bool value)
+    {
+        IsExplored = value;
+        ShaderData.RefreshVisibility(this);
     }
 
 }

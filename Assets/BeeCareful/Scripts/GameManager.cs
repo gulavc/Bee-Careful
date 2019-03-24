@@ -8,9 +8,8 @@ public class GameManager : MonoBehaviour {
     public bool launchInEditor = true;
 
     [Header("Public References to Management Scripts")]
-    public PlayerResources playerResources;    
+    public PlayerResources playerResources;
     public PointsAction pointsAction;
-    public Workers workers;    
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
@@ -28,20 +27,51 @@ public class GameManager : MonoBehaviour {
 
     [Space(10)]
     [Header("Game Settings")]
-    public string mapToLoadOnPlay;
+    public int numberOfYears;
+    public string[] maps;
     
+    //Properties
+    public int CurrentYear { get; set; } = 0;
+
+    private HexCell hiveCell;
+    public HexCell HiveCell {
+        get {
+            if (hiveCell == null)
+            {
+                hiveCell = grid.FindCellBySpecialIndex(gameController.HiveIndex);
+            }
+            return hiveCell;
+        }
+        private set {
+            hiveCell = value;
+        }
+    }
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if(numberOfYears < 0)
+        {
+            numberOfYears = 0;
+        }
+        if(maps.Length != numberOfYears)
+        {
+            System.Array.Resize(ref maps, numberOfYears);            
+        }
+    }
+#endif
 
     // Use this for initialization
     void Start () {
         playerResources.gameManager = this;
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
-        workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
         rpManager.gameManager = this;
+        scoutUI.gameManager = this;
 
-        resourcesHUD.UpdateHUDAllResources();
+        resourcesHUD.UpdateHUDAllResources();        
 
         Debug.Log(launchInEditor);
 
@@ -67,7 +97,6 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-
     //HUD Update Methods
     public void UpdateResourcesHUD(ResourceType r)
     {
@@ -90,6 +119,11 @@ public class GameManager : MonoBehaviour {
         return pointsAction.Points;
     }
 
+    public int GetPointsActionMax()
+    {
+        return pointsAction.pointsActionMax;
+    }
+
     public int GetRessourceCount(ResourceType r)
     {
         return playerResources.GetCurrentResource(r);
@@ -101,13 +135,18 @@ public class GameManager : MonoBehaviour {
         pointsAction.RemovePointsAction(change);
     }
 
+    public void SetCurrentPointsAction(int value)
+    {
+        pointsAction.SetPointsAction(value);
+    }
+
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
-        if(r == ResourceType.Workers)
+        /*if(r == ResourceType.Workers)
         {
             workers.CreateNewWorkers(amount);
-        }
+        }*/
     }
 
     public void RemovePlayerRessources(ResourceType r, int amount)
@@ -155,10 +194,37 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator LoadGame()
     {
-        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, mapToLoadOnPlay + ".map"));
+        if (rpManager)
+        {
+            rpManager.Clear();
+        }
+        loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, maps[CurrentYear] + ".map"));
         yield return new WaitForEndOfFrame();
         rpManager.AddDangersOnResourcePoints();
     }
 
+
+    //Year Advancement
+    public void AdvanceYear()
+    {
+        CurrentYear++;
+        if(CurrentYear >= numberOfYears)
+        {
+            Debug.Log("END OF GAME");
+        }
+        else
+        {
+            //Load new map
+            grid.SaveMapExploration();
+            StartCoroutine(LoadGame());
+            grid.LoadMapExploration();
+
+            //Set new objectives
+            //TODO
+
+            //Reset player values
+            SetCurrentPointsAction(pointsAction.pointsActionMax);
+        }
+    }
     
 }

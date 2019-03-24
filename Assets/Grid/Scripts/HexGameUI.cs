@@ -16,6 +16,12 @@ public class HexGameUI : MonoBehaviour {
     List<int> resourcePointIndices;
     const int HiveSpecialIndex = 3;
 
+    public int HiveIndex {
+        get {
+            return HiveSpecialIndex;
+        }
+    }
+
     void Update() {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButtonDown(0)) {
@@ -30,12 +36,6 @@ public class HexGameUI : MonoBehaviour {
                 else {
                     DoPathfinding();
                 }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.R)) {
-            if (selectedUnit) {
-                selectedUnit.ResetMovement();
-                //ShowPossibleMovement();
             }
         }
     }
@@ -148,6 +148,7 @@ public class HexGameUI : MonoBehaviour {
         scoutUI.gameObject.SetActive(true);
         scoutUI.currentCell = currentCell;
         scoutUI.resourcePoint = gameManager.FindResourcePoint(currentCell);
+        HexMapCamera.MoveTo(currentCell);
     }
 
     void HideScoutUI()
