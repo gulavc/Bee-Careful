@@ -9,12 +9,12 @@ public class ResourcesHUD : MonoBehaviour {
     
 
     //Hud Elements
-    public Slider pollenSlider;
-    public Slider waterSlider;
-    public Slider nectarSlider;
-    public Slider resinSlider;
-    public Text workersText;
-    public Text pointActionText;
+    public Image pollenHex;
+    public Image waterHex;
+    public Image nectarHex;
+    public Image resinHex;
+    public Image workerHex;
+    public Image seasonTimer;
     public Text pollenText;
     public Text nectarText;
     public Text waterText;
@@ -35,23 +35,23 @@ public class ResourcesHUD : MonoBehaviour {
         switch (r)
         {
             case ResourceType.Water:
-                waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+                waterHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Water) / 200f; //VALEUR TEMPORAIRE À CHANGER
                 waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water);
                 break;
             case ResourceType.Pollen:
-                pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+                pollenHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Pollen) / 200f; //VALEUR TEMPORAIRE À CHANGER
                 pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen);
                 break;
             case ResourceType.Nectar:
-                nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+                nectarHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Nectar) / 200f; // VALEUR TEMPORAIRE À CHANGER
                 nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
                 break;
             case ResourceType.Resin:
-                resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+                resinHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Resin) / 200f; // VALEUR TEMPO À CHANGER
                 resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
                 break;
             case ResourceType.Workers:
-                workersText.text = "Workers: " + gameManager.GetRessourceCount(ResourceType.Workers);
+                workerHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Workers) / 200f; // IDEM
                 break;
             default:
                 UpdateHUDAllResources();
@@ -62,20 +62,26 @@ public class ResourcesHUD : MonoBehaviour {
 
     public void UpdatePointsActionHUD()
     {
-        pointActionText.text = "Points d'Action: " + gameManager.GetCurrentPointsAction();
+        UpdateSeasonTimer();
     }
 
     public void UpdateHUDAllResources()
     {
-        pollenSlider.value = gameManager.GetRessourceCount(ResourceType.Pollen);
+        pollenHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Pollen) / 200f; //VALEUR TEMPORAIRE À CHANGER
         pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen);
-        nectarSlider.value = gameManager.GetRessourceCount(ResourceType.Nectar);
+        nectarHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Nectar) / 200f; // VALEUR À CHANGER
         nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
-        waterSlider.value = gameManager.GetRessourceCount(ResourceType.Water);
+        waterHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Water) / 200f; // VALEUR TEMPORAIRE À CHANGER
         waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water);
-        resinSlider.value = gameManager.GetRessourceCount(ResourceType.Resin);
+        resinHex.fillAmount = gameManager.GetRessourceCount(ResourceType.Resin) / 200f; // IDEM
         resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
-        workersText.text = "Workforce: " + gameManager.GetRessourceCount(ResourceType.Workers);
-        pointActionText.text = "Beenergy: " + gameManager.GetCurrentPointsAction();
+        workerHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Workers) / 200f; //IDEM
+        UpdateSeasonTimer();
+    }
+
+    void UpdateSeasonTimer()
+    {
+        
+        seasonTimer.fillAmount = (float)gameManager.GetCurrentPointsAction() / (float)gameManager.GetPointsActionMax();
     }
 }

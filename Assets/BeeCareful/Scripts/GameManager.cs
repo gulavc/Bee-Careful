@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour {
     [Header("Public References to Management Scripts")]
     public PlayerResources playerResources;
     public PointsAction pointsAction;
-    public Workers workers;
     public GlobalObjectives globalObjectives;
     public UpgradeManager upgradeManager;
     public HexGameUI gameController;
@@ -30,9 +29,23 @@ public class GameManager : MonoBehaviour {
     [Header("Game Settings")]
     public int numberOfYears;
     public string[] maps;
+    
     //Properties
     public int CurrentYear { get; set; } = 0;
 
+    private HexCell hiveCell;
+    public HexCell HiveCell {
+        get {
+            if (hiveCell == null)
+            {
+                hiveCell = grid.FindCellBySpecialIndex(gameController.HiveIndex);
+            }
+            return hiveCell;
+        }
+        private set {
+            hiveCell = value;
+        }
+    }
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -53,12 +66,12 @@ public class GameManager : MonoBehaviour {
         playerResources.gameManager = this;
         resourcesHUD.gameManager = this;
         pointsAction.gameManager = this;
-        workers.gameManager = this;
         globalObjectives.gameManager = this;
         upgradeManager.gameManager = this;
         rpManager.gameManager = this;
+        scoutUI.gameManager = this;
 
-        resourcesHUD.UpdateHUDAllResources();
+        resourcesHUD.UpdateHUDAllResources();        
 
         Debug.Log(launchInEditor);
 
@@ -84,7 +97,6 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-
     //HUD Update Methods
     public void UpdateResourcesHUD(ResourceType r)
     {
@@ -107,6 +119,11 @@ public class GameManager : MonoBehaviour {
         return pointsAction.Points;
     }
 
+    public int GetPointsActionMax()
+    {
+        return pointsAction.pointsActionMax;
+    }
+
     public int GetRessourceCount(ResourceType r)
     {
         return playerResources.GetCurrentResource(r);
@@ -126,10 +143,10 @@ public class GameManager : MonoBehaviour {
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
-        if(r == ResourceType.Workers)
+        /*if(r == ResourceType.Workers)
         {
             workers.CreateNewWorkers(amount);
-        }
+        }*/
     }
 
     public void RemovePlayerRessources(ResourceType r, int amount)

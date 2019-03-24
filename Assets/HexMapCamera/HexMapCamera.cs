@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class HexMapCamera : MonoBehaviour
 {
@@ -7,6 +9,18 @@ public class HexMapCamera : MonoBehaviour
 
     float zoom = 1f;
     float rotationAngle;
+
+    public float Rotation {
+        get {
+            return rotationAngle;
+        }
+    }
+
+    public float Zoom {
+        get {
+            return zoom;
+        }
+    }
 
     public float stickMinZoom, stickMaxZoom;
     public float swivelMinZoom, swivelMaxZoom;
@@ -19,7 +33,11 @@ public class HexMapCamera : MonoBehaviour
 
     static HexMapCamera instance;
 
+    private Vector3 velocity = Vector3.zero;
 
+    [Header("Time for the camera to move to target on autonomous move")]
+    public float smoothTime = 0.3F;
+    const float minDistance = 0.1f;
 
     void Awake()
     {
@@ -123,5 +141,32 @@ public class HexMapCamera : MonoBehaviour
     public static void ValidatePosition()
     {
         instance.AdjustPosition(0f, 0f);
+    }
+
+    public static void MoveTo(HexCell cell)
+    {
+        instance.MoveCamera(cell);
+        
+        
+    }
+
+    void MoveCamera(HexCell cell)
+    {
+        StopAllCoroutines();
+        StartCoroutine(SmoothMove(cell));
+    }
+
+    IEnumerator SmoothMove(HexCell cell)
+    {
+        Vector3 targetPosition = cell.Position;
+        float distance = Vector3.Distance(targetPosition, instance.transform.position);
+       
+        while (distance > minDistance)
+        {
+            instance.transform.localPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            distance = Vector3.Distance(targetPosition, instance.transform.position);
+            yield return null;
+        }
+        yield break;
     }
 }
