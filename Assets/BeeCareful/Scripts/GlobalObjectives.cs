@@ -5,23 +5,20 @@ using UnityEngine;
 public class GlobalObjectives : MonoBehaviour
 {
 
+    [Header("Yearly Objectives (NERP)")]
+    public Objective[] objectives;
+
     Dictionary<ResourceType, int> goals = new Dictionary<ResourceType, int>();
     [HideInInspector] public GameManager gameManager;
 
     public void Start()
     {
-
+        //Initialize resources;
         goals.Add(ResourceType.Nectar, 0);
         goals.Add(ResourceType.Water, 0);
         goals.Add(ResourceType.Resin, 0);
         goals.Add(ResourceType.Pollen, 0);
         goals.Add(ResourceType.Workers, 0);
-
-        //Temporary stuff to test
-        SetObjective(ResourceType.Nectar, 50);
-        SetObjective(ResourceType.Water, 50);
-        SetObjective(ResourceType.Resin, 50);
-        SetObjective(ResourceType.Pollen, 50);
 
     }
 
@@ -30,6 +27,14 @@ public class GlobalObjectives : MonoBehaviour
         goals[r] = goal;
     }
 
+    public void SetObjectivesByYear(int year)
+    {
+        Objective o = objectives[year];
+        SetObjective(ResourceType.Nectar, o.NERP[0]);
+        SetObjective(ResourceType.Water, o.NERP[1]);
+        SetObjective(ResourceType.Resin, o.NERP[2]);
+        SetObjective(ResourceType.Pollen, o.NERP[3]);
+    }
 
     public bool VerifyObjective(ResourceType r)
     {
@@ -55,5 +60,43 @@ public class GlobalObjectives : MonoBehaviour
 
         return objectivesComplete;
     }
+
+    //Objective Class
+    [System.Serializable]
+    public class Objective
+    {
+        public int[] NERP;
+        public int Length {
+            get {
+                return NERP.Length;
+            }
+        }
+
+        public Objective(int count)
+        {
+            NERP = new int[count];
+        }
+    }
+
+#if UNITY_EDITOR
+    void OnValidate()
+    {
+        int NumResources = FindObjectOfType<GameManager>().NumResources;
+        int NumYears = FindObjectOfType<GameManager>().numberOfYears;
+        if (objectives.Length != NumYears)
+        {
+            System.Array.Resize(ref objectives, NumYears);
+        }
+
+        for(int i = 0; i < objectives.Length; i++)
+        {
+            if(objectives[i].Length != NumResources)
+            {
+                objectives[i] = new Objective(NumResources);
+            }
+        }
+
+    }
+#endif
 
 }

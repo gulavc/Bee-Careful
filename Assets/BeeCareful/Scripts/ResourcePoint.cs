@@ -53,7 +53,7 @@ public class ResourcePoint : HexInteractable {
             actualWorkforceCost = (int)(actualWorkforceCost * rpm.pesticidePenalty);
         }
 
-        if (gameManager.GetCurrentPointsAction() >= actualWorkforceCost)
+        if (gameManager.GetRessourceCount(ResourceType.Workers) >= actualWorkforceCost)
         {
             int resourceGet = Mathf.CeilToInt(RemainingResources / 2f);
             RemainingResources -= resourceGet;

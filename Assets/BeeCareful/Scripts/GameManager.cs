@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public HexGameUI gameController;
     public ResourcePointManager rpManager;
     public HexGrid grid;
+    public SpawnManager spawnManager;
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -28,8 +29,10 @@ public class GameManager : MonoBehaviour {
     [Space(10)]
     [Header("Game Settings")]
     public int numberOfYears;
-    public string[] maps;
+    public string[] maps;    
     
+
+
     //Properties
     public int CurrentYear { get; set; } = 0;
 
@@ -47,6 +50,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public int ScoutCount { get; set; }
+
+    //Private stuff
+    const int NUMRESOURCES = 4;
+    public int NumResources {
+        get {
+            return NUMRESOURCES;
+        }
+    }
+    
+
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -57,7 +71,7 @@ public class GameManager : MonoBehaviour {
         if(maps.Length != numberOfYears)
         {
             System.Array.Resize(ref maps, numberOfYears);            
-        }
+        }        
     }
 #endif
 
@@ -70,6 +84,7 @@ public class GameManager : MonoBehaviour {
         upgradeManager.gameManager = this;
         rpManager.gameManager = this;
         scoutUI.gameManager = this;
+        spawnManager.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();        
 
@@ -91,11 +106,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseUI.Show();
-        }
-	}
+        
+	}    
 
     //HUD Update Methods
     public void UpdateResourcesHUD(ResourceType r)
@@ -111,6 +123,11 @@ public class GameManager : MonoBehaviour {
     public void HideScoutUI()
     {
         scoutUI.gameObject.SetActive(false);
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseUI.Show();
     }
 
     //Ressource Getters
@@ -143,10 +160,6 @@ public class GameManager : MonoBehaviour {
     public void AddPlayerResources(ResourceType r, int amount)
     {
         playerResources.AddResources(r, amount);
-        /*if(r == ResourceType.Workers)
-        {
-            workers.CreateNewWorkers(amount);
-        }*/
     }
 
     public void RemovePlayerRessources(ResourceType r, int amount)
@@ -183,6 +196,14 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(LoadGame());            
 
             grid.ResetExploration();
+            upgradeManager.ResetAllUpgrades();
+
+            globalObjectives.SetObjectivesByYear(0);
+
+            spawnManager.CreateScout();
+
+            //Snap camera to Hive
+            HexMapCamera.MoveTo(HiveCell, true);
 
         }
         else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
@@ -214,16 +235,31 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+            //Clear current stuff
+            gameController.DeselectUnit();
+
             //Load new map
             grid.SaveMapExploration();
             StartCoroutine(LoadGame());
             grid.LoadMapExploration();
 
             //Set new objectives
-            //TODO
+            globalObjectives.SetObjectivesByYear(CurrentYear);
 
             //Reset player values
             SetCurrentPointsAction(pointsAction.pointsActionMax);
+
+            //Spawn new scouts
+            for(int i = 0; i < ScoutCount; i++)
+            {
+                spawnManager.CreateScout(false);
+            }
+
+            //Move Camera to Hive
+            HexMapCamera.MoveTo(HiveCell, true);
+
+            //Activate UI
+            resourcesHUD.gameObject.SetActive(true);
         }
     }
     

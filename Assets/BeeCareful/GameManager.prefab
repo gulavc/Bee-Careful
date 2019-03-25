@@ -311,6 +311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b630e4b10f99b234696f69a3de553744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectives:
+  - NERP: 0a0000000a0000000a0000000a000000
+  - NERP: 14000000140000001400000014000000
+  - NERP: 1e0000001e0000001e0000001e000000
+  - NERP: 28000000280000002800000028000000
+  - NERP: 32000000320000003200000032000000
+  - NERP: 3c0000003c0000003c0000003c000000
   gameManager: {fileID: 0}
 --- !u!114 &114160541461995432
 MonoBehaviour:
@@ -443,12 +450,12 @@ MonoBehaviour:
   launchInEditor: 0
   playerResources: {fileID: 114667128376241786}
   pointsAction: {fileID: 114228309259063038}
-  workers: {fileID: 0}
   globalObjectives: {fileID: 114152446127359380}
   upgradeManager: {fileID: 114699117815647096}
   gameController: {fileID: 114192400815176384}
   rpManager: {fileID: 114291069587861650}
   grid: {fileID: 0}
+  spawnManager: {fileID: 0}
   resourcesHUD: {fileID: 0}
   endOfYearUI: {fileID: 0}
   editorUI: {fileID: 0}
@@ -458,9 +465,9 @@ MonoBehaviour:
   pauseUI: {fileID: 0}
   numberOfYears: 6
   maps:
-  - Map_World
-  - Map_World_urb1
-  - Map_World_urb2
-  - Map_World_urb3
-  - Map_World_urb4
-  - Map_World_urb5
+  - NEW_MapWorld
+  - NEW_MapWorld_urb1
+  - NEW_MapWorld_urb2
+  - NEW_MapWorld_urb3
+  - NEW_MapWorld_urb4
+  - NEW_MapWorld_urb5

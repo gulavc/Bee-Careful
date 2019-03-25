@@ -25,17 +25,40 @@ public class HexGameUI : MonoBehaviour {
     void Update() {
         if (!EventSystem.current.IsPointerOverGameObject()) {
             if (Input.GetMouseButtonDown(0)) {
-                DoSelection();
-                /*ShowPossibleMovement();*/
+                if (!selectedUnit)
+                {
+                    DoSelection();
+                }
+                else
+                {
+                    UpdateCurrentCell();
+                    if (currentCell.Unit)
+                    {
+                        //DoSelection();
+                    }
+                    else
+                    {
+                        DoMove();
+                    }                    
+                }                
             }
             else if (selectedUnit) {
+                DoPathfinding();
                 if (Input.GetMouseButtonDown(1)) {
-                    DoMove();
-                    /*ShowPossibleMovement();*/
+                    DeselectUnit();                  
                 }
-                else {
-                    DoPathfinding();
-                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!selectedUnit)
+            {
+                gameManager.ShowPauseMenu();
+            }
+            else
+            {
+                DeselectUnit();
             }
         }
     }
@@ -109,13 +132,25 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 
+    public void DeselectUnit()
+    {
+        if (selectedUnit)
+        {
+            grid.ClearPath();
+            grid.ClearShowMovement();
+            selectedUnit.Location.DisableHighlight();
+            selectedUnit = null;
+        }        
+    }
+
     void DoPathfinding() {
         if (UpdateCurrentCell()) {
             if (currentCell && selectedUnit.IsValidDestination(currentCell)) {
                 grid.FindPath(selectedUnit.Location, currentCell, selectedUnit);
             }
-            else {
+            else {                
                 grid.ClearPath();
+                selectedUnit.Location.EnableHighlight(Color.blue);
             }
         }
     }
