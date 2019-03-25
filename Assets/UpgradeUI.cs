@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpgradeUI : MonoBehaviour
 {
 
-    public Toggle visionMore1, visionMore2, visionMore3, flyOverMountains, flyOverRivers, flyOverBeasts, moveMore1, moveMore2, moveMore3,
+    public Toggle visionMore1, visionMore2, visionMore3, flyOverMountains, flyOverRivers, flyOverCities, moveMore1, moveMore2, moveMore3,
         gatherMore1, gatherMore2, gatherMore3, unfuckWasps1, unfuckWasps2, unfuckWasps3, unfuckPoison1, unfuckPoison2, unfuckPoison3,
         cheapWork1, cheapWork2, cheapWork3, cheapScout1, cheapScout2, cheapScout3, startScout1, startScout2, startScout3, startWork1, startWork2, startWork3;
 
@@ -39,7 +39,7 @@ public class UpgradeUI : MonoBehaviour
 
         upgradeList.Add("ScoutFlyUpgrade1", flyOverMountains);
         upgradeList.Add("ScoutFlyUpgrade2", flyOverRivers);
-        upgradeList.Add("ScoutFlyUpgrade3", flyOverBeasts);
+        upgradeList.Add("ScoutFlyUpgrade3", flyOverCities);
 
         upgradeList.Add("ScoutMoveUpgrade1", moveMore1);
         upgradeList.Add("ScoutMoveUpgrade2", moveMore2);
@@ -132,7 +132,7 @@ public class UpgradeUI : MonoBehaviour
                     flyOverRivers.interactable = false;
                     break;
                 case "ScoutFlyUpgrade3":
-                    flyOverBeasts.interactable = false;
+                    flyOverCities.interactable = false;
                     break;
 
                 case "ScoutMoveUpgrade1":
@@ -241,7 +241,7 @@ public class UpgradeUI : MonoBehaviour
                     flyOverRivers.isOn = false;
                     break;
                 case "ScoutFlyUpgrade3":
-                    flyOverBeasts.isOn = false;
+                    flyOverCities.isOn = false;
                     break;
                 case "ScoutMoveUpgrade1":
                     moveMore1.isOn = false;
