@@ -143,17 +143,25 @@ public class HexMapCamera : MonoBehaviour
         instance.AdjustPosition(0f, 0f);
     }
 
-    public static void MoveTo(HexCell cell)
+    public static void MoveTo(HexCell cell, bool snapToDestination = false)
     {
-        instance.MoveCamera(cell);
+        instance.MoveCamera(cell, snapToDestination);
         
         
     }
 
-    void MoveCamera(HexCell cell)
+    void MoveCamera(HexCell cell, bool snapToDestination)
     {
         StopAllCoroutines();
-        StartCoroutine(SmoothMove(cell));
+        if (snapToDestination)
+        {
+            instance.transform.localPosition = cell.Position;
+        }
+        else
+        {            
+            StartCoroutine(SmoothMove(cell));
+        }
+        
     }
 
     IEnumerator SmoothMove(HexCell cell)
