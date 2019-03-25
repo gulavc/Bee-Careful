@@ -339,6 +339,10 @@ Prefab:
       propertyPath: hexGrid
       value: 
       objectReference: {fileID: 776477863}
+    - target: {fileID: 1150559668887630, guid: b71c65fd1abae8f49a0d5c224fbe503e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71c65fd1abae8f49a0d5c224fbe503e, type: 2}
   m_IsPrefabAsset: 0
