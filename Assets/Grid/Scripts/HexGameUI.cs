@@ -34,7 +34,7 @@ public class HexGameUI : MonoBehaviour {
                     UpdateCurrentCell();
                     if (currentCell.Unit)
                     {
-                        DoSelection();
+                        //DoSelection();
                     }
                     else
                     {
@@ -132,12 +132,15 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 
-    void DeselectUnit()
+    public void DeselectUnit()
     {
-        grid.ClearPath();
-        grid.ClearShowMovement();
-        selectedUnit.Location.DisableHighlight();
-        selectedUnit = null;
+        if (selectedUnit)
+        {
+            grid.ClearPath();
+            grid.ClearShowMovement();
+            selectedUnit.Location.DisableHighlight();
+            selectedUnit = null;
+        }        
     }
 
     void DoPathfinding() {

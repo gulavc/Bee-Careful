@@ -448,6 +448,77 @@ public class HexGrid : MonoBehaviour {
         frontier = null;
     }
 
+
+    public HexCell GetNearestEmptyCell(HexCell cell)
+    {
+        if (!cell.IsSpecial && !cell.Unit)
+        {
+            return cell;
+        }
+
+        List<HexCell> nearCells = ListPool<HexCell>.Get();
+
+        searchFrontierPhase += 2;
+        if (searchFrontier == null)
+        {
+            searchFrontier = new HexCellPriorityQueue();
+        }
+        else
+        {
+            searchFrontier.Clear();
+        }
+        
+        cell.SearchPhase = searchFrontierPhase;
+        cell.Distance = 0;
+        searchFrontier.Enqueue(cell);
+
+        HexCoordinates fromCoordinates = cell.coordinates;
+        while (searchFrontier.Count > 0)
+        {
+            HexCell current = searchFrontier.Dequeue();
+            current.SearchPhase += 1;
+
+            nearCells.Add(current);
+
+            if (!current.IsSpecial && !current.Unit)
+            {
+                return current;
+            }
+
+            for (HexDirection d = HexDirection.NE; d <= HexDirection.NW; d++)
+            {
+                HexCell neighbor = current.GetNeighbor(d);
+                if (neighbor == null || neighbor.SearchPhase > searchFrontierPhase || !neighbor.Explorable)
+                {
+                    continue;
+                }
+
+                int distance = current.Distance + 1;
+                if (distance > fromCoordinates.DistanceTo(neighbor.coordinates))
+                {
+                    continue;
+                }
+
+                if (neighbor.SearchPhase < searchFrontierPhase)
+                {
+                    neighbor.SearchPhase = searchFrontierPhase;
+                    neighbor.Distance = distance;
+                    neighbor.SearchHeuristic = 0;
+                    searchFrontier.Enqueue(neighbor);
+
+                }
+                else if (distance < neighbor.Distance)
+                {
+                    int oldPriority = neighbor.SearchPriority;
+                    neighbor.Distance = distance;
+                    searchFrontier.Change(neighbor, oldPriority);
+
+                }
+            }
+        }
+        return null;
+    }
+
     void ShowPath(int speed) {
         if (currentPathExists) {
             HexCell current = currentPathTo;

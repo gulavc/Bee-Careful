@@ -8,8 +8,9 @@ public class SpawnManager : MonoBehaviour
 
     //public Button SpawnScout;
     //public Button SpawnWorker;
-    private HexGrid hexGrid;
-    private GameManager gameManager;
+    public HexGrid hexGrid;
+    [HideInInspector]
+    public GameManager gameManager;
     public int scoutNectarCost;
     public int scoutPollenCost;
     public int workNectarCost;
@@ -20,15 +21,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
 
-        //SpawnScout.onClick.AddListener(CreateScout);
-        /*SpawnWorker.onClick.AddListener(CreateWorker);*/
-        hexGrid = GameObject.FindObjectOfType<HexGrid>();
-        gameManager = GameObject.FindObjectOfType<GameManager>();
-
-
     }
-
-
     void Update()
 
     {
@@ -37,19 +30,25 @@ public class SpawnManager : MonoBehaviour
 
 
 
-    public void CreateScout()
+    public void CreateScout(bool addCount = true)
     {
         if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= scoutNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= scoutPollenCost))
         {
-
-            gameManager.RemovePlayerRessources(ResourceType.Nectar, scoutNectarCost);
-            gameManager.RemovePlayerRessources(ResourceType.Pollen, scoutPollenCost);
-            Debug.Log("Let's explore this hood!");
-            HexCell cell = hexGrid.GetCell(new Vector3(13, -30, 17));
-            if (cell && !cell.Unit)
+            Debug.Log(hexGrid);
+            HexCell cell = hexGrid.GetNearestEmptyCell(gameManager.HiveCell);
+            if (cell)
             {
+                gameManager.RemovePlayerRessources(ResourceType.Nectar, scoutNectarCost);
+                gameManager.RemovePlayerRessources(ResourceType.Pollen, scoutPollenCost);
+                if (addCount)
+                {
+                    gameManager.ScoutCount += 1;
+                }                
                 hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
-
+            }
+            else
+            {
+                Debug.Log("No empty cell left on map");
             }
         }
     }

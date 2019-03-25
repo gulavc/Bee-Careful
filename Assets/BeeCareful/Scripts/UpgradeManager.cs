@@ -791,13 +791,14 @@ public class UpgradeManager : MonoBehaviour {
         return false;
     }
 
-    //Methods to link with the ui
-    public void TryApplyUpgrade(string s)
+    public void ResetAllUpgrades()
     {
-        bool applied = ApplyUpgrade(s);
-        
-    }
+        HexUnit.ScoutVisionUpgrade1 = false;
+        HexUnit.ScoutVisionUpgrade2 = false;
+        HexUnit.ScoutVisionUpgrade3 = false;
 
+
+    }
 
 
 }
