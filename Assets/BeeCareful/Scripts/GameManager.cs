@@ -91,11 +91,8 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseUI.Show();
-        }
-	}
+        
+	}    
 
     //HUD Update Methods
     public void UpdateResourcesHUD(ResourceType r)
@@ -111,6 +108,11 @@ public class GameManager : MonoBehaviour {
     public void HideScoutUI()
     {
         scoutUI.gameObject.SetActive(false);
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseUI.Show();
     }
 
     //Ressource Getters
