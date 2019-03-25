@@ -1286,12 +1286,62 @@ Prefab:
     - target: {fileID: 224513521128625012, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 396.2
+      value: 417.4
       objectReference: {fileID: 0}
     - target: {fileID: 114028403332878196, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
         type: 2}
       propertyPath: m_Text
       value: 'Total Resin gathered:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114494095740940508, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Total Water gathered:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114159873903475560, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Total Pollen gathered:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114768435516390868, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Total workers dead:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912841972751268, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 416.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224513521128625012, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 117.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912841972751268, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 119.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 224669528206008886, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 414.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224669528206008886, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 121.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 224555066883362648, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 415.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224555066883362648, guid: 3f9afc5a746e65b41b9e4fe004fe95ef,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 117.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9afc5a746e65b41b9e4fe004fe95ef, type: 2}
