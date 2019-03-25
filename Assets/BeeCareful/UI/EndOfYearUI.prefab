@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 222413033377017296}
   - component: {fileID: 114438365657442220}
   m_Layer: 5
-  m_Name: PollenGoalTitle
+  m_Name: YearlyObjectives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 222996673483771754}
   - component: {fileID: 114281899550777156}
   m_Layer: 5
-  m_Name: PollenGoalResults
+  m_Name: YearlyObjectivesResults
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 222227987526242872}
   - component: {fileID: 114166954941583184}
   m_Layer: 5
-  m_Name: WorkersMadeCount
+  m_Name: PollenGoalResults
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 222983666866560130}
   - component: {fileID: 114159873903475560}
   m_Layer: 5
-  m_Name: WorkersMadeTitle
+  m_Name: PollenGoalTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Resin:'
+  m_Text: 'Total Resin gathered:'
 --- !u!114 &114080346460369082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Total Pollen gathered:'
 --- !u!114 &114166954941583184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,10 +496,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519d3163aabefcc4bac7be9972ba5488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pollenGoal: {fileID: 114281899550777156}
+  yearlyObjectives: {fileID: 114281899550777156}
+  nectarGoal: {fileID: 114778561106173392}
   resinGoal: {fileID: 114365240426899670}
-  nectarGoal: {fileID: 0}
-  waterGoal: {fileID: 0}
+  waterGoal: {fileID: 114129985881374326}
+  pollenGoal: {fileID: 114166954941583184}
   workersCreated: {fileID: 0}
   workersDead: {fileID: 0}
 --- !u!114 &114220029005598714
@@ -588,13 +589,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'u laugh u lose
+
+'
 --- !u!114 &114365240426899670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -720,7 +723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Total Water gathered:'
 --- !u!114 &114619097470563594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -823,7 +826,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Total workers dead:'
 --- !u!114 &114778561106173392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -856,7 +859,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: New text
 --- !u!114 &114814036528004224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1123,8 +1126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 387.58, y: -5.78}
+  m_SizeDelta: {x: 371.97, y: 65.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224063119297434950
 RectTransform:
@@ -1142,8 +1145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 80}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -243.10999, y: 80}
+  m_SizeDelta: {x: 286.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224165631756094216
 RectTransform:
@@ -1180,8 +1183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 135}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -193.10999, y: 135}
+  m_SizeDelta: {x: 386.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224213414380989788
 RectTransform:
@@ -1199,8 +1202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -95}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -243.10999, y: -95}
+  m_SizeDelta: {x: 286.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224247774992103374
 RectTransform:
@@ -1236,8 +1239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -150}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -243.10999, y: -150}
+  m_SizeDelta: {x: 286.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224392353275857762
 RectTransform:
@@ -1294,8 +1297,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: -30}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -243.10999, y: -30}
+  m_SizeDelta: {x: 286.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224513521128625012
 RectTransform:
@@ -1312,8 +1315,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 417.4, y: 0}
+  m_SizeDelta: {x: 117.61, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224527381327430144
 RectTransform:
@@ -1349,8 +1352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 415.5, y: 0}
+  m_SizeDelta: {x: 117.61, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224604945140957638
 RectTransform:
@@ -1367,9 +1370,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 420.8, y: 0}
+  m_SizeDelta: {x: 122.43, y: 40}
+  m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!224 &224651542479739936
 RectTransform:
   m_ObjectHideFlags: 1
@@ -1386,8 +1389,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 25}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -243.10999, y: 25}
+  m_SizeDelta: {x: 286.22, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224669528206008886
 RectTransform:
@@ -1404,8 +1407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 414.6, y: 0}
+  m_SizeDelta: {x: 121.46, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224710499624007506
 RectTransform:
@@ -1446,6 +1449,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: 416.5, y: 0}
+  m_SizeDelta: {x: 119.53, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
