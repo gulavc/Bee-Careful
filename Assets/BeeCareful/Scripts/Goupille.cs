@@ -7,8 +7,11 @@ public class Goupille : MonoBehaviour {
     HexMapCamera hexMapCamera;
     Transform attachedObject;
     SpriteRenderer spriteRenderer;
+    HexGrid grid;
+
     public float upperLimit;
     public float lowerLimit;
+    public GoupilleType type;
 
     private float regression, intercept;
 
@@ -17,6 +20,7 @@ public class Goupille : MonoBehaviour {
         hexMapCamera = FindObjectOfType<HexMapCamera>();
         attachedObject = transform.parent;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        grid = FindObjectOfType<HexGrid>();
 
         regression = 1f / (upperLimit - lowerLimit);
         intercept = 1 - regression * upperLimit;
@@ -35,8 +39,26 @@ public class Goupille : MonoBehaviour {
         float lerp = (regression * hexMapCamera.Zoom) + intercept;
 
         Color c = spriteRenderer.color;
-        c.a = Mathf.Lerp(0f, 1f, lerp);
+        
+        if (grid.GetCell(attachedObject.localPosition).IsExplored)
+        {
+            c.a = Mathf.Lerp(0f, 1f, lerp);
+        }
+        else
+        {
+            c.a = 0f;
+        }
+
         spriteRenderer.color = c;        
 
+    }
+
+    public enum GoupilleType
+    {
+        BEE,
+        HIVE,
+        RESOURCE,
+        MOUNTAIN,
+        DANGER
     }
 }
