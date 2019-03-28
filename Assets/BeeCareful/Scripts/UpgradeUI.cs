@@ -8,7 +8,7 @@ public class UpgradeUI : MonoBehaviour
 
     public Toggle visionMore1, visionMore2, visionMore3, flyOverMountains, flyOverRivers, flyOverCities, moveMore1, moveMore2, moveMore3,
         gatherMore1, gatherMore2, gatherMore3, unfuckWasps1, unfuckWasps2, unfuckWasps3, unfuckPoison1, unfuckPoison2, unfuckPoison3,
-        cheapWork1, cheapWork2, cheapWork3, cheapScout1, cheapScout2, cheapScout3, startScout1, startScout2, startScout3, startWork1, startWork2, startWork3;
+        cheapWork1, cheapWork2, cheapWork3, cheapScout1, cheapScout2, cheapScout3, seasonTime1, seasonTime2, seasonTime3, startWork1, startWork2, startWork3;
 
     public UpgradeManager upgradeManager;
 
@@ -67,9 +67,9 @@ public class UpgradeUI : MonoBehaviour
         upgradeList.Add("CheapScoutUpgrade2", cheapScout2);
         upgradeList.Add("CheapScoutUpgrade3", cheapScout3);
 
-        upgradeList.Add("StartScoutUpgrade1", startScout1);
-        upgradeList.Add("StartScoutUpgrade2", startScout2);
-        upgradeList.Add("StartScoutUpgrade3", startScout3);
+        upgradeList.Add("SeasonTimeUpgrade1", seasonTime1);
+        upgradeList.Add("SeasonTimeUpgrade2", seasonTime2);
+        upgradeList.Add("SeasonTimeUpgrade3", seasonTime3);
 
         upgradeList.Add("StartWorkUpgrade1", startWork1);
         upgradeList.Add("StartWorkUpgrade2", startWork2);
@@ -195,14 +195,14 @@ public class UpgradeUI : MonoBehaviour
                     cheapScout3.interactable = false;
                     break;
 
-                case "StartScoutUpgrade1":
-                    startScout1.interactable = false;
+                case "SeasonTimeUpgrade1":
+                    seasonTime1.interactable = false;
                     break;
-                case "StartScoutUpgrade2":
-                    startScout2.interactable = false;
+                case "SeasonTimeUpgrade2":
+                    seasonTime2.interactable = false;
                     break;
-                case "StartScoutUpgrade3":
-                    startScout3.interactable = false;
+                case "SeasonTimeUpgrade3":
+                   seasonTime3.interactable = false;
                     break;
 
                 case "StartWorkUpgrade1":
@@ -302,14 +302,14 @@ public class UpgradeUI : MonoBehaviour
                     cheapScout3.isOn = false;
                     break;
 
-                case "StartScoutUpgrade1":
-                    startScout1.isOn = false;
+                case "SeasonTimeUpgrade1":
+                    seasonTime1.isOn = false;
                     break;
-                case "StartScoutUpgrade2":
-                    startScout2.isOn = false;
+                case "SeasonTimeUpgrade2":
+                    seasonTime2.isOn = false;
                     break;
-                case "StartScoutUpgrade3":
-                    startScout3.isOn = false;
+                case "SeasonTimeUpgrade3":
+                    seasonTime3.isOn = false;
                     break;
 
                 case "StartWorkUpgrade1":
