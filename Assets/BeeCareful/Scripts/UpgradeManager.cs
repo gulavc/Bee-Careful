@@ -520,7 +520,7 @@ public class UpgradeManager : MonoBehaviour {
         prereqs.Clear();
 
         //Set name
-        upgradeName = "StartScoutUpgrade1";
+        upgradeName = "SeasonTimeUpgrade1";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -537,10 +537,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost[3] = 30; //Pollen
 
         //Set prereqs
-        prereqs.Add("StartScoutUpgrade1");
+        prereqs.Add("SeasonTimeUpgrade1");
 
         //Set name
-        upgradeName = "StartScoutUpgrade2";
+        upgradeName = "SeasonTimeUpgrade2";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -557,10 +557,10 @@ public class UpgradeManager : MonoBehaviour {
         upgradeCost[3] = 45; //Pollen
 
         //Set prereqs
-        prereqs.Add("StartScoutUpgrade2");
+        prereqs.Add("SeasonTimeUpgrade2");
 
         //Set name
-        upgradeName = "StartScoutUpgrade3";
+        upgradeName = "SeasonTimeUpgrade3";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
