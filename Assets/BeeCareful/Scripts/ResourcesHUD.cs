@@ -53,7 +53,7 @@ public class ResourcesHUD : MonoBehaviour {
                 break;
             case ResourceType.Workers:
                 workerHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Workers) / 200f; // IDEM
-                workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";
+                //workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";
                 break;
             default:
                 UpdateHUDAllResources();
@@ -78,7 +78,7 @@ public class ResourcesHUD : MonoBehaviour {
         resinHex.fillAmount = gameManager.GetRessourceCount(ResourceType.Resin) / 200f; // IDEM
         resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
         workerHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Workers) / 200f; //IDEM
-        workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";
+        //workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";
         UpdateSeasonTimer();
     }
 

@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 4475252193862808}
   - component: {fileID: 114667977300356474}
   - component: {fileID: 114770513936990422}
-  - component: {fileID: 114887486738967606}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -473,14 +472,3 @@ MonoBehaviour:
   - NEW_MapWorld_urb3
   - NEW_MapWorld_urb4
   - NEW_MapWorld_urb5
---- !u!114 &114887486738967606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1488152988736904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1327945023, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
