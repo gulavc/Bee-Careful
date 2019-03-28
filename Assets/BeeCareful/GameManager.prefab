@@ -1636,6 +1636,7 @@ MonoBehaviour:
   endOfYearUI: {fileID: 0}
   editorUI: {fileID: 0}
   gameUI: {fileID: 0}
+  gameButtons: {fileID: 0}
   loader: {fileID: 0}
   scoutUI: {fileID: 0}
   pauseUI: {fileID: 0}

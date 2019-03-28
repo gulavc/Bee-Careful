@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     [Header("Public References to UI Elements")]
     public ResourcesHUD resourcesHUD;
     public EndOfYearUI endOfYearUI;
-    public GameObject editorUI, gameUI;
+    public GameObject editorUI, gameUI, gameButtons;
     public SaveLoadMenu loader;
     public ScoutUI scoutUI;
     public PauseUI pauseUI;
@@ -181,6 +181,7 @@ public class GameManager : MonoBehaviour {
     public void EndOfYear()
     {
         resourcesHUD.gameObject.SetActive(false);
+        gameButtons.SetActive(false);
         endOfYearUI.gameObject.SetActive(true);
         endOfYearUI.EndOfYear();
     }
@@ -271,7 +272,8 @@ public class GameManager : MonoBehaviour {
             HexMapCamera.MoveTo(HiveCell, true);
 
             //Activate UI
-            resourcesHUD.gameObject.SetActive(true);            
+            resourcesHUD.gameObject.SetActive(true);
+            gameButtons.SetActive(true);
         }
     }
     
