@@ -29,8 +29,10 @@ public class ResourcePoint : HexInteractable {
 
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (dangerPrefab)
         {
             if (Cell.IsVisible)
@@ -80,7 +82,14 @@ public class ResourcePoint : HexInteractable {
 
     public override void OnUnitEnterCell(HexCell cell)
     {
-        //Do nothing
+        if (hasWasp)
+        {
+            gameManager.ShowWaspsTutorial();
+        }
+        if (hasPesticide)
+        {
+            gameManager.ShowPesticideTutorial();
+        }
     }
 
     public int RemainingResources { get; private set; }
