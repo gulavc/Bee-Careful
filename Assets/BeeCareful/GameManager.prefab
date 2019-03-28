@@ -361,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 114819425955994446}
   pointsActionMax: 500
+  bonusEnergyPercentPerScout: 0
 --- !u!114 &114291069587861650
 MonoBehaviour:
   m_ObjectHideFlags: 1
