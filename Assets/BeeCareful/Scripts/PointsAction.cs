@@ -8,6 +8,8 @@ public class PointsAction : MonoBehaviour {
     [HideInInspector] public GameManager gameManager;
     
     public int pointsActionMax;
+    [Range(0, 1)]
+    public float bonusEnergyPercentPerScout;
 
     public int Points { get; private set; }
 
@@ -49,4 +51,18 @@ public class PointsAction : MonoBehaviour {
         }
         gameManager.UpdatePointsActionHUD();
     }
+
+#if UNITY_EDITOR
+    void OnValidate()
+    {
+        if(bonusEnergyPercentPerScout > 1f)
+        {
+            bonusEnergyPercentPerScout = 1f;
+        }
+        else if(bonusEnergyPercentPerScout < 0f)
+        {
+            bonusEnergyPercentPerScout = 0f;
+        }
+    }
+#endif
 }

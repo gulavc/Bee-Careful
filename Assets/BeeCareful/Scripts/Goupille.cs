@@ -35,7 +35,16 @@ public class Goupille : MonoBehaviour {
         float lerp = (regression * hexMapCamera.Zoom) + intercept;
 
         Color c = spriteRenderer.color;
-        c.a = Mathf.Lerp(0f, 1f, lerp);
+
+        if (HexGrid.instance.GetCell(attachedObject.position).IsVisible)
+        {
+            c.a = Mathf.Lerp(0f, 1f, lerp);
+        }
+        else
+        {
+            c.a = 0f;
+        }
+
         spriteRenderer.color = c;        
 
     }

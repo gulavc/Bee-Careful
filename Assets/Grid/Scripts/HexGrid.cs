@@ -9,6 +9,8 @@ using System;
 //based on tutorial on http://catlikecoding.com/unity/tutorials/hex-map/
 public class HexGrid : MonoBehaviour {
 
+    public static HexGrid instance;
+
     public int cellCountX = 20, cellCountZ = 15;
     int chunkCountX, chunkCountZ;
 
@@ -39,6 +41,7 @@ public class HexGrid : MonoBehaviour {
     HexCellShaderData cellShaderData;
 
     void Awake() {
+        instance = this;
         HexMetrics.noiseSource = noiseSource;
         HexMetrics.InitializeHashGrid(seed);
         HexUnit.unitPrefab = unitPrefab;
