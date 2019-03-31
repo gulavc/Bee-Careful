@@ -42,7 +42,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1029487567865864
 GameObject:
   m_ObjectHideFlags: 1
@@ -613,7 +613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1696527630410380
 GameObject:
   m_ObjectHideFlags: 1
@@ -1478,6 +1478,7 @@ MonoBehaviour:
   nectarText: {fileID: 114153190334168668}
   waterText: {fileID: 114271520269527232}
   resinText: {fileID: 114599783664101262}
+  workerText: {fileID: 0}
 --- !u!114 &114322448658793532
 MonoBehaviour:
   m_ObjectHideFlags: 1

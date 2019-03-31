@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     [Header("Public References to UI Elements")]
     public ResourcesHUD resourcesHUD;
     public EndOfYearUI endOfYearUI;
-    public GameObject editorUI, gameUI;
+    public GameObject editorUI, gameUI, gameButtons;
     public SaveLoadMenu loader;
     public ScoutUI scoutUI;
     public PauseUI pauseUI;
@@ -29,9 +29,18 @@ public class GameManager : MonoBehaviour {
     [Space(10)]
     [Header("Game Settings")]
     public int numberOfYears;
-    public string[] maps;    
-    
+    public string[] maps;
 
+    [Space(10)]
+    [Header("Tutorials references")]
+    public GameObject startUpTutorial;
+    public GameObject mountainTutorial;
+    public GameObject waspsTutorial;
+    public GameObject pesticideTutorial;
+
+    //Static variables
+    public static bool waspsTutorialDone = false;
+    public static bool pesticideTutorialDone = false;
 
     //Properties
     public int CurrentYear { get; set; } = 0;
@@ -60,6 +69,7 @@ public class GameManager : MonoBehaviour {
         }
     }
     
+
 
 #if UNITY_EDITOR
     private void OnValidate()
@@ -171,6 +181,7 @@ public class GameManager : MonoBehaviour {
     public void EndOfYear()
     {
         resourcesHUD.gameObject.SetActive(false);
+        gameButtons.SetActive(false);
         endOfYearUI.gameObject.SetActive(true);
         endOfYearUI.EndOfYear();
     }
@@ -200,11 +211,13 @@ public class GameManager : MonoBehaviour {
 
             globalObjectives.SetObjectivesByYear(0);
 
-            spawnManager.CreateScout();
+            spawnManager.CreateScout(true, false);
 
             //Snap camera to Hive
             HexMapCamera.MoveTo(HiveCell, true);
 
+            //Show Beginning Tutorial
+            ShowStartUpTutorial();
         }
         else /*if (GameLoader.LoadMode == LoadMode.Edit)*/ //For now we presume that not play is "edit"
         {
@@ -252,7 +265,7 @@ public class GameManager : MonoBehaviour {
             //Spawn new scouts
             for(int i = 0; i < ScoutCount; i++)
             {
-                spawnManager.CreateScout(false);
+                spawnManager.CreateScout(false, false);
             }
 
             //Move Camera to Hive
@@ -260,7 +273,37 @@ public class GameManager : MonoBehaviour {
 
             //Activate UI
             resourcesHUD.gameObject.SetActive(true);
+            gameButtons.SetActive(true);
         }
     }
     
+    
+    //Tutorials
+    public void ShowStartUpTutorial()
+    {
+        startUpTutorial.SetActive(true);
+    }
+
+    public void ShowMountainTutorial()
+    {
+        mountainTutorial.SetActive(true);
+    }
+
+    public void ShowWaspsTutorial()
+    {
+        if (!waspsTutorialDone)
+        {
+            waspsTutorial.SetActive(true);
+            waspsTutorialDone = true;
+        }        
+    }
+
+    public void ShowPesticideTutorial()
+    {
+        if (!pesticideTutorialDone)
+        {
+            pesticideTutorial.SetActive(true);
+            pesticideTutorialDone = true;
+        }        
+    }
 }

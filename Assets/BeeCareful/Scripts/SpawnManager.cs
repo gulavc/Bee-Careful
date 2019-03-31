@@ -30,11 +30,11 @@ public class SpawnManager : MonoBehaviour
 
 
 
-    public void CreateScout(bool addCount = true)
+    public void CreateScout(bool addCount = true, bool paycost = true)
     {
         if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= scoutNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= scoutPollenCost))
         {
-            Debug.Log(hexGrid);
+            
             HexCell cell = hexGrid.GetNearestEmptyCell(gameManager.HiveCell);
             if (cell)
             {
