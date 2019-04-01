@@ -232,6 +232,7 @@ public class GameManager : MonoBehaviour {
         {
             gameController.SetEditMode(true);
             gameUI.SetActive(false);
+            gameButtons.SetActive(false);
         }
     }
 
