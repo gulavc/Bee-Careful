@@ -960,7 +960,7 @@ MonoBehaviour:
   wallTower: {fileID: 4764244389369490, guid: c1577efe4ca57bf478bc91e369a8250c, type: 2}
   bridge: {fileID: 4781738550713454, guid: d6ae40d56308c31499264b8a2f81f1ed, type: 2}
   special:
-  - {fileID: 4530954123642070, guid: 0b615ee8154e1e3418a7ec5b991cb82b, type: 2}
+  - {fileID: 4194475028249462, guid: 0f72780adede290488596de64bb2efcd, type: 2}
   - {fileID: 4291013751534696, guid: bb523c112f484f144842616d2eda2424, type: 2}
   - {fileID: 4355605492911078, guid: 6a317885214960e46b26257d2ca40cc9, type: 2}
   - {fileID: 4133098397837300, guid: 23b197bd1abd6644db4dbcf3c57553e3, type: 2}
