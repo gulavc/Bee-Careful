@@ -348,6 +348,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1864860963}
   m_Script: {fileID: 11500000, guid: 519d3163aabefcc4bac7be9972ba5488, type: 3}
+--- !u!1001 &336786884
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685106981577156, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 691bfee2c46273e488f7b97dc2962399, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &371447843
 Prefab:
   m_ObjectHideFlags: 0
@@ -902,6 +944,21 @@ Prefab:
       propertyPath: scoutUI
       value: 
       objectReference: {fileID: 813133705}
+    - target: {fileID: 114291069587861650, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: percentPesticide
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114291069587861650, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: percentWasps
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: launchInEditor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
