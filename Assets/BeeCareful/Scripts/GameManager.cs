@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour {
 
     public void HideScoutUI()
     {
-        scoutUI.gameObject.SetActive(false);
+        scoutUI.HideButton();
     }
 
     public void ShowPauseMenu()

@@ -182,6 +182,7 @@ public class HexGameUI : MonoBehaviour {
     void ShowScoutUI()
     {
         scoutUI.gameObject.SetActive(true);
+        scoutUI.ShowButton();
         scoutUI.currentCell = currentCell;
         scoutUI.resourcePoint = gameManager.FindResourcePoint(currentCell);
         HexMapCamera.MoveTo(currentCell);
@@ -189,7 +190,7 @@ public class HexGameUI : MonoBehaviour {
 
     void HideScoutUI()
     {
-        scoutUI.gameObject.SetActive(false);
+        scoutUI.HideButton();
     }
 
     public void ShowHiveUI()
