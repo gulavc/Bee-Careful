@@ -112,8 +112,7 @@ public class GameManager : MonoBehaviour {
         
 
     }
-
-
+    
     // Update is called once per frame
     void Update () {
         
@@ -138,6 +137,16 @@ public class GameManager : MonoBehaviour {
     public void ShowPauseMenu()
     {
         pauseUI.Show();
+    }
+
+    public void PreviewSeasonTimer(int distance)
+    {
+        resourcesHUD.PreviewSeasonTimer(distance);
+    }
+
+    public void ResetSeasonTimerPreview()
+    {
+        resourcesHUD.ResetSeasonTimerPreview();
     }
 
     //Ressource Getters

@@ -13,18 +13,36 @@ public class ResourcesHUD : MonoBehaviour {
     public Image waterHex;
     public Image nectarHex;
     public Image resinHex;
-    public Image workerHex;
-    public Image seasonTimer;
+    public Image workerHex;    
     public Text pollenText;
     public Text nectarText;
     public Text waterText;
     public Text resinText;
     public Text workerText;
 
-	// Use this for initialization
-	void Start () {
+    [Header("Season Timers")]
+    public Image seasonTimerSpring;
+    public Image seasonTimerRedBarSpring;
+    public Image seasonTimerSummer;
+    public Image seasonTimerRedBarSummer;
+    public Image seasonTimerFall;
+    public Image seasonTimerRedBarFall;
 
-	}
+    [Header("Season Buttons")]
+    public Button hiveButtonSpring;
+    public Button hiveButtonSummer;
+    public Button hiveButtonFall;
+
+    //private Image seasonTimer;
+
+    // Use this for initialization
+    void OnEnable () {
+        //seasonTimer = seasonTimerSpring;
+        seasonTimerSpring.gameObject.SetActive(true);
+        seasonTimerSummer.gameObject.SetActive(true);
+        seasonTimerFall.gameObject.SetActive(true);
+        seasonTimerSpring.fillAmount = 1f;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -84,7 +102,50 @@ public class ResourcesHUD : MonoBehaviour {
 
     void UpdateSeasonTimer()
     {
-        
-        seasonTimer.fillAmount = (float)gameManager.GetCurrentPointsAction() / (float)gameManager.GetPointsActionMax();
+        int currentTime = gameManager.GetCurrentPointsAction();
+        int maxTime = gameManager.GetPointsActionMax();
+        //seasonTimer.gameObject.SetActive(false);
+        hiveButtonFall.gameObject.SetActive(false);
+        hiveButtonSummer.gameObject.SetActive(false);
+        hiveButtonSpring.gameObject.SetActive(false);
+        if(currentTime > maxTime * (2 / 3f))
+        {
+            hiveButtonSpring.gameObject.SetActive(true);
+        }
+        else if (currentTime > maxTime * (1 / 3f))
+        {
+            hiveButtonSummer.gameObject.SetActive(true);
+        }
+        else
+        {
+            hiveButtonFall.gameObject.SetActive(true);
+        }
+        //seasonTimer.gameObject.SetActive(true);
+        //seasonTimer.fillAmount = (float)currentTime / (float)maxTime;
+        float third = maxTime / 3f;
+        /*seasonTimer.fillAmount = (currentTime % third) / third;*/
+
+        seasonTimerRedBarSpring.fillAmount = (currentTime - (third * 2)) / third;
+        seasonTimerRedBarSummer.fillAmount = (currentTime - third) / third;
+        seasonTimerRedBarFall.fillAmount = currentTime / third;
+
+    }
+
+
+    public void PreviewSeasonTimer(int distance)
+    {
+        int currentTime = gameManager.GetCurrentPointsAction() - distance;
+        int maxTime = gameManager.GetPointsActionMax();
+        float third = maxTime / 3f;
+        seasonTimerSpring.fillAmount = (currentTime - (third * 2)) / third;
+        seasonTimerSummer.fillAmount = (currentTime - third) / third;
+        seasonTimerFall.fillAmount = currentTime / third;
+    }
+
+    public void ResetSeasonTimerPreview()
+    {
+        seasonTimerSpring.fillAmount = seasonTimerRedBarSpring.fillAmount;
+        seasonTimerSummer.fillAmount = seasonTimerRedBarSummer.fillAmount;
+        seasonTimerFall.fillAmount = seasonTimerRedBarFall.fillAmount;
     }
 }
