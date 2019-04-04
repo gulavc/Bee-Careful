@@ -7,7 +7,6 @@ public class PlayerResources : MonoBehaviour
     [HideInInspector] public GameManager gameManager;
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
-    public int maxResources = 100;
 
     public void Awake()
     {
@@ -22,66 +21,8 @@ public class PlayerResources : MonoBehaviour
 
     public void AddResources(ResourceType r, int value)
     {
-        if (ValidateResources(value))
-        {
-            playerResources[r] += value;
-
-        }
-
-        else
-        {
-
-            //Dealing with damage -- RIP
-            /*if (r == ResourceType.Damage)
-            {
-
-                for (int i = 0; i < value; i++)
-                {
-                    if (ValidateResources(1))
-                    {
-                        playerResources[r] += 1;
-                    }
-
-                    else
-                    {
-                        bool done = false;
-
-                        do
-                        {
-
-                            ResourceType result = (ResourceType)Random.Range(0, 4);
-                            if (playerResources[result] > 0)
-                            {
-                                playerResources[result] -= 1;
-                                playerResources[r] += 1;
-                                done = true;
-                            }
-                            if (playerResources[r] == maxResources)
-                            {
-                                done = true;
-                                Debug.Log("u dead bzz bzz");
-                            }
-
-                        } while (!done);
-
-
-
-                    }
-                }
-            }*/
-
-
-            int total = 0;
-            foreach (int i in playerResources.Values)
-            {
-                total += i;
-            }
-            playerResources[r] += maxResources - total;
-
-
-        }
-
-
+        
+        playerResources[r] += value;
         gameManager.UpdateResourcesHUD(r);
 
     }
@@ -103,22 +44,10 @@ public class PlayerResources : MonoBehaviour
             ResourceType.Resin + ": " + playerResources[ResourceType.Resin] + " / " +
             ResourceType.Pollen + ": " + playerResources[ResourceType.Pollen] + " / " +
             ResourceType.Workers + ": " + playerResources[ResourceType.Workers];
-    }
-
-    public bool ValidateResources(int newValue = 0)
-    {
-        int total = newValue;
-        foreach (int i in playerResources.Values)
-        {
-            total += i;
-        }
-
-        return total <= maxResources;
-    }
+    }    
 
     public int GetCurrentResource(ResourceType r)
     {
         return playerResources[r];
     }
-
 }
