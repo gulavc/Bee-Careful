@@ -59,7 +59,16 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public int ScoutCount { get; set; }
+    int scoutCount;
+    public int ScoutCount {
+        get {
+            return scoutCount;            
+        }
+        set {
+            scoutCount = value;
+            globalObjectives.UpdateObjectives();
+        }
+    }
 
     //Private stuff
     const int NUMRESOURCES = 4;

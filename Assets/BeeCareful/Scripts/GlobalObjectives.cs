@@ -15,6 +15,27 @@ public class GlobalObjectives : MonoBehaviour
     Dictionary<ResourceType, int> goals = new Dictionary<ResourceType, int>();
     [HideInInspector] public GameManager gameManager;
 
+    public int ObjectiveDiscount {
+        get {
+            if (ObjectivesUpgrade3)
+            {
+                return 3 * gameManager.ScoutCount;
+            }
+            else if (ObjectivesUpgrade2)
+            {
+                return 2 * gameManager.ScoutCount;
+            }
+            else if (ObjectivesUpgrade1)
+            {
+                return 1 * gameManager.ScoutCount;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+
     public void Start()
     {
         //Initialize resources;
@@ -34,10 +55,10 @@ public class GlobalObjectives : MonoBehaviour
     public void SetObjectivesByYear(int year)
     {
         Objective o = objectives[year];
-        SetObjective(ResourceType.Nectar, o.NERP[0]);
-        SetObjective(ResourceType.Water, o.NERP[1]);
-        SetObjective(ResourceType.Resin, o.NERP[2]);
-        SetObjective(ResourceType.Pollen, o.NERP[3]);
+        SetObjective(ResourceType.Nectar, o.NERP[0] - ObjectiveDiscount < 0 ? 0 : o.NERP[0] - ObjectiveDiscount);
+        SetObjective(ResourceType.Water, o.NERP[1] - ObjectiveDiscount < 0 ? 0 : o.NERP[1] - ObjectiveDiscount);
+        SetObjective(ResourceType.Resin, o.NERP[2] - ObjectiveDiscount < 0 ? 0 : o.NERP[2] - ObjectiveDiscount);
+        SetObjective(ResourceType.Pollen, o.NERP[3] - ObjectiveDiscount < 0 ? 0 : o.NERP[3] - ObjectiveDiscount);
     }
 
     public bool VerifyObjective(ResourceType r)
@@ -80,6 +101,11 @@ public class GlobalObjectives : MonoBehaviour
         {
             NERP = new int[count];
         }
+    }
+
+    public void UpdateObjectives()
+    {
+        SetObjectivesByYear(gameManager.CurrentYear);
     }
 
 #if UNITY_EDITOR

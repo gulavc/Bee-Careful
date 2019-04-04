@@ -37,10 +37,10 @@ public class PlayerResources : MonoBehaviour
     public void Awake()
     {
         //Here's to change the start ressources number
-        playerResources.Add(ResourceType.Nectar, 1000);
-        playerResources.Add(ResourceType.Water, 1000);
-        playerResources.Add(ResourceType.Resin, 1000);
-        playerResources.Add(ResourceType.Pollen, 1000);
+        playerResources.Add(ResourceType.Nectar, 0);
+        playerResources.Add(ResourceType.Water, 0);
+        playerResources.Add(ResourceType.Resin, 0);
+        playerResources.Add(ResourceType.Pollen, 0);
         playerResources.Add(ResourceType.Workers, 0);
 
     }
