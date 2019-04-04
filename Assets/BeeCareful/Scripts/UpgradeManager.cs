@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpgradeManager : MonoBehaviour {
+public class UpgradeManager : MonoBehaviour
+{
 
     Dictionary<string, Upgrade> upgrades;
     [HideInInspector] public GameManager gameManager;
@@ -97,7 +98,7 @@ public class UpgradeManager : MonoBehaviour {
         upgradeName = "ScoutFlyUpgrade1";
 
         //Don't touch this
-        newUpgrade = new Upgrade( prereqs, upgradeCost);
+        newUpgrade = new Upgrade(prereqs, upgradeCost);
         upgrades.Add(upgradeName, newUpgrade);
         prereqs.Clear();
 
@@ -637,8 +638,8 @@ public class UpgradeManager : MonoBehaviour {
 
         if (upgrades.ContainsKey(name))
         {
-            
-            if( !upgrades[name].upgradeUnlocked &&
+
+            if (!upgrades[name].upgradeUnlocked &&
                 IsUpgradeAvailable(name) &&
                 gameManager.GetRessourceCount(ResourceType.Nectar) >= upgrades[name].upgradeCost[0] &&
                 gameManager.GetRessourceCount(ResourceType.Water) >= upgrades[name].upgradeCost[1] &&
@@ -652,9 +653,10 @@ public class UpgradeManager : MonoBehaviour {
 
                 switch (name)
                 {
+
                     case "ScoutVisionUpgrade1":
                         HexUnit.ScoutVisionUpgrade1 = true;
-                        gameManager.grid.ResetVisibility();     
+                        gameManager.grid.ResetVisibility();
                         break;
                     case "ScoutVisionUpgrade2":
                         HexUnit.ScoutVisionUpgrade2 = true;
@@ -664,49 +666,55 @@ public class UpgradeManager : MonoBehaviour {
                         HexUnit.ScoutVisionUpgrade3 = true;
                         gameManager.grid.ResetVisibility();
                         break;
-                        // IL VA FALLOIR CRÉER MÉCANIQUEMENT LES UPGRADES
-                    /*case "ScoutFlyUpgrade1":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }                            
-                        break;
-                    case "ScoutFlyUpgrade2":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
-                        break;
-                    case "ScoutFlyUpgrade3":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
-                        break;
                     case "ScoutMoveUpgrade1":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
+                        /*HexUnit.ScoutMoveUpgrade1 = true;*/
                         break;
                     case "ScoutMoveUpgrade2":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
+                        /*HexUnit.ScoutMoveUpgrade2 = true;*/
                         break;
                     case "ScoutMoveUpgrade3":
-                        scouts = FindObjectsOfType<HexUnit>();
-                        foreach (HexUnit h in scouts)
-                        {
-                            h.ApplyUpgrade(name);
-                        }
-                        break;*/
+                        /*HexUnit.ScoutMoveUpgrade3 = true;*/
+                        break;
+                    case "ScoutFlyUpgrade1":
+                        /*HexUnit.ScoutFlyUpgrade1 = true;*/
+                        break;
+                    case "ScoutFlyUpgrade2":
+                        /*HexUnit.ScoutFlyUpgrade2 = true;*/
+                        break;
+                    case "ScoutFlyUpgrade3":
+                        /*HexUnit.ScoutFlyUpgrade3 = true;*/
+                        break;
+
+                    case "SeasonTimeUpgrade1":
+                        /*PointsAction.SeasonTimeUpgrade1 = true;*/
+                        break;
+                    case "SeasonTimeUpgrade2":
+                        /*PointsAction.SeasonTimeUpgrade2 = true;*/
+                        break;
+                    case "SeasonTimeUpgrade3":
+                        /*PointsAction.SeasonTimeUpgrade3 = true;*/
+                        break;
+                    case "ProtectPesticideUpgrade1":
+                        break;
+                    case "ProtectPesticideUpgrade2":
+                        break;
+                    case "ProtectPesticideUpgrade3":
+                        break;
+                    case "ProtectWaspsUpgrade1":
+                        break;
+                    case "ProtectWaspsUpgrade2":
+                        break;
+                    case "ProtectWaspsUpgrade3":
+                        break;
+                    case "GatherMoreUpgrade1":
+                        break;
+                    case "GatherMoreUpgrade2":
+                        break;
+                    case "GatherMoreUpgrade3":
+                        break;
+
+
+
                     default:
                         Debug.LogError("No such upgrade");
                         break;
@@ -722,9 +730,9 @@ public class UpgradeManager : MonoBehaviour {
                 Debug.Log("Not enough resources");
                 return false;
             }
-            
 
-            
+
+
         }
         else
         {
@@ -739,8 +747,8 @@ public class UpgradeManager : MonoBehaviour {
     public bool IsUpgradeAvailable(string name)
     {
         if (upgrades.ContainsKey(name))
-        {           
-            
+        {
+
             foreach (string s in upgrades[name].upgradePrerequisites)
             {
                 if (!IsUpgradeAcquired(s))
@@ -796,6 +804,21 @@ public class UpgradeManager : MonoBehaviour {
         HexUnit.ScoutVisionUpgrade1 = false;
         HexUnit.ScoutVisionUpgrade2 = false;
         HexUnit.ScoutVisionUpgrade3 = false;
+
+        /*HexUnit.ScoutMoveUpgrade1 = false;
+         HexUnit.ScoutMoveUpgrade2 = false;
+         HexUnit.ScoutMoveUpgrade3 = false;
+
+         HexUnit.ScoutFlyUpgrade1 = false;
+         HexUnit.ScoutFlyUpgrade2 = false;
+         HexUnit.ScoutFlyUpgrade3 = false;
+
+        PointsAction.SeasonTimeUpgrade1 = false;
+        PointsAction.SeasonTimeUpgrade2 = false;
+        PointsAction.SeasonTimeUpgrade3 = false;
+
+
+          */
 
 
     }
