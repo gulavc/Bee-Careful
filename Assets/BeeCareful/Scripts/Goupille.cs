@@ -8,6 +8,7 @@ public class Goupille : MonoBehaviour {
     Transform attachedObject;
     SpriteRenderer spriteRenderer;
     HexGrid grid;
+    bool hide = false;
 
     public float upperLimit;
     public float lowerLimit;
@@ -23,51 +24,59 @@ public class Goupille : MonoBehaviour {
         grid = FindObjectOfType<HexGrid>();
 
         regression = 1f / (upperLimit - lowerLimit);
-        intercept = 1 - regression * upperLimit;
+        intercept = 1 - regression * upperLimit;    
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        bool show = false;
-        switch (type)
+        if (!hide)
         {
-            case GoupilleType.BEE:
-                if (Options.ShowBeePins)
-                {
-                    show = true;
-                }
-                break;
-            case GoupilleType.DANGER:
-                if (Options.ShowDangerPins)
-                {
-                    show = true;
-                }
-                break;
-            case GoupilleType.HIVE:
-                if (Options.ShowHivePins)
-                {
-                    show = true;
-                }
-                break;
-            case GoupilleType.MOUNTAIN:
-                if (Options.ShowMountainPins)
-                {
-                    show = true;
-                }
-                break;
-            case GoupilleType.RESOURCE:
-                if (Options.ShowResourcePins)
-                {
-                    show = true;
-                }
-                break;
-            default:
-                break;
-        }
+            bool show = false;
+            switch (type)
+            {
+                case GoupilleType.BEE:
+                    if (Options.ShowBeePins)
+                    {
+                        show = true;
+                    }
+                    break;
+                case GoupilleType.DANGER:
+                    if (Options.ShowDangerPins)
+                    {
+                        show = true;
+                    }
+                    break;
+                case GoupilleType.HIVE:
+                    if (Options.ShowHivePins)
+                    {
+                        show = true;
+                    }
+                    break;
+                case GoupilleType.MOUNTAIN:
+                    if (Options.ShowMountainPins)
+                    {
+                        show = true;
+                    }
+                    break;
+                case GoupilleType.RESOURCE:
+                    if (Options.ShowResourcePins)
+                    {
+                        show = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
 
-        if (show)
-        {
-            UpdateGoupille();
+            if (show)
+            {
+                UpdateGoupille();
+            }
+            else
+            {
+                HideGoupille();
+            }
         }
         else
         {
@@ -78,7 +87,7 @@ public class Goupille : MonoBehaviour {
     }
 
     void UpdateGoupille()
-    {
+    {        
         //Rotation
         transform.localRotation = Quaternion.Euler(0f, -attachedObject.rotation.eulerAngles.y + hexMapCamera.Rotation, 0f);
 
@@ -91,7 +100,7 @@ public class Goupille : MonoBehaviour {
 
         Color c = spriteRenderer.color;
 
-        if (grid.GetCell(attachedObject.localPosition).IsExplored)
+        if (grid.GetCell(attachedObject.position).IsExplored)
         {
             c.a = Mathf.Lerp(0f, 1f, lerp);
         }
@@ -109,7 +118,17 @@ public class Goupille : MonoBehaviour {
         c.a = 0f;
         spriteRenderer.color = c;
     }
-    
+
+    public void Hide()
+    {
+        hide = true;
+    }
+
+    public void Show()
+    {
+        hide = false;
+    }
+
 
     public enum GoupilleType
     {

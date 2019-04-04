@@ -23,15 +23,47 @@ public class SpawnManager : MonoBehaviour
     public int workPollenCost;
     public int addWorkers;
 
-    // Use this for initialization
-    void Start()
-    {
-
+    
+    public float WorkerDiscout {
+        get {
+            if (CheapWorkUpgrade3)
+            {
+                return 0.75f;
+            }
+            else if (CheapWorkUpgrade2)
+            {
+                return 0.5f;
+            }
+            else if (CheapWorkUpgrade1)
+            {
+                return 0.25f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
     }
-    void Update()
 
-    {
-        
+    public float ScoutDiscout {
+        get {
+            if (CheapScoutUpgrade3)
+            {
+                return 0.75f;
+            }
+            else if (CheapScoutUpgrade2)
+            {
+                return 0.5f;
+            }
+            else if (CheapScoutUpgrade1)
+            {
+                return 0.25f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
     }
 
     public void CreateScout()
@@ -43,39 +75,53 @@ public class SpawnManager : MonoBehaviour
 
     public void CreateScout(bool addCount = true, bool paycost = true)
     {
-        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= scoutNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= scoutPollenCost))
+        bool addUnit = true;
+        if (paycost)
         {
-            
+            int actualNectarCost = (int)(scoutNectarCost * (1 - ScoutDiscout));
+            int actualPollenCost = (int)(scoutPollenCost * (1 - ScoutDiscout));
+            if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost))
+            {
+                gameManager.RemovePlayerRessources(ResourceType.Nectar, actualNectarCost);
+                gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
+            }
+            else
+            {
+                addUnit = false;
+            }
+        }
+        if (addUnit)
+        {
             HexCell cell = hexGrid.GetNearestEmptyCell(gameManager.HiveCell);
             if (cell)
             {
-                gameManager.RemovePlayerRessources(ResourceType.Nectar, scoutNectarCost);
-                gameManager.RemovePlayerRessources(ResourceType.Pollen, scoutPollenCost);
+
                 if (addCount)
                 {
                     gameManager.ScoutCount += 1;
-                }                
+                }
                 hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
             }
             else
             {
                 Debug.Log("No empty cell left on map");
-            }
+            }          
+            
         }
     }
 
 
     public void CreateWorker()
     {
+        int actualNectarCost = (int)(workNectarCost * (1 - WorkerDiscout));
+        int actualPollenCost = (int)(workPollenCost * (1 - WorkerDiscout));
 
-        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= workNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= workPollenCost))
+        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost))
         {
 
-            gameManager.RemovePlayerRessources(ResourceType.Nectar, workNectarCost);
-            gameManager.RemovePlayerRessources(ResourceType.Pollen, workPollenCost);
+            gameManager.RemovePlayerRessources(ResourceType.Nectar, actualNectarCost);
+            gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
             gameManager.playerResources.AddResources(ResourceType.Workers, addWorkers);
-            Debug.Log("Let's gather some shit!");
-
         }
 
     }

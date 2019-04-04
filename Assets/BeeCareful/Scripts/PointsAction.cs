@@ -5,12 +5,6 @@ using UnityEngine.UI;
 
 public class PointsAction : MonoBehaviour {
 
-    public static bool SeasonTimeUpgrade1 = false;
-    public static bool SeasonTimeUpgrade2 = false;
-    public static bool SeasonTimeUpgrade3 = false;
-
-
-
     [HideInInspector] public GameManager gameManager;
     
     public int pointsActionMax;

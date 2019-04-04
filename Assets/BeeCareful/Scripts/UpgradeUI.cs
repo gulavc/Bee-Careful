@@ -67,9 +67,9 @@ public class UpgradeUI : MonoBehaviour
         upgradeList.Add("CheapScoutUpgrade2", cheapScout2);
         upgradeList.Add("CheapScoutUpgrade3", cheapScout3);
 
-        upgradeList.Add("SeasonTimeUpgrade1", seasonTime1);
-        upgradeList.Add("SeasonTimeUpgrade2", seasonTime2);
-        upgradeList.Add("SeasonTimeUpgrade3", seasonTime3);
+        upgradeList.Add("ObjectivesUpgrade1", seasonTime1);
+        upgradeList.Add("ObjectivesUpgrade2", seasonTime2);
+        upgradeList.Add("ObjectivesUpgrade3", seasonTime3);
 
         upgradeList.Add("StartWorkUpgrade1", startWork1);
         upgradeList.Add("StartWorkUpgrade2", startWork2);
@@ -112,7 +112,6 @@ public class UpgradeUI : MonoBehaviour
         bool result = upgradeManager.ApplyUpgrade(upgradeName);
         if (result)
         {
-            Debug.Log("upgrade yay!");
             switch (upgradeName)
             {
                 case "ScoutVisionUpgrade1":
@@ -195,13 +194,13 @@ public class UpgradeUI : MonoBehaviour
                     cheapScout3.interactable = false;
                     break;
 
-                case "SeasonTimeUpgrade1":
+                case "ObjectivesUpgrade1":
                     seasonTime1.interactable = false;
                     break;
-                case "SeasonTimeUpgrade2":
+                case "ObjectivesUpgrade2":
                     seasonTime2.interactable = false;
                     break;
-                case "SeasonTimeUpgrade3":
+                case "ObjectivesUpgrade3":
                    seasonTime3.interactable = false;
                     break;
 
@@ -302,13 +301,13 @@ public class UpgradeUI : MonoBehaviour
                     cheapScout3.isOn = false;
                     break;
 
-                case "SeasonTimeUpgrade1":
+                case "ObjectivesUpgrade1":
                     seasonTime1.isOn = false;
                     break;
-                case "SeasonTimeUpgrade2":
+                case "ObjectivesUpgrade2":
                     seasonTime2.isOn = false;
                     break;
-                case "SeasonTimeUpgrade3":
+                case "ObjectivesUpgrade3":
                     seasonTime3.isOn = false;
                     break;
 
