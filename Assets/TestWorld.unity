@@ -381,10 +381,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 1430148006248372, guid: 33476354e42e6ce429a9f04309aeff3f, type: 2}
-      propertyPath: m_Name
-      value: NectarText
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33476354e42e6ce429a9f04309aeff3f, type: 2}
   m_IsPrefabAsset: 0
