@@ -13,6 +13,18 @@ public class ResourcePoint : HexInteractable {
 
     public bool hasWasp = false;
     public bool hasPesticide = false;
+
+    public static bool ProtectPesticideUpgrade1 = false;
+    public static bool ProtectPesticideUpgrade2 = false;
+    public static bool ProtectPesticideUpgrade3 = false;
+
+    public static bool ProtectWaspsUpgrade1 = false;
+    public static bool ProtectWaspsUpgrade2 = false;
+    public static bool ProtectWaspsUpgrade3 = false;
+
+    public static bool GatherMoreUpgrade1 = false;
+    public static bool GatherMoreUpgrade2 = false;
+    public static bool GatherMoreUpgrade3 = false;
     
     [HideInInspector]
     public GameObject dangerPrefab;

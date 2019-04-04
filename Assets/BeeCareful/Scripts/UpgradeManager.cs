@@ -9,6 +9,7 @@ public class UpgradeManager : MonoBehaviour
     [HideInInspector] public GameManager gameManager;
 
     HexUnit[] scouts;
+    
 
     void Start()
     {
@@ -666,51 +667,95 @@ public class UpgradeManager : MonoBehaviour
                         HexUnit.ScoutVisionUpgrade3 = true;
                         gameManager.grid.ResetVisibility();
                         break;
+
                     case "ScoutMoveUpgrade1":
-                        /*HexUnit.ScoutMoveUpgrade1 = true;*/
+                        HexUnit.ScoutMoveUpgrade1 = true;
                         break;
                     case "ScoutMoveUpgrade2":
-                        /*HexUnit.ScoutMoveUpgrade2 = true;*/
+                        HexUnit.ScoutMoveUpgrade2 = true;
                         break;
                     case "ScoutMoveUpgrade3":
-                        /*HexUnit.ScoutMoveUpgrade3 = true;*/
+                        HexUnit.ScoutMoveUpgrade3 = true;
                         break;
+
                     case "ScoutFlyUpgrade1":
-                        /*HexUnit.ScoutFlyUpgrade1 = true;*/
+                        HexUnit.ScoutFlyUpgrade1 = true;
                         break;
                     case "ScoutFlyUpgrade2":
-                        /*HexUnit.ScoutFlyUpgrade2 = true;*/
+                        HexUnit.ScoutFlyUpgrade2 = true;
                         break;
                     case "ScoutFlyUpgrade3":
-                        /*HexUnit.ScoutFlyUpgrade3 = true;*/
+                        HexUnit.ScoutFlyUpgrade3 = true;
                         break;
 
                     case "SeasonTimeUpgrade1":
-                        /*PointsAction.SeasonTimeUpgrade1 = true;*/
+                        PointsAction.SeasonTimeUpgrade1 = true;
                         break;
                     case "SeasonTimeUpgrade2":
-                        /*PointsAction.SeasonTimeUpgrade2 = true;*/
+                        PointsAction.SeasonTimeUpgrade2 = true;
                         break;
                     case "SeasonTimeUpgrade3":
-                        /*PointsAction.SeasonTimeUpgrade3 = true;*/
+                        PointsAction.SeasonTimeUpgrade3 = true;
                         break;
+
                     case "ProtectPesticideUpgrade1":
+                        ResourcePoint.ProtectPesticideUpgrade1 = true;   
                         break;
                     case "ProtectPesticideUpgrade2":
+                        ResourcePoint.ProtectPesticideUpgrade2 = true;
                         break;
                     case "ProtectPesticideUpgrade3":
+                        ResourcePoint.ProtectPesticideUpgrade3 = true;
                         break;
+
                     case "ProtectWaspsUpgrade1":
+                        ResourcePoint.ProtectWaspsUpgrade1 = true;
                         break;
                     case "ProtectWaspsUpgrade2":
+                        ResourcePoint.ProtectWaspsUpgrade2 = true;
                         break;
                     case "ProtectWaspsUpgrade3":
+                        ResourcePoint.ProtectWaspsUpgrade3 = true;
                         break;
+
                     case "GatherMoreUpgrade1":
+                        ResourcePoint.GatherMoreUpgrade1 = true;
                         break;
                     case "GatherMoreUpgrade2":
+                        ResourcePoint.GatherMoreUpgrade2 = true;
                         break;
                     case "GatherMoreUpgrade3":
+                        ResourcePoint.GatherMoreUpgrade3 = true;
+                        break;
+
+                    case "StartWorkUpgrade1":
+                        GameManager.StartWorkUpgrade1 = true;
+                        break;
+                    case "StartWorkUpgrade2":
+                        GameManager.StartWorkUpgrade2 = true;
+                        break;
+                    case "StartWorkUpgrade3":
+                        GameManager.StartWorkUpgrade3 = true;
+                        break;
+
+                    case "CheapWorkUpgrade1":
+                        SpawnManager.CheapWorkUpgrade1 = true;
+                        break;
+                    case "CheapWorkUpgrade2":
+                        SpawnManager.CheapWorkUpgrade2 = true;
+                        break;
+                    case "CheapWorkUpgrade3":
+                        SpawnManager.CheapWorkUpgrade3 = true;
+                        break;
+
+                    case "CheapScoutUpgrade1":
+                        SpawnManager.CheapScoutUpgrade1 = true;
+                        break;
+                    case "CheapScoutUpgrade2":
+                        SpawnManager.CheapScoutUpgrade2 = true;
+                        break;
+                    case "CheapScoutUpgrade3":
+                        SpawnManager.CheapScoutUpgrade3 = true;
                         break;
 
 
@@ -805,23 +850,43 @@ public class UpgradeManager : MonoBehaviour
         HexUnit.ScoutVisionUpgrade2 = false;
         HexUnit.ScoutVisionUpgrade3 = false;
 
-        /*HexUnit.ScoutMoveUpgrade1 = false;
-         HexUnit.ScoutMoveUpgrade2 = false;
-         HexUnit.ScoutMoveUpgrade3 = false;
+        HexUnit.ScoutMoveUpgrade1 = false;
+        HexUnit.ScoutMoveUpgrade2 = false;
+        HexUnit.ScoutMoveUpgrade3 = false;
 
-         HexUnit.ScoutFlyUpgrade1 = false;
-         HexUnit.ScoutFlyUpgrade2 = false;
-         HexUnit.ScoutFlyUpgrade3 = false;
+        HexUnit.ScoutFlyUpgrade1 = false;
+        HexUnit.ScoutFlyUpgrade2 = false;
+        HexUnit.ScoutFlyUpgrade3 = false;
 
         PointsAction.SeasonTimeUpgrade1 = false;
         PointsAction.SeasonTimeUpgrade2 = false;
         PointsAction.SeasonTimeUpgrade3 = false;
 
+        ResourcePoint.ProtectPesticideUpgrade1 = false;
+        ResourcePoint.ProtectPesticideUpgrade2 = false;
+        ResourcePoint.ProtectPesticideUpgrade3 = false;
 
-          */
+        ResourcePoint.ProtectWaspsUpgrade1 = false;
+        ResourcePoint.ProtectWaspsUpgrade2 = false;
+        ResourcePoint.ProtectWaspsUpgrade3 = false;
 
+        ResourcePoint.GatherMoreUpgrade1 = false;
+        ResourcePoint.GatherMoreUpgrade2 = false;
+        ResourcePoint.GatherMoreUpgrade3 = false;
 
+        GameManager.StartWorkUpgrade1 = false;
+        GameManager.StartWorkUpgrade2 = false;
+        GameManager.StartWorkUpgrade3 = false;
+
+        SpawnManager.CheapWorkUpgrade1 = false;
+        SpawnManager.CheapWorkUpgrade2 = false;
+        SpawnManager.CheapWorkUpgrade3 = false;
+
+        SpawnManager.CheapScoutUpgrade1 = false;
+        SpawnManager.CheapScoutUpgrade2 = false;
+        SpawnManager.CheapScoutUpgrade3 = false;
     }
+
 
 
 }

@@ -6,8 +6,14 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
 
-    //public Button SpawnScout;
-    //public Button SpawnWorker;
+    public static bool CheapScoutUpgrade1 = false;
+    public static bool CheapScoutUpgrade2 = false;
+    public static bool CheapScoutUpgrade3 = false;
+
+    public static bool CheapWorkUpgrade1 = false;
+    public static bool CheapWorkUpgrade2 = false;
+    public static bool CheapWorkUpgrade3 = false;
+
     public HexGrid hexGrid;
     [HideInInspector]
     public GameManager gameManager;
@@ -28,7 +34,12 @@ public class SpawnManager : MonoBehaviour
         
     }
 
+    public void CreateScout()
+    {
 
+        CreateScout(true, true);
+
+    }
 
     public void CreateScout(bool addCount = true, bool paycost = true)
     {
