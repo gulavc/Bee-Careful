@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
 --- !u!114 &114705285100426306
 MonoBehaviour:
@@ -2650,7 +2650,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 2
 --- !u!114 &114911384396650146
 MonoBehaviour:
