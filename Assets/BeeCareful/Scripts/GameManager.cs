@@ -220,6 +220,7 @@ public class GameManager : MonoBehaviour {
 
             globalObjectives.SetObjectivesByYear(0);
             playerResources.SetStartingWorkers();
+            resourcesHUD.UpdateHUDAllResources();
 
             spawnManager.CreateScout(true, false);
 
