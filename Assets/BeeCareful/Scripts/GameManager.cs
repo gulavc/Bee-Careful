@@ -112,8 +112,7 @@ public class GameManager : MonoBehaviour {
         
 
     }
-
-
+    
     // Update is called once per frame
     void Update () {
         
@@ -132,12 +131,22 @@ public class GameManager : MonoBehaviour {
 
     public void HideScoutUI()
     {
-        scoutUI.gameObject.SetActive(false);
+        scoutUI.HideButton();
     }
 
     public void ShowPauseMenu()
     {
         pauseUI.Show();
+    }
+
+    public void PreviewSeasonTimer(int distance)
+    {
+        resourcesHUD.PreviewSeasonTimer(distance);
+    }
+
+    public void ResetSeasonTimerPreview()
+    {
+        resourcesHUD.ResetSeasonTimerPreview();
     }
 
     //Ressource Getters
@@ -223,6 +232,7 @@ public class GameManager : MonoBehaviour {
         {
             gameController.SetEditMode(true);
             gameUI.SetActive(false);
+            gameButtons.SetActive(false);
         }
     }
 

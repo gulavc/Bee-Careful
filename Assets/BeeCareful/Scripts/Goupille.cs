@@ -28,6 +28,57 @@ public class Goupille : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        bool show = false;
+        switch (type)
+        {
+            case GoupilleType.BEE:
+                if (Options.ShowBeePins)
+                {
+                    show = true;
+                }
+                break;
+            case GoupilleType.DANGER:
+                if (Options.ShowDangerPins)
+                {
+                    show = true;
+                }
+                break;
+            case GoupilleType.HIVE:
+                if (Options.ShowHivePins)
+                {
+                    show = true;
+                }
+                break;
+            case GoupilleType.MOUNTAIN:
+                if (Options.ShowMountainPins)
+                {
+                    show = true;
+                }
+                break;
+            case GoupilleType.RESOURCE:
+                if (Options.ShowResourcePins)
+                {
+                    show = true;
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (show)
+        {
+            UpdateGoupille();
+        }
+        else
+        {
+            HideGoupille();
+        }
+            
+
+    }
+
+    void UpdateGoupille()
+    {
         //Rotation
         transform.localRotation = Quaternion.Euler(0f, -attachedObject.rotation.eulerAngles.y + hexMapCamera.Rotation, 0f);
 
@@ -39,7 +90,7 @@ public class Goupille : MonoBehaviour {
         float lerp = (regression * hexMapCamera.Zoom) + intercept;
 
         Color c = spriteRenderer.color;
-        
+
         if (grid.GetCell(attachedObject.localPosition).IsExplored)
         {
             c.a = Mathf.Lerp(0f, 1f, lerp);
@@ -49,9 +100,16 @@ public class Goupille : MonoBehaviour {
             c.a = 0f;
         }
 
-        spriteRenderer.color = c;        
-
+        spriteRenderer.color = c;
     }
+
+    void HideGoupille()
+    {
+        Color c = spriteRenderer.color;
+        c.a = 0f;
+        spriteRenderer.color = c;
+    }
+    
 
     public enum GoupilleType
     {

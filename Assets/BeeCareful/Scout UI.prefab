@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workersPrefab: {fileID: 198940532138530046, guid: 2ef88e818521a8b4c8bbf76691f13074,
     type: 2}
+  gatherButton: {fileID: 114766767956268028}
   currentCell: {fileID: 0}
   resourcePoint: {fileID: 0}
   gameManager: {fileID: 0}

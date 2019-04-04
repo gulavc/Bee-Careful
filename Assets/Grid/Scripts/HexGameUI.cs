@@ -126,8 +126,7 @@ public class HexGameUI : MonoBehaviour {
 
             if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
-                Debug.Log("Hive UI");
-                HiveUI.SetActive(true);
+                ShowHiveUI();                
             }
         }
     }
@@ -147,10 +146,12 @@ public class HexGameUI : MonoBehaviour {
         if (UpdateCurrentCell()) {
             if (currentCell && selectedUnit.IsValidDestination(currentCell)) {
                 grid.FindPath(selectedUnit.Location, currentCell, selectedUnit);
+                gameManager.PreviewSeasonTimer(currentCell.Distance);
             }
             else {                
                 grid.ClearPath();
                 selectedUnit.Location.EnableHighlight(Color.blue);
+                gameManager.ResetSeasonTimerPreview();
             }
         }
     }
@@ -181,6 +182,7 @@ public class HexGameUI : MonoBehaviour {
     void ShowScoutUI()
     {
         scoutUI.gameObject.SetActive(true);
+        scoutUI.ShowButton();
         scoutUI.currentCell = currentCell;
         scoutUI.resourcePoint = gameManager.FindResourcePoint(currentCell);
         HexMapCamera.MoveTo(currentCell);
@@ -188,6 +190,11 @@ public class HexGameUI : MonoBehaviour {
 
     void HideScoutUI()
     {
-        scoutUI.gameObject.SetActive(false);
+        scoutUI.HideButton();
+    }
+
+    public void ShowHiveUI()
+    {
+        HiveUI.SetActive(true);
     }
 }
