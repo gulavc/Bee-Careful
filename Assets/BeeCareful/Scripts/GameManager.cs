@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour {
             upgradeManager.ResetAllUpgrades();
 
             globalObjectives.SetObjectivesByYear(0);
+            resourcesHUD.UpdateHUDAllResources();
 
             spawnManager.CreateScout(true, false);
 
