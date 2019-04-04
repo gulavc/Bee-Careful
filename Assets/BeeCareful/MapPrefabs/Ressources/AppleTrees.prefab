@@ -503,7 +503,6 @@ GameObject:
   - component: {fileID: 33472983863748276}
   - component: {fileID: 23382734447451220}
   - component: {fileID: 64192856895383020}
-  - component: {fileID: 114360704593126318}
   m_Layer: 0
   m_Name: AppleTrees
   m_TagString: Untagged
@@ -555,6 +554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194475028249462}
+  - component: {fileID: 114570033079967092}
   m_Layer: 0
   m_Name: AppleTrees
   m_TagString: Untagged
@@ -7250,12 +7250,12 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8e22b09183d115b45b12741f524a8ab4, type: 3}
---- !u!114 &114360704593126318
+--- !u!114 &114570033079967092
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1264820832017704}
+  m_GameObject: {fileID: 1323790024425222}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24a95dc17bf0bfc4bb4f2596d0c10e46, type: 3}
