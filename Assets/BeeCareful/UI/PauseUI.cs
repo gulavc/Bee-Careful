@@ -8,6 +8,7 @@ public class PauseUI : MonoBehaviour {
     public GameObject[] toHide;
     public GameObject optionsUI;
     public string menuScene;
+    public Material terrainMaterial;
 	
     public void ReturnToGame()
     {
@@ -78,5 +79,13 @@ public class PauseUI : MonoBehaviour {
     public void SetShowGrid(bool value)
     {
         Options.ShowGrid = value;
+        if (value)
+        {
+            terrainMaterial.EnableKeyword("GRID_ON");
+        }
+        else
+        {
+            terrainMaterial.DisableKeyword("GRID_ON");
+        }
     }
 }

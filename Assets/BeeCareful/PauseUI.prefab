@@ -2233,6 +2233,7 @@ MonoBehaviour:
   - {fileID: 1650495571078336}
   optionsUI: {fileID: 1324460504136744}
   menuScene: MainMenu
+  terrainMaterial: {fileID: 2100000, guid: 78eed392977a255468d3d98a29fa0e44, type: 2}
 --- !u!114 &114998976374117740
 MonoBehaviour:
   m_ObjectHideFlags: 1
