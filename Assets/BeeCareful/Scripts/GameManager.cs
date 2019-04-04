@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class GameManager : MonoBehaviour {
-
-    public static bool StartWorkUpgrade1 = false;
-    public static bool StartWorkUpgrade2 = false;
-    public static bool StartWorkUpgrade3 = false;
+public class GameManager : MonoBehaviour {    
 
     public bool launchInEditor = true;
 
@@ -223,6 +219,7 @@ public class GameManager : MonoBehaviour {
             upgradeManager.ResetAllUpgrades();
 
             globalObjectives.SetObjectivesByYear(0);
+            playerResources.SetStartingWorkers();
 
             spawnManager.CreateScout(true, false);
 
@@ -272,6 +269,9 @@ public class GameManager : MonoBehaviour {
 
             //Set new objectives
             globalObjectives.SetObjectivesByYear(CurrentYear);
+
+            //Set workers
+            playerResources.SetStartingWorkers();
 
             //Reset player values
             SetCurrentPointsAction(pointsAction.pointsActionMax);

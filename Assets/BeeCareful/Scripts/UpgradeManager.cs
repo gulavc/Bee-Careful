@@ -522,7 +522,7 @@ public class UpgradeManager : MonoBehaviour
         prereqs.Clear();
 
         //Set name
-        upgradeName = "SeasonTimeUpgrade1";
+        upgradeName = "ObjectivesUpgrade1";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -539,10 +539,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost[3] = 30; //Pollen
 
         //Set prereqs
-        prereqs.Add("SeasonTimeUpgrade1");
+        prereqs.Add("ObjectivesUpgrade1");
 
         //Set name
-        upgradeName = "SeasonTimeUpgrade2";
+        upgradeName = "ObjectivesUpgrade2";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -559,10 +559,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost[3] = 45; //Pollen
 
         //Set prereqs
-        prereqs.Add("SeasonTimeUpgrade2");
+        prereqs.Add("ObjectivesUpgrade2");
 
         //Set name
-        upgradeName = "SeasonTimeUpgrade3";
+        upgradeName = "ObjectivesUpgrade3";
 
         //Don't touch this
         newUpgrade = new Upgrade(prereqs, upgradeCost);
@@ -654,7 +654,7 @@ public class UpgradeManager : MonoBehaviour
 
                 switch (name)
                 {
-
+                    //Done
                     case "ScoutVisionUpgrade1":
                         HexUnit.ScoutVisionUpgrade1 = true;
                         gameManager.grid.ResetVisibility();
@@ -668,6 +668,7 @@ public class UpgradeManager : MonoBehaviour
                         gameManager.grid.ResetVisibility();
                         break;
 
+                    //Done
                     case "ScoutMoveUpgrade1":
                         HexUnit.ScoutMoveUpgrade1 = true;
                         break;
@@ -677,7 +678,8 @@ public class UpgradeManager : MonoBehaviour
                     case "ScoutMoveUpgrade3":
                         HexUnit.ScoutMoveUpgrade3 = true;
                         break;
-
+                    
+                    //Done
                     case "ScoutFlyUpgrade1":
                         HexUnit.ScoutFlyUpgrade1 = true;
                         break;
@@ -688,14 +690,14 @@ public class UpgradeManager : MonoBehaviour
                         HexUnit.ScoutFlyUpgrade3 = true;
                         break;
 
-                    case "SeasonTimeUpgrade1":
-                        PointsAction.SeasonTimeUpgrade1 = true;
+                    case "ObjectivesUpgrade1":
+                        GlobalObjectives.ObjectivesUpgrade1 = true;
                         break;
-                    case "SeasonTimeUpgrade2":
-                        PointsAction.SeasonTimeUpgrade2 = true;
+                    case "ObjectivesUpgrade2":
+                        GlobalObjectives.ObjectivesUpgrade2 = true;
                         break;
-                    case "SeasonTimeUpgrade3":
-                        PointsAction.SeasonTimeUpgrade3 = true;
+                    case "ObjectivesUpgrade3":
+                        GlobalObjectives.ObjectivesUpgrade2 = true;
                         break;
 
                     case "ProtectPesticideUpgrade1":
@@ -728,16 +730,18 @@ public class UpgradeManager : MonoBehaviour
                         ResourcePoint.GatherMoreUpgrade3 = true;
                         break;
 
+                    //Done
                     case "StartWorkUpgrade1":
-                        GameManager.StartWorkUpgrade1 = true;
+                        PlayerResources.StartWorkUpgrade1 = true;
                         break;
                     case "StartWorkUpgrade2":
-                        GameManager.StartWorkUpgrade2 = true;
+                        PlayerResources.StartWorkUpgrade2 = true;
                         break;
                     case "StartWorkUpgrade3":
-                        GameManager.StartWorkUpgrade3 = true;
+                        PlayerResources.StartWorkUpgrade3 = true;
                         break;
 
+                    //Done
                     case "CheapWorkUpgrade1":
                         SpawnManager.CheapWorkUpgrade1 = true;
                         break;
@@ -748,6 +752,7 @@ public class UpgradeManager : MonoBehaviour
                         SpawnManager.CheapWorkUpgrade3 = true;
                         break;
 
+                    //Done
                     case "CheapScoutUpgrade1":
                         SpawnManager.CheapScoutUpgrade1 = true;
                         break;
@@ -858,9 +863,9 @@ public class UpgradeManager : MonoBehaviour
         HexUnit.ScoutFlyUpgrade2 = false;
         HexUnit.ScoutFlyUpgrade3 = false;
 
-        PointsAction.SeasonTimeUpgrade1 = false;
-        PointsAction.SeasonTimeUpgrade2 = false;
-        PointsAction.SeasonTimeUpgrade3 = false;
+        GlobalObjectives.ObjectivesUpgrade1 = false;
+        GlobalObjectives.ObjectivesUpgrade2 = false;
+        GlobalObjectives.ObjectivesUpgrade3 = false;
 
         ResourcePoint.ProtectPesticideUpgrade1 = false;
         ResourcePoint.ProtectPesticideUpgrade2 = false;
@@ -874,9 +879,9 @@ public class UpgradeManager : MonoBehaviour
         ResourcePoint.GatherMoreUpgrade2 = false;
         ResourcePoint.GatherMoreUpgrade3 = false;
 
-        GameManager.StartWorkUpgrade1 = false;
-        GameManager.StartWorkUpgrade2 = false;
-        GameManager.StartWorkUpgrade3 = false;
+        PlayerResources.StartWorkUpgrade1 = false;
+        PlayerResources.StartWorkUpgrade2 = false;
+        PlayerResources.StartWorkUpgrade3 = false;
 
         SpawnManager.CheapWorkUpgrade1 = false;
         SpawnManager.CheapWorkUpgrade2 = false;

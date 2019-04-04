@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GlobalObjectives : MonoBehaviour
 {
+    
+    public static bool ObjectivesUpgrade1 = false;
+    public static bool ObjectivesUpgrade2 = false;
+    public static bool ObjectivesUpgrade3 = false;
 
     [Header("Yearly Objectives (NERP)")]
     public Objective[] objectives;

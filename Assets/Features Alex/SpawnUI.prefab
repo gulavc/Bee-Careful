@@ -782,11 +782,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexGrid: {fileID: 0}
   gameManager: {fileID: 0}
-  scoutNectarCost: 0
-  scoutPollenCost: 0
-  workNectarCost: 0
-  workPollenCost: 0
-  addWorkers: 5
+  scoutNectarCost: 50
+  scoutPollenCost: 50
+  workNectarCost: 20
+  workPollenCost: 20
+  addWorkers: 20
 --- !u!114 &114726072310058130
 MonoBehaviour:
   m_ObjectHideFlags: 1
