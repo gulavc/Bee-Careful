@@ -38,10 +38,12 @@ public class ResourcePoint : HexInteractable {
             if (Cell.IsVisible)
             {
                 dangerPrefab.SetActive(true);
+                HideGoupille();
             }
             else
             {
                 dangerPrefab.SetActive(false);
+                ShowGoupille();
             }
         }
     }
@@ -90,6 +92,16 @@ public class ResourcePoint : HexInteractable {
         {
             gameManager.ShowPesticideTutorial();
         }
+    }
+
+    public void HideGoupille()
+    {
+        GetComponentInChildren<Goupille>().Hide();
+    }
+
+    public void ShowGoupille()
+    {
+        GetComponentInChildren<Goupille>().Show();
     }
 
     public int RemainingResources { get; private set; }
