@@ -692,12 +692,15 @@ public class UpgradeManager : MonoBehaviour
 
                     case "ObjectivesUpgrade1":
                         GlobalObjectives.ObjectivesUpgrade1 = true;
+                        gameManager.globalObjectives.UpdateObjectives();
                         break;
                     case "ObjectivesUpgrade2":
                         GlobalObjectives.ObjectivesUpgrade2 = true;
+                        gameManager.globalObjectives.UpdateObjectives();
                         break;
                     case "ObjectivesUpgrade3":
-                        GlobalObjectives.ObjectivesUpgrade2 = true;
+                        GlobalObjectives.ObjectivesUpgrade3 = true;
+                        gameManager.globalObjectives.UpdateObjectives();
                         break;
 
                     case "ProtectPesticideUpgrade1":
