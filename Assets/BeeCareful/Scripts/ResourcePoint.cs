@@ -26,6 +26,69 @@ public class ResourcePoint : HexInteractable {
     public static bool GatherMoreUpgrade2 = false;
     public static bool GatherMoreUpgrade3 = false;
     
+    public float GatherPercent {
+        get {
+            if (GatherMoreUpgrade3)
+            {
+                return 0.5f;
+            }
+            else if (GatherMoreUpgrade2)
+            {
+                return 0.4f;
+            }
+            else if (GatherMoreUpgrade1)
+            {
+                return 0.3f;
+            }
+            else
+            {
+                return 0.2f;
+            }            
+        }
+    }
+
+    public float WaspProtection {
+        get {
+            if (ProtectWaspsUpgrade3)
+            {
+                return 1f;
+            }
+            else if (ProtectWaspsUpgrade2)
+            {
+                return 2 / 3f;
+            }
+            else if (ProtectWaspsUpgrade1)
+            {
+                return 1 / 3f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
+    }
+
+    public float PesticideProtection {
+        get {
+            if (ProtectPesticideUpgrade3)
+            {
+                return 1f;
+            }
+            else if (ProtectPesticideUpgrade2)
+            {
+                return 2 / 3f;
+            }
+            else if (ProtectPesticideUpgrade1)
+            {
+                return 1 / 3f;
+            }
+            else
+            {
+                return 0f;
+            }
+        }
+    }
+
     [HideInInspector]
     public GameObject dangerPrefab;
 
@@ -64,14 +127,18 @@ public class ResourcePoint : HexInteractable {
     public void GatherResources() {
 
         int actualWorkforceCost = workforceCost;
-        if (hasPesticide)
+        if (hasPesticide)            
         {
-            actualWorkforceCost = (int)(actualWorkforceCost * rpm.pesticidePenalty);
+            float pesticidePenalty = 1 - rpm.pesticidePenalty;
+            pesticidePenalty *= (1 - PesticideProtection);
+            pesticidePenalty += 1;
+
+            actualWorkforceCost = (int)(actualWorkforceCost * pesticidePenalty);
         }
 
         if (gameManager.GetRessourceCount(ResourceType.Workers) >= actualWorkforceCost)
         {
-            int resourceGet = Mathf.CeilToInt(RemainingResources / 2f);
+            int resourceGet = Mathf.CeilToInt(RemainingResources * GatherPercent);
             RemainingResources -= resourceGet;
             //si c'est 0 ou plus bas, tu peux rien ramasser.            
             if (RemainingResources <= 0)
@@ -82,7 +149,9 @@ public class ResourcePoint : HexInteractable {
 
             if (hasWasp)
             {
-                resourceGet = (int)(resourceGet * (1 - rpm.waspPenalty)); 
+                float waspPenalty = rpm.waspPenalty;
+                waspPenalty *= (1 - WaspProtection);
+                resourceGet = (int)(resourceGet * (1 - waspPenalty)); 
             }
             
 
