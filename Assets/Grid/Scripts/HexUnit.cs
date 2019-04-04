@@ -10,6 +10,16 @@ public class HexUnit : MonoBehaviour, IUpgrade {
     public static bool ScoutVisionUpgrade2 = false;
     public static bool ScoutVisionUpgrade3 = false;
 
+    public static bool ScoutMoveUpgrade1 = false;
+    public static bool ScoutMoveUpgrade2 = false;
+    public static bool ScoutMoveUpgrade3 = false;
+
+    public static bool ScoutFlyUpgrade1 = false;
+    public static bool ScoutFlyUpgrade2 = false;
+    public static bool ScoutFlyUpgrade3 = false;
+
+
+
     public Text countText;
     HexCell location, currentTravelLocation;
     float orientation;

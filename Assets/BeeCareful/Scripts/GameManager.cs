@@ -5,6 +5,10 @@ using System.IO;
 
 public class GameManager : MonoBehaviour {
 
+    public static bool StartWorkUpgrade1 = false;
+    public static bool StartWorkUpgrade2 = false;
+    public static bool StartWorkUpgrade3 = false;
+
     public bool launchInEditor = true;
 
     [Header("Public References to Management Scripts")]
