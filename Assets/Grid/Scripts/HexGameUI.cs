@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Collections;
 
-public class HexGameUI : MonoBehaviour {
+public class HexGameUI : MonoBehaviour
+{
 
     public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
     private GameManager gameManager;
+
+    bool playerHasControl;
 
     HexCell currentCell;
 
@@ -22,9 +26,12 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 
-    void Update() {
-        if (!EventSystem.current.IsPointerOverGameObject()) {
-            if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
                 if (!selectedUnit)
                 {
                     DoSelection();
@@ -39,13 +46,15 @@ public class HexGameUI : MonoBehaviour {
                     else
                     {
                         DoMove();
-                    }                    
-                }                
+                    }
+                }
             }
-            else if (selectedUnit) {
+            else if (selectedUnit)
+            {
                 DoPathfinding();
-                if (Input.GetMouseButtonDown(1)) {
-                    DeselectUnit();                  
+                if (Input.GetMouseButtonDown(1))
+                {
+                    DeselectUnit();
                 }
             }
         }
@@ -66,6 +75,7 @@ public class HexGameUI : MonoBehaviour {
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        playerHasControl = true;
 
         //This contains all the special indices of the resource points
         resourcePointIndices = new List<int>();
@@ -75,7 +85,8 @@ public class HexGameUI : MonoBehaviour {
         resourcePointIndices.Add(5);
     }
 
-    public void SetEditMode(bool toggle) {
+    public void SetEditMode(bool toggle)
+    {
         enabled = !toggle;
         grid.ShowUI(!toggle);
         grid.ClearPath();
@@ -89,27 +100,31 @@ public class HexGameUI : MonoBehaviour {
         }
     }
 
-    bool UpdateCurrentCell() {
+    bool UpdateCurrentCell()
+    {
         HexCell cell =
             grid.GetCell(Camera.main.ScreenPointToRay(Input.mousePosition));
-        if (cell != currentCell) {
+        if (cell != currentCell)
+        {
             currentCell = cell;
             return true;
         }
         return false;
     }
 
-    void DoSelection() {
+    void DoSelection()
+    {
         grid.ClearPath();
         grid.ClearShowMovement();
         UpdateCurrentCell();
-        if (currentCell) {
+        if (currentCell)
+        {
             selectedUnit = currentCell.Unit;
             if (currentCell.Unit)
             {
                 currentCell.EnableHighlight(Color.blue);
 
-                if(resourcePointIndices.Contains(currentCell.SpecialIndex))
+                if (resourcePointIndices.Contains(currentCell.SpecialIndex))
                 {
                     ShowScoutUI();
                 }
@@ -126,54 +141,64 @@ public class HexGameUI : MonoBehaviour {
 
             if (currentCell.SpecialIndex == HiveSpecialIndex)
             {
-                ShowHiveUI();                
+                ShowHiveUI();
             }
         }
     }
 
     public void DeselectUnit()
     {
+        StopCoroutine(WaitForEndOfMove());
         if (selectedUnit)
         {
             grid.ClearPath();
             grid.ClearShowMovement();
             selectedUnit.Location.DisableHighlight();
             selectedUnit = null;
-        }        
+        }
     }
 
-    void DoPathfinding() {
-        if (UpdateCurrentCell()) {
-            if (currentCell && selectedUnit.IsValidDestination(currentCell)) {
-                grid.FindPath(selectedUnit.Location, currentCell, selectedUnit);
-                gameManager.PreviewSeasonTimer(currentCell.Distance);
+    void DoPathfinding()
+    {
+
+        if (UpdateCurrentCell())
+        {
+            if (selectedUnit.IsControllable)
+            {
+                if (currentCell && selectedUnit.IsValidDestination(currentCell))
+                {
+                    grid.FindPath(selectedUnit.Location, currentCell, selectedUnit);
+                    gameManager.PreviewSeasonTimer(currentCell.Distance);
+                }
+                else
+                {
+                    grid.ClearPath();
+                    selectedUnit.Location.EnableHighlight(Color.blue);
+                    gameManager.ResetSeasonTimerPreview();
+                }
             }
-            else {                
+        }
+    }
+
+    void DoMove()
+    {
+        if (selectedUnit.IsControllable)
+        {
+            if (grid.HasPath)
+            {
+                selectedUnit.Travel(grid.GetPath());
+                gameManager.RemovePointsAction(currentCell.Distance);
                 grid.ClearPath();
-                selectedUnit.Location.EnableHighlight(Color.blue);
-                gameManager.ResetSeasonTimerPreview();
+                StartCoroutine(WaitForEndOfMove());
             }
         }
+
     }
 
-    void DoMove() {
-        if (grid.HasPath /*&& grid.IsReachable(currentCell)*/) {
-            selectedUnit.Travel(grid.GetPath());
-            gameManager.RemovePointsAction(currentCell.Distance);
-            grid.ClearPath();
-            if (resourcePointIndices.Contains(currentCell.SpecialIndex))
-            {
-                ShowScoutUI();
-            }
-            else
-            {
-                HideScoutUI();
-            }
-        }
-    }
-
-    void ShowPossibleMovement() {
-        if(currentCell && currentCell.Unit) {
+    void ShowPossibleMovement()
+    {
+        if (currentCell && currentCell.Unit)
+        {
             grid.ClearShowMovement();
             grid.ShowPossibleMovement(selectedUnit.Location, currentCell, selectedUnit.Speed);
         }
@@ -197,4 +222,31 @@ public class HexGameUI : MonoBehaviour {
     {
         HiveUI.SetActive(true);
     }
+
+    IEnumerator WaitForEndOfMove()
+    {
+
+        while (selectedUnit && !selectedUnit.IsControllable)
+        {
+            yield return new WaitForEndOfFrame();
+
+        }
+
+        if (!selectedUnit)
+        {
+            yield break;
+        }
+
+        currentCell = selectedUnit.Location;
+
+        if (resourcePointIndices.Contains(currentCell.SpecialIndex))
+        {
+            ShowScoutUI();
+        }
+        else
+        {
+            HideScoutUI();
+        }
+    }
 }
+    

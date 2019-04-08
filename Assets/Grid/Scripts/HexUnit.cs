@@ -71,6 +71,12 @@ public class HexUnit : MonoBehaviour, IUpgrade {
 
     public HexGrid Grid { get; set; }
 
+    public bool IsControllable {
+        get {
+            return (Grid.GetCell(transform.position) == location);
+        }
+    }
+
     void OnEnable() {
         if (location) {
             transform.localPosition = location.Position;
