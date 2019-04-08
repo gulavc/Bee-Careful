@@ -155,6 +155,7 @@ public class HexGameUI : MonoBehaviour
             grid.ClearShowMovement();
             selectedUnit.Location.DisableHighlight();
             selectedUnit = null;
+            gameManager.ResetSeasonTimerPreview();
         }
     }
 

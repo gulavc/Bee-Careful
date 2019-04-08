@@ -113,7 +113,15 @@ public class ResourcePoint : HexInteractable {
             if (Cell.IsVisible)
             {
                 dangerPrefab.SetActive(true);
-                HideGoupille();
+                if (Options.ShowDangerPins)
+                {
+                    HideGoupille();
+                }
+                else
+                {
+                    ShowGoupille();
+                }
+                
             }
             else
             {

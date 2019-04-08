@@ -481,11 +481,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114382116949186438, guid: 554077abb074bcd48adc9ccbe3efe2fd,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1841896859}
     - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
         type: 2}
       propertyPath: hexGrid
@@ -1076,6 +1071,11 @@ Prefab:
       objectReference: {fileID: 1565452845}
     - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
+      propertyPath: HiveUI
+      value: 
+      objectReference: {fileID: 1841896859}
+    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
       propertyPath: grid
       value: 
       objectReference: {fileID: 776477863}
@@ -1084,11 +1084,6 @@ Prefab:
       propertyPath: scoutUI
       value: 
       objectReference: {fileID: 813133705}
-    - target: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: HiveUI
-      value: 
-      objectReference: {fileID: 1841896859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0

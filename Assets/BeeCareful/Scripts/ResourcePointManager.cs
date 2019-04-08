@@ -13,6 +13,9 @@ public class ResourcePointManager : MonoBehaviour {
     [Range(0, 100)]
     public int percentPesticide;
 
+    public int waspPercentIncreaseByYear;
+    public int pesticidePercentIncreaseByYear;
+
     [Space(10)]
     [Header("Danger Effectiveness")]
     [Range(0, 1)]
