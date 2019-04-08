@@ -6,6 +6,7 @@ public class ResourcePoint : HexInteractable {
 
     private GameManager gameManager;
     private ResourcePointManager rpm;
+    private AudioSource sound;
     public ResourceType type;
     //public int resourceValue;
     public int resourceMax;
@@ -13,6 +14,11 @@ public class ResourcePoint : HexInteractable {
 
     public bool hasWasp = false;
     public bool hasPesticide = false;
+
+    public ParticleSystem gatherParticles;
+    public AudioClip soundToPlay;
+    private GameObject UITarget;
+    
 
     public static bool ProtectPesticideUpgrade1 = false;
     public static bool ProtectPesticideUpgrade2 = false;
@@ -96,11 +102,14 @@ public class ResourcePoint : HexInteractable {
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         rpm = GameObject.FindObjectOfType<ResourcePointManager>();
+        sound = gameObject.AddComponent<AudioSource>();
         
         rpm.AddResourcePoint(this);
         RemainingResources = resourceMax;
 
         Cell = gameManager.grid.GetCell(HexCoordinates.FromPosition(transform.position));
+
+        UITarget = GameObject.Find("Panel_resin");
 
     }
 
@@ -132,7 +141,7 @@ public class ResourcePoint : HexInteractable {
     }
 
 
-    public void GatherResources() {
+    public bool GatherResources() {
 
         int actualWorkforceCost = workforceCost;
         if (hasPesticide)            
@@ -165,10 +174,21 @@ public class ResourcePoint : HexInteractable {
 
             gameManager.RemovePlayerRessources(ResourceType.Workers, actualWorkforceCost);
             gameManager.AddPlayerResources(type, resourceGet);
+            sound.PlayOneShot(soundToPlay);
 
+            //Test
+            ParticleSystem anim = Instantiate(gatherParticles);
+            Destroy(anim, 5f);
+            anim.emissionRate = resourceGet;
+            anim.transform.position = this.transform.position;
+            StartCoroutine(MoveToUI(anim.gameObject, UITarget));
+            anim.Play();
+
+
+            return true;
             
         }
-
+        return false;
     }
 
     public override void OnUnitEnterCell(HexCell cell)
@@ -194,5 +214,18 @@ public class ResourcePoint : HexInteractable {
     }
 
     public int RemainingResources { get; private set; }
+
+    IEnumerator MoveToUI(GameObject toMove, GameObject target)
+    {
+        Vector3 velocity = Vector3.zero;
+        float smoothTime = 2f;
+
+        while(Vector3.Distance(toMove.transform.position, target.transform.position) > 0.1f)
+        {
+            Vector3.SmoothDamp(toMove.transform.position, target.transform.position, ref velocity, smoothTime);
+            yield return new WaitForEndOfFrame();
+        }
+        
+    }
 
 }

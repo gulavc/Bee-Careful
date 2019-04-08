@@ -25,8 +25,10 @@ public class ScoutUI : MonoBehaviour
 
         if (resourcePoint)
         {
-            StartCoroutine(WorkersTravel());
-            resourcePoint.GatherResources();
+            if (resourcePoint.GatherResources())
+            {
+                StartCoroutine(WorkersTravel());
+            }           
         }
         else
         {

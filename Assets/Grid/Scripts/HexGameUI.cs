@@ -156,6 +156,7 @@ public class HexGameUI : MonoBehaviour
             selectedUnit.Location.DisableHighlight();
             selectedUnit = null;
             gameManager.ResetSeasonTimerPreview();
+            HideScoutUI();
         }
     }
 

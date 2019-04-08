@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
     public GameObject playButton, editButton, loadingText;
+    public float rotationSpeed;
 
     public void PlayGame(int loadMode)
     {
@@ -21,4 +23,5 @@ public class MainMenu : MonoBehaviour {
     {
         Application.Quit();
     }
+    
 }
