@@ -145,6 +145,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         HexCell target = grid.GetCell(new HexCoordinates(19, 43));
+        HexMapCamera.MoveTo(target);
 
         while(unit.Location != target)
         {
@@ -163,8 +164,9 @@ public class Tutorial : MonoBehaviour {
 
         //Go to RP 1
         HexCell target = grid.GetCell(new HexCoordinates(18, 45));
+        HexMapCamera.MoveTo(target);
 
-        while(unit.Location != target)
+        while (unit.Location != target)
         {
             target.EnableHighlight(Color.red);
             yield return new WaitForEndOfFrame();
@@ -183,6 +185,7 @@ public class Tutorial : MonoBehaviour {
 
         //Go to RP 2
         target = grid.GetCell(new HexCoordinates(26, 42));
+        HexMapCamera.MoveTo(target);
 
         while (unit.Location != target)
         {
@@ -202,6 +205,7 @@ public class Tutorial : MonoBehaviour {
 
         //Go to RP 3
         target = grid.GetCell(new HexCoordinates(30, 38));
+        HexMapCamera.MoveTo(target);
 
         while (unit.Location != target)
         {
@@ -222,6 +226,7 @@ public class Tutorial : MonoBehaviour {
 
         //Go to RP 4
         target = grid.GetCell(new HexCoordinates(34, 39));
+        HexMapCamera.MoveTo(target);
 
         while (unit.Location != target)
         {

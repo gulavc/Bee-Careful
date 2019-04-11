@@ -177,12 +177,12 @@ public class ResourcePoint : HexInteractable {
             sound.PlayOneShot(soundToPlay);
 
             //Test
-            ParticleSystem anim = Instantiate(gatherParticles);
+            /*ParticleSystem anim = Instantiate(gatherParticles);
             Destroy(anim, 5f);
             anim.emissionRate = resourceGet;
             anim.transform.position = this.transform.position;
             StartCoroutine(MoveToUI(anim.gameObject, UITarget));
-            anim.Play();
+            anim.Play();*/
 
             float scale = RemainingResources / (float)resourceMax;
             this.transform.localScale = new Vector3(scale, scale, scale);
