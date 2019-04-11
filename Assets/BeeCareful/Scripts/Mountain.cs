@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mountain : HexInteractable {
+    public GameObject[] nuages;
+    public float rotationSpeed;
 
     public static bool mountainVisited = false;
 
@@ -23,6 +25,12 @@ public class Mountain : HexInteractable {
         {
             Cell.IncreaseVisibility();
         }
+
+        foreach(GameObject g in nuages)
+        {
+            g.transform.RotateAround(this.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+
     }
 
 }
