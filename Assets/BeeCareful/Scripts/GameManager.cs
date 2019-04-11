@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
     public ResourcePointManager rpManager;
     public HexGrid grid;
     public SpawnManager spawnManager;
+    public Tutorial tutorials;
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -31,16 +32,6 @@ public class GameManager : MonoBehaviour {
     public int numberOfYears;
     public string[] maps;
 
-    [Space(10)]
-    [Header("Tutorials references")]
-    public GameObject startUpTutorial;
-    public GameObject mountainTutorial;
-    public GameObject waspsTutorial;
-    public GameObject pesticideTutorial;
-
-    //Static variables
-    public static bool waspsTutorialDone = false;
-    public static bool pesticideTutorialDone = false;
 
     //Properties
     public int CurrentYear { get; set; } = 0;
@@ -104,6 +95,7 @@ public class GameManager : MonoBehaviour {
         rpManager.gameManager = this;
         scoutUI.gameManager = this;
         spawnManager.gameManager = this;
+        tutorials.gameManager = this;
 
         resourcesHUD.UpdateHUDAllResources();        
 
@@ -301,33 +293,35 @@ public class GameManager : MonoBehaviour {
         }
     }
     
+
+    public void RemovePlayerControls()
+    {
+        gameController.PlayerHasControl = false;
+    }
     
+    public void RestorePlayerControls()
+    {
+        gameController.PlayerHasControl = true;
+    }
+
     //Tutorials
     public void ShowStartUpTutorial()
     {
-        startUpTutorial.SetActive(true);
+        tutorials.ShowStartUpTutorial();
     }
 
     public void ShowMountainTutorial()
     {
-        mountainTutorial.SetActive(true);
+        tutorials.ShowMountainTutorial();
     }
 
     public void ShowWaspsTutorial()
     {
-        if (!waspsTutorialDone)
-        {
-            waspsTutorial.SetActive(true);
-            waspsTutorialDone = true;
-        }        
+        tutorials.ShowWaspsTutorial();   
     }
 
     public void ShowPesticideTutorial()
     {
-        if (!pesticideTutorialDone)
-        {
-            pesticideTutorial.SetActive(true);
-            pesticideTutorialDone = true;
-        }        
+        tutorials.ShowPesticideTutorial();
     }
 }

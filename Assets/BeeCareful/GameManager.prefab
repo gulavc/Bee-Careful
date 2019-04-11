@@ -803,6 +803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4046615657276120}
+  - component: {fileID: 114661868171656144}
   m_Layer: 0
   m_Name: Tutorials
   m_TagString: Untagged
@@ -1310,9 +1311,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224854463513493828}
-  - {fileID: 224953523020043414}
   - {fileID: 224105128190272586}
   - {fileID: 224330616079664992}
+  - {fileID: 224953523020043414}
   - {fileID: 224038246227809692}
   - {fileID: 224687857557360220}
   - {fileID: 224895800200915852}
@@ -2133,6 +2134,7 @@ MonoBehaviour:
   HiveUI: {fileID: 0}
   grid: {fileID: 0}
   scoutUI: {fileID: 0}
+  MoveToWorkerConversionRatio: 1
 --- !u!114 &114200983646480236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2406,8 +2408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentWasps: 0
   percentPesticide: 0
-  waspPercentIncreaseByYear: 20
-  pesticidePercentIncreaseByYear: 20
+  waspPercentIncreaseByYear: 10
+  pesticidePercentIncreaseByYear: 10
   waspPenalty: 0.5
   pesticidePenalty: 1.3
   waspPrefab: {fileID: 1709793752967134, guid: 34f37948c3b83fd42aea36e2a995b916, type: 2}
@@ -3508,6 +3510,32 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Button
+--- !u!114 &114661868171656144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1656473194233356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92434df57a4b2cb4990ce0b8edc652ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  grid: {fileID: 0}
+  startUpTutorial: {fileID: 1599824489325628}
+  selectMoveTutorial: {fileID: 1485440096689490}
+  gatherTutorial: {fileID: 1838304957967750}
+  UITutorial: {fileID: 1873287132462140}
+  hiveTutorial: {fileID: 1291886992936838}
+  hiveUITutorial: {fileID: 1087787864576314}
+  spawnTutorial: {fileID: 1667259218386206}
+  upgradeTutorial: {fileID: 1471676892989270}
+  buyUpgradeTutorial: {fileID: 1686403594429838}
+  pointsActionTutorial: {fileID: 1328144119163100}
+  mountainTutorial: {fileID: 1889865801204996}
+  waspsTutorial: {fileID: 1849280418943432}
+  pesticideTutorial: {fileID: 1294146687006982}
 --- !u!114 &114667128376241786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4090,6 +4118,7 @@ MonoBehaviour:
   rpManager: {fileID: 114291069587861650}
   grid: {fileID: 0}
   spawnManager: {fileID: 0}
+  tutorials: {fileID: 114661868171656144}
   resourcesHUD: {fileID: 0}
   endOfYearUI: {fileID: 0}
   editorUI: {fileID: 0}
@@ -4106,10 +4135,6 @@ MonoBehaviour:
   - NEW_MapWorld_urb3
   - NEW_MapWorld_urb4
   - NEW_MapWorld_urb5
-  startUpTutorial: {fileID: 1599824489325628}
-  mountainTutorial: {fileID: 1889865801204996}
-  waspsTutorial: {fileID: 1849280418943432}
-  pesticideTutorial: {fileID: 1294146687006982}
 --- !u!114 &114843683285943922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4413,22 +4438,10 @@ MonoBehaviour:
   panelText: {fileID: 114127125634163794}
   buttonText: {fileID: 114498057552037266}
   tutorialText:
-  - Welcome to Bee Careful! In this game, you control a beehive and must collect enough
-    resources to survive winter.
-  - First up, you can move the camera around with the arrow keys or WASD, and zoom
-    in and out with the scroll wheel.
-  - You can select your units by clicking on them, and move by left clicking on your
-    desired destination.
-  - By moving, you will discover resources. Bring your scout on them and click the
-    gather button to harvest them.
-  - This will use up some of the workers from the hive, represented by the red resource
-    bar in the bottom-right corner of the screen.
-  - You will also gain other resources, represented by the other 4 hexagons.
-  - Once you have enough resources, you can click on the tree on the bottom left to
-    spend them at your hive.
-  - As you move around, you will see the remaining time of the season decrease on
-    the bottom-left.
-  - Make sure you collect enough resources before winter arrives! Good luck!
+  - "\u201CHappy Spring everyone ! I\u2019m pleased to be your new Queen for the next
+    few seasons... If we survive that long !\u201D"
+  - "\u201CTo start off, remember to use all your senses to scan ahead for potential
+    resources or danger.\u201D"
 --- !u!114 &114987874978674490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5321,7 +5334,7 @@ RectTransform:
   m_Children:
   - {fileID: 224199988724274662}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5638,7 +5651,7 @@ RectTransform:
   m_Children:
   - {fileID: 224779594865478290}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6356,7 +6369,7 @@ RectTransform:
   m_Children:
   - {fileID: 224158302830421866}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

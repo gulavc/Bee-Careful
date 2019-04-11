@@ -1019,6 +1019,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 776477863}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: grid

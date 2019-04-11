@@ -9,13 +9,16 @@ public class HexGameUI : MonoBehaviour
     public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
-    private GameManager gameManager;
-
-    bool playerHasControl;
+    private GameManager gameManager;    
 
     HexCell currentCell;
 
     HexUnit selectedUnit;
+    public HexUnit GetSelectedUnit {
+        get {
+            return selectedUnit;
+        }
+    }
 
     List<int> resourcePointIndices;
     const int HiveSpecialIndex = 3;
@@ -26,9 +29,17 @@ public class HexGameUI : MonoBehaviour
         }
     }
 
+
+    public bool PlayerHasControl {
+        get; set;
+    } = true;
+
+    public int MoveToWorkerConversionRatio = 1;
+    private float partialWorker;
+
     void Update()
     {
-        if (!EventSystem.current.IsPointerOverGameObject())
+        if (PlayerHasControl && !EventSystem.current.IsPointerOverGameObject())
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -45,7 +56,15 @@ public class HexGameUI : MonoBehaviour
                     }
                     else
                     {
-                        DoMove();
+                        if(Tutorial.earlyGameTutorial && gameManager.HiveCell.coordinates.DistanceTo(currentCell.coordinates) > 13)
+                        {
+                            //Show message "too far"
+                            Debug.Log("Too far");
+                        }
+                        else
+                        {
+                            DoMove();
+                        }                        
                     }
                 }
             }
@@ -57,6 +76,7 @@ public class HexGameUI : MonoBehaviour
                     DeselectUnit();
                 }
             }
+            Debug.Log(currentCell.coordinates.ToString());
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -75,7 +95,6 @@ public class HexGameUI : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
-        playerHasControl = true;
 
         //This contains all the special indices of the resource points
         resourcePointIndices = new List<int>();
@@ -83,6 +102,8 @@ public class HexGameUI : MonoBehaviour
         resourcePointIndices.Add(2);
         resourcePointIndices.Add(4);
         resourcePointIndices.Add(5);
+
+        partialWorker = 0;
     }
 
     public void SetEditMode(bool toggle)
@@ -190,6 +211,18 @@ public class HexGameUI : MonoBehaviour
             {
                 selectedUnit.Travel(grid.GetPath());
                 gameManager.RemovePointsAction(currentCell.Distance);
+
+                float addWorker = currentCell.Distance / (float)HexUnit.MoveCost;
+                float reminder = addWorker % 1f;
+                partialWorker += reminder;
+                if(partialWorker >= 1)
+                {
+                    addWorker++;
+                    partialWorker--;
+                }
+
+                gameManager.AddPlayerResources(ResourceType.Workers, (int)addWorker);
+
                 grid.ClearPath();
                 StartCoroutine(WaitForEndOfMove());
             }
@@ -241,7 +274,7 @@ public class HexGameUI : MonoBehaviour
 
         currentCell = selectedUnit.Location;
 
-        if (resourcePointIndices.Contains(currentCell.SpecialIndex))
+        if (resourcePointIndices.Contains(currentCell.SpecialIndex) && Tutorial.gatherEnabled)
         {
             ShowScoutUI();
         }

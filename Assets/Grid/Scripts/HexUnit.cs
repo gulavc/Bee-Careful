@@ -43,7 +43,7 @@ public class HexUnit : MonoBehaviour, IUpgrade {
         }
     }
 
-    public int MoveCost {
+    public static int MoveCost {
         get {
             if (ScoutMoveUpgrade3)
             {
@@ -60,6 +60,7 @@ public class HexUnit : MonoBehaviour, IUpgrade {
             return 4;
         }
     }
+
 
     List<HexCell> pathToTravel;
     const float travelSpeed = 4f; //cells per second
