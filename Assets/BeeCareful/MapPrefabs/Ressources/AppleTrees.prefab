@@ -7263,7 +7263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   resourceMax: 100
-  workforceCost: 10
+  workforceCost: 5
   hasWasp: 0
   hasPesticide: 0
   dangerPrefab: {fileID: 0}

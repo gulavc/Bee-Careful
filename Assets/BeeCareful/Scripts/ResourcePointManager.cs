@@ -21,7 +21,7 @@ public class ResourcePointManager : MonoBehaviour {
     [Range(0, 1)]
     public float waspPenalty;
 
-    [Range(1, 2)]
+    [Range(1, 4)]
     public float pesticidePenalty;
 
     [Space(10)]
@@ -48,9 +48,9 @@ public class ResourcePointManager : MonoBehaviour {
         {
             pesticidePenalty = 1f;
         } 
-        else if (pesticidePenalty > 2f)
+        else if (pesticidePenalty > 4f)
         {
-            pesticidePenalty = 2f;
+            pesticidePenalty = 4f;
         }
 
         if(waspPenalty < 0f)

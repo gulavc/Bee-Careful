@@ -2004,12 +2004,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives:
-  - NERP: 0a0000000a0000000a0000000a000000
-  - NERP: 14000000140000001400000014000000
-  - NERP: 1e0000001e0000001e0000001e000000
-  - NERP: 28000000280000002800000028000000
+  - NERP: 19000000190000001900000019000000
   - NERP: 32000000320000003200000032000000
-  - NERP: 3c0000003c0000003c0000003c000000
+  - NERP: 4b0000004b0000004b0000004b000000
+  - NERP: 64000000640000006400000064000000
+  - NERP: 7d0000007d0000007d0000007d000000
+  - NERP: 7d0000007d0000007d0000007d000000
   gameManager: {fileID: 0}
 --- !u!114 &114160541461995432
 MonoBehaviour:
@@ -2406,10 +2406,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentWasps: 0
   percentPesticide: 0
-  waspPercentIncreaseByYear: 20
-  pesticidePercentIncreaseByYear: 20
-  waspPenalty: 0.5
-  pesticidePenalty: 1.3
+  waspPercentIncreaseByYear: 10
+  pesticidePercentIncreaseByYear: 10
+  waspPenalty: 0.75
+  pesticidePenalty: 2
   waspPrefab: {fileID: 1709793752967134, guid: 34f37948c3b83fd42aea36e2a995b916, type: 2}
   pesticidePrefab: {fileID: 1730665606786236, guid: 7af4f73c35ea4bd47a88d29743280ec8,
     type: 2}
