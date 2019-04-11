@@ -244,6 +244,9 @@ public class Tutorial : MonoBehaviour {
 
         ShowUITutorial();
 
+        //TEMPORARY REMOVE THIS PLEASE OH GOD WHY IS IT STILL HERE
+        gatherEnabled = true;
+
     }
 
     //This is bad code, shame on you Guillaume
