@@ -246,6 +246,7 @@ public class Tutorial : MonoBehaviour {
 
         //TEMPORARY REMOVE THIS PLEASE OH GOD WHY IS IT STILL HERE
         gatherEnabled = true;
+        earlyGameTutorial = false;
 
     }
 

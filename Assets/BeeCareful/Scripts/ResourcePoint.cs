@@ -184,6 +184,8 @@ public class ResourcePoint : HexInteractable {
             StartCoroutine(MoveToUI(anim.gameObject, UITarget));
             anim.Play();
 
+            float scale = RemainingResources / (float)resourceMax;
+            this.transform.localScale = new Vector3(scale, scale, scale);
 
             return true;
             

@@ -76,7 +76,7 @@ public class HexGameUI : MonoBehaviour
                     DeselectUnit();
                 }
             }
-            Debug.Log(currentCell.coordinates.ToString());
+            //Debug.Log(currentCell.coordinates.ToString());
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
