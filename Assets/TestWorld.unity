@@ -788,16 +788,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114351952651241034, guid: 97c75573826201243a8ac0343881aa00,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1841896859}
     - target: {fileID: 114918515003133336, guid: 97c75573826201243a8ac0343881aa00,
         type: 2}
       propertyPath: upgradeManager
       value: 
       objectReference: {fileID: 807051935}
+    - target: {fileID: 114351952651241034, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1841896859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c75573826201243a8ac0343881aa00, type: 2}
   m_IsPrefabAsset: 0
