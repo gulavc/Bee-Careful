@@ -329,16 +329,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114712014581961348, guid: 3edfbcceac7133d4281cc61f282ffbe9,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 792997844}
     - target: {fileID: 114971192251874954, guid: 3edfbcceac7133d4281cc61f282ffbe9,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1857541531}
+    - target: {fileID: 114712014581961348, guid: 3edfbcceac7133d4281cc61f282ffbe9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 792997844}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3edfbcceac7133d4281cc61f282ffbe9, type: 2}
   m_IsPrefabAsset: 0
@@ -481,11 +481,61 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114382116949186438, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1841896859}
     - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
         type: 2}
       propertyPath: hexGrid
       value: 
       objectReference: {fileID: 776477863}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: scoutNectarCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: scoutWaterCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: scoutResinCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: scoutPollenCost
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: workNectarCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: workWaterCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: workResinCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: workPollenCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114692263333133492, guid: 554077abb074bcd48adc9ccbe3efe2fd,
+        type: 2}
+      propertyPath: addWorkers
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 554077abb074bcd48adc9ccbe3efe2fd, type: 2}
   m_IsPrefabAsset: 0
@@ -793,6 +843,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1841896859}
+    - target: {fileID: 1705571255559006, guid: 97c75573826201243a8ac0343881aa00, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c75573826201243a8ac0343881aa00, type: 2}
   m_IsPrefabAsset: 0

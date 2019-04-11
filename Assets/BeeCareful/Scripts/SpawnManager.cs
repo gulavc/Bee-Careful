@@ -18,8 +18,12 @@ public class SpawnManager : MonoBehaviour
     [HideInInspector]
     public GameManager gameManager;
     public int scoutNectarCost;
+    public int scoutWaterCost;
+    public int scoutResinCost;
     public int scoutPollenCost;
     public int workNectarCost;
+    public int workWaterCost;
+    public int workResinCost;
     public int workPollenCost;
     public int addWorkers;
 
@@ -79,10 +83,17 @@ public class SpawnManager : MonoBehaviour
         if (paycost)
         {
             int actualNectarCost = (int)(scoutNectarCost * (1 - ScoutDiscout));
+            int actualWaterCost = (int)(scoutWaterCost * (1 - ScoutDiscout));
+            int actualResinCost = (int)(scoutResinCost * (1 - ScoutDiscout));
             int actualPollenCost = (int)(scoutPollenCost * (1 - ScoutDiscout));
-            if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost))
+            if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && 
+                (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost) && 
+                (gameManager.GetRessourceCount(ResourceType.Water) >= actualWaterCost)&& 
+                (gameManager.GetRessourceCount(ResourceType.Resin) >= actualResinCost))
             {
                 gameManager.RemovePlayerRessources(ResourceType.Nectar, actualNectarCost);
+                gameManager.RemovePlayerRessources(ResourceType.Water, actualWaterCost);
+                gameManager.RemovePlayerRessources(ResourceType.Resin, actualResinCost);
                 gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
             }
             else
@@ -114,12 +125,19 @@ public class SpawnManager : MonoBehaviour
     public void CreateWorker()
     {
         int actualNectarCost = (int)(workNectarCost * (1 - WorkerDiscout));
+        int actualWaterCost = (int)(workWaterCost * (1 - WorkerDiscout));
+        int actualResinCost = (int)(workResinCost * (1 - WorkerDiscout));
         int actualPollenCost = (int)(workPollenCost * (1 - WorkerDiscout));
 
-        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost))
+        if ((gameManager.GetRessourceCount(ResourceType.Nectar) >= actualNectarCost) && 
+            (gameManager.GetRessourceCount(ResourceType.Pollen) >= actualPollenCost) && 
+            (gameManager.GetRessourceCount(ResourceType.Water) >= actualWaterCost) && 
+            (gameManager.GetRessourceCount(ResourceType.Resin) >= actualResinCost))
         {
 
             gameManager.RemovePlayerRessources(ResourceType.Nectar, actualNectarCost);
+            gameManager.RemovePlayerRessources(ResourceType.Water, actualWaterCost);
+            gameManager.RemovePlayerRessources(ResourceType.Resin, actualResinCost);
             gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
             gameManager.playerResources.AddResources(ResourceType.Workers, addWorkers);
         }

@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resourceMax: 100
-  workforceCost: 10
+  workforceCost: 5
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 0}

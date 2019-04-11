@@ -401,7 +401,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2ed3e2c8ceb5b6849b6d7f5f34e05887, type: 3}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2ed3e2c8ceb5b6849b6d7f5f34e05887, type: 3}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2ed3e2c8ceb5b6849b6d7f5f34e05887, type: 3}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2ed3e2c8ceb5b6849b6d7f5f34e05887, type: 3}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1164,7 +1164,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2ed3e2c8ceb5b6849b6d7f5f34e05887, type: 3}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
