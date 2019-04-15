@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TutorialDialog : MonoBehaviour {
 
+    private const float textSpeed = 0.03f;
+
     public Text panelText;
     public Text buttonText;
 
@@ -29,16 +31,17 @@ public class TutorialDialog : MonoBehaviour {
             buttonText.text = "Continue";
         }
 
-        panelText.text = tutorialText[currentText];
+        StartCoroutine(ShowText(tutorialText[currentText]));
     }
 	
     public void ContinueText()
     {
+        StopAllCoroutines();
         if(currentText + 1 >= tutorialText.Length)
         {
             buttonText.text = "Done";
         }
-        panelText.text = tutorialText[currentText];
+        StartCoroutine(ShowText(tutorialText[currentText]));
     }
 
     public void ClickButton()
@@ -46,12 +49,26 @@ public class TutorialDialog : MonoBehaviour {
         currentText++;
         if (currentText >= tutorialText.Length)
         {
-            this.gameObject.SetActive(false);
+            this.transform.parent.gameObject.SetActive(false);
         }
         else
         {
             ContinueText();
         }
+    }
+
+
+    IEnumerator ShowText(string text)
+    {
+        char[] arrayText = text.ToCharArray();
+        panelText.text = "";
+
+        foreach(char c in arrayText)
+        {
+            panelText.text += c;
+            yield return new WaitForSecondsRealtime(textSpeed);
+        }
+        
     }
 
 	// Update is called once per frame

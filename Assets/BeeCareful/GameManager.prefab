@@ -11,6 +11,24 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1202531166480508}
   m_IsPrefabAsset: 1
+--- !u!1 &1048492731909560
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224201561878676786}
+  - component: {fileID: 222928417327337754}
+  - component: {fileID: 114867505659378550}
+  - component: {fileID: 114383984807380766}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1048679027560540
 GameObject:
   m_ObjectHideFlags: 1
@@ -133,6 +151,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1100126951213422
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224160085504773290}
+  - component: {fileID: 223025869156930638}
+  - component: {fileID: 114260412886070600}
+  - component: {fileID: 114089469258679056}
+  m_Layer: 0
+  m_Name: PesticideTutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1115067094980956
 GameObject:
   m_ObjectHideFlags: 1
@@ -144,6 +180,24 @@ GameObject:
   - component: {fileID: 222540005476083012}
   - component: {fileID: 114170733117441890}
   - component: {fileID: 114994321614873214}
+  m_Layer: 0
+  m_Name: OKButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1134377798763088
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224134978612691612}
+  - component: {fileID: 222509824141335286}
+  - component: {fileID: 114701145237721854}
+  - component: {fileID: 114644672172950834}
   m_Layer: 0
   m_Name: OKButton
   m_TagString: Untagged
@@ -318,7 +372,7 @@ GameObject:
   - component: {fileID: 114110442804546842}
   - component: {fileID: 114812324070779562}
   m_Layer: 0
-  m_Name: PesticideTutorial
+  m_Name: TooFarTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,6 +530,23 @@ GameObject:
   - component: {fileID: 114258880987574114}
   m_Layer: 0
   m_Name: OKButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1414153112864922
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224683889412989742}
+  - component: {fileID: 222683434874922124}
+  - component: {fileID: 114186433286023204}
+  m_Layer: 0
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,6 +1229,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &1891887401632990
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224773886336674194}
+  - component: {fileID: 222723271702809658}
+  - component: {fileID: 114929028722170912}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1904738590453226
 GameObject:
   m_ObjectHideFlags: 1
@@ -1312,6 +1400,7 @@ Transform:
   m_Children:
   - {fileID: 224854463513493828}
   - {fileID: 224105128190272586}
+  - {fileID: 224160085504773290}
   - {fileID: 224330616079664992}
   - {fileID: 224953523020043414}
   - {fileID: 224038246227809692}
@@ -1701,6 +1790,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114089469258679056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100126951213422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114092355836124358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1715,14 +1820,16 @@ MonoBehaviour:
   panelText: {fileID: 114009639274531454}
   buttonText: {fileID: 114598141501264140}
   tutorialText:
-  - "\u201CThe Hive Mind allows us to be aware of the current state of our resources.
-    Pollen is found in fruit bearing trees, Nectar in flowers, Resin on tree trunks
-    and Water in small pools.\u201C "
-  - "\u201CWorkers tend to get exhausted from their hard work. Without them, the hive
-    will starve. Since I\u2019m in charge of new spawns in the colony, don\u2019t
-    hesitate to call me. I\u2019ll be in the hive.\u201D "
-  - "\u201CNow that you have collected enough resources, let\u2019s go back to the
-    hive.\u201D"
+  - The Hive Mind allows us to be aware of the current state of our resources.
+  - Pollen is found in fruit bearing trees, Nectar in flowers, Resin on tree trunks
+    and Water in small pools.
+  - 'Workers tend to get exhausted from their hard work. Without them, the hive will
+    starve. '
+  - "Since I\u2019m in charge of new spawns in the colony, don\u2019t hesitate to
+    call me. I\u2019ll be in the hive."
+  - I'll also be hatching some Workers constantly as you explore our environment.
+  - "Now that you have collected enough resources, let\u2019s go back to the hive."
+  - (Move back to the Hive to continue.)
 --- !u!114 &114094130618187036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2120,6 +2227,39 @@ MonoBehaviour:
   tutorialText:
   - "\u201C Here's where you use the resources you\u2019ve gathered so far. You can
     spawn new units or upgrade what you have.\u201D"
+--- !u!114 &114186433286023204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414153112864922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
 --- !u!114 &114192400815176384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2352,6 +2492,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114260412886070600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100126951213422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114279466627365978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2619,6 +2780,23 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114383984807380766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048492731909560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b9a564175fbfd45b78022773093477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelText: {fileID: 114186433286023204}
+  buttonText: {fileID: 114929028722170912}
+  tutorialText:
+  - Careful! There is pesticide on this resource!
+  - If you try to harvest it, more workers than usual will be lost due to the toxic
+    chemicals.
 --- !u!114 &114384835942604720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3425,6 +3603,58 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Button
+--- !u!114 &114644672172950834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134377798763088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114701145237721854}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114383984807380766}
+        m_MethodName: ClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114656656856552338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3523,6 +3753,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   grid: {fileID: 0}
+  hiveButton: {fileID: 0}
+  seasonTimers:
+  - {fileID: 0}
   startUpTutorial: {fileID: 1599824489325628}
   selectMoveTutorial: {fileID: 1485440096689490}
   gatherTutorial: {fileID: 1838304957967750}
@@ -3535,7 +3768,8 @@ MonoBehaviour:
   pointsActionTutorial: {fileID: 1328144119163100}
   mountainTutorial: {fileID: 1889865801204996}
   waspsTutorial: {fileID: 1849280418943432}
-  pesticideTutorial: {fileID: 1294146687006982}
+  pesticideTutorial: {fileID: 1100126951213422}
+  tooFarTutorial: {fileID: 1294146687006982}
 --- !u!114 &114667128376241786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3695,6 +3929,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+--- !u!114 &114701145237721854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134377798763088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114714696396173792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4215,9 +4476,12 @@ MonoBehaviour:
   panelText: {fileID: 114864304279105858}
   buttonText: {fileID: 114291097310339498}
   tutorialText:
-  - "\u201CUnbeelievable ! Scout 87 already found some pollen ! To gather it, you
-    need to call to action some workers. They\u2019re the one collecting all the resources
-    for the hive.\u201D"
+  - "Unbeelievable ! Scout 87 already found some pollen ! To gather it, you need to
+    call to action some workers. They\u2019re the one collecting all the resources
+    for the hive."
+  - (Move your scout over the Resource Point and click the Gather Button to call some
+    workers. Follow the markers to the different resource points and Gather them all
+    to continue.)
 --- !u!114 &114864304279105858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4251,6 +4515,33 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &114867505659378550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048492731909560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.49803922}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114876249163209332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4322,10 +4613,45 @@ MonoBehaviour:
   panelText: {fileID: 114607760219310786}
   buttonText: {fileID: 114677465328768362}
   tutorialText:
-  - "\u201CThrough the Hive Mind, we will share this information and pass it along
-    so that everyone is updated about the current state of our environment.\u201D "
-  - "\u201CNow, please give a warm welcome to Scout 87 who\u2019s going to be our
-    main explorer this year. I\u2019m sure she\u2019ll be unbeetable !\u201D "
+  - Through the Hive Mind, we will share this information and pass it along so that
+    everyone is updated about the current state of our environment.
+  - "Now, please give a warm welcome to Scout 87 who\u2019s going to be our main explorer
+    this year. I\u2019m sure she\u2019ll be unbeetable !"
+  - (Select a Scout by left-clicking on it, and left-click on a a space on the map
+    to move there. Move your Scout on the red Hex to continue.)
+--- !u!114 &114929028722170912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891887401632990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
 --- !u!114 &114946392417680666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4340,9 +4666,7 @@ MonoBehaviour:
   panelText: {fileID: 114843683285943922}
   buttonText: {fileID: 114536707026392828}
   tutorialText:
-  - Careful! There is pesticide on this resource!
-  - If you try to harvest it, more workers than usual will be lost due to the toxic
-    chemicals.
+  - Don't go too far from the Hive just yet!
 --- !u!114 &114950725893584012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4438,10 +4762,12 @@ MonoBehaviour:
   panelText: {fileID: 114127125634163794}
   buttonText: {fileID: 114498057552037266}
   tutorialText:
-  - "\u201CHappy Spring everyone ! I\u2019m pleased to be your new Queen for the next
-    few seasons... If we survive that long !\u201D"
-  - "\u201CTo start off, remember to use all your senses to scan ahead for potential
-    resources or danger.\u201D"
+  - "Happy Spring everyone ! I\u2019m pleased to be your new Queen for the next few
+    seasons... If we survive that long !"
+  - To start off, remember to use all your senses to scan ahead for potential resources
+    or danger.
+  - (Move the Camera around with the WASD or the arrow keys, rotate your vision with
+    Q and E, and use the Mouse Wheel to zoom in and out to continue.)
 --- !u!114 &114987874978674490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4456,7 +4782,9 @@ MonoBehaviour:
   panelText: {fileID: 114495316400403078}
   buttonText: {fileID: 114133690426396080}
   tutorialText:
-  - "\u201CTo go in, click on the tree\u201D"
+  - You should go in the Hive to see what we can do with the resources you gathered!
+  - (Click on the Hive or on the Tree button on the bottom-left of your screen to
+    continue.)
 --- !u!114 &114990700652244498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4736,6 +5064,13 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577176728585054}
   m_CullTransparentMesh: 0
+--- !u!222 &222509824141335286
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134377798763088}
+  m_CullTransparentMesh: 0
 --- !u!222 &222536577634158080
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -4820,12 +5155,26 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1616436096903668}
   m_CullTransparentMesh: 0
+--- !u!222 &222683434874922124
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414153112864922}
+  m_CullTransparentMesh: 0
 --- !u!222 &222686348112171674
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1454962591125978}
+  m_CullTransparentMesh: 0
+--- !u!222 &222723271702809658
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891887401632990}
   m_CullTransparentMesh: 0
 --- !u!222 &222756819491212220
 CanvasRenderer:
@@ -4911,6 +5260,13 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1054200675027038}
   m_CullTransparentMesh: 0
+--- !u!222 &222928417327337754
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048492731909560}
+  m_CullTransparentMesh: 0
 --- !u!222 &222934792582209024
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -4932,6 +5288,26 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1061520025021094}
   m_CullTransparentMesh: 0
+--- !u!223 &223025869156930638
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100126951213422}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!223 &223027986235245070
 Canvas:
   m_ObjectHideFlags: 1
@@ -5242,7 +5618,7 @@ RectTransform:
   m_Children:
   - {fileID: 224853550587698844}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5433,6 +5809,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224134978612691612
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134377798763088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224773886336674194}
+  m_Father: {fileID: 224201561878676786}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -94, y: 31}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224158302830421866
 RectTransform:
   m_ObjectHideFlags: 1
@@ -5453,6 +5848,25 @@ RectTransform:
   m_AnchoredPosition: {x: -37.5, y: 75}
   m_SizeDelta: {x: -575, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224160085504773290
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100126951213422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 224201561878676786}
+  m_Father: {fileID: 4046615657276120}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &224199988724274662
 RectTransform:
   m_ObjectHideFlags: 1
@@ -5466,6 +5880,26 @@ RectTransform:
   - {fileID: 224667821541443934}
   - {fileID: 224894596228659540}
   m_Father: {fileID: 224105128190272586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -37.5, y: 75}
+  m_SizeDelta: {x: -575, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224201561878676786
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048492731909560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224683889412989742}
+  - {fileID: 224134978612691612}
+  m_Father: {fileID: 224160085504773290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5576,7 +6010,7 @@ RectTransform:
   m_Children:
   - {fileID: 224393168622266300}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5651,7 +6085,7 @@ RectTransform:
   m_Children:
   - {fileID: 224779594865478290}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5784,7 +6218,7 @@ RectTransform:
   m_Children:
   - {fileID: 224388660329517340}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5976,6 +6410,24 @@ RectTransform:
   m_AnchoredPosition: {x: -94, y: 31}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224683889412989742
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414153112864922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224201561878676786}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 62.5}
+  m_SizeDelta: {x: -30, y: 95}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224687857557360220
 RectTransform:
   m_ObjectHideFlags: 1
@@ -5988,7 +6440,7 @@ RectTransform:
   m_Children:
   - {fileID: 224544512927638814}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6007,7 +6459,7 @@ RectTransform:
   m_Children:
   - {fileID: 224429408782718266}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6044,7 +6496,7 @@ RectTransform:
   m_Children:
   - {fileID: 224746052729556334}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6070,6 +6522,24 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -37.5, y: 75}
   m_SizeDelta: {x: -575, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224773886336674194
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1891887401632990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224134978612691612}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224779594865478290
 RectTransform:
@@ -6292,7 +6762,7 @@ RectTransform:
   m_Children:
   - {fileID: 224316046328595714}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6311,7 +6781,7 @@ RectTransform:
   m_Children:
   - {fileID: 224037974348160354}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6350,7 +6820,7 @@ RectTransform:
   m_Children:
   - {fileID: 224917246186319892}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6369,7 +6839,7 @@ RectTransform:
   m_Children:
   - {fileID: 224158302830421866}
   m_Father: {fileID: 4046615657276120}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

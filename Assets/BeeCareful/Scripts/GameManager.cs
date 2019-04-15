@@ -264,6 +264,9 @@ public class GameManager : MonoBehaviour {
             //Clear current stuff
             gameController.DeselectUnit();
 
+            //Set new Dangers
+            rpManager.IncreaseDanger();
+
             //Load new map
             grid.SaveMapExploration();
             StartCoroutine(LoadGame());
@@ -276,7 +279,7 @@ public class GameManager : MonoBehaviour {
             playerResources.SetStartingWorkers();
 
             //Reset player values
-            SetCurrentPointsAction(pointsAction.pointsActionMax);
+            SetCurrentPointsAction(pointsAction.pointsActionMax);            
 
             //Spawn new scouts
             for(int i = 0; i < ScoutCount; i++)
@@ -323,5 +326,10 @@ public class GameManager : MonoBehaviour {
     public void ShowPesticideTutorial()
     {
         tutorials.ShowPesticideTutorial();
+    }
+
+    public void ShowTooFarTutorial()
+    {
+        tutorials.ShowTooFarTutorial();
     }
 }

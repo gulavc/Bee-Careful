@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour {
 
-    //Static variables
-    public static bool waspsTutorialDone = false;
-    public static bool pesticideTutorialDone = false;
-    public static bool earlyGameTutorial = true;
-    public static bool gatherEnabled = false;
-    public static bool hiveEnabled = false;
+    //Static variables, default state is Tuto done to allow skipping
+    public static bool waspsTutorialDone = true;
+    public static bool pesticideTutorialDone = true;
+    public static bool earlyGameTutorial = false;
+    public static bool gatherEnabled = true;
+    public static bool hiveEnabled = true;
 
     [HideInInspector]
     public GameManager gameManager;
-    public HexGrid grid;
 
+    [Header("Tutorial Settings")]
+    public Color goalHighlightColor = Color.green;
+
+    [Header("Game elements references")]
+    public HexGrid grid;
+    public GameObject hiveButton;
+    public GameObject[] seasonTimers;
+    
     [Header("Tutorials references")]
     public GameObject startUpTutorial;
     public GameObject selectMoveTutorial;
@@ -30,6 +37,7 @@ public class Tutorial : MonoBehaviour {
     public GameObject mountainTutorial;
     public GameObject waspsTutorial;
     public GameObject pesticideTutorial;
+    public GameObject tooFarTutorial;
 
     private List<GameObject> allTutorials;
 
@@ -38,6 +46,9 @@ public class Tutorial : MonoBehaviour {
     //Beginning Tutorial
     public void ShowStartUpTutorial()
     {
+        TutorialsSetUp();        
+
+        //Start up tuto
         ShowTutorial(startUpTutorial);
         gameManager.RemovePlayerControls();
         StartCoroutine(WaitForCameraMove());
@@ -58,7 +69,13 @@ public class Tutorial : MonoBehaviour {
     public void ShowUITutorial()
     {
         ShowTutorial(UITutorial);
-        //StartCoroutine(WaitForGather());
+        StartCoroutine(WaitForMoveToHive());
+    }
+
+    public void ShowHiveTutorial()
+    {
+        ShowTutorial(hiveTutorial);
+        //StartCoroutine(WaitForOpenHive());
     }
 
     //New year messages
@@ -87,12 +104,20 @@ public class Tutorial : MonoBehaviour {
         }
     }
 
+    public void ShowTooFarTutorial()
+    {
+        ShowTutorial(tooFarTutorial, false);
+    }
 
+    
 
     //Show any tutorial
-    private void ShowTutorial(GameObject toShow)
+    private void ShowTutorial(GameObject toShow, bool stopCoroutines = true)
     {
-        StopAllCoroutines();
+        if (stopCoroutines)
+        {
+            StopAllCoroutines();
+        }        
         gameManager.RestorePlayerControls();
         foreach(GameObject g in allTutorials)
         {
@@ -138,18 +163,22 @@ public class Tutorial : MonoBehaviour {
     {
         HexGameUI controller = FindObjectOfType<HexGameUI>();
         HexUnit unit = FindObjectOfType<HexUnit>();
-        unit.Location.EnableHighlight(Color.red);
+        
         while (!controller.GetSelectedUnit)
         {
+            unit.Location.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
+
+        //ShowTutorial MoveTo
+        //Wait for finish reading
 
         HexCell target = grid.GetCell(new HexCoordinates(19, 43));
         HexMapCamera.MoveTo(target);
 
         while(unit.Location != target)
         {
-            target.EnableHighlight(Color.red);
+            target.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
 
@@ -168,7 +197,7 @@ public class Tutorial : MonoBehaviour {
 
         while (unit.Location != target)
         {
-            target.EnableHighlight(Color.red);
+            target.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
 
@@ -181,6 +210,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         gameManager.RestorePlayerControls();
+        gameManager.HideScoutUI();
         gatherEnabled = false;
 
         //Go to RP 2
@@ -189,7 +219,7 @@ public class Tutorial : MonoBehaviour {
 
         while (unit.Location != target)
         {
-            target.EnableHighlight(Color.red);
+            target.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
 
@@ -201,6 +231,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         gameManager.RestorePlayerControls();
+        gameManager.HideScoutUI();
         gatherEnabled = false;
 
         //Go to RP 3
@@ -209,7 +240,7 @@ public class Tutorial : MonoBehaviour {
 
         while (unit.Location != target)
         {
-            target.EnableHighlight(Color.red);
+            target.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
 
@@ -222,6 +253,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         gameManager.RestorePlayerControls();
+        gameManager.HideScoutUI();
         gatherEnabled = false;
 
         //Go to RP 4
@@ -230,7 +262,7 @@ public class Tutorial : MonoBehaviour {
 
         while (unit.Location != target)
         {
-            target.EnableHighlight(Color.red);
+            target.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
 
@@ -243,16 +275,85 @@ public class Tutorial : MonoBehaviour {
         }
 
         gameManager.RestorePlayerControls();
+        gameManager.HideScoutUI();
         gatherEnabled = false;
 
         //End
+        ShowUITutorial();        
 
-        ShowUITutorial();
+    }
 
-        //TEMPORARY REMOVE THIS PLEASE OH GOD WHY IS IT STILL HERE
+    IEnumerator WaitForMoveToHive()
+    {
+        HexUnit unit = FindObjectOfType<HexUnit>();
+
+        //Hive
+        List<HexCell> targets = new List<HexCell>();
+        targets.Add(grid.GetCell(new HexCoordinates(20, 39)));
+        targets.Add(grid.GetCell(new HexCoordinates(21, 38)));
+        targets.Add(grid.GetCell(new HexCoordinates(22, 38)));
+        targets.Add(grid.GetCell(new HexCoordinates(22, 39)));
+        targets.Add(grid.GetCell(new HexCoordinates(20, 40)));
+        targets.Add(grid.GetCell(new HexCoordinates(21, 40)));
+
+        HexMapCamera.MoveTo(grid.GetCell(new HexCoordinates(21, 39)));
+
+        while (!targets.Contains(unit.Location))
+        {            
+            foreach(HexCell c in targets)
+            {
+                c.EnableHighlight(goalHighlightColor);
+            }
+            yield return new WaitForEndOfFrame();
+
+        }
+
+        foreach (HexCell c in targets)
+        {
+            c.DisableHighlight();
+        }
+
+        ShowHiveTutorial();
+
+        //Temp tear down here
+        TutorialsTearDown();
+    }
+
+
+    //Set up and Tear down
+
+    private void TutorialsSetUp()
+    {
+        //Set up Tutorials
+        waspsTutorialDone = false;
+        pesticideTutorialDone = false;
+        earlyGameTutorial = true;
+        gatherEnabled = false;
+        hiveEnabled = false;
+
+        //Hide parts of UI
+        hiveButton.SetActive(false);
+        foreach(GameObject g in seasonTimers)
+        {
+            g.SetActive(false);
+        }
+
+        //here we cheat
+        gameManager.SetCurrentPointsAction(int.MaxValue);
+    }
+
+    private void TutorialsTearDown()
+    {
         gatherEnabled = true;
         earlyGameTutorial = false;
+        hiveEnabled = true;
 
+        hiveButton.SetActive(true);
+        foreach (GameObject g in seasonTimers)
+        {
+            g.SetActive(true);
+        }
+        gameManager.SetCurrentPointsAction(gameManager.GetPointsActionMax());
     }
 
     //This is bad code, shame on you Guillaume
@@ -272,6 +373,7 @@ public class Tutorial : MonoBehaviour {
         allTutorials.Add(mountainTutorial);
         allTutorials.Add(waspsTutorial);
         allTutorials.Add(pesticideTutorial);
+        allTutorials.Add(tooFarTutorial);
     }
 
 }

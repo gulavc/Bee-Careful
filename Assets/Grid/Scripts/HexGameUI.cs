@@ -58,8 +58,7 @@ public class HexGameUI : MonoBehaviour
                     {
                         if(Tutorial.earlyGameTutorial && gameManager.HiveCell.coordinates.DistanceTo(currentCell.coordinates) > 13)
                         {
-                            //Show message "too far"
-                            Debug.Log("Too far");
+                            gameManager.ShowTooFarTutorial();
                         }
                         else
                         {
@@ -76,7 +75,20 @@ public class HexGameUI : MonoBehaviour
                     DeselectUnit();
                 }
             }
-            //Debug.Log(currentCell.coordinates.ToString());
+            else
+            {
+                if (currentCell)
+                {
+                    currentCell.DisableHighlight();
+                }
+                
+                UpdateCurrentCell();
+                if (currentCell.Unit)
+                {
+                    currentCell.EnableHighlight(Color.white);
+                }
+            }
+            Debug.Log(currentCell.coordinates.ToString());
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -255,7 +267,10 @@ public class HexGameUI : MonoBehaviour
 
     public void ShowHiveUI()
     {
-        HiveUI.SetActive(true);
+        if (Tutorial.hiveEnabled)
+        {
+            HiveUI.SetActive(true);
+        }        
     }
 
     IEnumerator WaitForEndOfMove()

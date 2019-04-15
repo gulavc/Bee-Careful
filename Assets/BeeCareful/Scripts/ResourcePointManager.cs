@@ -134,4 +134,20 @@ public class ResourcePointManager : MonoBehaviour {
         resourcePoints.Clear();
     }
 
+    public void IncreaseDanger()
+    {
+        percentPesticide += pesticidePercentIncreaseByYear;
+        percentWasps += waspPercentIncreaseByYear;
+
+        if (percentPesticide + percentWasps > 100)
+        {
+            int finalPercentPesticide = (100 * percentPesticide) / (percentPesticide + percentWasps);
+            int finalPercentWasps = (100 * percentWasps) / (percentPesticide + percentWasps);
+
+            percentWasps = finalPercentWasps;
+            percentPesticide = finalPercentPesticide;
+        }
+
+    }
+
 }
