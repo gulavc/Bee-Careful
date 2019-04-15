@@ -9341,7 +9341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Hive
+  m_Text: Back to World Map
 --- !u!114 &114620044976057572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11537,9 +11537,9 @@ MonoBehaviour:
   startWork3: {fileID: 114412297203843982}
   upgradeManager: {fileID: 0}
   unavailableImage: {fileID: 21300000, guid: d4d23e1636d19504ca65396a1d43b6ca, type: 3}
-  availableImage: {fileID: 21300000, guid: caef7a5029936e545bd6150497745adb, type: 3}
-  costyImage: {fileID: 21300000, guid: 70723a2a331d3ea4f950f4564cd54e10, type: 3}
-  buyableImage: {fileID: 21300000, guid: 799005e24263be94a8a767448503e88c, type: 3}
+  availableImage: {fileID: 21300000, guid: 3a7045444dce93d49af5617ba8097dd0, type: 3}
+  costyImage: {fileID: 21300000, guid: 9af1827b900dd704eab61ccd37140e7a, type: 3}
+  buyableImage: {fileID: 21300000, guid: 95f93f8638ebddc47917431db0366bf4, type: 3}
 --- !u!114 &114920084464492794
 MonoBehaviour:
   m_ObjectHideFlags: 1
