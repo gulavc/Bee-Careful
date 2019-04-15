@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndOfYearUI : MonoBehaviour {
@@ -15,6 +16,11 @@ public class EndOfYearUI : MonoBehaviour {
     public Text pollenGoal;
     public Text workersCreated;
     public Text workersDead;
+    public Button nextYear;
+    public Button returnMainMenu;
+
+    [Header("Main Menu Scene")]
+    public string menuScene;
 
 
     void Awake()
@@ -33,11 +39,15 @@ public class EndOfYearUI : MonoBehaviour {
         {
             yearlyObjectives.text = "You have succeeded. Your hive will survive winter.";
             yearlyObjectives.color = Color.green;
+            nextYear.gameObject.SetActive(true);
+            returnMainMenu.gameObject.SetActive(false);
         }
         else
         {
             yearlyObjectives.text = "You have failed. Your hive did not last winter.";
             yearlyObjectives.color = Color.red;
+            nextYear.gameObject.SetActive(false);
+            returnMainMenu.gameObject.SetActive(true);
         }
     }
 
@@ -47,4 +57,8 @@ public class EndOfYearUI : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadSceneAsync(menuScene);
+    }
 }
