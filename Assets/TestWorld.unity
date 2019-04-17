@@ -860,6 +860,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1824099975}
   m_Script: {fileID: 11500000, guid: e1dfeaf343f63574781af6713fed388b, type: 3}
+--- !u!1 &930233674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061791815994936, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 1824099975}
 --- !u!114 &983093030 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114192400815176384, guid: 11feb5e47cc57104aace03e188affe14,
@@ -1077,6 +1082,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 776477863}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: hiveButton
+      value: 
+      objectReference: {fileID: 518362258}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: seasonTimers.Array.data[0]
+      value: 
+      objectReference: {fileID: 930233674}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: grid
@@ -1142,16 +1162,6 @@ Prefab:
       propertyPath: scoutUI
       value: 
       objectReference: {fileID: 813133705}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 776477863}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: HiveButton
-      value: 
-      objectReference: {fileID: 518362258}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0

@@ -3752,6 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  goalHighlightColor: {r: 0, g: 1, b: 0, a: 1}
   grid: {fileID: 0}
   hiveButton: {fileID: 0}
   seasonTimers:
