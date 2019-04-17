@@ -83,12 +83,12 @@ public class HexGameUI : MonoBehaviour
                 }
                 
                 UpdateCurrentCell();
-                if (currentCell.Unit)
+                if (currentCell && currentCell.Unit)
                 {
                     currentCell.EnableHighlight(Color.white);
                 }
             }
-            Debug.Log(currentCell.coordinates.ToString());
+            //Debug.Log(currentCell.coordinates.ToString());
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
