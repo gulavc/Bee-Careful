@@ -1098,7 +1098,8 @@ MonoBehaviour:
   workforceCost: 5
   hasWasp: 0
   hasPesticide: 0
-  gatherParticles: {fileID: 0}
+  gatherParticles: {fileID: 198886311566248392, guid: d4fc5ff3413b31243b59c87080e6a865,
+    type: 2}
   soundToPlay: {fileID: 8300000, guid: 3a9812b3b22565f4785c7d6cc9c4ceb8, type: 3}
   dangerPrefab: {fileID: 0}
 --- !u!114 &114717504515873732
