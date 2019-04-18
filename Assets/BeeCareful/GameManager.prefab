@@ -5192,12 +5192,12 @@ MonoBehaviour:
   buttonText: {fileID: 114677465328768362}
   allowCompletion: 1
   tutorialText:
+  - good job
   - Through the Hive Mind, we will share this information and pass it along so that
     everyone is updated about the current state of our environment.
   - "Now, please give a warm welcome to Scout 87 who\u2019s going to be our main explorer
     this year. I\u2019m sure she\u2019ll be unbeetable !"
-  - (Select a Scout by left-clicking on it, and left-click on a a space on the map
-    to move there. Move your Scout on the red Hex to continue.)
+  - (Select a Scout by left-clicking on it.)
 --- !u!114 &114929028722170912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5395,7 +5395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114127125634163794}
   buttonText: {fileID: 114498057552037266}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
   - "Happy Spring everyone ! I\u2019m pleased to be your new Queen for the next few
     seasons... If we survive that long !"
