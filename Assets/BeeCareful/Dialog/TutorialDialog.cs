@@ -9,6 +9,9 @@ public class TutorialDialog : MonoBehaviour {
 
     public Text panelText;
     public Text buttonText;
+    private Button button;
+
+    public bool allowCompletion = true;
 
     public string[] tutorialText;
     int currentText;
@@ -16,7 +19,7 @@ public class TutorialDialog : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         ShowText();
-
+        button = GetComponentInChildren<Button>();
     }
 
     public void ShowText()
@@ -39,7 +42,14 @@ public class TutorialDialog : MonoBehaviour {
         StopAllCoroutines();
         if(currentText + 1 >= tutorialText.Length)
         {
-            buttonText.text = "Done";
+            if (allowCompletion)
+            {
+                buttonText.text = "Done";
+            }
+            else
+            {
+                button.gameObject.SetActive(false);
+            }
         }
         StartCoroutine(ShowText(tutorialText[currentText]));
     }

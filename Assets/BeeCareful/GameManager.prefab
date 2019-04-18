@@ -1819,6 +1819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114009639274531454}
   buttonText: {fileID: 114598141501264140}
+  allowCompletion: 1
   tutorialText:
   - The Hive Mind allows us to be aware of the current state of our resources.
   - Pollen is found in fruit bearing trees, Nectar in flowers, Resin on tree trunks
@@ -2189,6 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114630806803247476}
   buttonText: {fileID: 114657696394428322}
+  allowCompletion: 1
   tutorialText:
   - "\u201CAs I said, workers get easily exhausted and we need to replace them constantly.
     This is where you can ask me for more Workers.\u201D "
@@ -2224,6 +2226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114001635402057016}
   buttonText: {fileID: 114950945570687242}
+  allowCompletion: 1
   tutorialText:
   - "\u201C Here's where you use the resources you\u2019ve gathered so far. You can
     spawn new units or upgrade what you have.\u201D"
@@ -2314,6 +2317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114845065715937414}
   buttonText: {fileID: 114020118765212070}
+  allowCompletion: 1
   tutorialText:
   - Mountains help you see really far!
   - Find more and go visit them to find new resources.
@@ -2798,6 +2802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114186433286023204}
   buttonText: {fileID: 114929028722170912}
+  allowCompletion: 1
   tutorialText:
   - Careful! There is pesticide on this resource!
   - If you try to harvest it, more workers than usual will be lost due to the toxic
@@ -2815,6 +2820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114594670512194338}
   buttonText: {fileID: 114718389517353722}
+  allowCompletion: 1
   tutorialText:
   - Careful! There are wasps also trying to harvest this resource!
   - If you harvest it, you will gather less than you normally would, as you are competing
@@ -3320,6 +3326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114046152252173218}
   buttonText: {fileID: 114632862006770924}
+  allowCompletion: 1
   tutorialText:
   - Welcome to Bee Careful! In this game, you control a beehive and must collect enough
     resources to survive winter.
@@ -3524,6 +3531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114229390226269360}
   buttonText: {fileID: 114808166070182694}
+  allowCompletion: 1
   tutorialText:
   - "\u201CBee-utiful ! This will be a great help later on.\u201D"
 --- !u!114 &114627522292737462
@@ -4481,6 +4489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114864304279105858}
   buttonText: {fileID: 114291097310339498}
+  allowCompletion: 1
   tutorialText:
   - "Unbeelievable ! Scout 87 already found some pollen ! To gather it, you need to
     call to action some workers. They\u2019re the one collecting all the resources
@@ -4561,6 +4570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114391962589849954}
   buttonText: {fileID: 114556581005112546}
+  allowCompletion: 1
   tutorialText:
   - "\u201CI\u2019ll let you explore your options.\u201D"
 --- !u!114 &114893135309495376
@@ -4618,6 +4628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114607760219310786}
   buttonText: {fileID: 114677465328768362}
+  allowCompletion: 1
   tutorialText:
   - Through the Hive Mind, we will share this information and pass it along so that
     everyone is updated about the current state of our environment.
@@ -4671,6 +4682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114843683285943922}
   buttonText: {fileID: 114536707026392828}
+  allowCompletion: 1
   tutorialText:
   - Don't go too far from the Hive just yet!
 --- !u!114 &114950725893584012
@@ -4767,6 +4779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114127125634163794}
   buttonText: {fileID: 114498057552037266}
+  allowCompletion: 0
   tutorialText:
   - "Happy Spring everyone ! I\u2019m pleased to be your new Queen for the next few
     seasons... If we survive that long !"
@@ -4787,6 +4800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114495316400403078}
   buttonText: {fileID: 114133690426396080}
+  allowCompletion: 1
   tutorialText:
   - You should go in the Hive to see what we can do with the resources you gathered!
   - (Click on the Hive or on the Tree button on the bottom-left of your screen to
