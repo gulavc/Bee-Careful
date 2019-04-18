@@ -217,10 +217,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   resourceMax: 100
-  workforceCost: 5
+  workforceCost: 10
   hasWasp: 0
   hasPesticide: 0
-  gatherParticles: {fileID: 0}
+  gatherParticles: {fileID: 198613701148012758, guid: 329ddc61f016f6248a6f8a60b66f0944,
+    type: 2}
   soundToPlay: {fileID: 8300000, guid: 3a9812b3b22565f4785c7d6cc9c4ceb8, type: 3}
   dangerPrefab: {fileID: 0}
 --- !u!114 &114672345655776232

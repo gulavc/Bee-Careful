@@ -271,6 +271,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114994744374367934, guid: 33476354e42e6ce429a9f04309aeff3f,
+        type: 2}
+      propertyPath: upgradeManager
+      value: 
+      objectReference: {fileID: 807051935}
+    - target: {fileID: 114922837000639642, guid: 33476354e42e6ce429a9f04309aeff3f,
+        type: 2}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 646970248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33476354e42e6ce429a9f04309aeff3f, type: 2}
   m_IsPrefabAsset: 0
@@ -396,6 +406,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2071321088}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &646970248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
+    type: 2}
+  m_PrefabInternal: {fileID: 1037867666}
+  m_Script: {fileID: 11500000, guid: d768931b1bc9df848af11c774e304e4c, type: 3}
+--- !u!114 &683665023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114160748956185826, guid: 97c75573826201243a8ac0343881aa00,
+    type: 2}
+  m_PrefabInternal: {fileID: 1512250245}
+  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
 --- !u!1 &776477862
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +562,7 @@ Prefab:
         type: 2}
       propertyPath: spawnManager
       value: 
-      objectReference: {fileID: 1512250246}
+      objectReference: {fileID: 683665023}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: resourcesHUD
@@ -868,16 +890,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114160748956185826, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: hexGrid
+      value: 
+      objectReference: {fileID: 776477863}
     - target: {fileID: 114918515003133336, guid: 97c75573826201243a8ac0343881aa00,
         type: 2}
       propertyPath: upgradeManager
       value: 
       objectReference: {fileID: 807051935}
-    - target: {fileID: 114217993178952170, guid: 97c75573826201243a8ac0343881aa00,
-        type: 2}
-      propertyPath: hexGrid
-      value: 
-      objectReference: {fileID: 776477863}
     - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
       propertyPath: m_Name
       value: HiveUI
@@ -885,12 +907,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c75573826201243a8ac0343881aa00, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1512250246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114217993178952170, guid: 97c75573826201243a8ac0343881aa00,
-    type: 2}
-  m_PrefabInternal: {fileID: 1512250245}
-  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
 --- !u!114 &1565452845 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114918476612680794, guid: 7223fab50f5f02f46bc478c170e45e48,

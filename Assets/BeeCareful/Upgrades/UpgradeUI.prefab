@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224120747132611118}
+  - component: {fileID: 114160748956185826}
   m_Layer: 5
   m_Name: CenterHive
   m_TagString: Untagged
@@ -72,7 +73,6 @@ GameObject:
   - component: {fileID: 114547875381558040}
   - component: {fileID: 114501281567195250}
   - component: {fileID: 114131279700094810}
-  - component: {fileID: 114565305300298430}
   m_Layer: 5
   m_Name: NewScout
   m_TagString: Untagged
@@ -676,7 +676,6 @@ GameObject:
   - component: {fileID: 114453431619054468}
   - component: {fileID: 114611677827545192}
   - component: {fileID: 114950950968221106}
-  - component: {fileID: 114453928629475480}
   m_Layer: 5
   m_Name: NewWorker
   m_TagString: Untagged
@@ -829,6 +828,7 @@ GameObject:
   - component: {fileID: 222885005961376204}
   - component: {fileID: 114303725519301464}
   - component: {fileID: 114188952216568376}
+  - component: {fileID: 114181660349616744}
   m_Layer: 5
   m_Name: Scout
   m_TagString: Untagged
@@ -1968,6 +1968,7 @@ GameObject:
   - component: {fileID: 222842544310072532}
   - component: {fileID: 114427363465145522}
   - component: {fileID: 114464685678109662}
+  - component: {fileID: 114897256480552020}
   m_Layer: 5
   m_Name: Worker
   m_TagString: Untagged
@@ -2618,8 +2619,6 @@ GameObject:
   - component: {fileID: 114212067232329886}
   - component: {fileID: 114413202750422508}
   - component: {fileID: 114918515003133336}
-  - component: {fileID: 114217993178952170}
-  - component: {fileID: 82049967858579368}
   m_Layer: 5
   m_Name: UpgradeUI
   m_TagString: Untagged
@@ -2757,6 +2756,7 @@ GameObject:
   - component: {fileID: 222659645357482952}
   - component: {fileID: 114385605622698534}
   - component: {fileID: 114003365514755966}
+  - component: {fileID: 114929658757204992}
   m_Layer: 5
   m_Name: Spawn
   m_TagString: Untagged
@@ -3232,101 +3232,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &82049967858579368
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1810843958806904}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 02fb027d7bcbe764da04878efade1cff, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &114003365514755966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3789,7 +3694,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3833,7 +3738,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can move [X] tiles further / Cost: 40 Water + 40 Resin'
+  m_Text: Our Scouts movements cost 1 Beenergy Point. We need 30 Nectar, 20 Water,
+    20 Resin and 20 Pollen.
 --- !u!114 &114028662175820598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4004,7 +3910,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Wasps / Cost: 30 Water + 30 Resin'
+  m_Text: Our Workers are completely unaffected by Wasps. We need 15 Nectar, 15 Resin
+    and 15 Pollen.
 --- !u!114 &114067201272975838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4121,7 +4028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Wasps / Cost: 20 Water + 20 Resin'
+  m_Text: Our Workers are 75% less affected by Wasps. We need 15 Resin and 15 Pollen.
 --- !u!114 &114073800049107870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4319,7 +4226,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can see two (2) tiles further / Cost: 30 Nectar + 30 Pollen'
+  m_Text: Our Scouts can see 2 tiles further. We need 10 Nectar, 30 Water, 10 Resin
+    and 10 Pollen.
 --- !u!114 &114092025882795630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4619,7 +4527,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can move [X] tiles further / Cost: 10 Water + 10 Resin'
+  m_Text: Our Scouts movements cost 3 Beenergy Points. We need 30 Nectar.
 --- !u!114 &114127269425267820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4782,7 +4690,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114565305300298430}
+      - m_Target: {fileID: 114160748956185826}
         m_MethodName: CreateScout
         m_Mode: 1
         m_Arguments:
@@ -5056,6 +4964,30 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &114160748956185826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001478639097442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hexGrid: {fileID: 0}
+  gameManager: {fileID: 0}
+  scoutNectarCost: 40
+  scoutWaterCost: 40
+  scoutResinCost: 40
+  scoutPollenCost: 40
+  workNectarCost: 20
+  workWaterCost: 20
+  workResinCost: 20
+  workPollenCost: 20
+  addWorkers: 50
+  workerTooltip: {fileID: 114022751143129362}
+  scoutTooltip: {fileID: 114473347560238300}
 --- !u!114 &114163467044308150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5110,6 +5042,47 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114181660349616744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196057735753856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114303725519301464}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114188952216568376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5388,7 +5361,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can now fly over Mountains / Cost: 15 Nectar + 30 Pollen'
+  m_Text: Our Scouts can now fly over Mountains. We need 30 Pollen.
 --- !u!114 &114211796321838538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5437,28 +5410,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114217993178952170
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1810843958806904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hexGrid: {fileID: 0}
-  gameManager: {fileID: 0}
-  scoutNectarCost: 40
-  scoutWaterCost: 40
-  scoutResinCost: 40
-  scoutPollenCost: 40
-  workNectarCost: 20
-  workWaterCost: 20
-  workResinCost: 20
-  workPollenCost: 20
-  addWorkers: 50
 --- !u!114 &114217998493925078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5704,7 +5655,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can see one (1) tile further / Cost: 15 Nectar + 15 Pollen'
+  m_Text: Our Scouts can see 1 tile further. We need 30 water.
 --- !u!114 &114237546273541370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5737,7 +5688,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Pesticide / Cost: 10 Nectar + 10 Pollen'
+  m_Text: 30 Workers will be able to gather resources with Pesticide. We need 15 Resin.
 --- !u!114 &114238082163675062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5770,7 +5721,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can now fly over Rivers / Cost: 15 Nectar + 30 Water'
+  m_Text: Our Scouts can now fly over Rivers. We need 10 Nectar, 10 Water, 10 Resin
+    and 30 Pollen.
 --- !u!114 &114239394751727264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6037,8 +5989,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Workers is now cheaper / Cost: 10 Nectar + 10 Resin + 10 Pollen
-    + 10 Water'
+  m_Text: Creating Workers is now 50% cheaper. We need 15 Nectar, 15 Water, 15 Resin
+    and 15 Pollen.
 --- !u!114 &114279030101122146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6167,7 +6119,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Wasps / Cost: 10 Water + 10 Resin'
+  m_Text: Our Workers are 50% less affected by Wasps. We need 15 Pollen.
 --- !u!114 &114287171805043532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6227,8 +6179,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'For each Scout you have, reduce your resource objectives by 2 / Cost: 30
-    Nectar + 30 Resin + 30 Pollen + 30 Water'
+  m_Text: For each Scout we have have, reduce your resource objectives by 2. We need
+    20 Nectar, 20 Water, 20 Resin and 20 Pollen.
 --- !u!114 &114296332790068506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6564,8 +6516,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Scouts is now cheaper / Cost: 20 Nectar + 20 Resin + 20 Pollen
-    + 20 Water'
+  m_Text: Creating Scouts is now 50% cheaper. We need 35 Nectar, 35 Water, 35 Resin
+    and 35 Pollen.
 --- !u!114 &114342673436182016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6667,7 +6619,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can see three (3) tiles further / Cost: 45 Nectar + 45 Pollen'
+  m_Text: Our Scouts can see 3 tiles further. We need 20 Nectar, 30 Water, 20 Resin
+    and 20 Pollen.
 --- !u!114 &114350299817825220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6734,51 +6687,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1810843958806904}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1705571255559006}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1362533729684632}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1623156358108776}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -6961,7 +6870,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can move [X] tiles further / Cost: 20 Water + 20 Resin'
+  m_Text: Our Scouts movements cost 2 Beenergy Points. We need 30 Nectar, 10 Water,
+    10 Resin and 10 Pollen.
 --- !u!114 &114385605622698534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7117,8 +7027,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'For each Scout you have, reduce your resource objectives by 3 / Cost: 45
-    Nectar + 45 Resin + 45 Pollen + 45 Water'
+  m_Text: For each Scout we have have, reduce your resource objectives by 3. We need
+    30 Nectar, 30 Water, 30 Resin and 30 Pollen.
 --- !u!114 &114412297203843982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7208,7 +7118,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers can gather [X] more resources / Cost: 20 Water + 20 Resin'
+  m_Text: Our Workers now gather 50 resources per resource point. We need 15 Nectar,
+    15 Water and 15 Resin.
 --- !u!114 &114413202750422508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7729,28 +7640,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114453928629475480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1148893369212848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hexGrid: {fileID: 0}
-  gameManager: {fileID: 0}
-  scoutNectarCost: 40
-  scoutWaterCost: 40
-  scoutResinCost: 40
-  scoutPollenCost: 40
-  workNectarCost: 20
-  workWaterCost: 20
-  workResinCost: 20
-  workPollenCost: 20
-  addWorkers: 50
 --- !u!114 &114464021556815336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7964,7 +7853,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -8433,9 +8322,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1492971969711562}
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 114160748956185826}
+          m_MethodName: ShowScoutToolip
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8656,8 +8545,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Each year, you start with [X] more Workers / Cost: 20 Nectar + 20 Resin
-    + 20 Pollen + 20 Water'
+  m_Text: At the start of a new year, we have 150 Workers. We need 15 Nectar, 15 Water,
+    15 Resin and 15 Pollen.
 --- !u!114 &114513999738304592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9059,30 +8948,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Each year, you start with [X] more Workers / Cost: 30 Nectar + 30 Resin
-    + 30 Pollen + 30 Water'
---- !u!114 &114565305300298430
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1022778833174902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0074cca35ac6d4086b63f7007c9fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hexGrid: {fileID: 0}
-  gameManager: {fileID: 0}
-  scoutNectarCost: 40
-  scoutWaterCost: 40
-  scoutResinCost: 40
-  scoutPollenCost: 40
-  workNectarCost: 20
-  workWaterCost: 20
-  workResinCost: 20
-  workPollenCost: 20
-  addWorkers: 50
+  m_Text: At the start of a new year, we have 200 Workers. We need 20 Nectar, 20 Water,
+    20 Resin and 20 Pollen.
 --- !u!114 &114568563405625392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9280,8 +9147,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Workers is now cheaper / Cost: 15 Nectar + 15 Resin + 15 Pollen
-    + 15 Water'
+  m_Text: Creating Workers is now 75% cheaper. We need 20 Nectar, 20 Water, 20 Resin
+    and 20 Pollen.
 --- !u!114 &114600585387156520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9325,9 +9192,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1724999847718034}
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 114160748956185826}
+          m_MethodName: ShowWorkerToolip
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9524,8 +9391,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'For each Scout you have, reduce your resource objectives by 1 / Cost: 15
-    Nectar + 15 Resin + 15 Pollen + 15 Water'
+  m_Text: For each Scout we have have, reduce your resource objectives by 1. We need
+    10 Nectar, 10 Water, 10 Resin and 10 Pollen.
 --- !u!114 &114639702436477982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10344,8 +10211,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Scouts is now cheaper / Cost: 30 Nectar + 30 Resin + 30 Pollen
-    + 30 Water'
+  m_Text: Creating Scouts is now 75% cheaper. We need 40 Nectar, 40 Water, 40 Resin
+    and 40 Pollen.
 --- !u!114 &114784312803796016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10486,8 +10353,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Each year, you start with [X] more Workers / Cost: 10 Nectar + 10 Resin
-    + 10 Pollen + 10 Water'
+  m_Text: At the start of a new year, we have 100 Workers. We need 10 Nectar, 10 Water,
+    10 Resin and 10 Pollen.
 --- !u!114 &114800895012768158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10577,7 +10444,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers can gather [X] more resources / Cost: 10 Water + 10 Resin'
+  m_Text: Our Workers now gather 30 resources per resource point. We need 15 Water.
 --- !u!114 &114805960093675252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10610,7 +10477,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Scouts can now fly over Cities / Cost: 15 Nectar + 30 Resin'
+  m_Text: Our Scouts can now fly over Cities. We need 20 Nectar, 20 Water, 20 Resin
+    and 30 Pollen.
 --- !u!114 &114806577757184830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10697,8 +10565,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Workers is now cheaper / Cost: 5 Nectar + 5 Resin + 5 Pollen
-    + 5 Water'
+  m_Text: Creating Workers is now 25% cheaper. We need 10 Nectar, 10 Water, 10 Resin
+    and 10 Pollen.
 --- !u!114 &114828089301122024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10908,7 +10776,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Pesticide / Cost: 20 Nectar + 20 Pollen'
+  m_Text: 20 Workers will be able to gather resources with Pesticide. We need 15 Water
+    and 15 Resin.
 --- !u!114 &114851855877367718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11202,7 +11071,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers can gather [X] more resources / Cost: 15 Water + 15 Resin'
+  m_Text: Our Workers now gather 40 resources per resource point. We need 15 Water
+    and 15 Resin.
 --- !u!114 &114883004407633784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11410,6 +11280,47 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114897256480552020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600128142902364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114427363465145522}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114898877093415080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11663,6 +11574,47 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114929658757204992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853302097943054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 114385605622698534}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114930731746670670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11978,7 +11930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114453928629475480}
+      - m_Target: {fileID: 114160748956185826}
         m_MethodName: CreateWorker
         m_Mode: 1
         m_Arguments:
@@ -12275,8 +12227,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating new Scouts is now cheaper / Cost: 10 Nectar + 10 Resin + 10 Pollen
-    + 10 Water'
+  m_Text: Creating Scouts is now 25% cheaper. We need 30 Nectar, 30 Water, 30 Resin
+    and 30 Pollen.
 --- !u!114 &114996814104355026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12309,7 +12261,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your Workers are less affected by Pesticide / Cost: 30 Nectar + 30 Pollen'
+  m_Text: 10 Workers will be able to gather resources with Pesticide. We need 15 Nectar,
+    15 Water and 15 Resin.
 --- !u!222 &222007637563070768
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -15625,7 +15578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 184, y: 409}
+  m_AnchoredPosition: {x: 188, y: 203}
   m_SizeDelta: {x: 284.4, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224539348889207886
@@ -16870,7 +16823,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -23.299988, y: 79.217}
-  m_SizeDelta: {x: 583.4, y: 23.939}
+  m_SizeDelta: {x: 583.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224958929599031864
 RectTransform:
