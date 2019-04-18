@@ -868,16 +868,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114217993178952170, guid: 97c75573826201243a8ac0343881aa00,
-        type: 2}
-      propertyPath: hexGrid
-      value: 
-      objectReference: {fileID: 776477863}
     - target: {fileID: 114918515003133336, guid: 97c75573826201243a8ac0343881aa00,
         type: 2}
       propertyPath: upgradeManager
       value: 
       objectReference: {fileID: 807051935}
+    - target: {fileID: 114217993178952170, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: hexGrid
+      value: 
+      objectReference: {fileID: 776477863}
     - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
       propertyPath: m_Name
       value: HiveUI
