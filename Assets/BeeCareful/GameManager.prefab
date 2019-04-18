@@ -2084,7 +2084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114009639274531454}
   buttonText: {fileID: 114598141501264140}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
   - The Hive Mind allows us to be aware of the current state of our resources.
   - Pollen is found in fruit bearing trees, Nectar in flowers, Resin on tree trunks
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114864304279105858}
   buttonText: {fileID: 114291097310339498}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
   - "Unbeelievable ! Scout 87 already found some pollen ! To gather it, you need to
     call to action some workers. They\u2019re the one collecting all the resources
@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114607760219310786}
   buttonText: {fileID: 114677465328768362}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
   - good job
   - Through the Hive Mind, we will share this information and pass it along so that
@@ -5419,8 +5419,8 @@ MonoBehaviour:
   allowCompletion: 1
   tutorialText:
   - You should go in the Hive to see what we can do with the resources you gathered!
-  - (Click on the Hive or on the Tree button on the bottom-left of your screen to
-    continue.)
+  - (End of the tutorial for now. Click on the Tree on the bottom left of your screen
+    to open your Hive and spend your resources.)
 --- !u!114 &114990700652244498
 MonoBehaviour:
   m_ObjectHideFlags: 1
