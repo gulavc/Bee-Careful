@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PollenParticles 2
+  m_Name: ResinParticles
   m_Shader: {fileID: 4800000, guid: 7ac63f951a6088843a7e7a6c536cc0c0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
