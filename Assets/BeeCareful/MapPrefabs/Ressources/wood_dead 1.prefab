@@ -221,7 +221,7 @@ MonoBehaviour:
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 0}
-  soundToPlay: {fileID: 8300000, guid: ad3903fe72d849d42abc1bb3ee9b4471, type: 3}
+  soundToPlay: {fileID: 8300000, guid: 3a9812b3b22565f4785c7d6cc9c4ceb8, type: 3}
   dangerPrefab: {fileID: 0}
 --- !u!114 &114672345655776232
 MonoBehaviour:
