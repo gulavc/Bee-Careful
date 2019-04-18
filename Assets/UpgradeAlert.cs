@@ -10,18 +10,25 @@ public class UpgradeAlert : MonoBehaviour {
     private List<string> upgradeList;
     private List<string> upgradeNames;
 
-    private Vector3 startPosition;
+    public float showTime = 5f;
 
-    public float showTime = 3f;
+    private float width;
     
     // Use this for initialization
     void Start () {
+
         upgradeNames = new List<string>();
         upgradeList = new List<string>();
-        startPosition = this.transform.position;
 
-        //TEST
-        Show();
+        width = 0;
+        RectTransform[] temp = GetComponentsInChildren<RectTransform>();
+        foreach(RectTransform r in temp)
+        {
+            if(r.sizeDelta.x > width)
+            {
+                width = r.sizeDelta.x;
+            }
+        }        
     }
 	
 	// Update is called once per frame
@@ -85,17 +92,27 @@ public class UpgradeAlert : MonoBehaviour {
 
     public void Hide()
     {
-
+        StartCoroutine(Translate(Vector2.left, false));
     }
 
-    IEnumerator Translate(Vector2 direction)
+    IEnumerator Translate(Vector2 direction, bool autoHide = true)
     {
-        while (true)
+        float translate = 0;
+        while (translate <= width)
         {
-            this.transform.Translate(Vector3.right);
+            translate += width * Time.deltaTime;
+            this.transform.Translate(direction * width * Time.deltaTime);
 
             yield return null;
         }
+
+        if (autoHide)
+        {
+            yield return new WaitForSeconds(showTime);
+
+            Hide();
+        }
+        
     }
 
 }

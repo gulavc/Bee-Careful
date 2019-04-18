@@ -10,6 +10,7 @@ public class PlayerResources : MonoBehaviour
     public static bool StartWorkUpgrade3 = false;
 
     [HideInInspector] public GameManager gameManager;
+    private UpgradeAlert upgradeAlert;
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
 
@@ -50,6 +51,16 @@ public class PlayerResources : MonoBehaviour
         //TODO: ADD ANIMATION TO INDICATE THIS;
         playerResources[r] += value;
         gameManager.UpdateResourcesHUD(r);
+
+        //Upgrade Pop-up HERE
+        if (!upgradeAlert)
+        {
+            upgradeAlert = FindObjectOfType<UpgradeAlert>();
+        }
+        if (upgradeAlert.VerifyPopup())
+        {
+            upgradeAlert.Show();
+        }
 
     }
 
