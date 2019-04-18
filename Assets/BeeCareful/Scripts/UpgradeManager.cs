@@ -899,6 +899,11 @@ public class UpgradeManager : MonoBehaviour
         SpawnManager.CheapScoutUpgrade3 = false;
     }
 
+    public List<string> GetUpgradeNames()
+    {
+        return new List<string>(upgrades.Keys);
+    }
+
 
 
 }

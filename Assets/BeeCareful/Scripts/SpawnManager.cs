@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -26,6 +26,10 @@ public class SpawnManager : MonoBehaviour
     public int workResinCost;
     public int workPollenCost;
     public int addWorkers;
+
+    [Header("Tooltips references")]
+    public Text workerTooltip;
+    public Text scoutTooltip;
 
     
     public float WorkerDiscout {
@@ -143,6 +147,50 @@ public class SpawnManager : MonoBehaviour
         }
 
     }
+
+    public int[] GetWorkerCost()
+    {    
+        int[] value = new int[4];
+
+        value[0] = (int)(workNectarCost * (1 - WorkerDiscout));
+        value[1] = (int)(workWaterCost * (1 - WorkerDiscout));
+        value[2] = (int)(workResinCost * (1 - WorkerDiscout));
+        value[3] = (int)(workPollenCost * (1 - WorkerDiscout));
+        return value;
+    }
+
+    public void ShowWorkerToolip()
+    {
+        int[] costs = GetWorkerCost();
+
+        workerTooltip.text = "Create new Workers to gather resources. We need " + costs[0] + " Nectar, " + costs[1] + " Water, " + costs[2] + " Resin and " + costs[3] + " Pollen."; 
+
+        workerTooltip.gameObject.SetActive(true);
+
+    }
+
+    public int[] GetScoutCost()
+    {
+        int[] value = new int[4];
+
+        value[0] = (int)(scoutNectarCost * (1 - ScoutDiscout));
+        value[1] = (int)(scoutWaterCost * (1 - ScoutDiscout));
+        value[2] = (int)(scoutResinCost * (1 - ScoutDiscout));
+        value[3] = (int)(scoutPollenCost * (1 - ScoutDiscout));
+        return value;
+    }
+
+    public void ShowScoutToolip()
+    {
+        int[] costs = GetScoutCost();
+
+        scoutTooltip.text = "Create a new Scout to explore the world. We need " + costs[0] + " Nectar, " + costs[1] + " Water, " + costs[2] + " Resin and " + costs[3] + " Pollen.";
+
+        scoutTooltip.gameObject.SetActive(true);
+
+    }
+
+
 }
 
 
