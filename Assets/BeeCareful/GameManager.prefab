@@ -2274,6 +2274,11 @@ MonoBehaviour:
   HiveUI: {fileID: 0}
   grid: {fileID: 0}
   scoutUI: {fileID: 0}
+  normalPointer: {fileID: 2800000, guid: 33509d2a3bebbf5449765db4317f5438, type: 3}
+  selectionPointer: {fileID: 2800000, guid: 74cf3f7ce1972ba4bbeae80183fb42dd, type: 3}
+  movePointer: {fileID: 2800000, guid: e0d56bdd83c766a48ae1e6356cfdc04b, type: 3}
+  noMovePointer: {fileID: 2800000, guid: de8f725314c7cd241be0243fe38da502, type: 3}
+  pointerOffset: {x: 0, y: 0}
   MoveToWorkerConversionRatio: 1
 --- !u!114 &114200983646480236
 MonoBehaviour:

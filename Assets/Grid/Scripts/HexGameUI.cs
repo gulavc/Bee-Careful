@@ -29,6 +29,13 @@ public class HexGameUI : MonoBehaviour
         }
     }
 
+    [Header("Pointer Textures")]
+    public Texture2D normalPointer;
+    public Texture2D selectionPointer;
+    public Texture2D movePointer;
+    public Texture2D noMovePointer;
+    public Vector2 pointerOffset = Vector2.zero;
+
 
     public bool PlayerHasControl {
         get; set;
@@ -39,6 +46,8 @@ public class HexGameUI : MonoBehaviour
 
     void Update()
     {
+        
+
         if (PlayerHasControl && !EventSystem.current.IsPointerOverGameObject())
         {
             if (Input.GetMouseButtonDown(0))
@@ -77,6 +86,7 @@ public class HexGameUI : MonoBehaviour
             }
             else
             {
+                Cursor.SetCursor(normalPointer, pointerOffset, CursorMode.Auto);
                 if (currentCell)
                 {
                     currentCell.DisableHighlight();
@@ -86,6 +96,7 @@ public class HexGameUI : MonoBehaviour
                 if (currentCell && currentCell.Unit)
                 {
                     currentCell.EnableHighlight(Color.white);
+                    Cursor.SetCursor(selectionPointer, pointerOffset, CursorMode.Auto);
                 }
             }
             //Debug.Log(currentCell.coordinates.ToString());
@@ -116,6 +127,8 @@ public class HexGameUI : MonoBehaviour
         resourcePointIndices.Add(5);
 
         partialWorker = 0;
+
+        Cursor.SetCursor(normalPointer, pointerOffset, CursorMode.Auto);
     }
 
     public void SetEditMode(bool toggle)
@@ -202,14 +215,16 @@ public class HexGameUI : MonoBehaviour
             {
                 if (currentCell && selectedUnit.IsValidDestination(currentCell))
                 {
+                    Cursor.SetCursor(movePointer, pointerOffset, CursorMode.Auto);
                     grid.FindPath(selectedUnit.Location, currentCell, selectedUnit);
-                    gameManager.PreviewSeasonTimer(currentCell.Distance);
+                    gameManager.PreviewSeasonTimer(currentCell.Distance);                    
                 }
                 else
                 {
+                    Cursor.SetCursor(noMovePointer, pointerOffset, CursorMode.Auto);
                     grid.ClearPath();
                     selectedUnit.Location.EnableHighlight(Color.blue);
-                    gameManager.ResetSeasonTimerPreview();
+                    gameManager.ResetSeasonTimerPreview();                    
                 }
             }
         }
