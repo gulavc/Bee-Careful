@@ -784,6 +784,66 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224731665973000128, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224162814929175448, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224486293297557300, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224888001055978388, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224631588325373496, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224402431108736660, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224080168854330282, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224896183500552524, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224342986003967100, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224037831021917774, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224442139373002296, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224490288214235606, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5879c73079813224a8741822ab2dda62, type: 2}
   m_IsPrefabAsset: 0
@@ -903,6 +963,24 @@ Prefab:
     - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
       propertyPath: m_Name
       value: HiveUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 114823394553097374, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: m_Text
+      value: Creating Workers is now 25% cheaper. We need 10 Nectar, 10 Water, 10
+        Resin and 10 Pollen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270555385704658, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: m_Text
+      value: Creating Workers is now 50% cheaper. We need 15 Nectar, 15 Water, 15
+        Resin and 15 Pollen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114585114534442306, guid: 97c75573826201243a8ac0343881aa00,
+        type: 2}
+      propertyPath: m_Text
+      value: Creating Workers is now 75% cheaper. We need 20 Nectar, 20 Water, 20
+        Resin and 20 Pollen.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c75573826201243a8ac0343881aa00, type: 2}
