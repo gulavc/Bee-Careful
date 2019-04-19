@@ -339,7 +339,7 @@ public class Tutorial : MonoBehaviour {
         }
 
         //here we cheat
-        gameManager.SetCurrentPointsAction(int.MaxValue);
+        gameManager.SetCurrentPointsAction(int.MaxValue, true);
     }
 
     private void TutorialsTearDown()

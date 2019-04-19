@@ -36,19 +36,19 @@ public class ResourcePoint : HexInteractable {
         get {
             if (GatherMoreUpgrade3)
             {
-                return 0.5f;
+                return 1.3f;
             }
             else if (GatherMoreUpgrade2)
             {
-                return 0.4f;
+                return 1.2f;
             }
             else if (GatherMoreUpgrade1)
             {
-                return 0.3f;
+                return 1.1f;
             }
             else
             {
-                return 0.2f;
+                return 1.0f;
             }            
         }
     }
@@ -109,8 +109,6 @@ public class ResourcePoint : HexInteractable {
 
         Cell = gameManager.grid.GetCell(HexCoordinates.FromPosition(transform.position));
 
-        UITarget = GameObject.Find("Panel_resin");
-
     }
 
     protected override void Update()
@@ -170,7 +168,9 @@ public class ResourcePoint : HexInteractable {
                 waspPenalty *= (1 - WaspProtection);
                 resourceGet = (int)(resourceGet * (1 - waspPenalty)); 
             }
-            
+
+            //Register Bonus According to Resource Type
+            rpm.TapResourcePoint(Cell, type);
 
             gameManager.RemovePlayerRessources(ResourceType.Workers, actualWorkforceCost);
             gameManager.AddPlayerResources(type, resourceGet);
@@ -215,18 +215,5 @@ public class ResourcePoint : HexInteractable {
     }
 
     public int RemainingResources { get; private set; }
-
-    IEnumerator MoveToUI(GameObject toMove, GameObject target)
-    {
-        Vector3 velocity = Vector3.zero;
-        float smoothTime = 2f;
-
-        while(Vector3.Distance(toMove.transform.position, target.transform.position) > 0.1f)
-        {
-            Vector3.SmoothDamp(toMove.transform.position, target.transform.position, ref velocity, smoothTime);
-            yield return new WaitForEndOfFrame();
-        }
-        
-    }
 
 }
