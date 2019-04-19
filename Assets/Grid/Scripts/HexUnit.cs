@@ -10,6 +10,16 @@ public class HexUnit : MonoBehaviour, IUpgrade {
     public static bool ScoutVisionUpgrade2 = false;
     public static bool ScoutVisionUpgrade3 = false;
 
+    public static bool ScoutMoveUpgrade1 = false;
+    public static bool ScoutMoveUpgrade2 = false;
+    public static bool ScoutMoveUpgrade3 = false;
+
+    public static bool ScoutFlyUpgrade1 = false;
+    public static bool ScoutFlyUpgrade2 = false;
+    public static bool ScoutFlyUpgrade3 = false;
+
+
+
     public Text countText;
     HexCell location, currentTravelLocation;
     float orientation;
@@ -33,6 +43,25 @@ public class HexUnit : MonoBehaviour, IUpgrade {
         }
     }
 
+    public static int MoveCost {
+        get {
+            if (ScoutMoveUpgrade3)
+            {
+                return 1;
+            }
+            else if (ScoutMoveUpgrade2)
+            {
+                return 2;
+            }
+            else if (ScoutMoveUpgrade1)
+            {
+                return 3;
+            }
+            return 4;
+        }
+    }
+
+
     List<HexCell> pathToTravel;
     const float travelSpeed = 4f; //cells per second
     const float rotationSpeed = 180f; //degrees per second
@@ -42,6 +71,12 @@ public class HexUnit : MonoBehaviour, IUpgrade {
     public static HexUnit unitPrefab;
 
     public HexGrid Grid { get; set; }
+
+    public bool IsControllable {
+        get {
+            return (Grid.GetCell(transform.position) == location);
+        }
+    }
 
     void OnEnable() {
         if (location) {
@@ -117,7 +152,7 @@ public class HexUnit : MonoBehaviour, IUpgrade {
     }
 
     public bool IsValidDestination(HexCell cell) {
-        return cell.IsExplored && !cell.IsUnderwater && !cell.Unit;
+        return cell.IsExplored && !cell.Unit && (!cell.IsUnderwater || ScoutFlyUpgrade2);
     }
 
     public void UseMovement(int move) {
@@ -238,25 +273,32 @@ public class HexUnit : MonoBehaviour, IUpgrade {
 
     public int GetMoveCost(HexCell fromCell, HexCell toCell, HexDirection direction)
     {
+        int moveCost;
+
         HexEdgeType edgeType = fromCell.GetEdgeType(toCell);
-        if (edgeType == HexEdgeType.Cliff && !canFly)
+        if (edgeType == HexEdgeType.Cliff && !ScoutFlyUpgrade1)
         {
             return -1;
         }
-
-        int moveCost;
-        if (fromCell.HasRoadThroughEdge(direction))
+                
+        /*if (fromCell.HasRoadThroughEdge(direction))
         {
             moveCost = 1;
         }
-        else if (fromCell.Walled != toCell.Walled && !canFly)
+        else */
+        if (fromCell.Walled != toCell.Walled && !ScoutFlyUpgrade1)
+        {
+            return -1;
+        }
+        if(toCell.UrbanLevel > 0 && !ScoutFlyUpgrade3)
         {
             return -1;
         }
         else
         {
-            moveCost = edgeType == HexEdgeType.Flat ? 3 : 5;
-            moveCost += (toCell.UrbanLevel + toCell.FarmLevel + toCell.PlantLevel) / 2;
+            moveCost = MoveCost;
+            /*moveCost = edgeType == HexEdgeType.Flat ? 3 : 5;
+            moveCost += (toCell.UrbanLevel + toCell.FarmLevel + toCell.PlantLevel) / 2;*/
         }
         return moveCost;
     }

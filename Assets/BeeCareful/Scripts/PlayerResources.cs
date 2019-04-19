@@ -4,10 +4,36 @@ using UnityEngine;
 
 public class PlayerResources : MonoBehaviour
 {
+
+    public static bool StartWorkUpgrade1 = false;
+    public static bool StartWorkUpgrade2 = false;
+    public static bool StartWorkUpgrade3 = false;
+
     [HideInInspector] public GameManager gameManager;
+    private UpgradeAlert upgradeAlert;
 
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
-    public int maxResources = 100;
+
+    private int StartingWorkers {
+        get {
+            if (StartWorkUpgrade3)
+            {
+                return 200;
+            }
+            else if (StartWorkUpgrade2)
+            {
+                return 150;
+            }
+            else if (StartWorkUpgrade1)
+            {
+                return 100;
+            }
+            else
+            {
+                return 50;
+            }
+        }
+    }
 
     public void Awake()
     {
@@ -16,79 +42,32 @@ public class PlayerResources : MonoBehaviour
         playerResources.Add(ResourceType.Water, 0);
         playerResources.Add(ResourceType.Resin, 0);
         playerResources.Add(ResourceType.Pollen, 0);
-        playerResources.Add(ResourceType.Workers, 200);
+        playerResources.Add(ResourceType.Workers, 0);
 
     }
 
     public void AddResources(ResourceType r, int value)
     {
-        if (ValidateResources(value))
-        {
-            playerResources[r] += value;
-
-        }
-
-        else
-        {
-
-            //Dealing with damage -- RIP
-            /*if (r == ResourceType.Damage)
-            {
-
-                for (int i = 0; i < value; i++)
-                {
-                    if (ValidateResources(1))
-                    {
-                        playerResources[r] += 1;
-                    }
-
-                    else
-                    {
-                        bool done = false;
-
-                        do
-                        {
-
-                            ResourceType result = (ResourceType)Random.Range(0, 4);
-                            if (playerResources[result] > 0)
-                            {
-                                playerResources[result] -= 1;
-                                playerResources[r] += 1;
-                                done = true;
-                            }
-                            if (playerResources[r] == maxResources)
-                            {
-                                done = true;
-                                Debug.Log("u dead bzz bzz");
-                            }
-
-                        } while (!done);
-
-
-
-                    }
-                }
-            }*/
-
-
-            int total = 0;
-            foreach (int i in playerResources.Values)
-            {
-                total += i;
-            }
-            playerResources[r] += maxResources - total;
-
-
-        }
-
-
+        //TODO: ADD ANIMATION TO INDICATE THIS;
+        playerResources[r] += value;
         gameManager.UpdateResourcesHUD(r);
+
+        //Upgrade Pop-up HERE
+        if (!upgradeAlert)
+        {
+            upgradeAlert = FindObjectOfType<UpgradeAlert>();
+        }
+        if (upgradeAlert.VerifyPopup())
+        {
+            upgradeAlert.Show();
+        }
 
     }
 
     public void RemoveResources(ResourceType r, int amount)
     {
-        if(amount >= 0)
+        //TODO: ADD ANIMATION TO INDICATE THIS;
+        if (amount >= 0)
         {
             playerResources[r] = playerResources[r] - amount < 0 ? 0 : playerResources[r] - amount;
         }
@@ -103,22 +82,16 @@ public class PlayerResources : MonoBehaviour
             ResourceType.Resin + ": " + playerResources[ResourceType.Resin] + " / " +
             ResourceType.Pollen + ": " + playerResources[ResourceType.Pollen] + " / " +
             ResourceType.Workers + ": " + playerResources[ResourceType.Workers];
-    }
-
-    public bool ValidateResources(int newValue = 0)
-    {
-        int total = newValue;
-        foreach (int i in playerResources.Values)
-        {
-            total += i;
-        }
-
-        return total <= maxResources;
-    }
+    }    
 
     public int GetCurrentResource(ResourceType r)
     {
         return playerResources[r];
     }
 
+    public void SetStartingWorkers()
+    {
+        playerResources[ResourceType.Workers] = StartingWorkers;
+        gameManager.UpdateResourcesHUD(ResourceType.Workers);
+    }
 }

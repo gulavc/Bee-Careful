@@ -14,8 +14,9 @@ public abstract class HexInteractable : MonoBehaviour {
         actionDone = false;
     }
 
-    void Update()
+    protected virtual void Update()
     {
+        
         if (Cell.Unit)
         {
             activateAction = true;
@@ -27,7 +28,7 @@ public abstract class HexInteractable : MonoBehaviour {
         }
 
         if (activateAction && !actionDone)
-        {
+        {            
             OnUnitEnterCell(Cell);
             actionDone = true;
         }

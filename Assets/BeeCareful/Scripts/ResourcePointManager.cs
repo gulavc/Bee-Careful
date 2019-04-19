@@ -13,12 +13,15 @@ public class ResourcePointManager : MonoBehaviour {
     [Range(0, 100)]
     public int percentPesticide;
 
+    public int waspPercentIncreaseByYear;
+    public int pesticidePercentIncreaseByYear;
+
     [Space(10)]
     [Header("Danger Effectiveness")]
     [Range(0, 1)]
     public float waspPenalty;
 
-    [Range(1, 2)]
+    [Range(1, 4)]
     public float pesticidePenalty;
 
     [Space(10)]
@@ -45,9 +48,9 @@ public class ResourcePointManager : MonoBehaviour {
         {
             pesticidePenalty = 1f;
         } 
-        else if (pesticidePenalty > 2f)
+        else if (pesticidePenalty > 4f)
         {
-            pesticidePenalty = 2f;
+            pesticidePenalty = 4f;
         }
 
         if(waspPenalty < 0f)
@@ -129,6 +132,22 @@ public class ResourcePointManager : MonoBehaviour {
     public void Clear()
     {
         resourcePoints.Clear();
+    }
+
+    public void IncreaseDanger()
+    {
+        percentPesticide += pesticidePercentIncreaseByYear;
+        percentWasps += waspPercentIncreaseByYear;
+
+        if (percentPesticide + percentWasps > 100)
+        {
+            int finalPercentPesticide = (100 * percentPesticide) / (percentPesticide + percentWasps);
+            int finalPercentWasps = (100 * percentWasps) / (percentPesticide + percentWasps);
+
+            percentWasps = finalPercentWasps;
+            percentPesticide = finalPercentPesticide;
+        }
+
     }
 
 }
