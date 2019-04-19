@@ -29,6 +29,12 @@ public class ResourcePointManager : MonoBehaviour {
     public GameObject waspPrefab;
     public GameObject pesticidePrefab;
 
+    [Space(10)]
+    [Header("Balance Variables")]
+    public int bonusResourcesPerGatheredResourcePoint;
+
+    private Dictionary<ResourceType, int> passiveBonuses;
+    private List<HexCell> tappedPoints;
 
 
     //Editor Script to limit the total danger % to 100
@@ -72,6 +78,13 @@ public class ResourcePointManager : MonoBehaviour {
     void Awake()
     {
         resourcePoints = new List<ResourcePoint>();
+        tappedPoints = new List<HexCell>();
+
+        passiveBonuses = new Dictionary<ResourceType, int>();
+        passiveBonuses.Add(ResourceType.Nectar, 0);
+        passiveBonuses.Add(ResourceType.Water, 0);
+        passiveBonuses.Add(ResourceType.Resin, 0);
+        passiveBonuses.Add(ResourceType.Pollen, 0);
     }
 
 
@@ -96,7 +109,8 @@ public class ResourcePointManager : MonoBehaviour {
     }
 
     public void AddDangersOnResourcePoints()
-    {
+    {       
+
         System.Random rng = new System.Random();
 
         /*foreach (ResourcePoint rp in FindObjectsOfType<ResourcePoint>())
@@ -148,6 +162,38 @@ public class ResourcePointManager : MonoBehaviour {
             percentPesticide = finalPercentPesticide;
         }
 
+    }
+
+    public void TapResourcePoint(HexCell location, ResourceType type)
+    {
+        tappedPoints.Add(location);
+        passiveBonuses[type] += bonusResourcesPerGatheredResourcePoint;
+    }
+
+    public int GetPassiveBonus(ResourceType r)
+    {
+        return passiveBonuses[r];
+    }
+
+    public void RemoveTappedResources()
+    {
+        List<ResourcePoint> toRemove = new List<ResourcePoint>();
+
+        foreach (HexCell c in tappedPoints)
+        {
+            c.SpecialIndex = 0;
+            foreach (ResourcePoint rp in resourcePoints)
+            {
+                if (rp.Cell == c)
+                {
+                    toRemove.Add(rp);
+                }
+            }
+        }
+        foreach (ResourcePoint remove in toRemove)
+        {
+            resourcePoints.Remove(remove);
+        }
     }
 
 }

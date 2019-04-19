@@ -2877,6 +2877,7 @@ MonoBehaviour:
   waspPrefab: {fileID: 1709793752967134, guid: 34f37948c3b83fd42aea36e2a995b916, type: 2}
   pesticidePrefab: {fileID: 1730665606786236, guid: 7af4f73c35ea4bd47a88d29743280ec8,
     type: 2}
+  bonusResourcesPerGatheredResourcePoint: 1
   gameManager: {fileID: 0}
 --- !u!114 &114291097310339498
 MonoBehaviour:
