@@ -223,6 +223,9 @@ public class GameManager : MonoBehaviour {
             playerResources.SetStartingWorkers();
             resourcesHUD.UpdateHUDAllResources();
 
+            //Turn Grid ON
+            pauseUI.SetShowGrid(true);
+
             spawnManager.CreateScout(true, false);
 
             //Snap camera to Hive

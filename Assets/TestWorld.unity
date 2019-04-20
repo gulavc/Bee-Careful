@@ -480,8 +480,13 @@ MonoBehaviour:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114892520305816456, guid: 21a492a62cfdb7f409212cd66bf6d1b7,
     type: 2}
-  m_PrefabInternal: {fileID: 1064280863}
+  m_PrefabInternal: {fileID: 1231542752}
   m_Script: {fileID: 11500000, guid: 6dd3f64c750dd624495c5ee1e1e2d0bd, type: 3}
+--- !u!1 &898553130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316922846982604, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 1824099975}
 --- !u!114 &900873160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114317600389620634, guid: 10f3e9fe4b19ab645b257461a7f0f720,
@@ -553,6 +558,21 @@ Prefab:
       propertyPath: seasonTimers.Array.data[0]
       value: 
       objectReference: {fileID: 930233674}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: gatherButton
+      value: 
+      objectReference: {fileID: 1311468979}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: workersHUD
+      value: 
+      objectReference: {fileID: 898553130}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: pollenHUD
+      value: 
+      objectReference: {fileID: 1959019040}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: grid
@@ -621,7 +641,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1064280863
+--- !u!1001 &1231542752
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -721,6 +741,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a492a62cfdb7f409212cd66bf6d1b7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1311468979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1063720805349170, guid: 21a492a62cfdb7f409212cd66bf6d1b7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1231542752}
 --- !u!1001 &1397993230
 Prefab:
   m_ObjectHideFlags: 0
@@ -1188,6 +1213,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f9afc5a746e65b41b9e4fe004fe95ef, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1959019040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1581633186395210, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 1824099975}
 --- !u!1 &2003393920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1022166421322216, guid: 5879c73079813224a8741822ab2dda62,

@@ -266,7 +266,7 @@ public class HexGameUI : MonoBehaviour
         }
     }
 
-    void ShowScoutUI()
+    public void ShowScoutUI()
     {
         scoutUI.gameObject.SetActive(true);
         scoutUI.ShowButton();
@@ -312,6 +312,11 @@ public class HexGameUI : MonoBehaviour
         {
             HideScoutUI();
         }
+    }
+
+    public void SetCurrentCell(HexCell cell)
+    {
+        currentCell = cell;
     }
 }
     
