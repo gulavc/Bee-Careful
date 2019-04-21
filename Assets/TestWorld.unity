@@ -509,6 +509,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1862255752937606, guid: f426ef29b94ea144ca71bbb76e5d730e,
     type: 2}
   m_PrefabInternal: {fileID: 2071321088}
+--- !u!1 &523618809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1340671247049962, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 285867661}
 --- !u!1 &524884896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1857460740445434, guid: 10f3e9fe4b19ab645b257461a7f0f720,
@@ -541,6 +546,11 @@ MonoBehaviour:
 --- !u!1 &706081105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1700884759195124, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 285867661}
+--- !u!1 &714297562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1732885094093882, guid: 10f3e9fe4b19ab645b257461a7f0f720,
     type: 2}
   m_PrefabInternal: {fileID: 285867661}
 --- !u!1 &776477862
@@ -763,6 +773,16 @@ Prefab:
       propertyPath: nectarHUD
       value: 
       objectReference: {fileID: 1195306658}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: resinHUD
+      value: 
+      objectReference: {fileID: 714297562}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: waterHUD
+      value: 
+      objectReference: {fileID: 523618809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
