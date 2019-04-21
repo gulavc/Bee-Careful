@@ -31,7 +31,8 @@ public class Tutorial : MonoBehaviour {
     public GameObject workersHUD;
 
     public GameObject pollenHUD;
-    
+    public GameObject nectarHUD;    
+
     [Header("Tutorials references")]
     public GameObject startUpTutorial;
     public GameObject cameraSuccessTutorial;
@@ -42,6 +43,10 @@ public class Tutorial : MonoBehaviour {
     public GameObject gatherTutorial2;
     public GameObject workersTutorial;
     public GameObject gatherTutorial3;
+    public GameObject pollenHUDTutorial;
+    public GameObject gatherTutorial4;
+    public GameObject gatherTutorial5;
+    public GameObject nectarHUDTutorial;
 
 
     public GameObject mountainTutorial;
@@ -282,22 +287,116 @@ public class Tutorial : MonoBehaviour {
     //Here we show the 1st resource on the HUD and explain it, then talk about finding more resources
     public void ShowResourceHUDTutorial()
     {
-        //ShowTutorial(gatherTutorial3);
-        //StartCoroutine(WaitForGather3());
-        TutorialsTearDown();
+        ShowTutorial(pollenHUDTutorial);
+        StartCoroutine(WaitForPollenHUD());
+        
     }
 
-    //Here we show the waitpoint to the 2nd resource, and wait until the player gets there
+    IEnumerator WaitForPollenHUD()
+    {
+        pollenHUD.SetActive(true);
 
+        UIFocus.Show();
+        UIFocus.MoveFocus(pollenHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (pollenHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        ShowGatherTutorial4();
+    }
+    
+
+    //Here we show the waitpoint to the 2nd resource, and wait until the player gets there
+    public void ShowGatherTutorial4()
+    {
+        ShowTutorial(gatherTutorial4);
+        StartCoroutine(WaitForGather4());
+    }
+
+    IEnumerator WaitForGather4()
+    {
+        gameManager.RestorePlayerControls();
+        HexCell target = grid.GetCell(new HexCoordinates(26, 42));
+        HexMapCamera.MoveTo(target);
+
+        while (unit.Location != target)
+        {
+            target.EnableHighlight(goalHighlightColor);
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.RemovePlayerControls();
+
+        ShowGatherTutorial5();
+    }
 
     //Here we congratulate him on finding resource and wait until he gathers
+    public void ShowGatherTutorial5()
+    {
+        ShowTutorial(gatherTutorial5);
+        StartCoroutine(WaitForGather5());
+    }
 
+    IEnumerator WaitForGather5()
+    {
+        UIFocus.Show();
+        UIFocus.MoveFocus(gatherButton.transform.position);
+        UIFocus.baseScale = 1f;
+
+        gatherEnabled = true;
+        if (controller.GetSelectedUnit)
+        {
+            controller.SetCurrentCell(unit.Location);
+            controller.ShowScoutUI();
+        }
+
+        while (gameManager.GetRessourceCount(ResourceType.Nectar) == 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.HideScoutUI();
+        gatherEnabled = false;
+
+        UIFocus.Hide();
+        ShowNectarHUDTutorial();
+    }
 
     //Here we say good job and tell him we found more resources nearby, go and collect them
+    public void ShowNectarHUDTutorial()
+    {
+        ShowTutorial(nectarHUDTutorial);
+        StartCoroutine(WaitForNectarHUD());
+    }
 
+    IEnumerator WaitForNectarHUD()
+    {
+        nectarHUD.SetActive(true);
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(nectarHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (nectarHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        ShowGatherTutorial6();
+    }
 
     //Here we show the waypoint to the 3rd resource and wait until move + gather
-
+    public void ShowGatherTutorial6()
+    {
+        TutorialsTearDown();
+    }
 
     //Here we congratulate + say one more resource left
 
@@ -540,6 +639,7 @@ public class Tutorial : MonoBehaviour {
         hiveButton.SetActive(false);
         workersHUD.SetActive(false);
         pollenHUD.SetActive(false);
+        nectarHUD.SetActive(false);
         foreach(GameObject g in seasonTimers)
         {
             g.SetActive(false);
@@ -558,6 +658,7 @@ public class Tutorial : MonoBehaviour {
         hiveButton.SetActive(true);
         workersHUD.SetActive(true);
         pollenHUD.SetActive(true);
+        nectarHUD.SetActive(true);
         foreach (GameObject g in seasonTimers)
         {
             g.SetActive(true);
@@ -578,6 +679,10 @@ public class Tutorial : MonoBehaviour {
         allTutorials.Add(gatherTutorial2);
         allTutorials.Add(workersTutorial);
         allTutorials.Add(gatherTutorial3);
+        allTutorials.Add(pollenHUDTutorial);
+        allTutorials.Add(gatherTutorial4);
+        allTutorials.Add(gatherTutorial5);
+        allTutorials.Add(nectarHUDTutorial);
         
 
         allTutorials.Add(mountainTutorial);

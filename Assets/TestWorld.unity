@@ -663,36 +663,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 776477863}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: hiveButton
-      value: 
-      objectReference: {fileID: 518362258}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: seasonTimers.Array.data[0]
-      value: 
-      objectReference: {fileID: 930233674}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: gatherButton
-      value: 
-      objectReference: {fileID: 1311468979}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: workersHUD
-      value: 
-      objectReference: {fileID: 308110188}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: pollenHUD
-      value: 
-      objectReference: {fileID: 706081105}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: grid
@@ -758,9 +728,49 @@ Prefab:
       propertyPath: scoutUI
       value: 
       objectReference: {fileID: 813133705}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 776477863}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: hiveButton
+      value: 
+      objectReference: {fileID: 518362258}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: seasonTimers.Array.data[0]
+      value: 
+      objectReference: {fileID: 930233674}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: gatherButton
+      value: 
+      objectReference: {fileID: 1311468979}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: workersHUD
+      value: 
+      objectReference: {fileID: 308110188}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: pollenHUD
+      value: 
+      objectReference: {fileID: 706081105}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: nectarHUD
+      value: 
+      objectReference: {fileID: 1195306658}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1195306658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1784763115335428, guid: 10f3e9fe4b19ab645b257461a7f0f720,
+    type: 2}
+  m_PrefabInternal: {fileID: 285867661}
 --- !u!1001 &1231542752
 Prefab:
   m_ObjectHideFlags: 0
