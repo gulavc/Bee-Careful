@@ -2386,6 +2386,8 @@ MonoBehaviour:
   gatherParticles: {fileID: 198551088521657634, guid: 6c65932f98c38074cb2a182687f3f322,
     type: 2}
   soundToPlay: {fileID: 8300000, guid: 3a9812b3b22565f4785c7d6cc9c4ceb8, type: 3}
+  floatingTextPrefab: {fileID: 1113924722261420, guid: acaff1cdea305dd469475e66475d1a15,
+    type: 2}
   dangerPrefab: {fileID: 0}
 --- !u!114 &114756315802504300
 MonoBehaviour:
