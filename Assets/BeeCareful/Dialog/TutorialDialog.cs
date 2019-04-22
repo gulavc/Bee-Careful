@@ -18,8 +18,9 @@ public class TutorialDialog : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        ShowText();
         button = GetComponentInChildren<Button>();
+        ShowText();
+        
     }
 
     public void ShowText()
@@ -27,7 +28,15 @@ public class TutorialDialog : MonoBehaviour {
         currentText = 0;
         if(tutorialText.Length == 1)
         {
-            buttonText.text = "Done";
+            if (allowCompletion)
+            {
+                buttonText.text = "Done";
+            }
+            else
+            {
+                button.gameObject.SetActive(false);
+            }
+            
         }
         else
         {

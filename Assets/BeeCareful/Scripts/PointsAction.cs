@@ -25,9 +25,9 @@ public class PointsAction : MonoBehaviour {
     {
     }
 
-    public void SetPointsAction(int pa)
+    public void SetPointsAction(int pa, bool overrideLimit = false)
     {
-        if(pa >= 0 && pa <= pointsActionMax)
+        if((pa >= 0 && pa <= pointsActionMax) || overrideLimit)
         {
             Points = pa;
         }
@@ -41,15 +41,37 @@ public class PointsAction : MonoBehaviour {
             Points = 0;
             gameManager.EndOfYear();
         }
-        else if (Points - change > pointsActionMax)
+        else if (Points - change > pointsActionMax && !Tutorial.earlyGameTutorial)
         {
             Points = pointsActionMax;
         }
         else
         {
+            string currentSeason = GetCurrentSeason();
             Points -= change;
+            string newSeason = GetCurrentSeason();
+            if(newSeason != currentSeason)
+            {
+                gameManager.ChangeSeason(newSeason);
+            }
         }
         gameManager.UpdatePointsActionHUD();
+    }
+
+    public string GetCurrentSeason()
+    {
+        if(Points > pointsActionMax * (2 / 3f))
+        {
+            return "Spring";
+        }
+        else if (Points > pointsActionMax * (1 / 3f))
+        {
+            return "Summer";
+        }
+        else
+        {
+            return "Fall";
+        }
     }
 
 #if UNITY_EDITOR

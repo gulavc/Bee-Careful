@@ -172,9 +172,9 @@ public class GameManager : MonoBehaviour {
         pointsAction.RemovePointsAction(change);
     }
 
-    public void SetCurrentPointsAction(int value)
+    public void SetCurrentPointsAction(int value, bool overrideLimit = false)
     {
-        pointsAction.SetPointsAction(value);
+        pointsAction.SetPointsAction(value, overrideLimit);
     }
 
     public void AddPlayerResources(ResourceType r, int amount)
@@ -223,6 +223,9 @@ public class GameManager : MonoBehaviour {
             playerResources.SetStartingWorkers();
             resourcesHUD.UpdateHUDAllResources();
 
+            //Turn Grid ON
+            pauseUI.SetShowGrid(true);
+
             spawnManager.CreateScout(true, false);
 
             //Snap camera to Hive
@@ -247,6 +250,7 @@ public class GameManager : MonoBehaviour {
         }
         loader.Load(Path.Combine(Application.dataPath, "StreamingAssets", loader.saveFolder, maps[CurrentYear] + ".map"));
         yield return new WaitForEndOfFrame();
+        rpManager.RemoveTappedResources();
         rpManager.AddDangersOnResourcePoints();
     }
 
@@ -295,7 +299,28 @@ public class GameManager : MonoBehaviour {
             gameButtons.SetActive(true);
         }
     }
-    
+
+    public void ChangeSeason(string newSeason)
+    {
+        //HUD.UpdateSeasonHud(newSeason);
+        AddPassiveResourceBonus();
+        Debug.Log("We are now in " + newSeason);
+    }
+
+    private void AddPassiveResourceBonus()
+    {
+        ResourceType t = ResourceType.Nectar;
+        playerResources.AddResources(t, rpManager.GetPassiveBonus(t));
+
+        t = ResourceType.Water;
+        playerResources.AddResources(t, rpManager.GetPassiveBonus(t));
+
+        t = ResourceType.Resin;
+        playerResources.AddResources(t, rpManager.GetPassiveBonus(t));
+
+        t = ResourceType.Pollen;
+        playerResources.AddResources(t, rpManager.GetPassiveBonus(t));
+    }
 
     public void RemovePlayerControls()
     {
