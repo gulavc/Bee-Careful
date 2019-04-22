@@ -87,12 +87,13 @@ public class UpgradeAlert : MonoBehaviour {
 
     public void Show()
     {
+        this.gameObject.SetActive(true);
         StartCoroutine(Translate(Vector2.right));
     }
 
     public void Hide()
     {
-        StartCoroutine(Translate(Vector2.left, false));
+        StartCoroutine(WaitForHide());        
     }
 
     IEnumerator Translate(Vector2 direction, bool autoHide = true)
@@ -113,6 +114,12 @@ public class UpgradeAlert : MonoBehaviour {
             Hide();
         }
         
+    }
+
+    IEnumerator WaitForHide()
+    {
+        yield return StartCoroutine(Translate(Vector2.left, false));
+        this.gameObject.SetActive(false);
     }
 
 }
