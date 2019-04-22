@@ -6,7 +6,6 @@ public class ResourcePoint : HexInteractable {
 
     private GameManager gameManager;
     private ResourcePointManager rpm;
-    private AudioSource sound;
     public ResourceType type;
   
 
@@ -104,7 +103,6 @@ public class ResourcePoint : HexInteractable {
     {
         gameManager = GameObject.FindObjectOfType<GameManager>();
         rpm = GameObject.FindObjectOfType<ResourcePointManager>();
-        sound = gameObject.AddComponent<AudioSource>();
         
         rpm.AddResourcePoint(this);
         RemainingResources = resourceMax;
@@ -176,7 +174,7 @@ public class ResourcePoint : HexInteractable {
 
             gameManager.RemovePlayerRessources(ResourceType.Workers, actualWorkforceCost);
             gameManager.AddPlayerResources(type, resourceGet);
-            sound.PlayOneShot(soundToPlay);
+            gameManager.PlaySFX(soundToPlay);
 
             //Test
             ParticleSystem anim = Instantiate(gatherParticles);
