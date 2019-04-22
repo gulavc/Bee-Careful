@@ -69,7 +69,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4738278305356694}
-  - component: {fileID: 114121720410758542}
   - component: {fileID: 114484405111256814}
   m_Layer: 0
   m_Name: wood_dead 1
@@ -189,21 +188,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300024, guid: fedace685724eba41b606db17be8dc08, type: 3}
---- !u!114 &114121720410758542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1829079241126078}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  resourceValue: 10
-  resourceMax: 100
-  paCost: 5
 --- !u!114 &114484405111256814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   resourceMax: 25
-  workforceCost: 10
+  workforceCost: 15
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 198613701148012758, guid: 329ddc61f016f6248a6f8a60b66f0944,

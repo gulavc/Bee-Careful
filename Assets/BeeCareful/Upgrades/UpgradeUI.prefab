@@ -4977,15 +4977,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexGrid: {fileID: 0}
   gameManager: {fileID: 0}
-  scoutNectarCost: 40
-  scoutWaterCost: 40
-  scoutResinCost: 40
-  scoutPollenCost: 40
-  workNectarCost: 20
-  workWaterCost: 20
-  workResinCost: 20
-  workPollenCost: 20
-  addWorkers: 50
+  scoutNectarCost: 20
+  scoutWaterCost: 20
+  scoutResinCost: 20
+  scoutPollenCost: 20
+  workNectarCost: 10
+  workWaterCost: 10
+  workResinCost: 10
+  workPollenCost: 10
+  addWorkers: 75
   workerTooltip: {fileID: 114022751143129362}
   scoutTooltip: {fileID: 114473347560238300}
 --- !u!114 &114163467044308150

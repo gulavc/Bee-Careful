@@ -487,7 +487,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4133098397837300}
-  - component: {fileID: 114756315802504300}
   - component: {fileID: 114560111475208906}
   m_Layer: 0
   m_Name: WATER
@@ -2380,7 +2379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   resourceMax: 25
-  workforceCost: 10
+  workforceCost: 15
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 198551088521657634, guid: 6c65932f98c38074cb2a182687f3f322,
@@ -2389,21 +2388,6 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 1113924722261420, guid: acaff1cdea305dd469475e66475d1a15,
     type: 2}
   dangerPrefab: {fileID: 0}
---- !u!114 &114756315802504300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1896508716512272}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
-  resourceValue: 10
-  resourceMax: 100
-  paCost: 5
 --- !u!114 &114772526237272574
 MonoBehaviour:
   m_ObjectHideFlags: 1

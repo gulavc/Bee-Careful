@@ -95,7 +95,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4291013751534696}
-  - component: {fileID: 114309247994650134}
   - component: {fileID: 23660818764210442}
   - component: {fileID: 114670644067888592}
   m_Layer: 0
@@ -1067,21 +1066,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740071525842254}
   m_Mesh: {fileID: 4300000, guid: c83f502368bab8140af79867b14e99c9, type: 3}
---- !u!114 &114309247994650134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373264916713022}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b35c5ff84573794f876f18b5212b298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  resourceValue: 10
-  resourceMax: 25
-  paCost: 5
 --- !u!114 &114670644067888592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1095,7 +1079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resourceMax: 25
-  workforceCost: 10
+  workforceCost: 15
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 198886311566248392, guid: d4fc5ff3413b31243b59c87080e6a865,

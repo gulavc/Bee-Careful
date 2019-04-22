@@ -7263,7 +7263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   resourceMax: 25
-  workforceCost: 10
+  workforceCost: 15
   hasWasp: 0
   hasPesticide: 0
   gatherParticles: {fileID: 198822919100901048, guid: e208cc05aa64bb1469082475f6e3dae8,
