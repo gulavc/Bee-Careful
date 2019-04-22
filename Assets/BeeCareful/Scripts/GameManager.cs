@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public HexGrid grid;
     public SpawnManager spawnManager;
     public Tutorial tutorials;
+    public SoundEffectPlayer SFXPlayer;
 
     [Space(10)]
     [Header("Public References to UI Elements")]
@@ -367,4 +368,11 @@ public class GameManager : MonoBehaviour {
     {
         tutorials.ShowTooFarTutorial();
     }
+
+    //Sound
+    public void PlaySFX(AudioClip sfx)
+    {
+        SFXPlayer.PlaySound(sfx);
+    }
+
 }

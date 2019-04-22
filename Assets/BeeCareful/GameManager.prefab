@@ -2136,6 +2136,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1903310497739260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4433100816908134}
+  - component: {fileID: 114628745391636674}
+  m_Layer: 0
+  m_Name: SFXPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1904738590453226
 GameObject:
   m_ObjectHideFlags: 1
@@ -2430,7 +2446,7 @@ Transform:
   - {fileID: 224732508414866270}
   - {fileID: 224217369564114168}
   m_Father: {fileID: 4758442124152670}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4162724921512868
 Transform:
@@ -2470,6 +2486,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4758442124152670}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4433100816908134
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903310497739260}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4758442124152670}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4457415816605242
 Transform:
@@ -2514,6 +2543,7 @@ Transform:
   - {fileID: 4406875178534284}
   - {fileID: 4457415816605242}
   - {fileID: 4162724921512868}
+  - {fileID: 4433100816908134}
   - {fileID: 4046615657276120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6076,6 +6106,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114628745391636674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903310497739260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7d13f2e95295b41a9376e62976d885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114630806803247476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7338,6 +7379,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   spawnManager: {fileID: 0}
   tutorials: {fileID: 114661868171656144}
+  SFXPlayer: {fileID: 114628745391636674}
   resourcesHUD: {fileID: 0}
   endOfYearUI: {fileID: 0}
   editorUI: {fileID: 0}

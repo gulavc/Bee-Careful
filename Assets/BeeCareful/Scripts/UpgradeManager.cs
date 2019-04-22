@@ -392,10 +392,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 5; //Nectar
-        upgradeCost[1] = 5; //Eau
-        upgradeCost[2] = 5; //Resine
-        upgradeCost[3] = 5; //Pollen
+        upgradeCost[0] = 10; //Nectar
+        upgradeCost[1] = 10; //Eau
+        upgradeCost[2] = 10; //Resine
+        upgradeCost[3] = 10; //Pollen
 
         //Set prereqs
         prereqs.Clear();
@@ -412,10 +412,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 10; //Nectar
-        upgradeCost[1] = 10; //Eau
-        upgradeCost[2] = 10; //Resine
-        upgradeCost[3] = 10; //Pollen
+        upgradeCost[0] = 15; //Nectar
+        upgradeCost[1] = 15; //Eau
+        upgradeCost[2] = 15; //Resine
+        upgradeCost[3] = 15; //Pollen
 
         //Set prereqs
         prereqs.Add("CheapWorkUpgrade1");
@@ -432,10 +432,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 15; //Nectar
-        upgradeCost[1] = 15; //Eau
-        upgradeCost[2] = 15; //Resine
-        upgradeCost[3] = 15; //Pollen
+        upgradeCost[0] = 20; //Nectar
+        upgradeCost[1] = 20; //Eau
+        upgradeCost[2] = 20; //Resine
+        upgradeCost[3] = 20; //Pollen
 
         //Set prereqs
         prereqs.Add("CheapWorkUpgrade2");
@@ -453,10 +453,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 15; //Nectar
-        upgradeCost[1] = 15; //Eau
-        upgradeCost[2] = 15; //Resine
-        upgradeCost[3] = 15; //Pollen
+        upgradeCost[0] = 30; //Nectar
+        upgradeCost[1] = 30; //Eau
+        upgradeCost[2] = 30; //Resine
+        upgradeCost[3] = 30; //Pollen
 
         //Set prereqs
         prereqs.Clear();
@@ -473,10 +473,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 30; //Nectar
-        upgradeCost[1] = 30; //Eau
-        upgradeCost[2] = 30; //Resine
-        upgradeCost[3] = 30; //Pollen
+        upgradeCost[0] = 35; //Nectar
+        upgradeCost[1] = 35; //Eau
+        upgradeCost[2] = 35; //Resine
+        upgradeCost[3] = 35; //Pollen
 
         //Set prereqs
         prereqs.Add("CheapScoutUpgrade1");
@@ -493,10 +493,10 @@ public class UpgradeManager : MonoBehaviour
         upgradeCost = new int[4];
 
         //Set costs
-        upgradeCost[0] = 45; //Nectar
-        upgradeCost[1] = 45; //Eau
-        upgradeCost[2] = 45; //Resine
-        upgradeCost[3] = 45; //Pollen
+        upgradeCost[0] = 40; //Nectar
+        upgradeCost[1] = 40; //Eau
+        upgradeCost[2] = 40; //Resine
+        upgradeCost[3] = 40; //Pollen
 
         //Set prereqs
         prereqs.Add("CheapScoutUpgrade2");
