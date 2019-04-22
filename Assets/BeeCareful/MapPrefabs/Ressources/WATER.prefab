@@ -2379,7 +2379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  resourceMax: 100
+  resourceMax: 25
   workforceCost: 10
   hasWasp: 0
   hasPesticide: 0

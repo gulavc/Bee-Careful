@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   resourceValue: 10
-  resourceMax: 100
+  resourceMax: 25
   paCost: 5
 --- !u!114 &114670644067888592
 MonoBehaviour:
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  resourceMax: 100
+  resourceMax: 25
   workforceCost: 10
   hasWasp: 0
   hasPesticide: 0

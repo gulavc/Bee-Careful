@@ -348,6 +348,8 @@ GameObject:
   - component: {fileID: 114731398247441168}
   - component: {fileID: 114735928626254382}
   - component: {fileID: 114193195673790458}
+  - component: {fileID: 20547763063995650}
+  - component: {fileID: 114259293632986068}
   m_Layer: 5
   m_Name: EndOfYearUI
   m_TagString: Untagged
@@ -355,6 +357,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!20 &20547763063995650
+Camera:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999963947479260}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!114 &114028403332878196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,13 +483,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -507,13 +549,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -574,6 +616,51 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &114259293632986068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999963947479260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc35e0180670ab4e8d2f9439137791f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SMAA:
+    settings:
+      debugPass: 0
+      quality: 2
+      edgeDetectionMethod: 2
+    quality:
+      diagonalDetection: 1
+      cornerDetection: 1
+      threshold: 0.1
+      depthThreshold: 0.01
+      maxSearchSteps: 16
+      maxDiagonalSearchSteps: 8
+      cornerRounding: 25
+      localContrastAdaptationFactor: 2
+    predication:
+      enabled: 0
+      threshold: 0.01
+      scale: 2
+      strength: 0.4
+    temporal:
+      enabled: 0
+      fuzzSize: 2
+  m_FXAA:
+    preset:
+      qualitySettings:
+        subpixelAliasingRemovalAmount: 0.75
+        edgeDetectionThreshold: 0.166
+        minimumRequiredLuminance: 0.0833
+      consoleSettings:
+        subpixelSpreadAmount: 0.5
+        edgeSharpnessAmount: 8
+        edgeDetectionThreshold: 0.125
+        minimumRequiredLuminance: 0.05
+  m_Method: 0
 --- !u!114 &114280100547443200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -621,8 +708,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -683,13 +770,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -912,13 +999,13 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1614,8 +1701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 416.5, y: 0}
-  m_SizeDelta: {x: 119.53, y: 40}
+  m_AnchoredPosition: {x: 430.8, y: 0}
+  m_SizeDelta: {x: 148.1, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224921044567567548
 RectTransform:
