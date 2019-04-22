@@ -31,7 +31,10 @@ public class Tutorial : MonoBehaviour {
     public GameObject workersHUD;
 
     public GameObject pollenHUD;
-    
+    public GameObject nectarHUD;    
+    public GameObject resinHUD;    
+    public GameObject waterHUD;    
+
     [Header("Tutorials references")]
     public GameObject startUpTutorial;
     public GameObject cameraSuccessTutorial;
@@ -42,6 +45,14 @@ public class Tutorial : MonoBehaviour {
     public GameObject gatherTutorial2;
     public GameObject workersTutorial;
     public GameObject gatherTutorial3;
+    public GameObject pollenHUDTutorial;
+    public GameObject gatherTutorial4;
+    public GameObject gatherTutorial5;
+    public GameObject nectarHUDTutorial;
+    public GameObject gatherTutorial6;
+    public GameObject resinHUDTutorial;
+    public GameObject gatherTutorial7;
+    public GameObject waterHUDTutorial;
 
 
     public GameObject mountainTutorial;
@@ -282,31 +293,242 @@ public class Tutorial : MonoBehaviour {
     //Here we show the 1st resource on the HUD and explain it, then talk about finding more resources
     public void ShowResourceHUDTutorial()
     {
-        //ShowTutorial(gatherTutorial3);
-        //StartCoroutine(WaitForGather3());
-        TutorialsTearDown();
+        ShowTutorial(pollenHUDTutorial);
+        StartCoroutine(WaitForPollenHUD());
+        
     }
 
-    //Here we show the waitpoint to the 2nd resource, and wait until the player gets there
+    IEnumerator WaitForPollenHUD()
+    {
+        pollenHUD.SetActive(true);
 
+        UIFocus.Show();
+        UIFocus.MoveFocus(pollenHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (pollenHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        ShowGatherTutorial4();
+    }
+    
+
+    //Here we show the waitpoint to the 2nd resource, and wait until the player gets there
+    public void ShowGatherTutorial4()
+    {
+        ShowTutorial(gatherTutorial4);
+        StartCoroutine(WaitForGather4());
+    }
+
+    IEnumerator WaitForGather4()
+    {
+        gameManager.RestorePlayerControls();
+        HexCell target = grid.GetCell(new HexCoordinates(26, 42));
+        HexMapCamera.MoveTo(target);
+
+        while (unit.Location != target)
+        {
+            target.EnableHighlight(goalHighlightColor);
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.RemovePlayerControls();
+
+        ShowGatherTutorial5();
+    }
 
     //Here we congratulate him on finding resource and wait until he gathers
+    public void ShowGatherTutorial5()
+    {
+        ShowTutorial(gatherTutorial5);
+        StartCoroutine(WaitForGather5());
+    }
 
+    IEnumerator WaitForGather5()
+    {
+        UIFocus.Show();
+        UIFocus.MoveFocus(gatherButton.transform.position);
+        UIFocus.baseScale = 1f;
+
+        gatherEnabled = true;
+        if (controller.GetSelectedUnit)
+        {
+            controller.SetCurrentCell(unit.Location);
+            controller.ShowScoutUI();
+        }
+
+        while (gameManager.GetRessourceCount(ResourceType.Nectar) == 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.HideScoutUI();
+        gatherEnabled = false;
+
+        UIFocus.Hide();
+        ShowNectarHUDTutorial();
+    }
 
     //Here we say good job and tell him we found more resources nearby, go and collect them
+    public void ShowNectarHUDTutorial()
+    {
+        ShowTutorial(nectarHUDTutorial);
+        StartCoroutine(WaitForNectarHUD());
+    }
 
+    IEnumerator WaitForNectarHUD()
+    {
+        nectarHUD.SetActive(true);
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(nectarHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (nectarHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        ShowGatherTutorial6();
+    }
 
     //Here we show the waypoint to the 3rd resource and wait until move + gather
+    public void ShowGatherTutorial6()
+    {
+        ShowTutorial(gatherTutorial6);
+        StartCoroutine(WaitForGather6());
+    }
 
+    IEnumerator WaitForGather6()
+    {
+        HexCell target = grid.GetCell(new HexCoordinates(30, 38));
+        HexMapCamera.MoveTo(target);
+
+        gameManager.RestorePlayerControls();
+
+        while (unit.Location != target)
+        {
+            target.EnableHighlight(goalHighlightColor);
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.RemovePlayerControls();
+        gatherEnabled = true;
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(gatherButton.transform.position);
+        UIFocus.baseScale = 1f;
+
+        while (gameManager.GetRessourceCount(ResourceType.Resin) == 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+        gameManager.HideScoutUI();
+        gatherEnabled = false;
+
+        ShowResinHUDTutorial();
+    }
 
     //Here we congratulate + say one more resource left
+    public void ShowResinHUDTutorial()
+    {
+        ShowTutorial(resinHUDTutorial);
+        StartCoroutine(WaitForResinHUD());
+    }
 
+    IEnumerator WaitForResinHUD()
+    {
+        resinHUD.SetActive(true);
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(resinHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (resinHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        ShowGatherTutorial7();
+    }
 
     //Here we show the waypoint & wait for move + gather
+    public void ShowGatherTutorial7()
+    {
+        ShowTutorial(gatherTutorial7);
+        StartCoroutine(WaitForGather7());
+    }
 
+    IEnumerator WaitForGather7()
+    {
 
-    //Here we congratulate + end FOR NOW
+        gameManager.RestorePlayerControls();
 
+        HexCell target = grid.GetCell(new HexCoordinates(34, 39));
+        HexMapCamera.MoveTo(target);
+
+        while (unit.Location != target)
+        {
+            target.EnableHighlight(goalHighlightColor);
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.RemovePlayerControls();
+        gatherEnabled = true;
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(gatherButton.transform.position);
+        UIFocus.baseScale = 1f;
+
+        while (gameManager.GetRessourceCount(ResourceType.Water) == 0)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        gameManager.RestorePlayerControls();
+        gameManager.HideScoutUI();
+
+        UIFocus.Hide();
+        gatherEnabled = false;
+
+        ShowWaterHUDTutorial();
+    }
+
+    //Here we congratulate + talk about full HUD & what to do with resources
+    public void ShowWaterHUDTutorial()
+    {
+        ShowTutorial(waterHUDTutorial);
+        StartCoroutine(WaitForWaterHUD());        
+    }
+
+    IEnumerator WaitForWaterHUD()
+    {
+        waterHUD.SetActive(true);
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(waterHUD.transform.position);
+        UIFocus.baseScale = 1.1f;
+
+        while (waterHUDTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
+        //Shownext();
+        TutorialsTearDown();
+    }
 
     //New year messages
 
@@ -356,170 +578,9 @@ public class Tutorial : MonoBehaviour {
 
         toShow.SetActive(true);
     }
-
-   
     
 
-    IEnumerator WaitForSelectAndMove()
-    {
-        HexGameUI controller = FindObjectOfType<HexGameUI>();
-        HexUnit unit = FindObjectOfType<HexUnit>();
-        
-        while (!controller.GetSelectedUnit)
-        {
-            unit.Location.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        //ShowTutorial MoveTo
-        //Wait for finish reading
-
-        HexCell target = grid.GetCell(new HexCoordinates(19, 43));
-        HexMapCamera.MoveTo(target);
-
-        while(unit.Location != target)
-        {
-            target.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        //ShowGatherTutorial();
-
-    }
-
-
-    IEnumerator WaitForGather()
-    {
-        HexUnit unit = FindObjectOfType<HexUnit>();
-
-        //Go to RP 1
-        HexCell target = grid.GetCell(new HexCoordinates(18, 45));
-        HexMapCamera.MoveTo(target);
-
-        while (unit.Location != target)
-        {
-            target.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RemovePlayerControls();
-        gatherEnabled = true;
-
-        while(gameManager.GetRessourceCount(ResourceType.Pollen) == 0)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RestorePlayerControls();
-        gameManager.HideScoutUI();
-        gatherEnabled = false;
-
-        //Go to RP 2
-        target = grid.GetCell(new HexCoordinates(26, 42));
-        HexMapCamera.MoveTo(target);
-
-        while (unit.Location != target)
-        {
-            target.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RemovePlayerControls();
-        gatherEnabled = true;
-        while (gameManager.GetRessourceCount(ResourceType.Nectar) == 0)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RestorePlayerControls();
-        gameManager.HideScoutUI();
-        gatherEnabled = false;
-
-        //Go to RP 3
-        target = grid.GetCell(new HexCoordinates(30, 38));
-        HexMapCamera.MoveTo(target);
-
-        while (unit.Location != target)
-        {
-            target.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RemovePlayerControls();
-        gatherEnabled = true;
-
-        while (gameManager.GetRessourceCount(ResourceType.Resin) == 0)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RestorePlayerControls();
-        gameManager.HideScoutUI();
-        gatherEnabled = false;
-
-        //Go to RP 4
-        target = grid.GetCell(new HexCoordinates(34, 39));
-        HexMapCamera.MoveTo(target);
-
-        while (unit.Location != target)
-        {
-            target.EnableHighlight(goalHighlightColor);
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RemovePlayerControls();
-        gatherEnabled = true;
-
-        while (gameManager.GetRessourceCount(ResourceType.Water) == 0)
-        {
-            yield return new WaitForEndOfFrame();
-        }
-
-        gameManager.RestorePlayerControls();
-        gameManager.HideScoutUI();
-        gatherEnabled = false;
-
-        //End
-        //ShowUITutorial();        
-
-    }
-
-    IEnumerator WaitForMoveToHive()
-    {
-        HexUnit unit = FindObjectOfType<HexUnit>();
-
-        //Hive
-        List<HexCell> targets = new List<HexCell>();
-        targets.Add(grid.GetCell(new HexCoordinates(20, 39)));
-        targets.Add(grid.GetCell(new HexCoordinates(21, 38)));
-        targets.Add(grid.GetCell(new HexCoordinates(22, 38)));
-        targets.Add(grid.GetCell(new HexCoordinates(22, 39)));
-        targets.Add(grid.GetCell(new HexCoordinates(20, 40)));
-        targets.Add(grid.GetCell(new HexCoordinates(21, 40)));
-
-        HexMapCamera.MoveTo(grid.GetCell(new HexCoordinates(21, 39)));
-
-        while (!targets.Contains(unit.Location))
-        {            
-            foreach(HexCell c in targets)
-            {
-                c.EnableHighlight(goalHighlightColor);
-            }
-            yield return new WaitForEndOfFrame();
-
-        }
-
-        foreach (HexCell c in targets)
-        {
-            c.DisableHighlight();
-        }
-
-        //howHiveTutorial();
-
-        //Temp tear down here
-        TutorialsTearDown();
-    }
-
+   
 
     //Set up and Tear down
 
@@ -540,6 +601,9 @@ public class Tutorial : MonoBehaviour {
         hiveButton.SetActive(false);
         workersHUD.SetActive(false);
         pollenHUD.SetActive(false);
+        nectarHUD.SetActive(false);
+        resinHUD.SetActive(false);
+        waterHUD.SetActive(false);
         foreach(GameObject g in seasonTimers)
         {
             g.SetActive(false);
@@ -558,6 +622,9 @@ public class Tutorial : MonoBehaviour {
         hiveButton.SetActive(true);
         workersHUD.SetActive(true);
         pollenHUD.SetActive(true);
+        nectarHUD.SetActive(true);
+        resinHUD.SetActive(true);
+        waterHUD.SetActive(true);
         foreach (GameObject g in seasonTimers)
         {
             g.SetActive(true);
@@ -578,6 +645,14 @@ public class Tutorial : MonoBehaviour {
         allTutorials.Add(gatherTutorial2);
         allTutorials.Add(workersTutorial);
         allTutorials.Add(gatherTutorial3);
+        allTutorials.Add(pollenHUDTutorial);
+        allTutorials.Add(gatherTutorial4);
+        allTutorials.Add(gatherTutorial5);
+        allTutorials.Add(nectarHUDTutorial);
+        allTutorials.Add(gatherTutorial6);
+        allTutorials.Add(resinHUDTutorial);
+        allTutorials.Add(gatherTutorial7);
+        allTutorials.Add(waterHUDTutorial);
         
 
         allTutorials.Add(mountainTutorial);
