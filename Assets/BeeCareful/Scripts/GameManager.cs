@@ -313,9 +313,17 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeSeason(string newSeason)
     {
-        //HUD.UpdateSeasonHud(newSeason);
+        int[] bonuses = new int[4];
+        bonuses[0] = rpManager.GetPassiveBonus(ResourceType.Nectar);
+        bonuses[1] = rpManager.GetPassiveBonus(ResourceType.Water);
+        bonuses[2] = rpManager.GetPassiveBonus(ResourceType.Resin);
+        bonuses[3] = rpManager.GetPassiveBonus(ResourceType.Pollen);
+
+        resourcesHUD.ShowSeasonPopUp(newSeason, bonuses);
+
         AddPassiveResourceBonus();
-        Debug.Log("We are now in " + newSeason);
+
+        //Play Season Sound
     }
 
     private void AddPassiveResourceBonus()

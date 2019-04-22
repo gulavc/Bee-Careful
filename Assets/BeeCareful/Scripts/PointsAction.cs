@@ -70,7 +70,7 @@ public class PointsAction : MonoBehaviour {
         }
         else
         {
-            return "Fall";
+            return "Autumn";
         }
     }
 

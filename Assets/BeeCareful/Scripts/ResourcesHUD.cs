@@ -33,6 +33,9 @@ public class ResourcesHUD : MonoBehaviour {
     public Button hiveButtonSummer;
     public Button hiveButtonFall;
 
+    [Header("Season Pop Up")]
+    public SeasonPopUp popUp;
+
     //private Image seasonTimer;
 
     // Use this for initialization
@@ -148,5 +151,12 @@ public class ResourcesHUD : MonoBehaviour {
         seasonTimerSpring.fillAmount = seasonTimerRedBarSpring.fillAmount;
         seasonTimerSummer.fillAmount = seasonTimerRedBarSummer.fillAmount;
         seasonTimerFall.fillAmount = seasonTimerRedBarFall.fillAmount;
+    }
+
+    public void ShowSeasonPopUp(string seasonName, int[] bonuses)
+    {
+        popUp.SetResources(bonuses);
+        popUp.SetSeasonName(seasonName);
+        popUp.Show();
     }
 }
