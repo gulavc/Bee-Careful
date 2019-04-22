@@ -276,8 +276,15 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(LoadGame());
             grid.LoadMapExploration();
 
+            //Remove Resources from previous year's objective
+            playerResources.RemoveResources(ResourceType.Nectar, globalObjectives.GetObjective(ResourceType.Nectar));
+            playerResources.RemoveResources(ResourceType.Water, globalObjectives.GetObjective(ResourceType.Water));
+            playerResources.RemoveResources(ResourceType.Resin, globalObjectives.GetObjective(ResourceType.Resin));
+            playerResources.RemoveResources(ResourceType.Pollen, globalObjectives.GetObjective(ResourceType.Pollen));
+
             //Set new objectives
             globalObjectives.SetObjectivesByYear(CurrentYear);
+
 
             //Set workers
             playerResources.SetStartingWorkers();
@@ -294,8 +301,11 @@ public class GameManager : MonoBehaviour {
             //Move Camera to Hive
             HexMapCamera.MoveTo(HiveCell, true);
 
+            AddPassiveResourceBonus();
+
             //Activate UI
             resourcesHUD.gameObject.SetActive(true);
+            resourcesHUD.UpdateHUDAllResources();
             gameButtons.SetActive(true);
         }
     }
