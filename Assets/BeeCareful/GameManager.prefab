@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114958867976490496}
   - component: {fileID: 114289372828962124}
   m_Layer: 0
-  m_Name: HiveUI Tutorial
+  m_Name: GatherTutorial1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 114584668020838316}
   - component: {fileID: 114301320571260876}
   m_Layer: 0
-  m_Name: HiveTutorial
+  m_Name: MoveToTutorial2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,6 +654,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1461609772016322
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224188880139564328}
+  - component: {fileID: 222418331348827840}
+  - component: {fileID: 114113832433558428}
+  m_Layer: 5
+  m_Name: Hex
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1463810328150932
 GameObject:
   m_ObjectHideFlags: 1
@@ -683,7 +700,7 @@ GameObject:
   - component: {fileID: 114907960392024880}
   - component: {fileID: 114581916171331646}
   m_Layer: 0
-  m_Name: Upgradetutorial
+  m_Name: WorkersTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +734,7 @@ GameObject:
   - component: {fileID: 114753583173475412}
   - component: {fileID: 114510918024489526}
   m_Layer: 0
-  m_Name: SelectingUnitandMove Tuto
+  m_Name: CameraSuccessTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,6 +897,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1630941028139430
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224217369564114168}
+  - component: {fileID: 223430500919384146}
+  - component: {fileID: 114352453824252142}
+  - component: {fileID: 114384479719427992}
+  - component: {fileID: 114858291229371972}
+  m_Layer: 5
+  m_Name: UIFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1630965114456634
 GameObject:
   m_ObjectHideFlags: 1
@@ -996,7 +1032,7 @@ GameObject:
   - component: {fileID: 114792838496833160}
   - component: {fileID: 114168043398623494}
   m_Layer: 0
-  m_Name: SpawnTutorial
+  m_Name: GatherTutorial2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1065,7 +1101,7 @@ GameObject:
   - component: {fileID: 114579172651935134}
   - component: {fileID: 114993679960250764}
   m_Layer: 0
-  m_Name: BuyUpgradeTuto
+  m_Name: GatherTutorial3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1271,7 +1307,7 @@ GameObject:
   - component: {fileID: 114893135309495376}
   - component: {fileID: 114022847355307282}
   m_Layer: 0
-  m_Name: GatheringTutorial
+  m_Name: SelectTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1377,7 @@ GameObject:
   - component: {fileID: 114294077788925200}
   - component: {fileID: 114177516021470450}
   m_Layer: 0
-  m_Name: UITutorial
+  m_Name: MoveToTutorial1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1650,6 +1686,7 @@ Transform:
   - {fileID: 224279145091933692}
   - {fileID: 224895074472027076}
   - {fileID: 224732508414866270}
+  - {fileID: 224217369564114168}
   m_Father: {fileID: 4758442124152670}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2084,18 +2121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114009639274531454}
   buttonText: {fileID: 114598141501264140}
-  allowCompletion: 0
+  allowCompletion: 1
   tutorialText:
-  - The Hive Mind allows us to be aware of the current state of our resources.
-  - Pollen is found in fruit bearing trees, Nectar in flowers, Resin on tree trunks
-    and Water in small pools.
-  - 'Workers tend to get exhausted from their hard work. Without them, the hive will
-    starve. '
-  - "Since I\u2019m in charge of new spawns in the colony, don\u2019t hesitate to
-    call me. I\u2019ll be in the hive."
-  - I'll also be hatching some Workers constantly as you explore our environment.
-  - "Now that you have collected enough resources, let\u2019s go back to the hive."
-  - (Move back to the Hive to continue.)
+  - good job
+  - you can click on bees, wow
+  - now learn to move by clicking on the destination
 --- !u!114 &114094130618187036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2169,6 +2199,33 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114113832433558428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461609772016322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 26b37ef70bd6d8c498ff73acb9c6b2a5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114118505550850396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2455,13 +2512,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114630806803247476}
   buttonText: {fileID: 114657696394428322}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
-  - "\u201CAs I said, workers get easily exhausted and we need to replace them constantly.
-    This is where you can ask me for more Workers.\u201D "
-  - "\u201CYou could also get more Scout, but these special bees will cost you more
-    as they can greatly improve your exploration.\u201D"
-  - "\u201CLet\u2019s go see how you can upgrade the hive\u2019s skills.\u201D"
+  - (Move to the resource point to continue)
 --- !u!114 &114177516021470450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2493,8 +2546,8 @@ MonoBehaviour:
   buttonText: {fileID: 114950945570687242}
   allowCompletion: 1
   tutorialText:
-  - "\u201C Here's where you use the resources you\u2019ve gathered so far. You can
-    spawn new units or upgrade what you have.\u201D"
+  - good job
+  - you found a resource point! we'll to get there to gather it
 --- !u!114 &114186433286023204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3082,6 +3135,27 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114352453824252142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630941028139430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!114 &114365670399678988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3127,6 +3201,22 @@ MonoBehaviour:
   - Careful! There is pesticide on this resource!
   - If you try to harvest it, more workers than usual will be lost due to the toxic
     chemicals.
+--- !u!114 &114384479719427992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630941028139430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &114384835942604720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3905,9 +3995,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114229390226269360}
   buttonText: {fileID: 114808166070182694}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
-  - "\u201CBee-utiful ! This will be a great help later on.\u201D"
+  - To call workers, use the gather button on your screen
+  - (Call some workers to this resource to continue)
 --- !u!114 &114627522292737462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4221,20 +4312,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   goalHighlightColor: {r: 0, g: 1, b: 0, a: 1}
+  UIFocus: {fileID: 114858291229371972}
   grid: {fileID: 0}
   hiveButton: {fileID: 0}
   seasonTimers:
   - {fileID: 0}
+  gatherButton: {fileID: 0}
+  workersHUD: {fileID: 0}
+  pollenHUD: {fileID: 0}
   startUpTutorial: {fileID: 1599824489325628}
-  selectMoveTutorial: {fileID: 1485440096689490}
-  gatherTutorial: {fileID: 1838304957967750}
-  UITutorial: {fileID: 1873287132462140}
-  hiveTutorial: {fileID: 1291886992936838}
-  hiveUITutorial: {fileID: 1087787864576314}
-  spawnTutorial: {fileID: 1667259218386206}
-  upgradeTutorial: {fileID: 1471676892989270}
-  buyUpgradeTutorial: {fileID: 1686403594429838}
-  pointsActionTutorial: {fileID: 1328144119163100}
+  cameraSuccessTutorial: {fileID: 1485440096689490}
+  selectTutorial: {fileID: 1838304957967750}
+  moveToTutorial1: {fileID: 1873287132462140}
+  moveToTutorial2: {fileID: 1291886992936838}
+  gatherTutorial1: {fileID: 1087787864576314}
+  gatherTutorial2: {fileID: 1667259218386206}
+  workersTutorial: {fileID: 1471676892989270}
+  gatherTutorial3: {fileID: 1686403594429838}
   mountainTutorial: {fileID: 1889865801204996}
   waspsTutorial: {fileID: 1849280418943432}
   pesticideTutorial: {fileID: 1100126951213422}
@@ -5054,12 +5148,22 @@ MonoBehaviour:
   buttonText: {fileID: 114291097310339498}
   allowCompletion: 0
   tutorialText:
-  - "Unbeelievable ! Scout 87 already found some pollen ! To gather it, you need to
-    call to action some workers. They\u2019re the one collecting all the resources
-    for the hive."
-  - (Move your scout over the Resource Point and click the Gather Button to call some
-    workers. Follow the markers to the different resource points and Gather them all
-    to continue.)
+  - (Click on the bee in the green cell to select it)
+--- !u!114 &114858291229371972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630941028139430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eac220d4ad5d054b8e96ed08082d6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 0, g: 0.2251563, b: 1, a: 1}
+  baseScale: 1
+  period: 1
+  amplitude: 0.3
 --- !u!114 &114864304279105858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5135,7 +5239,9 @@ MonoBehaviour:
   buttonText: {fileID: 114556581005112546}
   allowCompletion: 1
   tutorialText:
-  - "\u201CI\u2019ll let you explore your options.\u201D"
+  - good job
+  - Workers are the ones that will gather resources for us
+  - You can see their status on your screen
 --- !u!114 &114893135309495376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5191,14 +5297,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114607760219310786}
   buttonText: {fileID: 114677465328768362}
-  allowCompletion: 0
+  allowCompletion: 1
   tutorialText:
   - good job
-  - Through the Hive Mind, we will share this information and pass it along so that
-    everyone is updated about the current state of our environment.
-  - "Now, please give a warm welcome to Scout 87 who\u2019s going to be our main explorer
-    this year. I\u2019m sure she\u2019ll be unbeetable !"
-  - (Select a Scout by left-clicking on it.)
+  - now you need to select your scout in order to control it
 --- !u!114 &114929028722170912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5417,11 +5519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelText: {fileID: 114495316400403078}
   buttonText: {fileID: 114133690426396080}
-  allowCompletion: 1
+  allowCompletion: 0
   tutorialText:
-  - You should go in the Hive to see what we can do with the resources you gathered!
-  - (End of the tutorial for now. Click on the Tree on the bottom left of your screen
-    to open your Hive and spend your resources.)
+  - (Move the bee to the green hex to continue)
 --- !u!114 &114990700652244498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5728,6 +5828,13 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940957238458478}
+  m_CullTransparentMesh: 0
+--- !u!222 &222418331348827840
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461609772016322}
   m_CullTransparentMesh: 0
 --- !u!222 &222424843984177342
 CanvasRenderer:
@@ -6089,6 +6196,26 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328144119163100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223430500919384146
+Canvas:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630941028139430}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
@@ -6623,6 +6750,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &224188880139564328
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461609772016322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224217369564114168}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224199988724274662
 RectTransform:
   m_ObjectHideFlags: 1
@@ -6717,6 +6862,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 62.5}
   m_SizeDelta: {x: -30, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224217369564114168
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630941028139430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 224188880139564328}
+  m_Father: {fileID: 4046615657276120}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &224219089612731086
 RectTransform:
   m_ObjectHideFlags: 1
