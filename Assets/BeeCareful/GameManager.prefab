@@ -2564,7 +2564,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -2624,7 +2624,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -2835,7 +2835,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -2994,9 +2994,8 @@ MonoBehaviour:
   buttonText: {fileID: 114598141501264140}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - you can click on bees, wow
-  - now learn to move by clicking on the destination
+  - Excellent !
+  - This bee is your Scout. Scouts are your exploration tool.
 --- !u!114 &114094130618187036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3196,7 +3195,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -3317,7 +3316,7 @@ MonoBehaviour:
   buttonText: {fileID: 114284507227554566}
   allowCompletion: 0
   tutorialText:
-  - (Move your Scout to the next Resource Point to continue.)
+  - (Move your Scout to the next green space to continue.)
 --- !u!114 &114145207036734194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3521,7 +3520,7 @@ MonoBehaviour:
   buttonText: {fileID: 114657696394428322}
   allowCompletion: 0
   tutorialText:
-  - (Move to the resource point to continue)
+  - (Move to the green space to continue)
 --- !u!114 &114177106717098678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3542,7 +3541,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -3586,8 +3585,10 @@ MonoBehaviour:
   buttonText: {fileID: 114950945570687242}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - you found a resource point! we'll to get there to gather it
+  - 'Good job ! '
+  - Wow ! You found a Resource Point, more precisely, Pollen. Pollen is found anywhere
+    that is covered in grass.
+  - To gather it, move on top of it.
 --- !u!114 &114186433286023204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3608,7 +3609,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -3759,7 +3760,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -3887,7 +3888,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -4680,12 +4681,12 @@ MonoBehaviour:
   buttonText: {fileID: 114556502676225796}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - you gathered some pollen
-  - now we know where it is so we'll automatically gather some resources from it every
-    season
-  - you can see the state of your pollen in the bottom right of the screen
-  - next we'll go gather nectar wow
+  - Well done !
+  - Now you've collected some Pollen. Pollen will be required to update your skills.
+  - Since we now know where this Resource Point is, we'll automatically gather a small
+    amount of Pollen from it every season of every year.
+  - You can see the amount of Pollen in the bottom right of the screen.
+  - Now, let's found some Nectar !
 --- !u!114 &114383984807380766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4779,7 +4780,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -4954,8 +4955,9 @@ MonoBehaviour:
   buttonText: {fileID: 114129805439077394}
   allowCompletion: 0
   tutorialText:
-  - good job
-  - (Gather the Resources on this Resource Point to continue.)
+  - That's it ! You've found some Nectar. Nectar is also found on grass tiles.
+  - ' Nectar is required to update your skills.'
+  - (Gather the Nectar on this Resource Point to continue.)
 --- !u!114 &114451404465856598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5293,7 +5295,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -5699,10 +5701,12 @@ MonoBehaviour:
   buttonText: {fileID: 114632862006770924}
   allowCompletion: 1
   tutorialText:
-  - this is water, completing our resource collection
-  - all your resources are visible at all times in the bottom right corner of the
-    screen
-  - up next, upgrades, spawn and the passing of time! (to be sone soooooooooooooooon
+  - Water is found in small ponds. This completes our resources collection
+  - Water is found mostly surrounded by stony tiles. We cannot gather water from streams
+    or rivers. They flow too rapidly.
+  - All your Resources are visible at all times in the bottom right corner of the
+    screen. Mouse over them to get more information about them.
+  - up next, upgrades, spawn and the passing of time! (to be done soooooooooooooooon
     hopefully)
 --- !u!114 &114574738199152782
 MonoBehaviour:
@@ -5886,7 +5890,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -5914,10 +5918,11 @@ MonoBehaviour:
   buttonText: {fileID: 114218311120980032}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - this is resin, you can see it with the others
-  - there's only 1 resource left to gather
-  - let's get to it
+  - Great !
+  - You found some Resin ! The amount of Resin can be seen on the right side of the
+    screen, along with the other resources.
+  - Resin is always found on muddy tiles. Keep an eye out for them !
+  - You're almost done ! Let's go Gather some Water next !
 --- !u!114 &114598141501264140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5971,7 +5976,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -6053,8 +6058,8 @@ MonoBehaviour:
   buttonText: {fileID: 114808166070182694}
   allowCompletion: 0
   tutorialText:
-  - To call workers, use the gather button on your screen
-  - (Call some workers to this resource to continue)
+  - To call some Workers on a Resource Point, use the Gather Button on your screen.
+  - (Click on the Gather Button while on top of a Resource to Gather. Do so to continue)
 --- !u!114 &114627522292737462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6091,7 +6096,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -6708,7 +6713,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -6741,7 +6746,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7098,7 +7103,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7391,7 +7396,7 @@ MonoBehaviour:
   buttonText: {fileID: 114200020676015326}
   allowCompletion: 0
   tutorialText:
-  - (Move to the next Resource Point and Gather it to continue.)
+  - (Move to the next green space and Gather the Resource Point to continue.)
 --- !u!114 &114843683285943922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7412,7 +7417,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7445,7 +7450,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7525,7 +7530,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7585,7 +7590,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7613,9 +7618,9 @@ MonoBehaviour:
   buttonText: {fileID: 114556581005112546}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - Workers are the ones that will gather resources for us
-  - You can see their status on your screen
+  - Super ! Resources are invaluable to us.
+  - Worker bees are the ones that will gather Resources for the Hive.
+  - You can see how many you have on the right side of your screen.
 --- !u!114 &114883631997026214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7658,9 +7663,12 @@ MonoBehaviour:
   buttonText: {fileID: 114538256997436600}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - this is nectar, you can see how much of it we have next to the pollen
-  - next up is resin
+  - Good job !
+  - 'The Nectar that you''ll collect over the seasons will be shown on the right side
+    of the screen. '
+  - Every time you Gather from a Resource Point, a small amount will be awarded to
+    the Hive every season.
+  - Next up, let's find some Resin !
 --- !u!114 &114892169257457998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7729,7 +7737,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -7826,8 +7834,8 @@ MonoBehaviour:
   buttonText: {fileID: 114677465328768362}
   allowCompletion: 1
   tutorialText:
-  - good job
-  - now you need to select your scout in order to control it
+  - Well done !
+  - See that bee over here ? Try selecting it.
 --- !u!114 &114929028722170912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8029,8 +8037,7 @@ MonoBehaviour:
   tutorialText:
   - "Happy Spring everyone ! I\u2019m pleased to be your new Queen for the next few
     seasons... If we survive that long !"
-  - To start off, remember to use all your senses to scan ahead for potential resources
-    or danger.
+  - To start off, let's teach you how to use the Camera.
   - (Move the Camera around with the WASD or the arrow keys, rotate your vision with
     Q and E, and use the Mouse Wheel to zoom in and out to continue.)
 --- !u!114 &114987874978674490
@@ -8048,7 +8055,8 @@ MonoBehaviour:
   buttonText: {fileID: 114133690426396080}
   allowCompletion: 0
   tutorialText:
-  - (Move the bee to the green hex to continue)
+  - To move them, click on a visible space.
+  - (Move the Scout to the green space to continue)
 --- !u!114 &114990700652244498
 MonoBehaviour:
   m_ObjectHideFlags: 1

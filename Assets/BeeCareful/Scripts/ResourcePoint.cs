@@ -8,6 +8,8 @@ public class ResourcePoint : HexInteractable {
     private ResourcePointManager rpm;
     private AudioSource sound;
     public ResourceType type;
+  
+
     //public int resourceValue;
     public int resourceMax;
     public int workforceCost;
@@ -18,7 +20,7 @@ public class ResourcePoint : HexInteractable {
     public ParticleSystem gatherParticles;
     public AudioClip soundToPlay;
     private GameObject UITarget;
-    
+    public GameObject floatingTextPrefab;
 
     public static bool ProtectPesticideUpgrade1 = false;
     public static bool ProtectPesticideUpgrade2 = false;
@@ -179,6 +181,14 @@ public class ResourcePoint : HexInteractable {
             //Test
             ParticleSystem anim = Instantiate(gatherParticles);
             Destroy(anim.gameObject, 5f);
+
+            //floating text
+
+            ShowFloatingText(resourceGet);
+           
+            
+
+
             //anim.emissionRate *= resourceGet / (resourceMax * GatherPercent);
             anim.transform.position = this.transform.position;
             anim.Play();
@@ -192,6 +202,13 @@ public class ResourcePoint : HexInteractable {
         return false;
     }
 
+    public void ShowFloatingText(int texttoshow)
+    {
+        HexMapCamera camera = FindObjectOfType<HexMapCamera>();
+        var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.Euler(0f, camera.Rotation, 0f));
+        go.GetComponent<TextMesh>().text = texttoshow.ToString();
+    }
+    
     public override void OnUnitEnterCell(HexCell cell)
     {
         if (hasWasp)
