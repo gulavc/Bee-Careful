@@ -673,6 +673,51 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 776477863}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: hiveButton
+      value: 
+      objectReference: {fileID: 518362258}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: seasonTimers.Array.data[0]
+      value: 
+      objectReference: {fileID: 930233674}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: gatherButton
+      value: 
+      objectReference: {fileID: 1311468979}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: workersHUD
+      value: 
+      objectReference: {fileID: 308110188}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: pollenHUD
+      value: 
+      objectReference: {fileID: 706081105}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: nectarHUD
+      value: 
+      objectReference: {fileID: 1195306658}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: resinHUD
+      value: 
+      objectReference: {fileID: 714297562}
+    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
+        type: 2}
+      propertyPath: waterHUD
+      value: 
+      objectReference: {fileID: 523618809}
     - target: {fileID: 114819425955994446, guid: 11feb5e47cc57104aace03e188affe14,
         type: 2}
       propertyPath: grid
@@ -738,51 +783,6 @@ Prefab:
       propertyPath: scoutUI
       value: 
       objectReference: {fileID: 813133705}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 776477863}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: hiveButton
-      value: 
-      objectReference: {fileID: 518362258}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: seasonTimers.Array.data[0]
-      value: 
-      objectReference: {fileID: 930233674}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: gatherButton
-      value: 
-      objectReference: {fileID: 1311468979}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: workersHUD
-      value: 
-      objectReference: {fileID: 308110188}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: pollenHUD
-      value: 
-      objectReference: {fileID: 706081105}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: nectarHUD
-      value: 
-      objectReference: {fileID: 1195306658}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: resinHUD
-      value: 
-      objectReference: {fileID: 714297562}
-    - target: {fileID: 114661868171656144, guid: 11feb5e47cc57104aace03e188affe14,
-        type: 2}
-      propertyPath: waterHUD
-      value: 
-      objectReference: {fileID: 523618809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11feb5e47cc57104aace03e188affe14, type: 2}
   m_IsPrefabAsset: 0
