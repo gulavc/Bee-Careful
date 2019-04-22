@@ -33,9 +33,11 @@ public class Tutorial : MonoBehaviour {
     public GameObject pollenHUD;
     public GameObject nectarHUD;    
     public GameObject resinHUD;    
-    public GameObject waterHUD;    
+    public GameObject waterHUD;
 
-    [Header("Tutorials references")]
+    public GameObject hiveUI;
+
+    [Header("Tutorials references / Intro")]
     public GameObject startUpTutorial;
     public GameObject cameraSuccessTutorial;
     public GameObject selectTutorial;
@@ -53,12 +55,20 @@ public class Tutorial : MonoBehaviour {
     public GameObject resinHUDTutorial;
     public GameObject gatherTutorial7;
     public GameObject waterHUDTutorial;
+    public GameObject upgradeTutorial1;
+    public GameObject upgradeTutorial2;
+    public GameObject objectiveTutorial1;
+    public GameObject timeTutorial;
 
-
+    [Header("Tutorials references / Generic")]
     public GameObject mountainTutorial;
     public GameObject waspsTutorial;
     public GameObject pesticideTutorial;
     public GameObject tooFarTutorial;
+
+    [Header("Tutorials references / Yearly")]
+    public GameObject[] yearIntros;
+
 
     private List<GameObject> allTutorials;
     HexGameUI controller; 
@@ -142,6 +152,8 @@ public class Tutorial : MonoBehaviour {
             unit.Location.EnableHighlight(goalHighlightColor);
             yield return new WaitForEndOfFrame();
         }
+
+        gameManager.RemovePlayerControls();
 
         ShowMoveToTutorial1();
     }
@@ -495,7 +507,7 @@ public class Tutorial : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
-        gameManager.RestorePlayerControls();
+        
         gameManager.HideScoutUI();
 
         UIFocus.Hide();
@@ -513,6 +525,7 @@ public class Tutorial : MonoBehaviour {
 
     IEnumerator WaitForWaterHUD()
     {
+
         waterHUD.SetActive(true);
 
         UIFocus.Show();
@@ -526,11 +539,111 @@ public class Tutorial : MonoBehaviour {
 
         UIFocus.Hide();
 
-        //Shownext();
+        ShowUpgradeTutorial1();
+    }
+
+    //Here we tell the player about the Hive
+    public void ShowUpgradeTutorial1()
+    {
+        ShowTutorial(upgradeTutorial1);
+        StartCoroutine(WaitForUpgrade1());
+    }
+
+    IEnumerator WaitForUpgrade1()
+    {
+        while (upgradeTutorial1.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        ShowUpgradeTutorial2();
+    }
+
+    //Here we wait for the player to open the Hive
+    public void ShowUpgradeTutorial2()
+    {
+        ShowTutorial(upgradeTutorial2);
+        StartCoroutine(WaitForUpgrade2());
+    }
+
+    IEnumerator WaitForUpgrade2()
+    {
+        hiveEnabled = true;
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(seasonTimers[0].transform.position);
+        UIFocus.baseScale = 2.2f;
+
+        hiveButton.SetActive(true);
+
+        while (!hiveUI.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        upgradeTutorial2.SetActive(false);
+        UIFocus.Hide();
+
+        while (hiveUI.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        ShowObjectiveTutorial();
+
+    }
+
+    //Here we wait for the player to close the Hive and tell him about objectives
+    public void ShowObjectiveTutorial()
+    {
+        ShowTutorial(objectiveTutorial1);
+        StartCoroutine(WaitForObjective1());
+    }
+
+    IEnumerator WaitForObjective1()
+    {
+        while (upgradeTutorial1.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        ShowTimeTutorial();
+    }
+
+    //Here we highlight the time passing and let the player have fun
+    public void ShowTimeTutorial()
+    {
+        ShowTutorial(timeTutorial);
+        StartCoroutine(WaitForTime());
+    }
+
+    IEnumerator WaitForTime()
+    {
+        foreach (GameObject g in seasonTimers)
+        {
+            g.SetActive(true);
+        }
+
+        UIFocus.Show();
+        UIFocus.MoveFocus(seasonTimers[0].transform.position);
+        UIFocus.baseScale = 3f;
+
+        while (timeTutorial.activeSelf)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        UIFocus.Hide();
+
         TutorialsTearDown();
     }
 
     //New year messages
+    public void ShowIntroMessageByYear(int currentYear)
+    {
+        ShowTutorial(yearIntros[currentYear - 1]);
+    }
+
 
     //Generic Tutorials
     public void ShowMountainTutorial()
@@ -570,7 +683,8 @@ public class Tutorial : MonoBehaviour {
         {
             StopAllCoroutines();
         }        
-        gameManager.RestorePlayerControls();
+        
+
         foreach(GameObject g in allTutorials)
         {
             g.SetActive(false);
@@ -630,6 +744,7 @@ public class Tutorial : MonoBehaviour {
             g.SetActive(true);
         }
         gameManager.SetCurrentPointsAction(gameManager.GetPointsActionMax());
+        gameManager.RestorePlayerControls();
     }
 
     //This is bad code, shame on you Guillaume
@@ -653,12 +768,21 @@ public class Tutorial : MonoBehaviour {
         allTutorials.Add(resinHUDTutorial);
         allTutorials.Add(gatherTutorial7);
         allTutorials.Add(waterHUDTutorial);
+        allTutorials.Add(upgradeTutorial1);
+        allTutorials.Add(upgradeTutorial2);
+        allTutorials.Add(objectiveTutorial1);
+        allTutorials.Add(timeTutorial);
         
 
         allTutorials.Add(mountainTutorial);
         allTutorials.Add(waspsTutorial);
         allTutorials.Add(pesticideTutorial);
         allTutorials.Add(tooFarTutorial);
+
+        foreach(GameObject g in yearIntros)
+        {
+            allTutorials.Add(g);
+        }
     }
 
 }

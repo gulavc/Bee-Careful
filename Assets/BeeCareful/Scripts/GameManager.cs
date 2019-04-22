@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        
+
 	}    
 
     //HUD Update Methods
@@ -308,6 +308,9 @@ public class GameManager : MonoBehaviour {
             resourcesHUD.gameObject.SetActive(true);
             resourcesHUD.UpdateHUDAllResources();
             gameButtons.SetActive(true);
+
+            tutorials.ShowIntroMessageByYear(CurrentYear);
+
         }
     }
 
