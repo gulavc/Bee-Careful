@@ -18,19 +18,19 @@ public class PlayerResources : MonoBehaviour
         get {
             if (StartWorkUpgrade3)
             {
-                return 200;
+                return 300;
             }
             else if (StartWorkUpgrade2)
             {
-                return 150;
+                return 225;
             }
             else if (StartWorkUpgrade1)
             {
-                return 100;
+                return 150;
             }
             else
             {
-                return 50;
+                return 75;
             }
         }
     }
