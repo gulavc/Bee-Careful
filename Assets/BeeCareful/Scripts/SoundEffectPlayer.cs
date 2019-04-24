@@ -11,6 +11,7 @@ public class SoundEffectPlayer : MonoBehaviour {
 
     private Queue<AudioSource> soundSourcePool;
     private AudioSource musicSource;
+    private AudioSource soloSfxSource;
 
 
 	// Use this for initialization
@@ -20,8 +21,20 @@ public class SoundEffectPlayer : MonoBehaviour {
         musicSource.volume = musicVolume;
         PlayMusic(defaultMusic);
     }
-	
-	public void PlaySound(AudioClip toPlay, float volume = 1f)
+
+    public void PlaySoundSolo(AudioClip toPlay, float volume = 1f)
+    {
+        if (!soloSfxSource)
+        {
+            soloSfxSource = GetSourceFromPool();
+        }
+        soloSfxSource.Stop();
+        soloSfxSource.volume = volume;
+        soloSfxSource.PlayOneShot(toPlay);
+    }
+
+
+    public void PlaySound(AudioClip toPlay, float volume = 1f)
     {
         StartCoroutine(WaitForPlaySound(toPlay, volume));
     }

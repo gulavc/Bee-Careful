@@ -382,9 +382,14 @@ public class GameManager : MonoBehaviour {
     }
 
     //Sound
-    public void PlaySFX(AudioClip sfx)
+    public void PlaySFX(AudioClip sfx, float volume = 1f)
     {
-        SFXPlayer.PlaySound(sfx);
+        SFXPlayer.PlaySound(sfx, volume);
+    }
+
+    public void PlaySFXSolo(AudioClip sfx, float volume = 1f)
+    {
+        SFXPlayer.PlaySoundSolo(sfx, volume);
     }
 
     public void PlayMusic(AudioClip music)

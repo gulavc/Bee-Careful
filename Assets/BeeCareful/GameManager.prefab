@@ -3719,6 +3719,8 @@ MonoBehaviour:
   tutorialText:
   - Mountains help you see really far!
   - Find more and go visit them to find new resources.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114009639274531454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3974,6 +3976,8 @@ MonoBehaviour:
   tutorialText:
   - 'Unbeelievable. I thought we would never survive this Winter... No time to waste
     ! '
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114037936198434140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3992,6 +3996,8 @@ MonoBehaviour:
   - you can spend resources at the hive to buy upgrades or spawn new wokers and scouts
   - open the hive by clicking on the tree on the bottom left of the screen or the
     cell containing the hive
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114038095069978770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4311,6 +4317,8 @@ MonoBehaviour:
   tutorialText:
   - Excellent !
   - This bee is your Scout. Scouts are your exploration tool.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114094130618187036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4785,6 +4793,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Move your Scout to the next green space to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114145034992879698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5103,6 +5113,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Move to the green space to continue)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114177106717098678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5204,6 +5216,8 @@ MonoBehaviour:
   - Wow ! You found a Resource Point, more precisely, Pollen. Pollen is found anywhere
     that is covered in grass.
   - To gather it, move on top of it.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114186167079464922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5417,6 +5431,8 @@ MonoBehaviour:
   - Well, hello. I must say, I'm not really familiar with the regular proceedings.
     My predecessor didn't have time to give me many pointers before she passed away.
     Let's, hum, do our best ?
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114204929850922308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6860,6 +6876,8 @@ MonoBehaviour:
     amount of Pollen from it every season of every year.
   - You can see the amount of Pollen in the bottom right of the screen.
   - Now, let's found some Nectar !
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114383984807380766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6878,6 +6896,8 @@ MonoBehaviour:
   - Careful! There is pesticide on this resource!
   - If you try to harvest it, more workers than usual will be lost due to the toxic
     chemicals.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114384479719427992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6912,6 +6932,8 @@ MonoBehaviour:
   - Careful! There are wasps also trying to harvest this resource!
   - If you harvest it, you will gather less than you normally would, as you are competing
     with the wasps.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114387542793324850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6984,6 +7006,8 @@ MonoBehaviour:
   - 'Everyone ! I''m your new Queen, for as long as I''ll be strong enough to support
     us. '
   - There's no time for mourning. Let's get to work !
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114398364814713340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7217,6 +7241,8 @@ MonoBehaviour:
   - That's it ! You've found some Nectar. Nectar is also found on grass tiles.
   - ' Nectar is required to update your skills.'
   - (Gather the Nectar on this Resource Point to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114451404465856598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8148,6 +8174,8 @@ MonoBehaviour:
   - By the end of fall we need to hibernate, that's when you need to have all the
     resources
   - good luck lol
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114574738199152782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8442,6 +8470,8 @@ MonoBehaviour:
     screen, along with the other resources.
   - Resin is always found on muddy tiles. Keep an eye out for them !
   - You're almost done ! Let's go Gather some Water next !
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114598141501264140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8655,6 +8685,8 @@ MonoBehaviour:
   tutorialText:
   - To call some Workers on a Resource Point, use the Gather Button on your screen.
   - (Click on the Gather Button while on top of a Resource to Gather. Do so to continue)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114627522292737462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9129,6 +9161,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Open the Hive to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114667128376241786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9310,6 +9344,8 @@ MonoBehaviour:
   - "Welcome back to this new Spring, my darlings ! Let\u2019s keep up the good work. "
   - " I\u2019ve noticed more Wasp in our territory this year, but it shouldn\u2019t
     be a problem, right ? Buzz along now !"
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114691257466548500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9441,6 +9477,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Move to the last Resource Point and Gather it to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114714696396173792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10345,6 +10383,8 @@ MonoBehaviour:
   tutorialText:
   - "Hello dearies ! \u2026 another year is beginning Let\u2019s give our best, alright
     ? If you need me, you know where to find me. "
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114831264677678314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10388,6 +10428,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Move to the next green space and Gather the Resource Point to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114843683285943922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10513,6 +10555,8 @@ MonoBehaviour:
   allowCompletion: 0
   tutorialText:
   - (Click on the bee in the green cell to select it)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114855617063563078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10687,6 +10731,8 @@ MonoBehaviour:
   - Super ! Resources are invaluable to us.
   - Worker bees are the ones that will gather Resources for the Hive.
   - You can see how many you have on the right side of your screen.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114883631997026214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10735,6 +10781,8 @@ MonoBehaviour:
   - Every time you Gather from a Resource Point, a small amount will be awarded to
     the Hive every season.
   - Next up, let's find some Resin !
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114891616010076434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10970,6 +11018,8 @@ MonoBehaviour:
   tutorialText:
   - Well done !
   - See that bee over here ? Try selecting it.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114929028722170912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11048,6 +11098,8 @@ MonoBehaviour:
   - Bee careful not to spend all the resources as we need some to survive winter
   - you can see how much we need to each resource by looking
   - blablabla
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114946392417680666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11064,6 +11116,8 @@ MonoBehaviour:
   allowCompletion: 1
   tutorialText:
   - Don't go too far from the Hive just yet!
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114950725893584012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11144,6 +11198,8 @@ MonoBehaviour:
     or rivers. They flow too rapidly.
   - All your Resources are visible at all times in the bottom right corner of the
     screen. Mouse over them to get more information about them.
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114956072127081950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11266,6 +11322,8 @@ MonoBehaviour:
   - To start off, let's teach you how to use the Camera.
   - (Move the Camera around with the WASD or the arrow keys, rotate your vision with
     Q and E, and use the Mouse Wheel to zoom in and out to continue.)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114978634902169366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11384,6 +11442,8 @@ MonoBehaviour:
   tutorialText:
   - To move them, click on a visible space.
   - (Move the Scout to the green space to continue)
+  dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
+    type: 2}
 --- !u!114 &114988208417020592
 MonoBehaviour:
   m_ObjectHideFlags: 1

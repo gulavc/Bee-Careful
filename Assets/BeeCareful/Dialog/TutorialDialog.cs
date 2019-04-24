@@ -16,6 +16,10 @@ public class TutorialDialog : MonoBehaviour {
     public string[] tutorialText;
     int currentText;
 
+    public MultiAudioClip dialogSounds;
+    public float volume = 0.5f;
+    GameManager gameManager;
+
 	// Use this for initialization
 	void Start () {
         button = GetComponentInChildren<Button>();
@@ -79,10 +83,17 @@ public class TutorialDialog : MonoBehaviour {
 
     IEnumerator ShowText(string text)
     {
+        if (!gameManager)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
+
         char[] arrayText = text.ToCharArray();
         panelText.text = "";
 
-        foreach(char c in arrayText)
+        gameManager.PlaySFXSolo(dialogSounds.GetRandomSound(), volume);
+
+        foreach (char c in arrayText)
         {
             panelText.text += c;
             yield return new WaitForSecondsRealtime(textSpeed);
