@@ -91,13 +91,13 @@ public class ResourcesHUD : MonoBehaviour {
     public void UpdateHUDAllResources()
     {
         pollenHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Pollen) / 200f; //VALEUR TEMPORAIRE À CHANGER
-        pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen);
+        pollenText.text = gameManager.GetRessourceCount(ResourceType.Pollen) + "";
         nectarHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Nectar) / 200f; // VALEUR À CHANGER
-        nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
+        nectarText.text = gameManager.GetRessourceCount(ResourceType.Nectar) + "";
         waterHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Water) / 200f; // VALEUR TEMPORAIRE À CHANGER
-        waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water);
+        waterText.text = gameManager.GetRessourceCount(ResourceType.Water) + "";
         resinHex.fillAmount = gameManager.GetRessourceCount(ResourceType.Resin) / 200f; // IDEM
-        resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
+        resinText.text = gameManager.GetRessourceCount(ResourceType.Resin) + "";
         workerHex.fillAmount = (float)gameManager.GetRessourceCount(ResourceType.Workers) / 200f; //IDEM
         workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";
         //workerText.text = gameManager.GetRessourceCount(ResourceType.Workers) + "";

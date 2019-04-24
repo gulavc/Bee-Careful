@@ -42,7 +42,7 @@ public class EndOfYearUI : MonoBehaviour {
 
         if (gameManager.VerifyAllObjectives())
         {
-            yearlyObjectives.text = "You have succeeded. Your hive will survive winter.";
+            yearlyObjectives.text = "Complete. Your hive will survive winter.";
             yearlyObjectives.color = Color.green;
             nextYear.gameObject.SetActive(true);
             returnMainMenu.gameObject.SetActive(false);
@@ -51,7 +51,7 @@ public class EndOfYearUI : MonoBehaviour {
         }
         else
         {
-            yearlyObjectives.text = "You have failed. Your hive did not last winter.";
+            yearlyObjectives.text = "Your hive did not last winter. You have failed.";
             yearlyObjectives.color = Color.red;
             nextYear.gameObject.SetActive(false);
             returnMainMenu.gameObject.SetActive(true);
