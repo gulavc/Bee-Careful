@@ -1257,6 +1257,7 @@ MonoBehaviour:
   scaleAmp: 0.1
   logo: {fileID: 488042151}
   music: {fileID: 1614877074}
+  cursor: {fileID: 2800000, guid: 04490a80f6af27f47865b6814f7c2aad, type: 3}
 --- !u!1 &1348394852
 GameObject:
   m_ObjectHideFlags: 0
