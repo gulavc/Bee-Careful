@@ -9,6 +9,7 @@ public class HexGameUI : MonoBehaviour
     public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
+    public AudioClip hiveMusic;
     private GameManager gameManager;    
 
     HexCell currentCell;
@@ -284,7 +285,10 @@ public class HexGameUI : MonoBehaviour
     {
         if (Tutorial.hiveEnabled)
         {
+            DeselectUnit();
             HiveUI.SetActive(true);
+            gameManager.PlayMusic(hiveMusic);
+            
         }        
     }
 

@@ -4988,6 +4988,9 @@ MonoBehaviour:
   addWorkers: 75
   workerTooltip: {fileID: 114022751143129362}
   scoutTooltip: {fileID: 114473347560238300}
+  workerCreated: {fileID: 8300000, guid: 108cba202dfc6cc41afcf0debd87a45c, type: 3}
+  scoutCreated: {fileID: 8300000, guid: c5f316d1023d8a448851c40353ec2a31, type: 3}
+  notEnoughResources: {fileID: 8300000, guid: 09a70f41e58e503419afae22316e3e32, type: 3}
 --- !u!114 &114163467044308150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6687,9 +6690,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810843958806904}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 114918515003133336}
+        m_MethodName: HideHiveUI
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11547,6 +11550,8 @@ MonoBehaviour:
   availableImage: {fileID: 21300000, guid: 3a7045444dce93d49af5617ba8097dd0, type: 3}
   costyImage: {fileID: 21300000, guid: 9af1827b900dd704eab61ccd37140e7a, type: 3}
   buyableImage: {fileID: 21300000, guid: 95f93f8638ebddc47917431db0366bf4, type: 3}
+  upgradeSuccessful: {fileID: 8300000, guid: e3a2ed88586ab134eaaab066cecd14cc, type: 3}
+  upgradeFail: {fileID: 8300000, guid: 09a70f41e58e503419afae22316e3e32, type: 3}
 --- !u!114 &114920084464492794
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -31,7 +31,12 @@ public class SpawnManager : MonoBehaviour
     public Text workerTooltip;
     public Text scoutTooltip;
 
-    
+    [Header("Sounds")]
+    public AudioClip workerCreated;
+    public AudioClip scoutCreated;
+    public AudioClip notEnoughResources;
+
+
     public float WorkerDiscout {
         get {
             if (CheapWorkUpgrade3)
@@ -99,10 +104,13 @@ public class SpawnManager : MonoBehaviour
                 gameManager.RemovePlayerRessources(ResourceType.Water, actualWaterCost);
                 gameManager.RemovePlayerRessources(ResourceType.Resin, actualResinCost);
                 gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
+
+                gameManager.PlaySFX(scoutCreated);
             }
             else
             {
                 addUnit = false;
+                gameManager.PlaySFX(notEnoughResources);
             }
         }
         if (addUnit)
@@ -144,6 +152,12 @@ public class SpawnManager : MonoBehaviour
             gameManager.RemovePlayerRessources(ResourceType.Resin, actualResinCost);
             gameManager.RemovePlayerRessources(ResourceType.Pollen, actualPollenCost);
             gameManager.playerResources.AddResources(ResourceType.Workers, addWorkers);
+
+            gameManager.PlaySFX(workerCreated);
+        }
+        else
+        {
+            gameManager.PlaySFX(notEnoughResources);
         }
 
     }

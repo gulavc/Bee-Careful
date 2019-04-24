@@ -14,6 +14,9 @@ public class UpgradeUI : MonoBehaviour
 
     public Sprite unavailableImage, availableImage, costyImage, buyableImage;
 
+    public AudioClip upgradeSuccessful, upgradeFail;
+
+    private GameManager gameManager;
 
     // Use this for initialization
     void Start()
@@ -24,7 +27,7 @@ public class UpgradeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
 
 
@@ -109,9 +112,16 @@ public class UpgradeUI : MonoBehaviour
 
     public void TryApplyUpgrade(string upgradeName)
     {
+        if (!gameManager)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
+
         bool result = upgradeManager.ApplyUpgrade(upgradeName);
         if (result)
         {
+            gameManager.PlaySFX(upgradeSuccessful);
+
             switch (upgradeName)
             {
                 case "ScoutVisionUpgrade1":
@@ -222,6 +232,8 @@ public class UpgradeUI : MonoBehaviour
         }
         else
         {
+            gameManager.PlaySFX(upgradeFail);
+
             switch (upgradeName)
             {
                 case "ScoutVisionUpgrade1":
@@ -328,5 +340,15 @@ public class UpgradeUI : MonoBehaviour
         }
 
         UpgradeAvailableCheck();
+    }
+
+    public void HideHiveUI()
+    {
+        this.gameObject.SetActive(false);
+        if (!gameManager)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
+        gameManager.StopMusic();
     }
 }

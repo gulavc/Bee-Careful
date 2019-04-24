@@ -8,6 +8,7 @@ public class ScoutUI : MonoBehaviour
 
     public ParticleSystem workersPrefab;
     public Button gatherButton;
+    public AudioClip notEnoughWorkersSFX;
     [HideInInspector]
     public HexCell currentCell;
     [HideInInspector]
@@ -28,7 +29,11 @@ public class ScoutUI : MonoBehaviour
             if (resourcePoint.GatherResources())
             {
                 StartCoroutine(WorkersTravel());
-            }           
+            }
+            else
+            {
+                gameManager.PlaySFX(notEnoughWorkersSFX);
+            }
         }
         else
         {

@@ -6,6 +6,8 @@ public class SoundEffectPlayer : MonoBehaviour {
 
     public AudioSource soundSourcePrefab;
     public AudioClip defaultMusic;
+    [Range(0, 1)]
+    public float musicVolume; 
 
     private Queue<AudioSource> soundSourcePool;
     private AudioSource musicSource;
@@ -15,17 +17,19 @@ public class SoundEffectPlayer : MonoBehaviour {
 	void Start () {
         soundSourcePool = new Queue<AudioSource>();
         musicSource = GetSourceFromPool();
+        musicSource.volume = musicVolume;
         PlayMusic(defaultMusic);
     }
 	
-	public void PlaySound(AudioClip toPlay)
+	public void PlaySound(AudioClip toPlay, float volume = 1f)
     {
-        StartCoroutine(WaitForPlaySound(toPlay));
+        StartCoroutine(WaitForPlaySound(toPlay, volume));
     }
 
-    IEnumerator WaitForPlaySound(AudioClip toPlay)
+    IEnumerator WaitForPlaySound(AudioClip toPlay, float volume)
     {
         AudioSource src = GetSourceFromPool();
+        src.volume = volume;
         src.PlayOneShot(toPlay);
         while (src.isPlaying)
         {
@@ -36,10 +40,14 @@ public class SoundEffectPlayer : MonoBehaviour {
 
     public void PlayMusic(AudioClip music)
     {
-        musicSource.Stop();
-        musicSource.loop = true;
-        musicSource.clip = music;
-        musicSource.Play();
+        if(musicSource.clip != music)
+        {
+            musicSource.Stop();
+            musicSource.loop = true;
+            musicSource.clip = music;
+            musicSource.Play();
+        }
+        
     }
 
     public void StopMusic()

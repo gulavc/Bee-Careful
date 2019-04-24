@@ -578,11 +578,12 @@ MonoBehaviour:
   resinGoal: {fileID: 114365240426899670}
   waterGoal: {fileID: 114129985881374326}
   pollenGoal: {fileID: 114166954941583184}
-  workersCreated: {fileID: 0}
-  workersDead: {fileID: 0}
   nextYear: {fileID: 114942932124242438}
   returnMainMenu: {fileID: 114814036528004224}
   menuScene: MainMenu
+  objectiveWin: {fileID: 8300000, guid: 388f4f5a5312dbb43a57b69d2808400e, type: 3}
+  objectiveLose: {fileID: 8300000, guid: 978329c7cd67f5c4e8cf8e8475d11455, type: 3}
+  endOfYearMusic: {fileID: 8300000, guid: 2b75bf001d5e5454490e21a7e965cf84, type: 3}
 --- !u!114 &114220029005598714
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -191,6 +191,7 @@ public class GameManager : MonoBehaviour {
     //End of year
     public void EndOfYear()
     {
+        gameController.DeselectUnit();
         resourcesHUD.gameObject.SetActive(false);
         gameButtons.SetActive(false);
         endOfYearUI.gameObject.SetActive(true);
@@ -384,6 +385,16 @@ public class GameManager : MonoBehaviour {
     public void PlaySFX(AudioClip sfx)
     {
         SFXPlayer.PlaySound(sfx);
+    }
+
+    public void PlayMusic(AudioClip music)
+    {
+        SFXPlayer.PlayMusic(music);
+    }
+
+    public void StopMusic()
+    {
+        SFXPlayer.StopMusic();
     }
 
 }

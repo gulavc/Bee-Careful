@@ -8,19 +8,22 @@ public class EndOfYearUI : MonoBehaviour {
 
     private GameManager gameManager;
 
-    //Text Zones
+    [Header("Text Zones")]
     public Text yearlyObjectives;
     public Text nectarGoal;
     public Text resinGoal;
     public Text waterGoal;
     public Text pollenGoal;
-    public Text workersCreated;
-    public Text workersDead;
     public Button nextYear;
     public Button returnMainMenu;
 
     [Header("Main Menu Scene")]
     public string menuScene;
+
+    [Header("Sounds")]
+    public AudioClip objectiveWin;
+    public AudioClip objectiveLose;
+    public AudioClip endOfYearMusic;
 
 
     void Awake()
@@ -29,6 +32,8 @@ public class EndOfYearUI : MonoBehaviour {
     }
 
     public void EndOfYear(){
+
+        gameManager.PlayMusic(endOfYearMusic);
 
         nectarGoal.text = gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar);
         resinGoal.text = gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin);
@@ -41,6 +46,8 @@ public class EndOfYearUI : MonoBehaviour {
             yearlyObjectives.color = Color.green;
             nextYear.gameObject.SetActive(true);
             returnMainMenu.gameObject.SetActive(false);
+
+            gameManager.PlaySFX(objectiveWin);
         }
         else
         {
@@ -48,11 +55,14 @@ public class EndOfYearUI : MonoBehaviour {
             yearlyObjectives.color = Color.red;
             nextYear.gameObject.SetActive(false);
             returnMainMenu.gameObject.SetActive(true);
+
+            gameManager.PlaySFX(objectiveLose);
         }
     }
 
     public void NextYear()
     {
+        gameManager.StopMusic();
         gameManager.AdvanceYear();
         this.gameObject.SetActive(false);
     }
