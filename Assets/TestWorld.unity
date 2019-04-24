@@ -867,6 +867,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224386814119496198, guid: 5879c73079813224a8741822ab2dda62,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5879c73079813224a8741822ab2dda62, type: 2}
   m_IsPrefabAsset: 0
@@ -986,6 +991,10 @@ Prefab:
     - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
       propertyPath: m_Name
       value: HiveUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810843958806904, guid: 97c75573826201243a8ac0343881aa00, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c75573826201243a8ac0343881aa00, type: 2}
