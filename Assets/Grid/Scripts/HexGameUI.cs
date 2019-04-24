@@ -9,7 +9,11 @@ public class HexGameUI : MonoBehaviour
     public GameObject HiveUI;
     public HexGrid grid;
     public ScoutUI scoutUI;
+
+    [Header("Music")]
     public AudioClip hiveMusic;
+    public MultiAudioClip moveSFX;
+
     private GameManager gameManager;    
 
     HexCell currentCell;
@@ -237,6 +241,8 @@ public class HexGameUI : MonoBehaviour
         {
             if (grid.HasPath)
             {
+                gameManager.PlaySFX(moveSFX.GetRandomSound());
+
                 selectedUnit.Travel(grid.GetPath());
                 gameManager.RemovePointsAction(currentCell.Distance);
 
