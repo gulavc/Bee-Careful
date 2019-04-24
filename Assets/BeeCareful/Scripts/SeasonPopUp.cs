@@ -11,8 +11,9 @@ public class SeasonPopUp : MonoBehaviour {
     public Color springColor, summerColor, fallColor, pollenColor, nectarColor, waterColor, resinColor;
 
     private Vector3 velocity;
-
-
+    private GameManager gameManager;
+    private AudioClip seasonMusic;
+    public AudioClip springMusic, summerMusic, fallMusic;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class SeasonPopUp : MonoBehaviour {
         waterText.color = waterColor;
         pollenText.color = pollenColor;
         resinText.color = resinColor;
+        seasonMusic = springMusic;
     }
 	
 	// Update is called once per frame
@@ -42,12 +44,15 @@ public class SeasonPopUp : MonoBehaviour {
         {
             case "spring":
                 seasonText.color = springColor;
+                seasonMusic = springMusic;
                 break;
             case "summer":
                 seasonText.color = summerColor;
+                seasonMusic = summerMusic;
                 break;
             default:
                 seasonText.color = fallColor;
+                seasonMusic = fallMusic;
                 break;
         }
     }
@@ -60,7 +65,13 @@ public class SeasonPopUp : MonoBehaviour {
 
     IEnumerator ShowHide()
     {
+        if (!gameManager)
+        {
+            gameManager = FindObjectOfType<GameManager>();
+        }
+
         this.gameObject.SetActive(true);
+        gameManager.PlaySFX(seasonMusic);
 
         yield return new WaitForSeconds(stayTime);
 

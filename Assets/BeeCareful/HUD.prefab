@@ -2025,6 +2025,9 @@ MonoBehaviour:
   nectarColor: {r: 0.9245283, g: 0.63234246, b: 0.8523791, a: 1}
   waterColor: {r: 0.27687788, g: 0.7774099, b: 0.9622642, a: 1}
   resinColor: {r: 0.08677464, g: 0.735849, b: 0.27456453, a: 1}
+  springMusic: {fileID: 8300000, guid: 4003022cee04c7d45839630ae22260c4, type: 3}
+  summerMusic: {fileID: 8300000, guid: 6ca6de744e394bb4aa7761a017d7b519, type: 3}
+  fallMusic: {fileID: 8300000, guid: 7146ac96f7577e749b76cb91b3fedb14, type: 3}
 --- !u!114 &114599783664101262
 MonoBehaviour:
   m_ObjectHideFlags: 1
