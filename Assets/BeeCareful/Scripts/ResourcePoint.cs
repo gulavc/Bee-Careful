@@ -37,15 +37,15 @@ public class ResourcePoint : HexInteractable {
         get {
             if (GatherMoreUpgrade3)
             {
-                return 1.3f;
+                return 1.5f;
             }
             else if (GatherMoreUpgrade2)
             {
-                return 1.2f;
+                return 1.3f;
             }
             else if (GatherMoreUpgrade1)
             {
-                return 1.1f;
+                return 1.15f;
             }
             else
             {

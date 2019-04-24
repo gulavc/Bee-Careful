@@ -3705,7 +3705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Create new Workers to gather resources
+  m_Text: Create new Workers to gather more resources
 --- !u!114 &114022834752030438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3727,19 +3727,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts movements cost 1 Beenergy Point. We need 30 Nectar, 20 Water,
-    20 Resin and 20 Pollen.
+  m_Text: 'Scout moves cost 1 Time Points. Cost: 30 Nectar + 30 Resin + 30 Pollen'
 --- !u!114 &114028662175820598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3899,7 +3898,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3910,8 +3909,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers are completely unaffected by Wasps. We need 15 Nectar, 15 Resin
-    and 15 Pollen.
+  m_Text: 'Workers are 100% unaffected by Wasps. Cost: 20 Nectar + 20 Water + 20 Resin'
 --- !u!114 &114067201272975838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4017,7 +4015,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4028,7 +4026,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers are 75% less affected by Wasps. We need 15 Resin and 15 Pollen.
+  m_Text: 'Workers are 75% unaffected by Wasps. Cost: 15 Nectar + 15 Resin'
 --- !u!114 &114073800049107870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4215,19 +4213,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can see 2 tiles further. We need 10 Nectar, 30 Water, 10 Resin
-    and 10 Pollen.
+  m_Text: 'Scouts can see 2 tiles further. Cost: 30 Nectar + 15 Resin + 15 Pollen'
 --- !u!114 &114092025882795630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4276,7 +4273,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -4516,18 +4513,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts movements cost 3 Beenergy Points. We need 30 Nectar.
+  m_Text: 'Scout moves cost 3 Time Points. Cost: 30 Nectar'
 --- !u!114 &114127269425267820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4985,7 +4982,7 @@ MonoBehaviour:
   workWaterCost: 10
   workResinCost: 10
   workPollenCost: 10
-  addWorkers: 75
+  addWorkers: 80
   workerTooltip: {fileID: 114022751143129362}
   scoutTooltip: {fileID: 114473347560238300}
   workerCreated: {fileID: 8300000, guid: 108cba202dfc6cc41afcf0debd87a45c, type: 3}
@@ -5353,18 +5350,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can now fly over Mountains. We need 30 Pollen.
+  m_Text: 'Scouts can fly over Mountains. Cost: 30 Pollen'
 --- !u!114 &114211796321838538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5557,7 +5554,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -5647,18 +5644,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 72
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can see 1 tile further. We need 30 water.
+  m_Text: 'Scouts can see 1 tile further. Cost: 30 Nectar'
 --- !u!114 &114237546273541370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5680,7 +5677,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5691,7 +5688,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30 Workers will be able to gather resources with Pesticide. We need 15 Resin.
+  m_Text: 'Workers are 25% unaffected by Pesticide. Cost: 10 Resin'
 --- !u!114 &114238082163675062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5713,19 +5710,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can now fly over Rivers. We need 10 Nectar, 10 Water, 10 Resin
-    and 30 Pollen.
+  m_Text: 'Scouts can fly over Rivers. Cost: 15 Nectar + 15 Resin + 30 Pollen'
 --- !u!114 &114239394751727264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5981,7 +5977,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5992,8 +5988,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Workers is now 50% cheaper. We need 15 Nectar, 15 Water, 15 Resin
-    and 15 Pollen.
+  m_Text: 'Creating Workers is now 50% cheaper. Cost: 15 Nectar + 15 Water + 15 Resin
+    + 15 Pollen'
 --- !u!114 &114279030101122146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6111,7 +6107,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6122,7 +6118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers are 50% less affected by Wasps. We need 15 Pollen.
+  m_Text: 'Workers are 50% unaffected by Wasps. Cost: 10 Resin'
 --- !u!114 &114287171805043532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6171,19 +6167,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: For each Scout we have have, reduce your resource objectives by 2. We need
-    20 Nectar, 20 Water, 20 Resin and 20 Pollen.
+  m_Text: 'Reduce your resources objectives by 2 per Scout. Cost: 20 Nectar + 20 Water
+    + 20 Resin + 20 Pollen'
 --- !u!114 &114296332790068506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6508,7 +6504,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -6519,8 +6515,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Scouts is now 50% cheaper. We need 35 Nectar, 35 Water, 35 Resin
-    and 35 Pollen.
+  m_Text: 'Creating Scouts is now 50% cheaper. Cost: 30 Nectar + 30 Water + 30 Resin
+    + 30 Pollen'
 --- !u!114 &114342673436182016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6611,19 +6607,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can see 3 tiles further. We need 20 Nectar, 30 Water, 20 Resin
-    and 20 Pollen.
+  m_Text: 'Scouts can see 3 tiles further. Cost: 30 Nectar + 30 Resin + 30 Pollen.'
 --- !u!114 &114350299817825220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6693,6 +6688,28 @@ MonoBehaviour:
       - m_Target: {fileID: 114918515003133336}
         m_MethodName: HideHiveUI
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1159974038764978}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1118137486293870}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6862,19 +6879,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts movements cost 2 Beenergy Points. We need 30 Nectar, 10 Water,
-    10 Resin and 10 Pollen.
+  m_Text: 'Scout moves cost 2 Time Points. Cost: 30 Nectar + 15 Resin + 15 Pollen'
 --- !u!114 &114385605622698534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7019,19 +7035,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: For each Scout we have have, reduce your resource objectives by 3. We need
-    30 Nectar, 30 Water, 30 Resin and 30 Pollen.
+  m_Text: 'Reduce your resources objectives by 3 per Scout. Cost: 30 Nectar + 30 Water
+    + 30 Resin + 30 Pollen'
 --- !u!114 &114412297203843982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7110,7 +7126,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7121,8 +7137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers now gather 50 resources per resource point. We need 15 Nectar,
-    15 Water and 15 Resin.
+  m_Text: 'Gather 50% more resources. Cost: 10 Nectar + 15 Water + 10 Resin + 10 Pollen'
 --- !u!114 &114413202750422508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7421,7 +7436,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -7867,7 +7882,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Create a new Scout to explore the world
+  m_Text: Create a new Scout to explore and discover more resource points on the world
+    map
 --- !u!114 &114473537324468592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8537,7 +8553,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -8548,8 +8564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: At the start of a new year, we have 150 Workers. We need 15 Nectar, 15 Water,
-    15 Resin and 15 Pollen.
+  m_Text: 'Start each year with 120 Workers. Cost: 10 Nectar + 10 Resin + 10 Pollen'
 --- !u!114 &114513999738304592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8940,7 +8955,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -8951,8 +8966,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: At the start of a new year, we have 200 Workers. We need 20 Nectar, 20 Water,
-    20 Resin and 20 Pollen.
+  m_Text: 'Start each year with 160 Workers. Cost: 15 Nectar + 15 Water + 15 Resin
+    + 15 Pollen'
 --- !u!114 &114568563405625392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9139,7 +9154,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -9150,8 +9165,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Workers is now 75% cheaper. We need 20 Nectar, 20 Water, 20 Resin
-    and 20 Pollen.
+  m_Text: 'Creating Workers is now 75% cheaper. Cost: 30 Nectar + 30 Water + 30 Resin
+    + 30 Pollen'
 --- !u!114 &114600585387156520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9296,7 +9311,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 48
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -9383,19 +9398,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: For each Scout we have have, reduce your resource objectives by 1. We need
-    10 Nectar, 10 Water, 10 Resin and 10 Pollen.
+  m_Text: 'Reduce your resources objectives by 1 per Scout. Cost: 10 Nectar + 10 Water
+    + 10 Resin + 10 Pollen'
 --- !u!114 &114639702436477982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10203,7 +10218,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -10214,8 +10229,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Scouts is now 75% cheaper. We need 40 Nectar, 40 Water, 40 Resin
-    and 40 Pollen.
+  m_Text: 'Creating Scouts is now 75% cheaper. Cost: 60 Nectar + 60 Water + 60 Resin
+    + 60 Pollen'
 --- !u!114 &114784312803796016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10345,7 +10360,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -10356,8 +10371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: At the start of a new year, we have 100 Workers. We need 10 Nectar, 10 Water,
-    10 Resin and 10 Pollen.
+  m_Text: 'Start each year with 80 Workers. Cost: 5 Nectar + 10 Resin'
 --- !u!114 &114800895012768158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10436,7 +10450,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -10447,7 +10461,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers now gather 30 resources per resource point. We need 15 Water.
+  m_Text: 'Gather 15% more resources. Cost: 5 Nectar + 10 Resin'
 --- !u!114 &114805960093675252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10469,19 +10483,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 48
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Scouts can now fly over Cities. We need 20 Nectar, 20 Water, 20 Resin
-    and 30 Pollen.
+  m_Text: 'Scouts can fly over Cities. Cost: 30 Nectar + 30 Resin + 30 Pollen'
 --- !u!114 &114806577757184830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10557,7 +10570,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -10568,8 +10581,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Workers is now 25% cheaper. We need 10 Nectar, 10 Water, 10 Resin
-    and 10 Pollen.
+  m_Text: 'Creating Workers is now 25% cheaper. Cost: 10 Nectar + 10 Water + 10 Resin
+    + 10 Pollen'
 --- !u!114 &114828089301122024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10768,7 +10781,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -10779,8 +10792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20 Workers will be able to gather resources with Pesticide. We need 15 Water
-    and 15 Resin.
+  m_Text: 'Workers are 50% unaffected by Pesticide. Cost: 10 Nectar + 10 Resin'
 --- !u!114 &114851855877367718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11063,7 +11075,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -11074,8 +11086,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Our Workers now gather 40 resources per resource point. We need 15 Water
-    and 15 Resin.
+  m_Text: 'Gather 30% more resources. Cost: 10 Nectar + 10 Resin + 10 Pollen'
 --- !u!114 &114883004407633784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12221,7 +12232,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -12232,8 +12243,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creating Scouts is now 25% cheaper. We need 30 Nectar, 30 Water, 30 Resin
-    and 30 Pollen.
+  m_Text: 'Creating Scouts is now 25% cheaper. Cost: 15 Nectar + 15 Water + 15 Resin
+    + 15 Pollen'
 --- !u!114 &114996814104355026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12255,7 +12266,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0e7a7da7cdc39604984c40bffdb475d4, type: 3}
-    m_FontSize: 36
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -12266,8 +12277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10 Workers will be able to gather resources with Pesticide. We need 15 Nectar,
-    15 Water and 15 Resin.
+  m_Text: 'Workers are 100% unaffected by Pesticide. Cost: 10 Nectar + 30 Pollen'
 --- !u!222 &222007637563070768
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -15583,7 +15593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 188, y: 203}
+  m_AnchoredPosition: {x: -686, y: -313}
   m_SizeDelta: {x: 284.4, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224539348889207886
