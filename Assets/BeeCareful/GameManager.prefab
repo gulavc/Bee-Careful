@@ -6891,7 +6891,7 @@ MonoBehaviour:
   - Since we now know where this Resource Point is, we'll automatically gather a small
     amount of Pollen from it every season of every year.
   - You can see the amount of Pollen in the bottom right of the screen.
-  - Now, let's found some Nectar !
+  - Now, let's find some Nectar !
   dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
     type: 2}
   volume: 0.5
