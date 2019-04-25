@@ -9199,6 +9199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  upgradeAlertSound: {fileID: 8300000, guid: d9d7bbb2c47fcb043b9a07475a015a18, type: 3}
+  objectiveCompleteSound: {fileID: 8300000, guid: 6b21b93be3e01f44bb1217f689589790,
+    type: 3}
 --- !u!114 &114669367982325240
 MonoBehaviour:
   m_ObjectHideFlags: 1

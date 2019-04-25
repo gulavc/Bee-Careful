@@ -12,6 +12,10 @@ public class PlayerResources : MonoBehaviour
     [HideInInspector] public GameManager gameManager;
     private UpgradeAlert upgradeAlert;
 
+    [Header("Juice")]
+    public AudioClip upgradeAlertSound;
+    public AudioClip objectiveCompleteSound;
+
     Dictionary<ResourceType, int> playerResources = new Dictionary<ResourceType, int>();
 
     private int StartingWorkers {
@@ -48,7 +52,16 @@ public class PlayerResources : MonoBehaviour
 
     public void AddResources(ResourceType r, int value)
     {
-        //TODO: ADD ANIMATION TO INDICATE THIS;
+        //Check for objective complete
+        int previous = playerResources[r];
+        int future = previous + value;
+        int objective = gameManager.globalObjectives.GetObjective(r);
+        if (previous < objective && future >= objective)
+        {
+            gameManager.PlaySFX(objectiveCompleteSound);
+        }
+
+        //TODO: ADD ANIMATION TO INDICATE THIS; Done, thanks Chloé!
         playerResources[r] += value;
         gameManager.UpdateResourcesHUD(r);
 
@@ -60,6 +73,7 @@ public class PlayerResources : MonoBehaviour
         if (upgradeAlert.VerifyPopup())
         {
             upgradeAlert.Show();
+            gameManager.PlaySFX(upgradeAlertSound);
         }
 
     }
