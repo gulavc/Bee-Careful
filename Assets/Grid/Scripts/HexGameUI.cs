@@ -208,6 +208,7 @@ public class HexGameUI : MonoBehaviour
             selectedUnit = null;
             gameManager.ResetSeasonTimerPreview();
             HideScoutUI();
+            Cursor.SetCursor(normalPointer, pointerOffset, CursorMode.Auto);
         }
     }
 

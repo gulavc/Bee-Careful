@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour {
     [Header("Juice Stuff")]
     public GameObject logo;
     public AudioSource music;
+    public Texture2D cursor;
 
     public void PlayGame(int loadMode)
     {
@@ -77,5 +78,6 @@ public class MainMenu : MonoBehaviour {
     {
         StartCoroutine(AnimLogo());
         StartCoroutine(AnimButton());
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
     }
 }

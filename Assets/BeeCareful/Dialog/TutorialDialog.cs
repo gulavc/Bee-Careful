@@ -17,14 +17,17 @@ public class TutorialDialog : MonoBehaviour {
     int currentText;
 
     public MultiAudioClip dialogSounds;
-    public float volume = 0.5f;
+    public float volume = 0.2f;
     GameManager gameManager;
 
 	// Use this for initialization
 	void Start () {
         button = GetComponentInChildren<Button>();
         ShowText();
-        
+
+        //VOLUME OVERRIDE
+        volume = 0.2f;
+
     }
 
     public void ShowText()

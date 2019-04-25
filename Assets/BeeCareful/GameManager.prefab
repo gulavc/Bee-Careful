@@ -10584,7 +10584,8 @@ MonoBehaviour:
   buttonText: {fileID: 114291097310339498}
   allowCompletion: 0
   tutorialText:
-  - (Click on the bee in the green cell to select it)
+  - (Click on the bee in the green cell to select it. Right click or press Exit to
+    unselect a unit).
   dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
     type: 2}
   volume: 0.5
