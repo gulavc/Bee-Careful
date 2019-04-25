@@ -8742,7 +8742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundSourcePrefab: {fileID: 82633280019010354, guid: 47b31754e85082d478fc38df9e31b0c3,
     type: 2}
-  defaultMusic: {fileID: 8300000, guid: 5213007206dc0ad4da152c98871315b1, type: 3}
+  defaultMusic: {fileID: 8300000, guid: 2054cc41ed3461744addb63f60bbcb74, type: 3}
   defaultAmbiantSound: {fileID: 8300000, guid: 4d7247616d4da63448902ece5ef15f6c, type: 3}
   musicVolume: 0.5
   ambiantSoundVolume: 1
@@ -9142,6 +9142,7 @@ MonoBehaviour:
   resinHUD: {fileID: 0}
   waterHUD: {fileID: 0}
   hiveUI: {fileID: 0}
+  objectivePanel: {fileID: 0}
   startUpTutorial: {fileID: 1599824489325628}
   cameraSuccessTutorial: {fileID: 1485440096689490}
   selectTutorial: {fileID: 1838304957967750}
