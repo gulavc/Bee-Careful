@@ -296,12 +296,20 @@ public class HexGameUI : MonoBehaviour
 
     public void ShowHiveUI()
     {
-        if (Tutorial.hiveEnabled)
+        if (HiveUI.activeSelf)
         {
-            DeselectUnit();
-            HiveUI.SetActive(true);
-            gameManager.PlayMusic(hiveMusic);
-            
+            HiveUI.SetActive(false);
+            gameManager.StopMusic();
+        }
+        else
+        {
+            if (Tutorial.hiveEnabled)
+            {
+                DeselectUnit();
+                HiveUI.SetActive(true);
+                gameManager.PlayMusic(hiveMusic);
+
+            }
         }        
     }
 
