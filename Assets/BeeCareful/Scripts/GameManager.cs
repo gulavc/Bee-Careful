@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {    
 
@@ -263,7 +264,7 @@ public class GameManager : MonoBehaviour {
         CurrentYear++;
         if(CurrentYear >= numberOfYears)
         {
-            Debug.Log("END OF GAME");
+            SceneManager.LoadSceneAsync("CUTSCENE"); 
         }
         else
         {
