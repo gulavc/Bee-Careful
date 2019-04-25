@@ -13,6 +13,10 @@ public class MainMenu : MonoBehaviour {
     public AudioSource music;
     public Texture2D cursor;
 
+    [Header("Credits")]
+    public GameObject[] credits;
+    public GameObject[] notCredits;
+
     public void PlayGame(int loadMode)
     {
         GameLoader.LoadMode = (LoadMode)loadMode; 
@@ -62,6 +66,32 @@ public class MainMenu : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         
+    }
+
+    public void ShowCredits()
+    {
+        foreach(GameObject g in notCredits)
+        {
+            g.SetActive(false);
+        }
+
+        foreach(GameObject g in credits)
+        {
+            g.SetActive(true);
+        }
+    }
+
+    public void HideCredits()
+    {
+        foreach (GameObject g in notCredits)
+        {
+            g.SetActive(true);
+        }
+
+        foreach (GameObject g in credits)
+        {
+            g.SetActive(false);
+        }
     }
 
     private void Update()
