@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-
+        
 	}    
 
     //HUD Update Methods
@@ -401,6 +401,16 @@ public class GameManager : MonoBehaviour {
     public void StopMusic()
     {
         SFXPlayer.StopMusic();
+    }
+
+    public void PlayAmbiance(AudioClip sound)
+    {
+        SFXPlayer.PlayAmbiantSound(sound);
+    }
+
+    public void StopAmbiance()
+    {
+        SFXPlayer.StopAmbiantSound();
     }
 
 }
