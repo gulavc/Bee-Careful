@@ -6,11 +6,15 @@ public class SoundEffectPlayer : MonoBehaviour {
 
     public AudioSource soundSourcePrefab;
     public AudioClip defaultMusic;
+    public AudioClip defaultAmbiantSound;
     [Range(0, 1)]
-    public float musicVolume; 
+    public float musicVolume;
+    [Range(0, 1)]
+    public float ambiantSoundVolume;
 
     private Queue<AudioSource> soundSourcePool;
     private AudioSource musicSource;
+    private AudioSource ambiantSoundSource;
     private AudioSource soloSfxSource;
 
 
@@ -20,6 +24,9 @@ public class SoundEffectPlayer : MonoBehaviour {
         musicSource = GetSourceFromPool();
         musicSource.volume = musicVolume;
         PlayMusic(defaultMusic);
+        ambiantSoundSource = GetSourceFromPool();
+        ambiantSoundSource.volume = ambiantSoundVolume;
+        PlayAmbiantSound(defaultAmbiantSound);
     }
 
     public void PlaySoundSolo(AudioClip toPlay, float volume = 1f)
@@ -70,6 +77,31 @@ public class SoundEffectPlayer : MonoBehaviour {
         musicSource.clip = defaultMusic;
         musicSource.Play();
     }
+
+    public void PlayAmbiantSound(AudioClip sound)
+    {
+        if (ambiantSoundSource.clip != sound)
+        {
+            ambiantSoundSource.Stop();
+            ambiantSoundSource.loop = true;
+            ambiantSoundSource.clip = sound;
+            ambiantSoundSource.Play();
+        }
+
+    }
+
+    public void StopAmbiantSound()
+    {
+        if(ambiantSoundSource.clip != defaultAmbiantSound)
+        {
+            ambiantSoundSource.Stop();
+            ambiantSoundSource.loop = true;
+            ambiantSoundSource.clip = defaultAmbiantSound;
+            ambiantSoundSource.Play();
+        }
+        
+    }
+
 
     private AudioSource GetSourceFromPool()
     {

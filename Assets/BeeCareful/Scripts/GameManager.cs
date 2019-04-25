@@ -402,4 +402,14 @@ public class GameManager : MonoBehaviour {
         SFXPlayer.StopMusic();
     }
 
+    public void PlayAmbiance(AudioClip sound)
+    {
+        SFXPlayer.PlayAmbiantSound(sound);
+    }
+
+    public void StopAmbiance()
+    {
+        SFXPlayer.StopAmbiantSound();
+    }
+
 }

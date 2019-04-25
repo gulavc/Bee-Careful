@@ -5304,6 +5304,9 @@ MonoBehaviour:
   scoutUI: {fileID: 0}
   hiveMusic: {fileID: 8300000, guid: 02fb027d7bcbe764da04878efade1cff, type: 3}
   moveSFX: {fileID: 114986319222564880, guid: 4187b327aaa2783468fd5914369cb8ff, type: 2}
+  swarmSFX: {fileID: 8300000, guid: 8cf96cf88f9df9f4db611ffad73504ad, type: 3}
+  citySFX: {fileID: 8300000, guid: 9834d5a59d44a0143add9de33299cd4e, type: 3}
+  riverSFX: {fileID: 8300000, guid: 057de6c897b84c742be6a27afc5f3d7b, type: 3}
   normalPointer: {fileID: 2800000, guid: 04490a80f6af27f47865b6814f7c2aad, type: 3}
   selectionPointer: {fileID: 2800000, guid: 3cf6b9d74a14a5f40ba479b5f7adcbcf, type: 3}
   movePointer: {fileID: 2800000, guid: 3ae6bb58a7b9e9b47a5097866d415a57, type: 3}
@@ -8740,7 +8743,9 @@ MonoBehaviour:
   soundSourcePrefab: {fileID: 82633280019010354, guid: 47b31754e85082d478fc38df9e31b0c3,
     type: 2}
   defaultMusic: {fileID: 8300000, guid: 5213007206dc0ad4da152c98871315b1, type: 3}
+  defaultAmbiantSound: {fileID: 8300000, guid: 4d7247616d4da63448902ece5ef15f6c, type: 3}
   musicVolume: 0.5
+  ambiantSoundVolume: 1
 --- !u!114 &114630806803247476
 MonoBehaviour:
   m_ObjectHideFlags: 1
