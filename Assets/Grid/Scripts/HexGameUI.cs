@@ -206,7 +206,7 @@ public class HexGameUI : MonoBehaviour
     public void DeselectUnit()
     {
         StopCoroutine(WaitForEndOfMove());
-        if (selectedUnit)
+        if (!Tutorial.earlyGameTutorial && selectedUnit)
         {
             grid.ClearPath();
             grid.ClearShowMovement();
