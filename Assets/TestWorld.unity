@@ -491,16 +491,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114994744374367934, guid: 33476354e42e6ce429a9f04309aeff3f,
-        type: 2}
-      propertyPath: upgradeManager
-      value: 
-      objectReference: {fileID: 807051935}
     - target: {fileID: 114922837000639642, guid: 33476354e42e6ce429a9f04309aeff3f,
         type: 2}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 646970248}
+    - target: {fileID: 114994744374367934, guid: 33476354e42e6ce429a9f04309aeff3f,
+        type: 2}
+      propertyPath: upgradeManager
+      value: 
+      objectReference: {fileID: 807051935}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33476354e42e6ce429a9f04309aeff3f, type: 2}
   m_IsPrefabAsset: 0
