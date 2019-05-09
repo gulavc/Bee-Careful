@@ -6158,8 +6158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   percentWasps: 0
   percentPesticide: 0
-  waspPercentIncreaseByYear: 10
-  pesticidePercentIncreaseByYear: 10
+  waspPercentIncreaseByYear: 20
+  pesticidePercentIncreaseByYear: 20
   waspPenalty: 0.75
   pesticidePenalty: 4
   waspPrefab: {fileID: 1709793752967134, guid: 34f37948c3b83fd42aea36e2a995b916, type: 2}
