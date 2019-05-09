@@ -4984,9 +4984,6 @@ MonoBehaviour:
   - NERP: 1c0000000d0000001a00000017000000
   - NERP: 380000001b000000340000002d000000
   - NERP: 54000000280000004e00000044000000
-  - NERP: 7000000036000000680000005a000000
-  - NERP: 8c000000430000008200000071000000
-  - NERP: a7000000510000009d00000087000000
   gameManager: {fileID: 0}
 --- !u!114 &114160541461995432
 MonoBehaviour:
@@ -5445,7 +5442,10 @@ MonoBehaviour:
   - Well, hello. I must say, I'm not really familiar with the regular proceedings.
     My predecessor didn't have time to give me many pointers before she passed away.
     Let's, hum, do our best ?
-  - Our survival is entirely into your hands...
+  - 'One last thing. The peeks with clouds are Mountains. A good way to quickly know
+    what''s around a certain area. '
+  - However, not every Mountain is easily accessible, have you tried getting the skill
+    to fly over these mountains ?
   dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
     type: 2}
   volume: 0.5
@@ -7022,11 +7022,13 @@ MonoBehaviour:
   buttonText: {fileID: 114100071084504318}
   allowCompletion: 1
   tutorialText:
-  - 'Everyone ! I''m your new Queen, for as long as I''ll be strong enough to support
-    us. '
+  - 'Everyone ! New year, new Queen ! '
   - There's no time for mourning. Let's get to work !
-  - One last thing. Not every Mountain is accessible, have you tried getting the skill
-    that can make flying over these mountains much easier ?
+  - One last thing. The peeks with clouds are Mountains. A good way to quickly know
+    what's around a certain area. Not every Mountain is accessible, have you tried
+    getting the skill that can make flying over these mountains much easier ?
+  - However, not every Mountain is easily accessible, have you tried getting the skill
+    to fly over these mountains ?
   dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
     type: 2}
   volume: 0.5
@@ -10393,14 +10395,11 @@ MonoBehaviour:
   loader: {fileID: 0}
   scoutUI: {fileID: 0}
   pauseUI: {fileID: 0}
-  numberOfYears: 6
+  numberOfYears: 3
   maps:
   - NEW_MapWorld
-  - NEW_MapWorld_urb1
   - NEW_MapWorld_urb2
-  - NEW_MapWorld_urb3
   - NEW_MapWorld_urb4
-  - NEW_MapWorld_urb5
 --- !u!114 &114825488958808364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10412,14 +10411,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b9a564175fbfd45b78022773093477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelText: {fileID: 114643903151393338}
-  buttonText: {fileID: 114107287774092424}
+  panelText: {fileID: 114704562930067984}
+  buttonText: {fileID: 114100071084504318}
   allowCompletion: 1
   tutorialText:
-  - "Hello dearies ! \u2026 another year is beginning Let\u2019s give our best, alright
-    ? If you need me, you know where to find me. "
-  - Have you tried getting more Scouts ? It makes exploring much better, in my humble
-    opinion...
+  - 'Everyone ! New year, new Queen ! '
+  - I've heard that having more than one Scout could be really helpful. Maybe give
+    it a try ?
   dialogSounds: {fileID: 114986319222564880, guid: 16220c14a82afba4792a73cf79333dc2,
     type: 2}
   volume: 0.5
