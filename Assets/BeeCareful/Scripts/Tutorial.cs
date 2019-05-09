@@ -37,6 +37,8 @@ public class Tutorial : MonoBehaviour {
 
     public GameObject hiveUI;
 
+    public GameObject objectivePanel;
+
     [Header("Tutorials references / Intro")]
     public GameObject startUpTutorial;
     public GameObject cameraSuccessTutorial;
@@ -113,8 +115,7 @@ public class Tutorial : MonoBehaviour {
             yield return new WaitForEndOfFrame();
 
         }
-
-        gameManager.RestorePlayerControls();
+        
         ShowCameraSuccessTutorial();
     }
 
@@ -146,6 +147,8 @@ public class Tutorial : MonoBehaviour {
     IEnumerator WaitForSelect()
     {        
         HexMapCamera.MoveTo(unit.Location);
+
+        gameManager.RestorePlayerControls();
 
         while (!controller.GetSelectedUnit)
         {
@@ -313,6 +316,7 @@ public class Tutorial : MonoBehaviour {
     IEnumerator WaitForPollenHUD()
     {
         pollenHUD.SetActive(true);
+        objectivePanel.SetActive(true);
 
         UIFocus.Show();
         UIFocus.MoveFocus(pollenHUD.transform.position);
@@ -718,6 +722,7 @@ public class Tutorial : MonoBehaviour {
         nectarHUD.SetActive(false);
         resinHUD.SetActive(false);
         waterHUD.SetActive(false);
+        objectivePanel.SetActive(false);
         foreach(GameObject g in seasonTimers)
         {
             g.SetActive(false);
@@ -739,6 +744,7 @@ public class Tutorial : MonoBehaviour {
         nectarHUD.SetActive(true);
         resinHUD.SetActive(true);
         waterHUD.SetActive(true);
+        objectivePanel.SetActive(true);
         foreach (GameObject g in seasonTimers)
         {
             g.SetActive(true);

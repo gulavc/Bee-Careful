@@ -7,7 +7,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
     public GameManager gameManager;
 
-    public Text objectivesText;
+    public Text objectivesText1, objectivesText2, objectivesText3, objectivesText4;
 
     // Use this for initialization
     void Start () {
@@ -16,8 +16,12 @@ public class ObjectivesAlert : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        NectarObjective();
+        PollenObjective();
+        WaterObjective();
+        ResinObjective();
 	}
+
 
     public void NectarObjective()
 
@@ -27,7 +31,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: COMPLETE!";
+            objectivesText1.text = "NECTAR OBJECTIVE: COMPLETE!";
 
         }
 
@@ -35,7 +39,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar));
+            objectivesText1.text = "NECTAR OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Nectar) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Nectar));
 
         }
 
@@ -50,7 +54,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: COMPLETE!";
+            objectivesText3.text = "WATER OBJECTIVE: COMPLETE!";
 
         }
 
@@ -58,7 +62,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water));
+            objectivesText3.text = "WATER OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Water) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Water));
 
         }
 
@@ -73,7 +77,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: COMPLETE!";
+            objectivesText4.text = "RESIN OBJECTIVE: COMPLETE!";
 
         }
 
@@ -81,7 +85,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin));
+            objectivesText4.text = "RESIN OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Resin) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Resin));
 
         }
 
@@ -96,7 +100,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: COMPLETE!";
+            objectivesText2.text = "POLLEN OBJECTIVE: COMPLETE!";
 
         }
 
@@ -104,7 +108,7 @@ public class ObjectivesAlert : MonoBehaviour {
 
         {
 
-            objectivesText.text = "YEARLY OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen));
+            objectivesText2.text = "POLLEN OBJECTIVE: " + (gameManager.GetRessourceCount(ResourceType.Pollen) + " / " + gameManager.globalObjectives.GetObjective(ResourceType.Pollen));
 
         }
 

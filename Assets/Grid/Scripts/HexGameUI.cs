@@ -13,6 +13,9 @@ public class HexGameUI : MonoBehaviour
     [Header("Music")]
     public AudioClip hiveMusic;
     public MultiAudioClip moveSFX;
+    public AudioClip swarmSFX;
+    public AudioClip citySFX;
+    public AudioClip riverSFX;
 
     private GameManager gameManager;    
 
@@ -118,6 +121,9 @@ public class HexGameUI : MonoBehaviour
                 DeselectUnit();
             }
         }
+
+        PlayAmbiantSound();
+
     }
 
     void Start()
@@ -200,7 +206,7 @@ public class HexGameUI : MonoBehaviour
     public void DeselectUnit()
     {
         StopCoroutine(WaitForEndOfMove());
-        if (selectedUnit)
+        if (!Tutorial.earlyGameTutorial && selectedUnit)
         {
             grid.ClearPath();
             grid.ClearShowMovement();
@@ -275,7 +281,7 @@ public class HexGameUI : MonoBehaviour
     }
 
     public void ShowScoutUI()
-    {
+    {        
         scoutUI.gameObject.SetActive(true);
         scoutUI.ShowButton();
         scoutUI.currentCell = currentCell;
@@ -290,12 +296,20 @@ public class HexGameUI : MonoBehaviour
 
     public void ShowHiveUI()
     {
-        if (Tutorial.hiveEnabled)
+        if (HiveUI.activeSelf)
         {
-            DeselectUnit();
-            HiveUI.SetActive(true);
-            gameManager.PlayMusic(hiveMusic);
-            
+            HiveUI.SetActive(false);
+            gameManager.StopMusic();
+        }
+        else
+        {
+            if (Tutorial.hiveEnabled)
+            {
+                DeselectUnit();
+                HiveUI.SetActive(true);
+                gameManager.PlayMusic(hiveMusic);
+
+            }
         }        
     }
 
@@ -313,21 +327,54 @@ public class HexGameUI : MonoBehaviour
             yield break;
         }
 
-        currentCell = selectedUnit.Location;
+        currentCell = selectedUnit.Location;   
+        
 
         if (resourcePointIndices.Contains(currentCell.SpecialIndex) && Tutorial.gatherEnabled)
         {
-            ShowScoutUI();
+            ShowScoutUI();            
         }
         else
         {
             HideScoutUI();
         }
+
+        
+
     }
 
     public void SetCurrentCell(HexCell cell)
     {
         currentCell = cell;
+    }
+
+    private void PlayAmbiantSound()
+    {
+        if (selectedUnit)
+        {
+            HexCell cell = grid.GetCell(selectedUnit.transform.position);
+            ResourcePoint rp = gameManager.rpManager.GetResourcePointByCell(cell);
+            if(rp && rp.hasWasp)
+            {
+                gameManager.PlayAmbiance(swarmSFX);
+            }
+            else if (cell.UrbanLevel > 0)
+            {
+                gameManager.PlayAmbiance(citySFX);
+            }
+            else if (cell.HasRiver || cell.IsUnderwater)
+            {
+                gameManager.PlayAmbiance(riverSFX);
+            }
+            else
+            {
+                gameManager.StopAmbiance();
+            }
+        }
+        else
+        {
+            gameManager.StopAmbiance();
+        }        
     }
 }
     

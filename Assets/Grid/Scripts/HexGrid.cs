@@ -532,7 +532,7 @@ public class HexGrid : MonoBehaviour {
                     current = current.PathFrom;
                 }
                 currentPathFrom.EnableHighlight(Color.blue);
-                currentPathTo.EnableHighlight(Color.red);
+                currentPathTo.EnableHighlight(Color.cyan);
         }
     }
 
