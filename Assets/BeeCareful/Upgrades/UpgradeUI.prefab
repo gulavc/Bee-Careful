@@ -3738,7 +3738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scout moves cost 1 Time Points. Cost: 30 Nectar + 30 Resin + 30 Pollen'
+  m_Text: 'Scout moves cost 1 Time Points. Cost: 30 Nectar + 30 Pollen + 30 Resin'
 --- !u!114 &114028662175820598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4224,7 +4224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scouts can see 2 tiles further. Cost: 30 Nectar + 15 Resin + 15 Pollen'
+  m_Text: 'Scouts can see 2 tiles further. Cost: 30 Nectar + 15 Pollen + 15 Resin'
 --- !u!114 &114092025882795630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5721,7 +5721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scouts can fly over Rivers. Cost: 15 Nectar + 15 Resin + 30 Pollen'
+  m_Text: 'Scouts can fly over Rivers. Cost: 15 Nectar + 15 Pollen + 30 Resin'
 --- !u!114 &114239394751727264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5988,8 +5988,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Workers is now 50% cheaper. Cost: 15 Nectar + 15 Water + 15 Resin
-    + 15 Pollen'
+  m_Text: 'Creating Workers is now 50% cheaper. Cost: 15 Nectar + 15 Pollen + 15 Water
+    + 15 Resin'
 --- !u!114 &114279030101122146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6178,8 +6178,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reduce your resources objectives by 2 per Scout. Cost: 20 Nectar + 20 Water
-    + 20 Resin + 20 Pollen'
+  m_Text: 'Reduce ALL your resources objectives by 10 per Scout. Cost: 20 Nectar +
+    20 Pollen + 20 Water + 20 Resin'
 --- !u!114 &114296332790068506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6515,8 +6515,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Scouts is now 50% cheaper. Cost: 30 Nectar + 30 Water + 30 Resin
-    + 30 Pollen'
+  m_Text: 'Creating Scouts is now 50% cheaper. Cost: 30 Nectar + 30 Pollen + 30 Water
+    + 30 Resin'
 --- !u!114 &114342673436182016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6618,7 +6618,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scouts can see 3 tiles further. Cost: 30 Nectar + 30 Resin + 30 Pollen.'
+  m_Text: 'Scouts can see 3 tiles further. Cost: 30 Nectar + 30 Pollen + 30 Resin.'
 --- !u!114 &114350299817825220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6890,7 +6890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scout moves cost 2 Time Points. Cost: 30 Nectar + 15 Resin + 15 Pollen'
+  m_Text: 'Scout moves cost 2 Time Points. Cost: 30 Nectar + 15 Pollen + 15 Resin'
 --- !u!114 &114385605622698534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7046,8 +7046,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reduce your resources objectives by 3 per Scout. Cost: 30 Nectar + 30 Water
-    + 30 Resin + 30 Pollen'
+  m_Text: 'Reduce ALL your resources objectives by 15 per Scout. Cost: 30 Nectar +
+    30 Pollen + 30 Water + 30 Resin'
 --- !u!114 &114412297203843982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8564,7 +8564,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start each year with 120 Workers. Cost: 10 Nectar + 10 Resin + 10 Pollen'
+  m_Text: 'Start each year with 120 Workers. Cost: 10 Nectar + 10 Pollen + 10 Resin'
 --- !u!114 &114513999738304592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8966,8 +8966,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Start each year with 160 Workers. Cost: 15 Nectar + 15 Water + 15 Resin
-    + 15 Pollen'
+  m_Text: 'Start each year with 160 Workers. Cost: 15 Nectar + 15 Pollen + 15 Water
+    + 15 Resin'
 --- !u!114 &114568563405625392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9165,8 +9165,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Workers is now 75% cheaper. Cost: 30 Nectar + 30 Water + 30 Resin
-    + 30 Pollen'
+  m_Text: 'Creating Workers is now 75% cheaper. Cost: 30 Nectar + 30 Pollen + 30 Water
+    + 30 Resin'
 --- !u!114 &114600585387156520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9409,8 +9409,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Reduce your resources objectives by 1 per Scout. Cost: 10 Nectar + 10 Water
-    + 10 Resin + 10 Pollen'
+  m_Text: 'Reduce ALL your resources objectives by 5 per Scout. Cost: 10 Nectar +
+    10 Pollen + 10 Water + 10 Resin'
 --- !u!114 &114639702436477982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10229,8 +10229,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Scouts is now 75% cheaper. Cost: 60 Nectar + 60 Water + 60 Resin
-    + 60 Pollen'
+  m_Text: 'Creating Scouts is now 75% cheaper. Cost: 60 Nectar + 60 Pollen + 60 Water
+    + 60 Resin'
 --- !u!114 &114784312803796016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10494,7 +10494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Scouts can fly over Cities. Cost: 30 Nectar + 30 Resin + 30 Pollen'
+  m_Text: 'Scouts can fly over Cities. Cost: 30 Nectar + 30 Pollen + 30 Resin'
 --- !u!114 &114806577757184830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10581,8 +10581,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Workers is now 25% cheaper. Cost: 10 Nectar + 10 Water + 10 Resin
-    + 10 Pollen'
+  m_Text: 'Creating Workers is now 25% cheaper. Cost: 10 Nectar + 10 Pollen + 10 Water
+    + 10 Resin'
 --- !u!114 &114828089301122024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12243,8 +12243,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Creating Scouts is now 25% cheaper. Cost: 15 Nectar + 15 Water + 15 Resin
-    + 15 Pollen'
+  m_Text: 'Creating Scouts is now 25% cheaper. Cost: 15 Nectar + 15 Pollen + 15 Water
+    + 15 Resin'
 --- !u!114 &114996814104355026
 MonoBehaviour:
   m_ObjectHideFlags: 1

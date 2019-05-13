@@ -144,9 +144,9 @@ public class ResourcePoint : HexInteractable {
         int actualWorkforceCost = workforceCost;
         if (hasPesticide)            
         {
-            float pesticidePenalty = 1 - rpm.pesticidePenalty;
+            float pesticidePenalty = rpm.pesticidePenalty;
             pesticidePenalty *= (1 - PesticideProtection);
-            pesticidePenalty += 1;
+            //pesticidePenalty += 1;
 
             actualWorkforceCost = (int)(actualWorkforceCost * pesticidePenalty);
         }

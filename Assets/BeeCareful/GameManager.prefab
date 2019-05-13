@@ -5655,7 +5655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   pointsActionMax: 500
-  bonusEnergyPercentPerScout: 0
+  bonusEnergyPercentPerScout: 0.5
 --- !u!114 &114229390226269360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8747,7 +8747,7 @@ MonoBehaviour:
   defaultMusic: {fileID: 8300000, guid: 2054cc41ed3461744addb63f60bbcb74, type: 3}
   defaultAmbiantSound: {fileID: 8300000, guid: 4d7247616d4da63448902ece5ef15f6c, type: 3}
   musicVolume: 0.5
-  ambiantSoundVolume: 1
+  ambiantSoundVolume: 0.5
 --- !u!114 &114630806803247476
 MonoBehaviour:
   m_ObjectHideFlags: 1

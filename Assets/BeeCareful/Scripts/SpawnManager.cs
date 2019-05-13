@@ -122,6 +122,7 @@ public class SpawnManager : MonoBehaviour
                 if (addCount)
                 {
                     gameManager.ScoutCount += 1;
+                    gameManager.pointsAction.UpdateMaxPointsAction(gameManager.ScoutCount);
                 }
                 hexGrid.AddUnit(Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f));
             }

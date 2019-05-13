@@ -19,15 +19,15 @@ public class GlobalObjectives : MonoBehaviour
         get {
             if (ObjectivesUpgrade3)
             {
-                return 3 * gameManager.ScoutCount;
+                return 15 * gameManager.ScoutCount;
             }
             else if (ObjectivesUpgrade2)
             {
-                return 2 * gameManager.ScoutCount;
+                return 10 * gameManager.ScoutCount;
             }
             else if (ObjectivesUpgrade1)
             {
-                return 1 * gameManager.ScoutCount;
+                return 5 * gameManager.ScoutCount;
             }
             else
             {

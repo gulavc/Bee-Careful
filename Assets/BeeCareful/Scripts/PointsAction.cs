@@ -8,16 +8,17 @@ public class PointsAction : MonoBehaviour {
     [HideInInspector] public GameManager gameManager;
     
     public int pointsActionMax;
+    private int pointsActionMaxBase;
     [Range(0, 1)]
     public float bonusEnergyPercentPerScout;
 
+    private int currentPoints;
     public int Points { get; private set; }
 
 	// Use this for initialization
 	void Awake ()
     {
-        Points = pointsActionMax;
-
+        pointsActionMaxBase = Points = pointsActionMax;
     }
 	
 	// Update is called once per frame
@@ -56,6 +57,13 @@ public class PointsAction : MonoBehaviour {
             }
         }
         gameManager.UpdatePointsActionHUD();
+    }
+
+    public void UpdateMaxPointsAction(int numScouts)
+    {
+        float current = Points / (float)pointsActionMax;
+        pointsActionMax = (int)(pointsActionMaxBase * (1 + (numScouts-1) * bonusEnergyPercentPerScout));
+        Points = (int)(current * pointsActionMax);
     }
 
     public string GetCurrentSeason()
